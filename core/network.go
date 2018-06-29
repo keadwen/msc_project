@@ -20,17 +20,21 @@ type Network struct {
 }
 
 func (net *Network) AddNode(n *Node) error {
+	if net.Nodes == nil {
+		net.Nodes = make(map[int64]*Node)
+	}
 	if v, ok := net.Nodes[n.ID]; ok {
 		fmt.Errorf("node ID <%d> already exists: %+v", n.ID, v)
 	}
-	net.Nodes[n.ID] = Node
+	net.Nodes[n.ID] = n
+	return nil
 }
 
 func (net *Network) Simulate() {
 	var wg sync.WaitGroup
 
 	for r := 0; r < 10; r++ {
-		net.round = r
+		net.round = int64(r)
 
 		// Check if nodes are alive.
 		if net.CheckNodes() == 0 {
@@ -79,9 +83,11 @@ func (n *Node) Listen(ctx context.Context) {
 }
 
 func (n *Node) Transmit(msg Message) error {
+	return nil
 }
 
 func (n *Node) Receive(msg Message) error {
+	return nil
 }
 
 func (n *Node) Run() error {
