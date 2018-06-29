@@ -1,39 +1,28 @@
 package core
 
 import (
-	"context"
 	"fmt"
 	"sync"
 )
 
-type Message struct {
-	souceID       int64
-	destinationID int64
-	data          int64
-}
-
 type Network struct {
 	BaseStation *Node
-	Nodes       map[int64]*Node
+	Nodes       sync.Map
 
 	round int64
 }
 
 func (net *Network) AddNode(n *Node) error {
-	if net.Nodes == nil {
-		net.Nodes = make(map[int64]*Node)
-	}
-	if v, ok := net.Nodes[n.ID]; ok {
+	if v, ok := net.Nodes.Load(n.ID); ok {
 		fmt.Errorf("node ID <%d> already exists: %+v", n.ID, v)
 	}
-	net.Nodes[n.ID] = n
+	net.Nodes.Store(n.ID, n)
 	return nil
 }
 
 func (net *Network) Simulate() {
-	var wg sync.WaitGroup
-
-	for r := 0; r < 10; r++ {
+	for r := 0; r < 2; r++ {
+		fmt.Printf("=== Round %d ===\n", r)
 		net.round = int64(r)
 
 		// Check if nodes are alive.
@@ -42,28 +31,32 @@ func (net *Network) Simulate() {
 			break
 		}
 
-		for _, n := range net.Nodes {
-			if !n.Ready {
-				continue
+		var wg sync.WaitGroup
+		net.Nodes.Range(func(_, n interface{}) bool {
+			if !n.(*Node).Ready {
+				return true
 			}
 
 			wg.Add(1)
-			go func() {
+			go func(n *Node) {
 				defer wg.Done()
-				n.Run()
-			}()
-		}
+				// Simply send the message to Base Station.
+				n.Transmit(n.X, net.BaseStation)
+			}(n.(*Node))
+			return true
+		})
 		wg.Wait() // Wait for all nodes to finish.
 	}
 }
 
 func (net *Network) CheckNodes() int {
 	count := 0
-	for _, n := range net.Nodes {
-		if n.Energy > 0 {
+	net.Nodes.Range(func(_, n interface{}) bool {
+		if n.(*Node).Energy > 0 {
 			count++
 		}
-	}
+		return true
+	})
 	return count
 }
 
@@ -79,18 +72,13 @@ type Node struct {
 	Y int64
 }
 
-func (n *Node) Listen(ctx context.Context) {
-}
-
-func (n *Node) Transmit(msg Message) error {
+func (n *Node) Transmit(msg int64, dst *Node) error {
+	fmt.Printf("node <%d> sends to node <%d>\n", n.ID, dst.ID)
+	dst.Receive(msg)
 	return nil
 }
 
-func (n *Node) Receive(msg Message) error {
-	return nil
-}
-
-func (n *Node) Run() error {
-	// Simply send a message to the base station.
+func (n *Node) Receive(msg int64) error {
+	fmt.Printf("node <%d> receive message <%d>\n", n.ID, msg)
 	return nil
 }
