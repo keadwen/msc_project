@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"time"
+
 	"github.com/keadwen/msc_project/core"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/vg"
@@ -38,7 +41,7 @@ func main() {
 	net.Simulate()
 
 	// Save the plot to a PNG file.
-	if err := p.Save(8*vg.Inch, 8*vg.Inch, "graprounds.png"); err != nil {
+	if err := p.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
 		panic(err)
 	}
 }

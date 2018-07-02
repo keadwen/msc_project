@@ -22,7 +22,8 @@ func (net *Network) AddNode(n *Node) error {
 	if v, ok := net.Nodes.Load(n.ID); ok {
 		fmt.Errorf("node ID <%d> already exists: %+v", n.ID, v)
 	}
-	n.energyPoints = plotter.XYs{}
+
+	n.energyPoints = plotter.XYs{{X: float64(0), Y: float64(n.Energy)}}
 	n.tx_data = 0
 	n.rx_data = 0
 	net.Nodes.Store(n.ID, n)
