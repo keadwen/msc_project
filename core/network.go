@@ -3,6 +3,10 @@ package core
 import (
 	"fmt"
 	"sync"
+
+	"gonum.org/v1/plot"
+	"gonum.org/v1/plot/plotter"
+	"gonum.org/v1/plot/plotutil"
 )
 
 type Network struct {
@@ -10,12 +14,15 @@ type Network struct {
 	Nodes       sync.Map
 
 	round int64
+
+	PlotRound *plot.Plot
 }
 
 func (net *Network) AddNode(n *Node) error {
 	if v, ok := net.Nodes.Load(n.ID); ok {
 		fmt.Errorf("node ID <%d> already exists: %+v", n.ID, v)
 	}
+	n.energyPoints = plotter.XYs{}
 	n.tx_data = 0
 	n.rx_data = 0
 	net.Nodes.Store(n.ID, n)
@@ -50,8 +57,11 @@ func (net *Network) Simulate() {
 			}(n.(*Node))
 			return true
 		})
-		wg.Wait() // Wait for all nodes to finish.
+		wg.Wait() // Wait for all nodes to finish before plot.
+		net.PopulateEnergyPoints()
 	}
+	// Recollect all plot data.
+	net.PlotEnergy()
 
 	// Display the final count of TX/RX data per node.
 	fmt.Println("=== Final ===")
@@ -71,4 +81,28 @@ func (net *Network) CheckNodes() int {
 		return true
 	})
 	return count
+}
+
+func (net *Network) PopulateEnergyPoints() {
+	net.Nodes.Range(func(_, n interface{}) bool {
+		n.(*Node).energyPoints = append(n.(*Node).energyPoints, plotter.XYs{{
+			X: float64(net.round),
+			Y: n.(*Node).Energy,
+		}}...)
+		// fmt.Printf("Node: %v\n", n.(*Node).energyPoints)
+		return true
+	})
+}
+
+func (net *Network) PlotEnergy() {
+	net.Nodes.Range(func(_, n interface{}) bool {
+		if err := plotutil.AddLinePoints(
+			net.PlotRound,
+			fmt.Sprintf("Node <%d>", n.(*Node).ID),
+			n.(*Node).energyPoints,
+		); err != nil {
+			fmt.Printf("failed to AddLinePoints(): %v", err)
+		}
+		return true
+	})
 }

@@ -3,6 +3,8 @@ package core
 import (
 	"fmt"
 	"math"
+
+	"gonum.org/v1/plot/plotter"
 )
 
 const (
@@ -18,7 +20,8 @@ type Node struct {
 	Ready bool
 
 	// Energy levels.
-	Energy float64
+	Energy       float64
+	energyPoints plotter.XYs
 
 	// Coordinates.
 	X float64
