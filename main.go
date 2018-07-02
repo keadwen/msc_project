@@ -16,8 +16,8 @@ func main() {
 	}
 
 	// Create 2 nodes.
-	net.AddNode(&core.Node{1, true, 100.0e-7, 10.0, 0.0})
-	net.AddNode(&core.Node{2, true, 100.0e-8, 20.0, 0.0})
+	net.AddNode(&core.Node{ID: 1, Ready: true, Energy: 100.0e-7, X: 10.0, Y: 0.0})
+	net.AddNode(&core.Node{ID: 2, Ready: true, Energy: 100.0e-8, X: 20.0, Y: 0.0})
 
 	// Run simulation for 10 rounds.
 	net.Simulate()

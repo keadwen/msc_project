@@ -2,16 +2,7 @@ package core
 
 import (
 	"fmt"
-	"math"
 	"sync"
-)
-
-const (
-	// Energy values measured in [J/byte].
-	E_TX = 40e-9      // Transmission
-	E_RX = 4e-9       // Receiving
-	E_MP = 0.0104e-12 // Multipath fading
-	E_FS = 80e-12     // Line of sight free space channel
 )
 
 type Network struct {
@@ -25,6 +16,8 @@ func (net *Network) AddNode(n *Node) error {
 	if v, ok := net.Nodes.Load(n.ID); ok {
 		fmt.Errorf("node ID <%d> already exists: %+v", n.ID, v)
 	}
+	n.tx_data = 0
+	n.rx_data = 0
 	net.Nodes.Store(n.ID, n)
 	return nil
 }
@@ -58,6 +51,14 @@ func (net *Network) Simulate() {
 		})
 		wg.Wait() // Wait for all nodes to finish.
 	}
+
+	// Display the final count of TX/RX data per node.
+	fmt.Println("=== Final ===")
+	fmt.Println(net.BaseStation.Info())
+	net.Nodes.Range(func(_, n interface{}) bool {
+		fmt.Println(n.(*Node).Info())
+		return true
+	})
 }
 
 func (net *Network) CheckNodes() int {
@@ -69,58 +70,4 @@ func (net *Network) CheckNodes() int {
 		return true
 	})
 	return count
-}
-
-type Node struct {
-	ID    int64
-	Ready bool
-
-	// Energy levels.
-	Energy float64
-
-	// Coordinates.
-	X float64
-	Y float64
-}
-
-func (n *Node) Transmit(msg int64, dst *Node) error {
-	// Deduct cost of transmission.
-	var cost float64
-	if d := n.distance(dst); d > math.Sqrt(E_FS/E_MP) {
-		cost = E_TX + math.Pow(E_MP, 4)
-	} else {
-		cost = E_TX + math.Pow(E_MP, 2)
-	}
-	if err := n.consume(cost * float64(msg)); err != nil {
-		return err
-	}
-
-	fmt.Printf("node <%d> sends to node <%d>\n", n.ID, dst.ID)
-	return nil
-}
-
-func (n *Node) Receive(msg int64) error {
-	// Deduct cost of receiving.
-	if err := n.consume(E_TX * float64(msg)); err != nil {
-		return err
-	}
-
-	fmt.Printf("node <%d> receive message <%d>\n", n.ID, msg)
-	return nil
-}
-
-func (n *Node) distance(dst *Node) float64 {
-	x := math.Abs(n.X - dst.X)
-	y := math.Abs(n.Y - dst.Y)
-	return math.Hypot(x, y)
-}
-
-func (n *Node) consume(e float64) error {
-	if n.Energy-e < 0 {
-		n.Ready = false
-		n.Energy = 0
-		return fmt.Errorf("node <%d> no more energy!", n.ID)
-	}
-	n.Energy -= e
-	return nil
 }
