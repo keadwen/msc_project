@@ -23,9 +23,10 @@ func (net *Network) AddNode(n *Node) error {
 }
 
 func (net *Network) Simulate() {
-	for r := 0; r < 2; r++ {
-		fmt.Printf("=== Round %d ===\n", r)
-		net.round = int64(r)
+	net.round = 0
+	for net.CheckNodes() > 0 {
+		net.round++
+		fmt.Printf("=== Round %d ===\n", net.round)
 
 		// Check if nodes are alive.
 		if net.CheckNodes() == 0 {
