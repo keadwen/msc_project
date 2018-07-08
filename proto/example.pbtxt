@@ -1,6 +1,6 @@
 nodes: <
   id: 0
-  initial_energy: 10000
+  initial_energy: 1.0e4
   location: <
     X: 0
     Y: 0

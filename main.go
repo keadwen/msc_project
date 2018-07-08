@@ -53,9 +53,11 @@ func main() {
 	}
 
 	// Create base station node.
+	bsc := conf.Nodes[0]
 	net.BaseStation = &core.Node{
-		Conf:  *conf.GetNodes()[0],
-		Ready: true,
+		Conf:   *bsc,
+		Ready:  true,
+		Energy: bsc.GetInitialEnergy(),
 	}
 
 	// Create nodes.

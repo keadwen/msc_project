@@ -41,7 +41,10 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 	}
 	// Call destination to receive.
 	n.dataSent += msg
-	dst.Receive(msg) // Do not fetch error.
+	err := dst.Receive(msg)
+	if err != nil {
+		fmt.Printf("destination node <%d> failed: %v\n", dst.Conf.GetId(), err)
+	}
 
 	fmt.Printf("node <%d> sends to node <%d>\n", n.Conf.GetId(), dst.Conf.GetId())
 	return nil
@@ -49,7 +52,7 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 
 func (n *Node) Receive(msg int64) error {
 	// Deduct cost of receiving.
-	if err := n.consume(E_TX * float64(msg)); err != nil {
+	if err := n.consume(E_RX * float64(msg)); err != nil {
 		return err
 	}
 	n.dataReceived += msg
