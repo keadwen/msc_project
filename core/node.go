@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 
+	"github.com/keadwen/msc_project/proto"
 	"gonum.org/v1/plot/plotter"
 )
 
@@ -16,16 +17,12 @@ const (
 )
 
 type Node struct {
-	ID    int64
+	Conf  config.Node
 	Ready bool
 
 	// Energy levels.
 	Energy       float64
 	energyPoints plotter.XYs
-
-	// Coordinates.
-	X float64
-	Y float64
 
 	dataSent     int64
 	dataReceived int64
@@ -46,7 +43,7 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 	n.dataSent += msg
 	dst.Receive(msg) // Do not fetch error.
 
-	fmt.Printf("node <%d> sends to node <%d>\n", n.ID, dst.ID)
+	fmt.Printf("node <%d> sends to node <%d>\n", n.Conf.GetId(), dst.Conf.GetId())
 	return nil
 }
 
@@ -57,13 +54,13 @@ func (n *Node) Receive(msg int64) error {
 	}
 	n.dataReceived += msg
 
-	fmt.Printf("node <%d> receive message <%d>\n", n.ID, msg)
+	fmt.Printf("node <%d> receive message <%d>\n", n.Conf.GetId(), msg)
 	return nil
 }
 
 func (n *Node) distance(dst *Node) float64 {
-	x := math.Abs(n.X - dst.X)
-	y := math.Abs(n.Y - dst.Y)
+	x := math.Abs(n.Conf.GetLocation().GetX() - dst.Conf.GetLocation().GetX())
+	y := math.Abs(n.Conf.GetLocation().GetY() - dst.Conf.GetLocation().GetY())
 	return math.Hypot(x, y)
 }
 
@@ -71,12 +68,12 @@ func (n *Node) consume(e float64) error {
 	if n.Energy-e < 0 {
 		n.Ready = false
 		n.Energy = 0
-		return fmt.Errorf("node <%d> no more energy!", n.ID)
+		return fmt.Errorf("node <%d> no more energy!", n.Conf.GetId())
 	}
 	n.Energy -= e
 	return nil
 }
 
 func (n *Node) Info() string {
-	return fmt.Sprintf("node <%d> tx: <%d> rx: <%d>", n.ID, n.dataSent, n.dataReceived)
+	return fmt.Sprintf("node <%d> tx: <%d> rx: <%d>", n.Conf.GetId(), n.dataSent, n.dataReceived)
 }

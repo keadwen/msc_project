@@ -1,0 +1,36 @@
+nodes: <
+  id: 0
+  initial_energy: 10000
+  location: <
+    X: 0
+    Y: 0
+  >
+  energy_cost <
+  >
+  time_delay: <
+  >
+>
+nodes: <
+  id: 1
+  initial_energy: 100.0e-6
+  location: <
+    X: 100.0
+    Y: 0
+  >
+  energy_cost <
+  >
+  time_delay: <
+  >
+>
+nodes <
+  id: 2
+  initial_energy: 200.0e-6
+  location: <
+    X: 200
+    Y: 0
+  >
+  energy_cost: <
+  >
+  time_delay: <
+  >
+>

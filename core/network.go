@@ -19,14 +19,14 @@ type Network struct {
 }
 
 func (net *Network) AddNode(n *Node) error {
-	if v, ok := net.Nodes.Load(n.ID); ok {
-		fmt.Errorf("node ID <%d> already exists: %+v", n.ID, v)
+	if v, ok := net.Nodes.Load(n.Conf.GetId()); ok {
+		fmt.Errorf("node ID <%d> already exists: %+v", n.Conf.GetId(), v)
 	}
-
+	n.Energy = n.Conf.GetInitialEnergy()
 	n.energyPoints = plotter.XYs{{X: float64(0), Y: float64(n.Energy)}}
 	n.dataSent = 0
 	n.dataReceived = 0
-	net.Nodes.Store(n.ID, n)
+	net.Nodes.Store(n.Conf.GetId(), n)
 	return nil
 }
 
@@ -52,7 +52,7 @@ func (net *Network) Simulate() {
 			go func(n *Node) {
 				defer wg.Done()
 				// Simply send the message to Base Station.
-				if err := n.Transmit(int64(n.X), net.BaseStation); err != nil {
+				if err := n.Transmit(int64(n.Conf.GetLocation().GetX()), net.BaseStation); err != nil {
 					fmt.Println(err)
 				}
 			}(n.(*Node))
@@ -99,7 +99,7 @@ func (net *Network) PlotEnergy() {
 	net.Nodes.Range(func(_, n interface{}) bool {
 		if err := plotutil.AddLinePoints(
 			net.PlotRound,
-			fmt.Sprintf("Node <%d>", n.(*Node).ID),
+			fmt.Sprintf("Node <%d>", n.(*Node).Conf.GetId()),
 			n.(*Node).energyPoints,
 		); err != nil {
 			fmt.Printf("failed to AddLinePoints(): %v", err)

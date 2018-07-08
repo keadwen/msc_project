@@ -1,15 +1,43 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"time"
 
+	"github.com/golang/protobuf/proto"
 	"github.com/keadwen/msc_project/core"
+	"github.com/keadwen/msc_project/proto"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/vg"
 )
 
+var (
+	configFile = flag.String("config_file", "", "location of node config file")
+)
+
 func main() {
+	flag.Parse()
+
+	var conf config.Config
+	var err error
+	if *configFile == "" {
+		conf, err = createScenario()
+	} else {
+		data, err := ioutil.ReadFile(*configFile)
+		if err != nil {
+			log.Fatalf("Failed to open a file %q: %v", *configFile, err)
+		}
+		if err := proto.UnmarshalText(string(data), &conf); err != nil {
+			log.Fatalf("Failed to unmarshal config proto %q: %v", *configFile, err)
+		}
+	}
+	if len(conf.GetNodes()) < 1 {
+		log.Fatalf("Found 0 nodes in config proto %q", *configFile)
+	}
+
 	// Create a plot for rounds.
 	p, err := plot.New()
 	if err != nil {
@@ -26,16 +54,13 @@ func main() {
 
 	// Create base station node.
 	net.BaseStation = &core.Node{
-		ID:     0,
-		Ready:  true,
-		Energy: 10000.0,
-		X:      0.0,
-		Y:      0.0,
+		Conf:  *conf.GetNodes()[0],
+		Ready: true,
 	}
 
 	// Create 2 nodes.
-	net.AddNode(&core.Node{ID: 1, Ready: true, Energy: 100.0e-6, X: 100.0, Y: 0.0})
-	net.AddNode(&core.Node{ID: 2, Ready: true, Energy: 200.0e-6, X: 200.0, Y: 0.0})
+	net.AddNode(&core.Node{Conf: *conf.Nodes[1], Ready: true})
+	net.AddNode(&core.Node{Conf: *conf.Nodes[2], Ready: true})
 
 	// Run simulation for 10 rounds.
 	net.Simulate()
@@ -44,4 +69,9 @@ func main() {
 	if err := p.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
 		panic(err)
 	}
+}
+
+// createScenario provides an ability to run single scenario with CLI support.
+func createScenario() (config.Config, error) {
+	return config.Config{}, nil
 }
