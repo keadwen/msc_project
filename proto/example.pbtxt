@@ -12,7 +12,7 @@ nodes: <
 >
 nodes: <
   id: 1
-  initial_energy: 100.0e-6
+  initial_energy: 1.0e-4
   location: <
     X: 100.0
     Y: 0
@@ -24,7 +24,7 @@ nodes: <
 >
 nodes <
   id: 2
-  initial_energy: 200.0e-6
+  initial_energy: 2.0e-4
   location: <
     X: 200
     Y: 0
