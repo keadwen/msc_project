@@ -58,9 +58,10 @@ func main() {
 		Ready: true,
 	}
 
-	// Create 2 nodes.
-	net.AddNode(&core.Node{Conf: *conf.Nodes[1], Ready: true})
-	net.AddNode(&core.Node{Conf: *conf.Nodes[2], Ready: true})
+	// Create nodes.
+	for n := 1; n < len(conf.GetNodes()); n++ {
+		net.AddNode(&core.Node{Conf: *conf.Nodes[n], Ready: true})
+	}
 
 	// Run simulation for 10 rounds.
 	net.Simulate()
