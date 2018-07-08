@@ -24,8 +24,8 @@ func (net *Network) AddNode(n *Node) error {
 	}
 
 	n.energyPoints = plotter.XYs{{X: float64(0), Y: float64(n.Energy)}}
-	n.tx_data = 0
-	n.rx_data = 0
+	n.dataSent = 0
+	n.dataReceived = 0
 	net.Nodes.Store(n.ID, n)
 	return nil
 }

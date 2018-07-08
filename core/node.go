@@ -27,8 +27,8 @@ type Node struct {
 	X float64
 	Y float64
 
-	tx_data int64
-	rx_data int64
+	dataSent     int64
+	dataReceived int64
 }
 
 func (n *Node) Transmit(msg int64, dst *Node) error {
@@ -43,7 +43,7 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 		return err
 	}
 	// Call destination to receive.
-	n.tx_data += msg
+	n.dataSent += msg
 	dst.Receive(msg) // Do not fetch error.
 
 	fmt.Printf("node <%d> sends to node <%d>\n", n.ID, dst.ID)
@@ -55,7 +55,7 @@ func (n *Node) Receive(msg int64) error {
 	if err := n.consume(E_TX * float64(msg)); err != nil {
 		return err
 	}
-	n.rx_data += msg
+	n.dataReceived += msg
 
 	fmt.Printf("node <%d> receive message <%d>\n", n.ID, msg)
 	return nil
@@ -78,5 +78,5 @@ func (n *Node) consume(e float64) error {
 }
 
 func (n *Node) Info() string {
-	return fmt.Sprintf("node <%d> tx: <%d> rx: <%d>", n.ID, n.tx_data, n.rx_data)
+	return fmt.Sprintf("node <%d> tx: <%d> rx: <%d>", n.ID, n.dataSent, n.dataReceived)
 }
