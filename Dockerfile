@@ -10,6 +10,4 @@ ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN go version
-ENTRYPOINT ["/bin/msc_project"] 
-# Optional pass of the args to run scenario.
-#ENTRYPOINT ["/bin/wsn", "-alsologtostderr"]
+ENTRYPOINT ["/bin/bash"] 
