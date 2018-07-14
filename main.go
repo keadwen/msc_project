@@ -47,16 +47,14 @@ func main() {
 	}
 
 	// Create a plot for rounds.
-	p, err := plot.New()
+	p, err := createPlot("energy(rounds)", "round", "energy [J]")
 	if err != nil {
-		panic(err)
+		log.Fatalf("Failed to create plot object: %v", err)
 	}
-	p.Title.Text = "Plotutil example"
-	p.X.Label.Text = "Round"
-	p.Y.Label.Text = "Energy"
 
 	// Create new space.
 	net := &core.Network{
+		Protocol:  &core.DirectCommunication{},
 		PlotRound: p,
 	}
 
@@ -77,9 +75,22 @@ func main() {
 	net.Simulate()
 
 	// Save the plot to a PNG file.
-	if err := p.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
-		panic(err)
+	pif := fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())
+	if err := p.Save(8*vg.Inch, 8*vg.Inch, pif); err != nil {
+		log.Fatalf("Failed to save a plot image file %q: %v", pif, err)
 	}
+}
+
+// createPlot returns new plot object.
+func createPlot(title, x, y string) (*plot.Plot, error) {
+	p, err := plot.New()
+	if err != nil {
+		return nil, err
+	}
+	p.Title.Text = title
+	p.X.Label.Text = x
+	p.Y.Label.Text = y
+	return p, err
 }
 
 // createScenario provides an ability to run single scenario with CLI support.

@@ -10,6 +10,7 @@ import (
 )
 
 type Network struct {
+	Protocol    Protocol
 	BaseStation *Node
 	Nodes       sync.Map
 
@@ -42,6 +43,16 @@ func (net *Network) Simulate() {
 			break
 		}
 
+		// Setup routing protocol.
+		net.Protocol.Setup(net)
+
+		// Check if nodes are alive.
+		if net.CheckNodes() == 0 {
+			fmt.Printf("Simulation stopped. No active nodes.\n")
+			break
+		}
+
+		// Run the round.
 		var wg sync.WaitGroup
 		net.Nodes.Range(func(_, n interface{}) bool {
 			if !n.(*Node).Ready {

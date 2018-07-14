@@ -17,8 +17,9 @@ const (
 )
 
 type Node struct {
-	Conf  config.Node
-	Ready bool
+	Conf    config.Node
+	Ready   bool
+	nextHop *Node
 
 	// Energy levels.
 	Energy       float64
