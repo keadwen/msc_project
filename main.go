@@ -26,7 +26,7 @@ var (
 func main() {
 	flag.Parse()
 
-	var conf *config.Config
+	conf := &config.Config{}
 	var err error
 	if *configFile == "" {
 		conf, err = createScenario()
