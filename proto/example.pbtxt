@@ -12,9 +12,9 @@ nodes: <
 >
 nodes: <
   id: 1
-  initial_energy: 1.0e-4
+  initial_energy: 10.0e-6
   location: <
-    X: 100.0
+    X: 300.0
     Y: 0
   >
   energy_cost <
@@ -24,9 +24,9 @@ nodes: <
 >
 nodes <
   id: 2
-  initial_energy: 2.0e-4
+  initial_energy: 20.0e-6
   location: <
-    X: 200
+    X: 500.0
     Y: 0
   >
   energy_cost: <

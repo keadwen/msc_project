@@ -10,23 +10,26 @@ import (
 
 const (
 	// Energy values measured in [J/byte].
-	E_TX = 40e-9      // Transmission
-	E_RX = 4e-9       // Receiving
-	E_MP = 0.0104e-12 // Multipath fading
-	E_FS = 80e-12     // Line of sight free space channel
+	E_TX = 40e-9      // Transmission.
+	E_RX = 4e-9       // Receiving.
+	E_MP = 0.0104e-12 // Multipath fading.
+	E_FS = 80e-12     // Line of sight free space channel.
+
+	DEFAULT_MSG = 100
 )
 
 type Node struct {
 	Conf    config.Node
 	Ready   bool
-	nextHop *Node
+	nextHop *Node   // As a default set to Base Station.
+	Energy  float64 // Energy level of a node.
 
-	// Energy levels.
-	Energy       float64
-	energyPoints plotter.XYs
-
+	transmitQueue int64
+	receiveQueue  int64
+	// Statistics and aggregation variables.
 	dataSent     int64
 	dataReceived int64
+	energyPoints plotter.XYs
 }
 
 func (n *Node) Transmit(msg int64, dst *Node) error {
@@ -42,7 +45,7 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 	}
 	// Call destination to receive.
 	n.dataSent += msg
-	err := dst.Receive(msg)
+	err := dst.Receive(msg, n)
 	if err != nil {
 		fmt.Printf("destination node <%d> failed: %v\n", dst.Conf.GetId(), err)
 	}
@@ -51,14 +54,15 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 	return nil
 }
 
-func (n *Node) Receive(msg int64) error {
+func (n *Node) Receive(msg int64, src *Node) error {
 	// Deduct cost of receiving.
 	if err := n.consume(E_RX * float64(msg)); err != nil {
 		return err
 	}
+	n.receiveQueue += msg
 	n.dataReceived += msg
 
-	fmt.Printf("node <%d> receive message <%d>\n", n.Conf.GetId(), msg)
+	fmt.Printf("node <%d> receive message <%d> from node <%d>\n", n.Conf.GetId(), msg, src.Conf.GetId())
 	return nil
 }
 

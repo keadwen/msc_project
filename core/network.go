@@ -25,6 +25,7 @@ func (net *Network) AddNode(n *Node) error {
 	}
 	n.Energy = n.Conf.GetInitialEnergy()
 	n.energyPoints = plotter.XYs{{X: float64(0), Y: float64(n.Energy)}}
+	n.nextHop = net.BaseStation
 	n.dataSent = 0
 	n.dataReceived = 0
 	net.Nodes.Store(n.Conf.GetId(), n)
@@ -44,7 +45,10 @@ func (net *Network) Simulate() {
 		}
 
 		// Setup routing protocol.
-		net.Protocol.Setup(net)
+		heads, err := net.Protocol.Setup(net)
+		if err != nil {
+			fmt.Printf("Simulation stopped. LEACH error: %v\n", err)
+		}
 
 		// Check if nodes are alive.
 		if net.CheckNodes() == 0 {
@@ -52,20 +56,54 @@ func (net *Network) Simulate() {
 			break
 		}
 
-		// Run the round.
+		// Run leaf nodes (not cluster heads).
 		var wg sync.WaitGroup
 		net.Nodes.Range(func(_, n interface{}) bool {
 			if !n.(*Node).Ready {
 				return true
 			}
+			for _, h := range heads {
+				if h == n.(*Node).Conf.GetId() {
+					return true // Skip cluster heads.
+				}
+			}
 
 			wg.Add(1)
 			go func(n *Node) {
 				defer wg.Done()
-				// Simply send the message to Base Station.
-				if err := n.Transmit(int64(n.Conf.GetLocation().GetX()), net.BaseStation); err != nil {
+				// Send the transmit queue to next hop.
+				if err := n.Transmit(DEFAULT_MSG, n.nextHop); err != nil {
 					fmt.Println(err)
 				}
+			}(n.(*Node))
+			return true
+		})
+		wg.Wait()
+
+		// Run cluster head nodes.
+		net.Nodes.Range(func(_, n interface{}) bool {
+			if !n.(*Node).Ready {
+				return true
+			}
+			var head bool
+			for _, h := range heads {
+				if h == n.(*Node).Conf.GetId() {
+					head = true
+				}
+			}
+			if !head {
+				return true // Skip leaf nodes.
+			}
+
+			wg.Add(1)
+			go func(n *Node) {
+				defer wg.Done()
+				// Read the receiving queue and move to transmit queue.
+				n.transmitQueue = n.receiveQueue
+				if err := n.Transmit(DEFAULT_MSG+n.transmitQueue, n.nextHop); err != nil {
+					fmt.Println(err)
+				}
+				n.receiveQueue = 0
 			}(n.(*Node))
 			return true
 		})

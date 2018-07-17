@@ -11,7 +11,7 @@ type LEACH struct {
 	Nodes    int // A number of nodes in the network.
 }
 
-func (l *LEACH) Setup(net *Network) error {
+func (l *LEACH) Setup(net *Network) ([]int64, error) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	var heads []int64
@@ -73,5 +73,11 @@ func (l *LEACH) Setup(net *Network) error {
 		return true
 	})
 
-	return nil
+	fmt.Printf("=== Validation ===\n")
+	net.Nodes.Range(func(_, n interface{}) bool {
+		fmt.Printf("====> N<%d>: nextHop <%d>\n", n.(*Node).Conf.GetId(), n.(*Node).nextHop.Conf.GetId())
+		return true
+	})
+
+	return heads, nil
 }

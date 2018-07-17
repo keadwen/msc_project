@@ -1,5 +1,5 @@
 package core
 
 type Protocol interface {
-	Setup(net *Network) error
+	Setup(net *Network) ([]int64, error)
 }
