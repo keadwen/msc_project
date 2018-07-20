@@ -55,7 +55,7 @@ func main() {
 	// Create new space.
 	net := &core.Network{
 		Protocol: &core.DirectCommunication{},
-		//Protocol:  &core.LEACH{1, len(conf.GetNodes()) - 1},
+		// Protocol:  &core.LEACH{1, len(conf.GetNodes()) - 1},
 		PlotRound: p,
 	}
 

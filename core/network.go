@@ -111,7 +111,7 @@ func (net *Network) Simulate() {
 		net.PopulateEnergyPoints()
 	}
 	// Recollect all plot data.
-	net.PlotEnergy()
+	net.PlotAggregatedEnergy()
 
 	// Display the final count of TX/RX data per node.
 	fmt.Println("=== Final ===")
@@ -139,7 +139,6 @@ func (net *Network) PopulateEnergyPoints() {
 			X: float64(net.round),
 			Y: n.(*Node).Energy,
 		}}...)
-		// fmt.Printf("Node: %v\n", n.(*Node).energyPoints)
 		return true
 	})
 }
@@ -155,4 +154,27 @@ func (net *Network) PlotEnergy() {
 		}
 		return true
 	})
+}
+
+func (net *Network) PlotAggregatedEnergy() {
+	var aggEnergy plotter.XYs
+	for r := 1; r < int(net.round); r++ {
+		var e float64
+		net.Nodes.Range(func(_, n interface{}) bool {
+			if r == 1 {
+				fmt.Printf("\nEnergy: %+v\n", n.(*Node).energyPoints)
+			}
+			e += n.(*Node).energyPoints[r].Y
+			return true
+		})
+		aggEnergy = append(aggEnergy, plotter.XYs{{X: float64(r), Y: e}}...)
+	}
+
+	if err := plotutil.AddLinePoints(
+		net.PlotRound,
+		fmt.Sprintf("Algo: LEACH"),
+		aggEnergy,
+	); err != nil {
+		fmt.Printf("failed to AddLinePoints(): %v", err)
+	}
 }
