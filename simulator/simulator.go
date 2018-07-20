@@ -46,7 +46,7 @@ func (s *Simulator) create() error {
 	// Create a plot object, recording each simulation round.
 	p, err := createPlot("Total energy in rounds", "round", "Total energy [J]")
 	if err != nil {
-		fmt.Errorf("failed to create plot object: %v", err)
+		return fmt.Errorf("failed to create plot object: %v", err)
 	}
 
 	// Create new network space.
