@@ -35,10 +35,11 @@ type Node struct {
 func (n *Node) Transmit(msg int64, dst *Node) error {
 	// Deduct cost of transmission.
 	var cost float64
+	cost = E_TX
 	if d := n.distance(dst); d > math.Sqrt(E_FS/E_MP) {
-		cost = E_TX + math.Pow(E_MP, 4)
+		cost += E_MP * math.Pow(d, 4)
 	} else {
-		cost = E_TX + math.Pow(E_MP, 2)
+		cost += E_MP * math.Pow(d, 2)
 	}
 	if err := n.consume(cost * float64(msg)); err != nil {
 		return err
