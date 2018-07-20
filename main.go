@@ -74,14 +74,14 @@ func createScenario() (*config.Config, error) {
 
 	conf := &config.Config{}
 	// Create base station (without user interraction).
-	conf.Nodes = append(conf.Nodes, &config.Node{Id: 0, InitialEnergy: 1e100, Location: &config.Location{X: 0, Y: 0}})
+	conf.Nodes = append(conf.Nodes, &config.Node{Id: 0, InitialEnergy: 1e100, Location: &config.Location{X: 500, Y: 500}})
 	fmt.Println("Created Base Station...")
 
 	// Create nodes with exact amount of energy, but random location [0, 1000].
 	for n := 1; n <= nodes; n++ {
 		conf.Nodes = append(conf.Nodes, &config.Node{
 			Id:            int64(n),
-			InitialEnergy: 1e-4,
+			InitialEnergy: 0.1,
 			Location: &config.Location{
 				X: rand.Float64() * 1000,
 				Y: rand.Float64() * 1000,

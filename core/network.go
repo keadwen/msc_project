@@ -32,28 +32,16 @@ func (net *Network) AddNode(n *Node) error {
 	return nil
 }
 
-func (net *Network) Simulate() {
+func (net *Network) Simulate() error {
 	net.round = 0
 	for net.CheckNodes() > 0 {
 		net.round++
 		fmt.Printf("=== Round %d ===\n", net.round)
 
-		// Check if nodes are alive.
-		if net.CheckNodes() == 0 {
-			fmt.Printf("Simulation stopped. No active nodes.\n")
-			break
-		}
-
 		// Setup routing protocol.
 		heads, err := net.Protocol.Setup(net)
 		if err != nil {
-			fmt.Printf("Simulation stopped. LEACH error: %v\n", err)
-		}
-
-		// Check if nodes are alive.
-		if net.CheckNodes() == 0 {
-			fmt.Printf("Simulation stopped. No active nodes.\n")
-			break
+			return fmt.Errorf("failed to setup: %v", err)
 		}
 
 		// Run leaf nodes (not cluster heads).
@@ -120,6 +108,7 @@ func (net *Network) Simulate() {
 		fmt.Println(n.(*Node).Info())
 		return true
 	})
+	return nil
 }
 
 func (net *Network) CheckNodes() int {
@@ -161,9 +150,6 @@ func (net *Network) PlotAggregatedEnergy() {
 	for r := 1; r < int(net.round); r++ {
 		var e float64
 		net.Nodes.Range(func(_, n interface{}) bool {
-			if r == 1 {
-				fmt.Printf("\nEnergy: %+v\n", n.(*Node).energyPoints)
-			}
 			e += n.(*Node).energyPoints[r].Y
 			return true
 		})
@@ -172,7 +158,7 @@ func (net *Network) PlotAggregatedEnergy() {
 
 	if err := plotutil.AddLinePoints(
 		net.PlotRound,
-		fmt.Sprintf("Algo: LEACH"),
+		fmt.Sprintf(""),
 		aggEnergy,
 	); err != nil {
 		fmt.Printf("failed to AddLinePoints(): %v", err)

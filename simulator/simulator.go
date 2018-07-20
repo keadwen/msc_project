@@ -30,8 +30,7 @@ func (s *Simulator) Run() error {
 	if s.config == nil {
 		return fmt.Errorf("configuration is nil. Did you run Create()?")
 	}
-	s.network.Simulate()
-	return nil
+	return s.network.Simulate()
 }
 
 // ExportPlot create the plot image file.
@@ -54,7 +53,7 @@ func (s *Simulator) create() error {
 	// TODO(keadwen): Find a way to pass protocols.
 	s.network = &core.Network{
 		Protocol: &core.DirectCommunication{},
-		// Protocol:  &core.LEACH{1, len(conf.GetNodes()) - 1},
+		// Protocol:  &core.LEACH{1, len(s.config.GetNodes()) - 1},
 		PlotRound: p,
 	}
 
