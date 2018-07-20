@@ -13,10 +13,8 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/keadwen/msc_project/core"
 	"github.com/keadwen/msc_project/proto"
-	"gonum.org/v1/plot"
-	"gonum.org/v1/plot/vg"
+	"github.com/keadwen/msc_project/simulator"
 )
 
 var (
@@ -26,6 +24,7 @@ var (
 func main() {
 	flag.Parse()
 
+	// Parse or create simulation configuration proto.
 	conf := &config.Config{}
 	var err error
 	if *configFile == "" {
@@ -46,52 +45,17 @@ func main() {
 		log.Fatalf("Found 0 nodes in config proto %q", *configFile)
 	}
 
-	// Create a plot for rounds.
-	p, err := createPlot("energy(rounds)", "round", "energy [J]")
+	// Simulation section.
+	s, err := simulator.Create(conf)
 	if err != nil {
-		log.Fatalf("Failed to create plot object: %v", err)
+		log.Fatalf("Failed to create simulation: %v", err)
 	}
-
-	// Create new space.
-	net := &core.Network{
-		Protocol: &core.DirectCommunication{},
-		// Protocol:  &core.LEACH{1, len(conf.GetNodes()) - 1},
-		PlotRound: p,
+	if err := s.Run(); err != nil {
+		log.Fatalf("Failed to run simulation: %v", err)
 	}
-
-	// Create base station node.
-	bsc := conf.Nodes[0]
-	net.BaseStation = &core.Node{
-		Conf:   *bsc,
-		Ready:  true,
-		Energy: bsc.GetInitialEnergy(),
+	if err := s.ExportPlot(fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
+		log.Fatalf("Failed to export plot: %v", err)
 	}
-
-	// Create nodes.
-	for n := 1; n < len(conf.GetNodes()); n++ {
-		net.AddNode(&core.Node{Conf: *conf.Nodes[n], Ready: true})
-	}
-
-	// Run simulation for 10 rounds.
-	net.Simulate()
-
-	// Save the plot to a PNG file.
-	pif := fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())
-	if err := p.Save(8*vg.Inch, 8*vg.Inch, pif); err != nil {
-		log.Fatalf("Failed to save a plot image file %q: %v", pif, err)
-	}
-}
-
-// createPlot returns new plot object.
-func createPlot(title, x, y string) (*plot.Plot, error) {
-	p, err := plot.New()
-	if err != nil {
-		return nil, err
-	}
-	p.Title.Text = title
-	p.X.Label.Text = x
-	p.Y.Label.Text = y
-	return p, err
 }
 
 // createScenario provides an ability to run single scenario with CLI support.
