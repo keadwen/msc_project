@@ -11,6 +11,7 @@ type LEACH struct {
 	Nodes    int // A number of nodes in the network.
 }
 
+// Setup implements Protocol.Setup.
 func (l *LEACH) Setup(net *Network) ([]int64, error) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
