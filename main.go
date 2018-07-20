@@ -53,7 +53,7 @@ func main() {
 	if err := s.Run(); err != nil {
 		log.Fatalf("Failed to run simulation: %v", err)
 	}
-	if err := s.ExportPlot(fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
+	if err := s.ExportPlots(fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
 		log.Fatalf("Failed to export plot: %v", err)
 	}
 }

@@ -33,18 +33,25 @@ func (s *Simulator) Run() error {
 	return s.network.Simulate()
 }
 
-// ExportPlot create the plot image file.
-func (s *Simulator) ExportPlot(filepath string) error {
+// ExportPlots create the plot image file.
+func (s *Simulator) ExportPlots(filepath string) error {
 	if filepath == "" {
 		return fmt.Errorf("empty filepath provided")
 	}
-	return s.network.PlotRound.Save(8*vg.Inch, 8*vg.Inch, filepath)
+	var err error
+	err = s.network.PlotRound.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-round.png", filepath))
+	err = s.network.PlotNodes.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-nodes.png", filepath))
+	return err
 }
 
 // create builds the simulator object according to a given configuration.
 func (s *Simulator) create() error {
 	// Create a plot object, recording each simulation round.
-	p, err := createPlot("Total energy in rounds", "round", "Total energy [J]")
+	pRound, err := createPlot("Total energy in rounds", "Round", "Total energy [J]")
+	if err != nil {
+		return fmt.Errorf("failed to create plot object: %v", err)
+	}
+	pNodes, err := createPlot("Number of nodes in rounds", "Round", "Number of nodes")
 	if err != nil {
 		return fmt.Errorf("failed to create plot object: %v", err)
 	}
@@ -52,9 +59,10 @@ func (s *Simulator) create() error {
 	// Create new network space.
 	// TODO(keadwen): Find a way to pass protocols.
 	s.network = &core.Network{
-		Protocol: &core.DirectCommunication{},
-		// Protocol:  &core.LEACH{1, len(s.config.GetNodes()) - 1},
-		PlotRound: p,
+		//Protocol: &core.DirectCommunication{},
+		Protocol:  &core.LEACH{1, len(s.config.GetNodes()) - 1},
+		PlotRound: pRound,
+		PlotNodes: pNodes,
 	}
 
 	// Create base station node, which is node with ID of 0.

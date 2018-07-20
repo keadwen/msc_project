@@ -16,7 +16,9 @@ type Network struct {
 
 	round int64
 
-	PlotRound *plot.Plot
+	PlotRound        *plot.Plot
+	PlotNodes        *plot.Plot
+	nodesAlivePoints plotter.XYs
 }
 
 func (net *Network) AddNode(n *Node) error {
@@ -97,9 +99,11 @@ func (net *Network) Simulate() error {
 		})
 		wg.Wait() // Wait for all nodes to finish before plot.
 		net.PopulateEnergyPoints()
+		net.PopulateNodesAlivePoints()
 	}
 	// Recollect all plot data.
 	net.PlotAggregatedEnergy()
+	net.PlotNodesAlive()
 
 	// Display the final count of TX/RX data per node.
 	fmt.Println("=== Final ===")
@@ -132,6 +136,13 @@ func (net *Network) PopulateEnergyPoints() {
 	})
 }
 
+func (net *Network) PopulateNodesAlivePoints() {
+	net.nodesAlivePoints = append(net.nodesAlivePoints, plotter.XYs{{
+		X: float64(net.round),
+		Y: float64(net.CheckNodes()),
+	}}...)
+}
+
 func (net *Network) PlotEnergy() {
 	net.Nodes.Range(func(_, n interface{}) bool {
 		if err := plotutil.AddLinePoints(
@@ -143,6 +154,16 @@ func (net *Network) PlotEnergy() {
 		}
 		return true
 	})
+}
+
+func (net *Network) PlotNodesAlive() {
+	if err := plotutil.AddLinePoints(
+		net.PlotNodes,
+		fmt.Sprintf(""),
+		net.nodesAlivePoints,
+	); err != nil {
+		fmt.Printf("failed to AddLinePoints(): %v", err)
+	}
 }
 
 func (net *Network) PlotAggregatedEnergy() {
