@@ -45,8 +45,8 @@ func (s *Simulator) ExportPlots(filepath string) error {
 		return fmt.Errorf("empty filepath provided")
 	}
 	var err error
-	err = s.network.PlotRound.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-%s-round.png", filepath, s.config.Protocol.String()))
-	err = s.network.PlotNodes.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-%s-nodes.png", filepath, s.config.Protocol.String()))
+	err = s.network.PlotRound.Save(16*vg.Inch, 16*vg.Inch, fmt.Sprintf("%s-%s-round.png", filepath, s.config.Protocol.String()))
+	err = s.network.PlotNodes.Save(16*vg.Inch, 16*vg.Inch, fmt.Sprintf("%s-%s-nodes.png", filepath, s.config.Protocol.String()))
 	return err
 }
 

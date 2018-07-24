@@ -39,6 +39,9 @@ func (net *Network) Simulate() error {
 	for net.CheckNodes() > 0 {
 		net.round++
 		fmt.Printf("=== Round %d ===\n", net.round)
+		// Perform data collection before the round.
+		net.PopulateEnergyPoints()
+		net.PopulateNodesAlivePoints()
 
 		// Setup routing protocol.
 		heads, err := net.Protocol.Setup(net)
@@ -98,10 +101,10 @@ func (net *Network) Simulate() error {
 			return true
 		})
 		wg.Wait() // Wait for all nodes to finish before plot.
-		net.PopulateEnergyPoints()
-		net.PopulateNodesAlivePoints()
 	}
-	// Recollect all plot data.
+	// Final data collection and plotting.
+	net.PopulateEnergyPoints()
+	net.PopulateNodesAlivePoints()
 	net.PlotAggregatedEnergy()
 	net.PlotNodesAlive()
 

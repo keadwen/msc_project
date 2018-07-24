@@ -1,0 +1,87 @@
+protocol: 2
+clusters: 3
+nodes: <
+  initial_energy: 1e+100
+  location: <
+  >
+>
+nodes: <
+  id: 1
+  initial_energy: 0.1
+  location: <
+    X: 100
+    Y: 0
+  >
+>
+nodes: <
+  id: 2
+  initial_energy: 0.1
+  location: <
+    X: 100
+    Y: 0
+  >
+>
+nodes: <
+  id: 3
+  initial_energy: 0.1
+  location: <
+    X: 100
+    Y: 100
+  >
+>
+nodes: <
+  id: 4
+  initial_energy: 0.1
+  location: <
+    X: 200
+    Y: 0
+  >
+>
+nodes: <
+  id: 5
+  initial_energy: 0.1
+  location: <
+    X: 200
+    Y: 50
+  >
+>
+nodes: <
+  id: 6
+  initial_energy: 0.1
+  location: <
+    X: 0
+    Y: 200
+  >
+>
+nodes: <
+  id: 7
+  initial_energy: 0.1
+  location: <
+    X: 50
+    Y: 200
+  >
+>
+nodes: <
+  id: 8
+  initial_energy: 0.1
+  location: <
+    X: 300
+    Y: 25
+  >
+>
+nodes: <
+  id: 9
+  initial_energy: 0.1
+  location: <
+    X: 25
+    Y: 300
+  >
+>
+nodes: <
+  id: 10
+  initial_energy: 0.1
+  location: <
+    X: 300
+    Y: 300
+  >
+>

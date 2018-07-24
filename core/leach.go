@@ -25,7 +25,6 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 
 			// Nominate the node to be a cluster head.
 			ur := r.Float64()
-			fmt.Printf("%v < %v\n", ur, float64(l.Clusters)/float64(l.Nodes))
 			if ur < float64(l.Clusters)/float64(l.Nodes) {
 				n.(*Node).nextHop = net.BaseStation
 				heads = append(heads, n.(*Node).Conf.GetId())
@@ -36,7 +35,7 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 		// Shrink the slice to maximum amount of clusters.
 		// TODO(keadwen): Check if the shrinking is required.
 		if len(heads) >= l.Clusters {
-			heads = heads[:l.Clusters]
+			//	heads = heads[:l.Clusters]
 			break
 		}
 	}
