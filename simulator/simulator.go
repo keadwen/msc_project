@@ -9,6 +9,12 @@ import (
 	"gonum.org/v1/plot/vg"
 )
 
+var mapProtocol = map[config.E_Protocol]core.Protocol{
+	config.E_Protocol_UNSET:  &core.DirectCommunication{},
+	config.E_Protocol_DIRECT: &core.DirectCommunication{},
+	config.E_Protocol_LEACH:  &core.LEACH{},
+}
+
 type Simulator struct {
 	config  *config.Config
 	network *core.Network
@@ -39,8 +45,8 @@ func (s *Simulator) ExportPlots(filepath string) error {
 		return fmt.Errorf("empty filepath provided")
 	}
 	var err error
-	err = s.network.PlotRound.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-round.png", filepath))
-	err = s.network.PlotNodes.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-nodes.png", filepath))
+	err = s.network.PlotRound.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-%s-round.png", filepath, s.config.Protocol.String()))
+	err = s.network.PlotNodes.Save(8*vg.Inch, 8*vg.Inch, fmt.Sprintf("%s-%s-nodes.png", filepath, s.config.Protocol.String()))
 	return err
 }
 
@@ -56,11 +62,17 @@ func (s *Simulator) create() error {
 		return fmt.Errorf("failed to create plot object: %v", err)
 	}
 
+	// Select the protocol in simulation.
+	protocol := mapProtocol[s.config.GetProtocol()]
+	if protocol == nil {
+		return fmt.Errorf("failed to match a protocol: %v", s.config.GetProtocol())
+	}
+	protocol.SetClusters(int(s.config.Clusters))
+	protocol.SetNodes(len(s.config.GetNodes()) - 1) // Do not count base station.
+
 	// Create new network space.
-	// TODO(keadwen): Find a way to pass protocols.
 	s.network = &core.Network{
-		//Protocol: &core.DirectCommunication{},
-		Protocol:  &core.LEACH{1, len(s.config.GetNodes()) - 1},
+		Protocol:  protocol,
 		PlotRound: pRound,
 		PlotNodes: pNodes,
 	}

@@ -2,9 +2,20 @@ syntax = "proto3";
 
 package config;
 
+enum E_Protocol {
+	UNSET = 0;
+	DIRECT = 1;
+	LEACH = 2;
+	APTEEN = 3;
+}
+
 message Config {
+	// Simulation protocol.
+	E_Protocol protocol = 1;
+	// Number of cluster heads.
+	int64 clusters = 2;
 	// Nodes points to configuration for each node.
-	repeated Node nodes = 1;
+	repeated Node nodes = 3;
 }
 
 // Node defines a configuration for a single node.

@@ -25,6 +25,7 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 
 			// Nominate the node to be a cluster head.
 			ur := r.Float64()
+			fmt.Printf("%v < %v\n", ur, float64(l.Clusters)/float64(l.Nodes))
 			if ur < float64(l.Clusters)/float64(l.Nodes) {
 				n.(*Node).nextHop = net.BaseStation
 				heads = append(heads, n.(*Node).Conf.GetId())
@@ -73,4 +74,17 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 	})
 
 	return heads, nil
+}
+
+// SetNodes implements Protocol.SetNodes.
+func (l *LEACH) SetNodes(v int) {
+	l.Nodes = v
+}
+
+// SetClusters implements Protocol.SetClusters.
+func (l *LEACH) SetClusters(v int) {
+	l.Clusters = v
+	if v == 0 { // Leach must have at least one cluster.
+		l.Clusters = 1
+	}
 }

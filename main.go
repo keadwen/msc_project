@@ -53,7 +53,7 @@ func main() {
 	if err := s.Run(); err != nil {
 		log.Fatalf("Failed to run simulation: %v", err)
 	}
-	if err := s.ExportPlots(fmt.Sprintf("graphs/rounds-%d.png", time.Now().Nanosecond())); err != nil {
+	if err := s.ExportPlots(fmt.Sprintf("graphs/rounds-%d", time.Now().Nanosecond())); err != nil {
 		log.Fatalf("Failed to export plot: %v", err)
 	}
 }
@@ -62,19 +62,32 @@ func main() {
 func createScenario() (*config.Config, error) {
 	reader := bufio.NewReader(os.Stdin)
 	// Get amount of nodes in scenario.
-	fmt.Print("Nodes in scenario [e.g. 5]: ")
-	input, err := reader.ReadString('\n')
+	nodes, err := readIntInput(reader, "Number of nodes in scenario [e.g. 10]: ")
 	if err != nil {
-		return nil, fmt.Errorf("failed to read input: %v", err)
+		return nil, err
 	}
-	nodes, err := strconv.Atoi(strings.TrimSpace(input))
+	protocol, err := readIntInput(reader, "Select protcol [0 - ALL, 1 - DIRECT, 2 - LEACH]: ")
 	if err != nil {
-		return nil, fmt.Errorf("failed to parse int %q: %v", input, err)
+		return nil, err
+	}
+	clusters, err := readIntInput(reader, "Number of clusters in scenario [e.g. 3]: ")
+	if err != nil {
+		return nil, err
 	}
 
-	conf := &config.Config{}
+	conf := &config.Config{
+		Protocol: config.E_Protocol(protocol),
+		Clusters: int64(clusters),
+	}
 	// Create base station (without user interraction).
-	conf.Nodes = append(conf.Nodes, &config.Node{Id: 0, InitialEnergy: 1e100, Location: &config.Location{X: 500, Y: 500}})
+	conf.Nodes = append(conf.Nodes, &config.Node{
+		Id:            0,
+		InitialEnergy: 1e100,
+		Location: &config.Location{
+			X: 500,
+			Y: 500,
+		},
+	})
 	fmt.Println("Created Base Station...")
 
 	// Create nodes with exact amount of energy, but random location [0, 1000].
@@ -91,4 +104,17 @@ func createScenario() (*config.Config, error) {
 		fmt.Printf("Created node <%d> (E: %f[J] X: %2.f, Y: %2.f)...\n", n, node.GetInitialEnergy(), node.GetLocation().GetX(), node.GetLocation().GetY())
 	}
 	return conf, nil
+}
+
+func readIntInput(reader *bufio.Reader, prompt string) (int, error) {
+	fmt.Print(prompt)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		return 0, fmt.Errorf("failed to read input: %v", err)
+	}
+	value, err := strconv.Atoi(strings.TrimSpace(input))
+	if err != nil {
+		return 0, fmt.Errorf("failed to parse int %q: %v", input, err)
+	}
+	return value, nil
 }

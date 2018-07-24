@@ -1,6 +1,7 @@
 package core
 
-type DirectCommunication struct{}
+type DirectCommunication struct {
+}
 
 // Setup implements Protocol.Setup.
 func (d DirectCommunication) Setup(net *Network) ([]int64, error) {
@@ -10,3 +11,9 @@ func (d DirectCommunication) Setup(net *Network) ([]int64, error) {
 	})
 	return nil, nil // There are no cluster head ids to return.
 }
+
+// SetNodes implements Protocol.SetNodes.
+func (_ DirectCommunication) SetNodes(_ int) {}
+
+// SetClusters implements Protocol.SetClusters.
+func (_ DirectCommunication) SetClusters(_ int) {}
