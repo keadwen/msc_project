@@ -143,26 +143,36 @@ func createPlot(title, x, y string) (*plot.Plot, error) {
 	return p, err
 }
 
+// TODO(keadwen): Rework the function to scale with additonal algorithms.
 func (s *Simulator) plotter() error {
+	total := []plotter.XYs{}
 	for _, net := range s.network {
-		err := plotutil.AddLines(s.plotNodes, net.NodesAlivePoints)
-		if err != nil {
-			return fmt.Errorf("failed to AddLines(): %v", err)
-		}
+		total = append(total, net.NodesAlivePoints)
+	}
+	if err := plotutil.AddLines(s.plotNodes,
+		"Direct", total[0],
+		"LEACH", total[1],
+	); err != nil {
+		return fmt.Errorf("failed to AddLines(): %v", err)
 	}
 
-	totalEnergy := plotter.XYs{}
+	total = []plotter.XYs{}
 	for _, net := range s.network {
+		networkEnergy := plotter.XYs{}
 		for r := 1; r < int(net.Round); r++ {
 			var e float64
 			net.Nodes.Range(func(_, n interface{}) bool {
 				e += net.NodesEnergyPoints[n.(*core.Node).Conf.GetId()][r].Y
 				return true
 			})
-			totalEnergy = append(totalEnergy, plotter.XYs{{X: float64(r), Y: e}}...)
+			networkEnergy = append(networkEnergy, plotter.XYs{{X: float64(r), Y: e}}...)
 		}
+		total = append(total, networkEnergy)
 	}
-	if err := plotutil.AddLines(s.plotTotalEnergy, totalEnergy); err != nil {
+	if err := plotutil.AddLines(s.plotTotalEnergy,
+		"Direct", total[0],
+		"LEACH", total[1],
+	); err != nil {
 		return fmt.Errorf("failed to AddLines(): %v", err)
 	}
 	return nil
