@@ -45,10 +45,10 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 	n.dataSent += msg
 	err := dst.Receive(msg, n)
 	if err != nil {
-		fmt.Printf("destination node <%d> failed: %v\n", dst.Conf.GetId(), err)
+		fmt.Errorf("destination node <%d> failed: %v\n", dst.Conf.GetId(), err)
 	}
 
-	fmt.Printf("node <%d> sends to node <%d>\n", n.Conf.GetId(), dst.Conf.GetId())
+	// fmt.Printf("node <%d> sends to node <%d>\n", n.Conf.GetId(), dst.Conf.GetId())
 	return nil
 }
 
@@ -60,7 +60,7 @@ func (n *Node) Receive(msg int64, src *Node) error {
 	n.receiveQueue += msg
 	n.dataReceived += msg
 
-	fmt.Printf("node <%d> receive message <%d> from node <%d>\n", n.Conf.GetId(), msg, src.Conf.GetId())
+	// fmt.Printf("node <%d> receive message <%d> from node <%d>\n", n.Conf.GetId(), msg, src.Conf.GetId())
 	return nil
 }
 
