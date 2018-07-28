@@ -65,14 +65,21 @@ func main() {
 }
 
 func defaultConfigs() []*config.Config {
-	configs := []*config.Config{}
+	var configs []*config.Config
+	rand.Seed(time.Now().UTC().UnixNano())
 
-	nodes := 15
-	sizes := []float64{200} // , 200, 250, 300, 350, 400}
-	energies := []float64{0.4}
+	nodes := 150
+	sizes := []float64{1000} // , 200, 250, 300, 350, 400}
+	energies := []float64{10.0}
 	protocols := []int{1, 2}
 	for _, size := range sizes {
-		tmp := []*config.Config{}
+		// Nodes in a single network size, must have same location.
+		loc := []float64{size / 2} // Default base station location.
+		for n := 1; n <= nodes; n++ {
+			loc = append(loc, rand.Float64()*size)
+		}
+
+		var tmp []*config.Config
 		for _ = range energies {
 			for _, protocol := range protocols {
 				conf := &config.Config{
@@ -84,13 +91,14 @@ func defaultConfigs() []*config.Config {
 					Id:            0,
 					InitialEnergy: 1e100,
 					Location: &config.Location{
-						X: float64(size / 2),
-						Y: float64(size / 2),
+						X: loc[0],
+						Y: loc[0],
 					},
 				})
 				tmp = append(tmp, conf)
 			}
 		}
+
 		for _, conf := range tmp {
 			for _, energy := range energies {
 				for n := 1; n <= nodes; n++ {
@@ -98,10 +106,11 @@ func defaultConfigs() []*config.Config {
 						Id:            int64(n),
 						InitialEnergy: energy,
 						Location: &config.Location{
-							X: rand.Float64() * size,
-							Y: rand.Float64() * size,
+							X: loc[n],
+							Y: loc[n],
 						},
 					})
+
 				}
 			}
 		}
