@@ -40,9 +40,10 @@ func (net *Network) AddNode(n *Node) error {
 
 func (net *Network) Simulate() error {
 	net.Round = 0
-	for net.CheckNodes() > 0 {
+	maxRounds := int64(15000) // TODO(keadwen): Put inside a config file.
+	for net.CheckNodes() > 0 && net.Round < maxRounds {
 		net.Round++
-		fmt.Printf("=== Round %d ===\n", net.Round)
+		// fmt.Printf("=== Round %d ===\n", net.Round)
 		// Perform data collection before the Round.
 		net.PopulateEnergyPoints()
 		net.PopulateNodesAlivePoints()
@@ -111,12 +112,7 @@ func (net *Network) Simulate() error {
 	net.PopulateNodesAlivePoints()
 
 	// Display the final count of TX/RX data per node.
-	fmt.Println("=== Final ===")
-	fmt.Println(net.BaseStation.Info())
-	net.Nodes.Range(func(_, n interface{}) bool {
-		fmt.Println(n.(*Node).Info())
-		return true
-	})
+	fmt.Printf("=== Final: %d\n%v\n\n", net.Round, net.BaseStation.Info())
 	return nil
 }
 
