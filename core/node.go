@@ -9,10 +9,10 @@ import (
 
 const (
 	// Energy values measured in [J/byte].
-	E_TX = 40e-9      // Transmission.
-	E_RX = 4e-9       // Receiving.
-	E_MP = 0.0104e-12 // Multipath fading.
-	E_FS = 80e-12     // Line of sight free space channel.
+	E_ELEC = 40e-9      // Transmission.
+	E_RX   = 4e-9       // Receiving.
+	E_MP   = 0.0104e-12 // Multipath fading.
+	E_FS   = 80e-12     // Line of sight free space channel.
 
 	DEFAULT_MSG = 100
 )
@@ -32,12 +32,11 @@ type Node struct {
 
 func (n *Node) Transmit(msg int64, dst *Node) error {
 	// Deduct cost of transmission.
-	var cost float64
-	cost = E_TX
+	cost := E_ELEC
 	if d := n.distance(dst); d > math.Sqrt(E_FS/E_MP) {
 		cost += E_MP * math.Pow(d, 4)
 	} else {
-		cost += E_MP * math.Pow(d, 2)
+		cost += E_FS * math.Pow(d, 2)
 	}
 	if err := n.consume(cost * float64(msg)); err != nil {
 		return err
