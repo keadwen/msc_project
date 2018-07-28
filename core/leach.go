@@ -1,7 +1,6 @@
 package core
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -66,9 +65,9 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 		return true
 	})
 
-	fmt.Printf("=== Validation ===\n")
+	// fmt.Printf("=== Validation ===\n")
 	net.Nodes.Range(func(_, n interface{}) bool {
-		fmt.Printf("====> N<%d>: nextHop <%d>\n", n.(*Node).Conf.GetId(), n.(*Node).nextHop.Conf.GetId())
+		// fmt.Printf("====> N<%d>: nextHop <%d>\n", n.(*Node).Conf.GetId(), n.(*Node).nextHop.Conf.GetId())
 		return true
 	})
 
