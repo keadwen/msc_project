@@ -6,7 +6,6 @@ import (
 
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
-	"gonum.org/v1/plot/plotutil"
 )
 
 type Network struct {
@@ -14,32 +13,37 @@ type Network struct {
 	BaseStation *Node
 	Nodes       sync.Map
 
-	round int64
+	Round int64
 
-	PlotRound        *plot.Plot
-	PlotNodes        *plot.Plot
-	nodesAlivePoints plotter.XYs
+	PlotTotalEnergy   *plot.Plot // An amount of total energy in the network per Round.
+	PlotNodes         *plot.Plot // A number of alive nodes in the network per Round.
+	NodesAlivePoints  plotter.XYs
+	NodesEnergyPoints map[int64]plotter.XYs
 }
 
 func (net *Network) AddNode(n *Node) error {
+	if net.NodesEnergyPoints == nil {
+		net.NodesEnergyPoints = map[int64]plotter.XYs{}
+	}
 	if v, ok := net.Nodes.Load(n.Conf.GetId()); ok {
 		fmt.Errorf("node ID <%d> already exists: %+v", n.Conf.GetId(), v)
 	}
 	n.Energy = n.Conf.GetInitialEnergy()
-	n.energyPoints = plotter.XYs{{X: float64(0), Y: float64(n.Energy)}}
 	n.nextHop = net.BaseStation
 	n.dataSent = 0
 	n.dataReceived = 0
 	net.Nodes.Store(n.Conf.GetId(), n)
+	// Include the initial state of the node in the plot.
+	net.NodesEnergyPoints[n.Conf.GetId()] = plotter.XYs{{X: float64(0), Y: float64(n.Energy)}}
 	return nil
 }
 
 func (net *Network) Simulate() error {
-	net.round = 0
+	net.Round = 0
 	for net.CheckNodes() > 0 {
-		net.round++
-		fmt.Printf("=== Round %d ===\n", net.round)
-		// Perform data collection before the round.
+		net.Round++
+		fmt.Printf("=== Round %d ===\n", net.Round)
+		// Perform data collection before the Round.
 		net.PopulateEnergyPoints()
 		net.PopulateNodesAlivePoints()
 
@@ -105,8 +109,6 @@ func (net *Network) Simulate() error {
 	// Final data collection and plotting.
 	net.PopulateEnergyPoints()
 	net.PopulateNodesAlivePoints()
-	net.PlotAggregatedEnergy()
-	net.PlotNodesAlive()
 
 	// Display the final count of TX/RX data per node.
 	fmt.Println("=== Final ===")
@@ -131,60 +133,19 @@ func (net *Network) CheckNodes() int {
 
 func (net *Network) PopulateEnergyPoints() {
 	net.Nodes.Range(func(_, n interface{}) bool {
-		n.(*Node).energyPoints = append(n.(*Node).energyPoints, plotter.XYs{{
-			X: float64(net.round),
-			Y: n.(*Node).Energy,
-		}}...)
+		net.NodesEnergyPoints[n.(*Node).Conf.GetId()] = append(
+			net.NodesEnergyPoints[n.(*Node).Conf.GetId()],
+			plotter.XYs{{
+				X: float64(net.Round),
+				Y: n.(*Node).Energy,
+			}}...)
 		return true
 	})
 }
 
 func (net *Network) PopulateNodesAlivePoints() {
-	net.nodesAlivePoints = append(net.nodesAlivePoints, plotter.XYs{{
-		X: float64(net.round),
+	net.NodesAlivePoints = append(net.NodesAlivePoints, plotter.XYs{{
+		X: float64(net.Round),
 		Y: float64(net.CheckNodes()),
 	}}...)
-}
-
-func (net *Network) PlotEnergy() {
-	net.Nodes.Range(func(_, n interface{}) bool {
-		if err := plotutil.AddLinePoints(
-			net.PlotRound,
-			fmt.Sprintf("Node <%d>", n.(*Node).Conf.GetId()),
-			n.(*Node).energyPoints,
-		); err != nil {
-			fmt.Printf("failed to AddLinePoints(): %v", err)
-		}
-		return true
-	})
-}
-
-func (net *Network) PlotNodesAlive() {
-	if err := plotutil.AddLinePoints(
-		net.PlotNodes,
-		fmt.Sprintf(""),
-		net.nodesAlivePoints,
-	); err != nil {
-		fmt.Printf("failed to AddLinePoints(): %v", err)
-	}
-}
-
-func (net *Network) PlotAggregatedEnergy() {
-	var aggEnergy plotter.XYs
-	for r := 1; r < int(net.round); r++ {
-		var e float64
-		net.Nodes.Range(func(_, n interface{}) bool {
-			e += n.(*Node).energyPoints[r].Y
-			return true
-		})
-		aggEnergy = append(aggEnergy, plotter.XYs{{X: float64(r), Y: e}}...)
-	}
-
-	if err := plotutil.AddLinePoints(
-		net.PlotRound,
-		fmt.Sprintf(""),
-		aggEnergy,
-	); err != nil {
-		fmt.Printf("failed to AddLinePoints(): %v", err)
-	}
 }

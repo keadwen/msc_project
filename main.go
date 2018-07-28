@@ -18,38 +18,39 @@ import (
 )
 
 var (
-	configFile = flag.String("config_file", "", "location of node config file")
+	configFile = flag.String("config_files", "", "location of node config files (comma separated)")
 )
 
 func main() {
 	flag.Parse()
 
-	// Parse or create simulation configuration proto.
-	conf := &config.Config{}
-	var err error
-	if *configFile == "" {
-		conf, err = createScenario()
-		if err != nil {
-			log.Fatalf("Failed to create scenario: %v", err)
-		}
-	} else {
-		data, err := ioutil.ReadFile(*configFile)
-		if err != nil {
-			log.Fatalf("Failed to open a file %q: %v", *configFile, err)
-		}
-		if err := proto.UnmarshalText(string(data), conf); err != nil {
-			log.Fatalf("Failed to unmarshal config proto %q: %v", *configFile, err)
-		}
+	// Create Simulator.
+	s, err := simulator.Create()
+	if err != nil {
+		log.Fatalf("Failed to create simulator: %v", err)
 	}
-	if len(conf.GetNodes()) < 1 {
-		log.Fatalf("Found 0 nodes in config proto %q", *configFile)
+
+	// Parse or create simulation configuration proto.
+	for _, file := range strings.Split(*configFile, ",") {
+		data, err := ioutil.ReadFile(file)
+		if err != nil {
+			log.Fatalf("Failed to open a file %q: %v", file, err)
+		}
+		conf := &config.Config{}
+		if err := proto.UnmarshalText(string(data), conf); err != nil {
+			log.Fatalf("Failed to unmarshal config proto %q: %v", file, err)
+		}
+		if len(conf.GetNodes()) < 1 {
+			log.Fatalf("Found 0 nodes in config proto %q", file)
+		}
+
+		if err := s.AddScenario(conf.Protocol.String(), conf); err != nil {
+			log.Fatalf("Failed to add scenario: %v", err)
+		}
+		fmt.Printf("File: %s = %v\n", file, conf)
 	}
 
 	// Simulation section.
-	s, err := simulator.Create(conf)
-	if err != nil {
-		log.Fatalf("Failed to create simulation: %v", err)
-	}
 	if err := s.Run(); err != nil {
 		log.Fatalf("Failed to run simulation: %v", err)
 	}

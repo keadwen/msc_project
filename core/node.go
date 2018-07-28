@@ -5,7 +5,6 @@ import (
 	"math"
 
 	"github.com/keadwen/msc_project/proto"
-	"gonum.org/v1/plot/plotter"
 )
 
 const (
@@ -29,7 +28,6 @@ type Node struct {
 	// Statistics and aggregation variables.
 	dataSent     int64
 	dataReceived int64
-	energyPoints plotter.XYs
 }
 
 func (n *Node) Transmit(msg int64, dst *Node) error {
