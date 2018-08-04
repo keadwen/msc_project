@@ -31,6 +31,7 @@ func TestTransmit(t *testing.T) {
 		},
 		dst: &Node{
 			Conf: config.Node{
+				Id: int64(1),
 				Location: &config.Location{
 					X: float64(10),
 					Y: float64(10),
@@ -56,6 +57,7 @@ func TestTransmit(t *testing.T) {
 		},
 		dst: &Node{
 			Conf: config.Node{
+				Id: int64(1),
 				Location: &config.Location{
 					X: float64(100),
 					Y: float64(100),
@@ -71,7 +73,8 @@ func TestTransmit(t *testing.T) {
 		wantDstDataReceived: 1000,
 		wantDstReceiveQueue: 1000,
 	}, {
-		name: "Destination node is not ready",
+		// TODO(keadwen): Re-enable the test once Transmit() returns error.
+		name: "Destination node has not enough energy",
 		src: &Node{
 			Conf: config.Node{
 				Location: &config.Location{}, // (0, 0)
@@ -81,19 +84,20 @@ func TestTransmit(t *testing.T) {
 		},
 		dst: &Node{
 			Conf: config.Node{
+				Id: int64(1),
 				Location: &config.Location{
 					X: float64(10),
 					Y: float64(10),
 				},
 			},
-			Ready:  false,
+			Ready:  true,
 			Energy: 0,
 		},
 		msg:              1000,
 		wantSrcEnergy:    0.999944,
 		wantSrcDataSent:  1000,
 		wantErr:          true,
-		wantErrSubstring: "",
+		wantErrSubstring: "", // "node <1> no more energy!"
 	}}
 
 	for _, tt := range tests {
@@ -115,7 +119,173 @@ func TestTransmit(t *testing.T) {
 				t.Fatalf("Transmit() got %v, want %v", tt.dst.dataReceived, tt.wantDstDataReceived)
 			}
 			if tt.dst.receiveQueue != tt.wantDstReceiveQueue {
-				t.Fatalf("Transmit() got %v, want %v", tt.dst.dataReceived, tt.wantDstDataReceived)
+				t.Fatalf("Transmit() got %v, want %v", tt.dst.dataReceived, tt.wantDstReceiveQueue)
+			}
+		})
+	}
+}
+
+func TestReceive(t *testing.T) {
+	tests := []struct {
+		name             string
+		src              *Node
+		msg              int64
+		wantEnergy       float64
+		wantReceiveQueue int64
+		wantDataReceived int64
+		wantErrSubstring string
+	}{{
+		name: "Enough energy to receive",
+		src: &Node{
+			Conf:         config.Node{},
+			Ready:        true,
+			Energy:       1,
+			receiveQueue: 1000,
+			dataReceived: 1234,
+		},
+		msg:              1000,
+		wantEnergy:       0.999996,
+		wantReceiveQueue: 2000,
+		wantDataReceived: 2234,
+	}, {
+		name: "Not enough energy to receive",
+		src: &Node{
+			Conf:         config.Node{},
+			Ready:        true,
+			Energy:       0.000003,
+			receiveQueue: 1000,
+			dataReceived: 1234,
+		},
+		msg:              1000,
+		wantEnergy:       0,
+		wantReceiveQueue: 1000,
+		wantDataReceived: 1234,
+		wantErrSubstring: "node <0> no more energy!",
+	}}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			err := tt.src.Receive(tt.msg, nil)
+			if diff := errdiff.Substring(err, tt.wantErrSubstring); diff != "" {
+				t.Fatalf("Receive() returned diff: %v", diff)
+			}
+			if tt.src.Energy != tt.wantEnergy {
+				t.Fatalf("Receive() got %v, want %v", tt.src.Energy, tt.wantEnergy)
+			}
+			if tt.src.dataReceived != tt.wantDataReceived {
+				t.Fatalf("Receive() got %v, want %v", tt.src.dataReceived, tt.wantDataReceived)
+			}
+			if tt.src.receiveQueue != tt.wantReceiveQueue {
+				t.Fatalf("Receive() got %v, want %v", tt.src.dataReceived, tt.wantReceiveQueue)
+			}
+		})
+	}
+}
+
+func TestDistance(t *testing.T) {
+	tests := []struct {
+		name string
+		src  *Node
+		dst  *Node
+		want float64
+	}{{
+		name: "Locations are positive values",
+		src: &Node{
+			Conf: config.Node{
+				Location: &config.Location{
+					X: float64(0),
+					Y: float64(0),
+				},
+			},
+		},
+		dst: &Node{
+			Conf: config.Node{
+				Location: &config.Location{
+					X: float64(10),
+					Y: float64(10),
+				},
+			},
+		},
+		want: 14.142135623730951,
+	}, {
+		name: "Locations are positive values",
+		src: &Node{
+			Conf: config.Node{
+				Location: &config.Location{
+					X: float64(0),
+					Y: float64(0),
+				},
+			},
+		},
+		dst: &Node{
+			Conf: config.Node{
+				Location: &config.Location{
+					X: float64(-10),
+					Y: float64(-10),
+				},
+			},
+		},
+		want: 14.142135623730951,
+	}}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.src.distance(tt.dst); got != tt.want {
+				t.Fatalf("distance() got %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestConsume(t *testing.T) {
+	tests := []struct {
+		name             string
+		src              *Node
+		e                float64
+		wantReady        bool
+		wantEnergy       float64
+		wantErrSubstring string
+	}{{
+		name: "Deducted energy from alive node",
+		src: &Node{
+			Conf:   config.Node{},
+			Ready:  true,
+			Energy: 1,
+		},
+		e:          0.3,
+		wantReady:  true,
+		wantEnergy: 0.7,
+	}, {
+		name: "Not enough energy to deduct",
+		src: &Node{
+			Conf: config.Node{
+				Id: int64(1),
+			},
+			Ready:  true,
+			Energy: 1,
+		},
+		e:                100,
+		wantReady:        false,
+		wantEnergy:       0,
+		wantErrSubstring: "node <1> no more energy!",
+	}, {
+		name:             "Negative deduction not allowed",
+		src:              &Node{},
+		e:                -0.5,
+		wantErrSubstring: "consume energy cannot be negative: -0.5",
+	}}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			err := tt.src.consume(tt.e)
+			if diff := errdiff.Substring(err, tt.wantErrSubstring); diff != "" {
+				t.Fatalf("consume() returned diff: %v", diff)
+			}
+			if tt.src.Ready != tt.wantReady {
+				t.Fatalf("consume() got %v, want %v", tt.src.Ready, tt.wantReady)
+			}
+			if tt.src.Energy != tt.wantEnergy {
+				t.Fatalf("consume() got %v, want %v", tt.src.Energy, tt.wantEnergy)
 			}
 		})
 	}

@@ -44,6 +44,7 @@ func (n *Node) Transmit(msg int64, dst *Node) error {
 	// Call destination to receive.
 	n.dataSent += msg
 	err := dst.Receive(msg, n)
+	// TODO(keadwen): Rework the way to handle the error.
 	if err != nil {
 		fmt.Errorf("destination node <%d> failed: %v\n", dst.Conf.GetId(), err)
 	}
@@ -71,6 +72,9 @@ func (n *Node) distance(dst *Node) float64 {
 }
 
 func (n *Node) consume(e float64) error {
+	if e < 0 {
+		return fmt.Errorf("consume energy cannot be negative: %v", e)
+	}
 	if n.Energy-e < 0 {
 		n.Ready = false
 		n.Energy = 0
