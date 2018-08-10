@@ -40,7 +40,7 @@ func (net *Network) AddNode(n *Node) error {
 
 func (net *Network) Simulate() error {
 	net.Round = 0
-	maxRounds := int64(15000) // TODO(keadwen): Put inside a config file.
+	maxRounds := int64(25000) // TODO(keadwen): Put inside a config file.
 	for net.CheckNodes() > 0 && net.Round < maxRounds {
 		net.Round++
 		// fmt.Printf("=== Round %d ===\n", net.Round)
@@ -71,7 +71,8 @@ func (net *Network) Simulate() error {
 				defer wg.Done()
 				// Send the transmit queue to next hop.
 				if err := n.Transmit(DEFAULT_MSG, n.nextHop); err != nil {
-					fmt.Println(err)
+					//fmt.Println(err)
+					fmt.Println(n.Info())
 				}
 			}(n.(*Node))
 			return true
@@ -99,7 +100,7 @@ func (net *Network) Simulate() error {
 				// Read the receiving queue and move to transmit queue.
 				n.transmitQueue = n.receiveQueue
 				if err := n.Transmit(DEFAULT_MSG+n.transmitQueue, n.nextHop); err != nil {
-					fmt.Println(err)
+					// No action.
 				}
 				n.receiveQueue = 0
 			}(n.(*Node))

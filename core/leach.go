@@ -5,6 +5,11 @@ import (
 	"time"
 )
 
+var (
+	// seed
+	seed = time.Now().UnixNano()
+)
+
 type LEACH struct {
 	Clusters int // A number of clusters in the network.
 	Nodes    int // A number of nodes in the network.
@@ -12,10 +17,18 @@ type LEACH struct {
 
 // Setup implements Protocol.Setup.
 func (l *LEACH) Setup(net *Network) ([]int64, error) {
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	r := rand.New(rand.NewSource(seed))
+
+	// Clean previous cluster heads election.
+	net.Nodes.Range(func(_, n interface{}) bool {
+		n.(*Node).nextHop = net.BaseStation
+		n.(*Node).receiveQueue = 0
+		n.(*Node).transmitQueue = 0
+		return true
+	})
 
 	var heads []int64
-	for {
+	for len(heads) < l.Clusters {
 		net.Nodes.Range(func(_, n interface{}) bool {
 			// Skip dead nodes.
 			if !n.(*Node).Ready {
@@ -24,20 +37,14 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 
 			// Nominate the node to be a cluster head.
 			ur := r.Float64()
-			if ur < float64(l.Clusters)/float64(l.Nodes) {
-				n.(*Node).nextHop = net.BaseStation
+			if ur*float64(l.Nodes) < float64(l.Nodes/l.Clusters) {
 				heads = append(heads, n.(*Node).Conf.GetId())
 			}
 			return true
 		})
-
-		// Shrink the slice to maximum amount of clusters.
-		// TODO(keadwen): Check if the shrinking is required.
-		if len(heads) >= l.Clusters {
-			//	heads = heads[:l.Clusters]
-			break
-		}
 	}
+	// Shrink the slice to maximum amount of clusters.
+	heads = heads[:l.Clusters]
 
 	// Go through all nodes, as modify the base station to nearest cluster head.
 	net.Nodes.Range(func(_, src interface{}) bool {

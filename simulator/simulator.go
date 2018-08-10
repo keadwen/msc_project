@@ -69,7 +69,6 @@ func (s *Simulator) Run() error {
 		names = append(names, name)
 	}
 	sort.Strings(names)
-	fmt.Printf("Simulator: %v = %v\n", s, names)
 
 	var err error
 	for _, name := range names {

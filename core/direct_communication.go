@@ -1,6 +1,8 @@
 package core
 
 type DirectCommunication struct {
+	Clusters int // A number of clusters in the network.
+	Nodes    int // A number of nodes in the network.
 }
 
 // Setup implements Protocol.Setup.
