@@ -27,6 +27,7 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 		return true
 	})
 
+	// Election of cluster heads.
 	var heads []int64
 	for len(heads) < l.Clusters {
 		net.Nodes.Range(func(_, n interface{}) bool {
@@ -59,7 +60,8 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 			}
 		}
 
-		// Check distance to each cluster head.
+		// Assign to the base station. If more than one cluster heads,
+		// choose the one with strongest signal (the smalles distance).
 		nearest := src.(*Node).distance(net.BaseStation)
 		for _, hid := range heads {
 			dst, _ := net.Nodes.Load(hid)
