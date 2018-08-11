@@ -12,10 +12,12 @@ enum E_Protocol {
 message Config {
 	// Simulation protocol.
 	E_Protocol protocol = 1;
-	// Number of cluster heads.
-	int64 clusters = 2;
+	// Number of maximum rounds in simulation. 
+	int64 max_rounds = 2;
+	// Percentage of cluster heads among all nodes [0, 1].
+	double p_cluster_heads = 3;
 	// Nodes points to configuration for each node.
-	repeated Node nodes = 3;
+	repeated Node nodes = 4;
 }
 
 // Node defines a configuration for a single node.

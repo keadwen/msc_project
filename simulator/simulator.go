@@ -100,13 +100,14 @@ func (s *Simulator) create(name string, conf *config.Config) error {
 	if protocol == nil {
 		return fmt.Errorf("failed to match a protocol: %v", conf.GetProtocol())
 	}
-	protocol.SetClusters(int(conf.Clusters))
-	protocol.SetNodes(len(conf.GetNodes()) - 1) // Do not count base station.
+	nodes := len(conf.GetNodes()) - 1 // Do not count base station.
+	protocol.SetClusters(int(float64(nodes) * conf.PClusterHeads))
+	protocol.SetNodes(nodes)
 
 	// Create new network space.
 	s.network[name] = &core.Network{
 		Protocol:        protocol,
-		MaxRounds:       25000,
+		MaxRounds:       conf.MaxRounds,
 		PlotTotalEnergy: s.plotTotalEnergy,
 		PlotNodes:       s.plotNodes,
 	}

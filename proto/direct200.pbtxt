@@ -1,10 +1,11 @@
 protocol: DIRECT
-clusters: 10
+max_rounds: 10000
+p_cluster_heads: 0.1
 nodes: <
   initial_energy: 1e+100
   location: <
     X: 100
-    Y: 300
+    Y: 450
   >
 >
 nodes: <

@@ -69,8 +69,8 @@ func defaultConfigs() []*config.Config {
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	nodes := 150
-	sizes := []float64{1000} // , 200, 250, 300, 350, 400}
-	energies := []float64{10.0}
+	sizes := []float64{200} // , 200, 250, 300, 350, 400}
+	energies := []float64{0.5}
 	protocols := []int{1, 2}
 	for _, size := range sizes {
 		// Nodes in a single network size, must have same location.
@@ -83,8 +83,9 @@ func defaultConfigs() []*config.Config {
 		for _ = range energies {
 			for _, protocol := range protocols {
 				conf := &config.Config{
-					Protocol: config.E_Protocol(protocol),
-					Clusters: int64(nodes / 10),
+					Protocol:      config.E_Protocol(protocol),
+					MaxRounds:     10000,
+					PClusterHeads: 0.1,
 				}
 				// Create base station.
 				conf.Nodes = append(conf.Nodes, &config.Node{
