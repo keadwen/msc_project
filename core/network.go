@@ -13,7 +13,8 @@ type Network struct {
 	BaseStation *Node
 	Nodes       sync.Map
 
-	Round int64
+	Round     int64
+	MaxRounds int64
 
 	PlotTotalEnergy   *plot.Plot // An amount of total energy in the network per Round.
 	PlotNodes         *plot.Plot // A number of alive nodes in the network per Round.
@@ -40,10 +41,8 @@ func (net *Network) AddNode(n *Node) error {
 
 func (net *Network) Simulate() error {
 	net.Round = 0
-	maxRounds := int64(25000) // TODO(keadwen): Put inside a config file.
-	for net.CheckNodes() > 0 && net.Round < maxRounds {
+	for net.CheckNodes() > 0 && net.Round < net.MaxRounds {
 		net.Round++
-		// fmt.Printf("=== Round %d ===\n", net.Round)
 		// Perform data collection before the Round.
 		net.PopulateEnergyPoints()
 		net.PopulateNodesAlivePoints()
@@ -55,58 +54,54 @@ func (net *Network) Simulate() error {
 		}
 
 		// Run leaf nodes (not cluster heads).
-		var wg sync.WaitGroup
-		net.Nodes.Range(func(_, n interface{}) bool {
-			if !n.(*Node).Ready {
+		net.Nodes.Range(func(_, ni interface{}) bool {
+			n := ni.(*Node)
+
+			if !n.Ready {
 				return true
 			}
 			for _, h := range heads {
-				if h == n.(*Node).Conf.GetId() {
+				if h == n.Conf.GetId() {
 					return true // Skip cluster heads.
 				}
 			}
 
-			wg.Add(1)
-			go func(n *Node) {
-				defer wg.Done()
-				// Send the transmit queue to next hop.
-				if err := n.Transmit(DEFAULT_MSG, n.nextHop); err != nil {
-					//fmt.Println(err)
-					fmt.Println(n.Info())
-				}
-			}(n.(*Node))
+			// Send the transmit queue to next hop.
+			if err := n.Transmit(DEFAULT_MSG, n.nextHop); err != nil {
+				// If you receive a dead message from nexthop, send directly to base.
+				n.Transmit(DEFAULT_MSG, net.BaseStation)
+			}
 			return true
 		})
-		wg.Wait()
 
 		// Run cluster head nodes.
-		net.Nodes.Range(func(_, n interface{}) bool {
-			if !n.(*Node).Ready {
+		net.Nodes.Range(func(_, ni interface{}) bool {
+			n := ni.(*Node)
+
+			if !n.Ready {
 				return true
 			}
+
+			// Check if a node is a cluster head.
 			var head bool
 			for _, h := range heads {
-				if h == n.(*Node).Conf.GetId() {
+				if h == n.Conf.GetId() {
 					head = true
+					break
 				}
 			}
 			if !head {
-				return true // Skip leaf nodes.
+				return true // Skip non-cluster head nodes.
 			}
 
-			wg.Add(1)
-			go func(n *Node) {
-				defer wg.Done()
-				// Read the receiving queue and move to transmit queue.
-				n.transmitQueue = n.receiveQueue
-				if err := n.Transmit(DEFAULT_MSG+n.transmitQueue, n.nextHop); err != nil {
-					// No action.
-				}
-				n.receiveQueue = 0
-			}(n.(*Node))
+			// Read the receiving queue and move to transmit queue.
+			n.transmitQueue = n.receiveQueue
+			if err := n.Transmit(DEFAULT_MSG+n.transmitQueue, n.nextHop); err != nil {
+				// No action.
+			}
+			n.receiveQueue = 0
 			return true
 		})
-		wg.Wait() // Wait for all nodes to finish before plot.
 	}
 	// Final data collection and plotting.
 	net.PopulateEnergyPoints()

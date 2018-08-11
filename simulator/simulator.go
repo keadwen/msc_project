@@ -106,6 +106,7 @@ func (s *Simulator) create(name string, conf *config.Config) error {
 	// Create new network space.
 	s.network[name] = &core.Network{
 		Protocol:        protocol,
+		MaxRounds:       25000,
 		PlotTotalEnergy: s.plotTotalEnergy,
 		PlotNodes:       s.plotNodes,
 	}
