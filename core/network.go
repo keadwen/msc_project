@@ -41,8 +41,10 @@ func (net *Network) AddNode(n *Node) error {
 
 func (net *Network) Simulate() error {
 	net.Round = 0
+
 	for net.CheckNodes() > 0 && net.Round < net.MaxRounds {
 		net.Round++
+
 		// Perform data collection before the Round.
 		net.PopulateEnergyPoints()
 		net.PopulateNodesAlivePoints()

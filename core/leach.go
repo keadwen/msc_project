@@ -2,12 +2,7 @@ package core
 
 import (
 	"math/rand"
-	"time"
-)
-
-var (
-	// seed
-	seed = time.Now().UnixNano()
+	"sort"
 )
 
 type LEACH struct {
@@ -28,8 +23,11 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 	})
 
 	// Election of cluster heads.
-	var heads []int64
-	for len(heads) < l.Clusters {
+	// Number of cluster must be still above the p treshold.
+	clusterMap := map[int64]bool{}
+	p := int((net.CheckNodes() * l.Clusters) / l.Nodes)
+
+	for len(clusterMap) < p {
 		net.Nodes.Range(func(_, n interface{}) bool {
 			// Skip dead nodes.
 			if !n.(*Node).Ready {
@@ -39,13 +37,21 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 			// Nominate the node to be a cluster head.
 			ur := r.Float64()
 			if ur*float64(l.Nodes) < float64(l.Nodes/l.Clusters) {
-				heads = append(heads, n.(*Node).Conf.GetId())
+				clusterMap[n.(*Node).Conf.GetId()] = true
 			}
 			return true
 		})
 	}
-	// Shrink the slice to maximum amount of clusters.
-	heads = heads[:l.Clusters]
+
+	var heads []int64
+	for h := range clusterMap {
+		heads = append(heads, h)
+	}
+	// Shrink amount of clusters heads to expected match threshold.
+	if len(heads) > p {
+		heads = heads[:p]
+	}
+	sort.Slice(heads, func(i, j int) bool { return heads[i] < heads[j] })
 
 	// Go through all nodes, as modify the base station to nearest cluster head.
 	net.Nodes.Range(func(_, src interface{}) bool {
@@ -54,10 +60,8 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 			return true
 		}
 		// Omit the cluster head.
-		for _, hid := range heads {
-			if src.(*Node).Conf.GetId() == hid {
-				return true
-			}
+		if _, ok := clusterMap[src.(*Node).Conf.GetId()]; ok {
+			return true
 		}
 
 		// Assign to the base station. If more than one cluster heads,
@@ -71,12 +75,6 @@ func (l *LEACH) Setup(net *Network) ([]int64, error) {
 				src.(*Node).nextHop = dst.(*Node)
 			}
 		}
-		return true
-	})
-
-	// fmt.Printf("=== Validation ===\n")
-	net.Nodes.Range(func(_, n interface{}) bool {
-		// fmt.Printf("====> N<%d>: nextHop <%d>\n", n.(*Node).Conf.GetId(), n.(*Node).nextHop.Conf.GetId())
 		return true
 	})
 
