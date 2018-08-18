@@ -16,6 +16,8 @@ var mapProtocol = map[config.E_Protocol]core.Protocol{
 	config.E_Protocol_UNSET:  &core.DirectCommunication{},
 	config.E_Protocol_DIRECT: &core.DirectCommunication{},
 	config.E_Protocol_LEACH:  &core.LEACH{},
+	// config.E_Protocol_APTEEN: &core.APTEEN{},
+	config.E_Protocol_PEGASIS: &core.PEGASIS{},
 }
 
 type Simulator struct {

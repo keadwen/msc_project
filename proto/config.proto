@@ -7,6 +7,7 @@ enum E_Protocol {
 	DIRECT = 1;
 	LEACH = 2;
 	APTEEN = 3;
+	PEGASIS = 4;
 }
 
 message Config {
