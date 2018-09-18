@@ -15,6 +15,7 @@ type Network struct {
 
 	Round     int64
 	MaxRounds int64
+	MsgLength int64
 
 	PlotTotalEnergy   *plot.Plot // An amount of total energy in the network per Round.
 	PlotNodes         *plot.Plot // A number of alive nodes in the network per Round.
@@ -69,9 +70,9 @@ func (net *Network) Simulate() error {
 			}
 
 			// Send the transmit queue to next hop.
-			if err := n.Transmit(DEFAULT_MSG, n.nextHop); err != nil {
+			if err := n.Transmit(net.MsgLength, n.nextHop); err != nil {
 				// If you receive a dead message from nexthop, send directly to base.
-				n.Transmit(DEFAULT_MSG, net.BaseStation)
+				n.Transmit(net.MsgLength, net.BaseStation)
 			}
 			return true
 		})
@@ -98,7 +99,7 @@ func (net *Network) Simulate() error {
 
 			// Read the receiving queue and move to transmit queue.
 			n.transmitQueue = n.receiveQueue
-			if err := n.Transmit(DEFAULT_MSG+n.transmitQueue, n.nextHop); err != nil {
+			if err := n.Transmit(net.MsgLength+n.transmitQueue, n.nextHop); err != nil {
 				// No action.
 			}
 			n.receiveQueue = 0

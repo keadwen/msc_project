@@ -17,8 +17,10 @@ message Config {
 	int64 max_rounds = 2;
 	// Percentage of cluster heads among all nodes [0, 1].
 	double p_cluster_heads = 3;
+	// Size of data sent by individual node (in Bytes).
+	int64 msg_length = 4;
 	// Nodes points to configuration for each node.
-	repeated Node nodes = 4;
+	repeated Node nodes = 5;
 }
 
 // Node defines a configuration for a single node.

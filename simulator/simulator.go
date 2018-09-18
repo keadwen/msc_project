@@ -110,6 +110,7 @@ func (s *Simulator) create(name string, conf *config.Config) error {
 	s.network[name] = &core.Network{
 		Protocol:        protocol,
 		MaxRounds:       conf.MaxRounds,
+		MsgLength:       conf.MsgLength,
 		PlotTotalEnergy: s.plotTotalEnergy,
 		PlotNodes:       s.plotNodes,
 	}

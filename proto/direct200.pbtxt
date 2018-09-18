@@ -1,5 +1,6 @@
 protocol: DIRECT
 max_rounds: 10000
+msg_length: 128
 p_cluster_heads: 0.1
 nodes: <
   initial_energy: 1e+100

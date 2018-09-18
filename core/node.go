@@ -13,8 +13,6 @@ const (
 	E_RX   = 4e-9       // Receiving.
 	E_MP   = 0.0104e-12 // Multipath fading.
 	E_FS   = 80e-12     // Line of sight free space channel.
-
-	DEFAULT_MSG = 100
 )
 
 type Node struct {
