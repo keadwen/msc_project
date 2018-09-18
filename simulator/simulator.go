@@ -2,7 +2,9 @@ package simulator
 
 import (
 	"fmt"
+	"os"
 	"sort"
+	"strings"
 
 	"github.com/keadwen/msc_project/core"
 	"github.com/keadwen/msc_project/proto"
@@ -83,7 +85,7 @@ func (s *Simulator) Run() error {
 	return nil
 }
 
-// ExportPlots create the plot image file.
+// ExportPlots creates the plot image file.
 func (s *Simulator) ExportPlots(filepath string) error {
 	if filepath == "" {
 		return fmt.Errorf("empty filepath provided")
@@ -93,6 +95,31 @@ func (s *Simulator) ExportPlots(filepath string) error {
 	err = s.plotTotalEnergy.Save(16*vg.Inch, 16*vg.Inch, fmt.Sprintf("%s-round.png", filepath))
 	err = s.plotNodes.Save(16*vg.Inch, 16*vg.Inch, fmt.Sprintf("%s-nodes.png", filepath))
 	return err
+}
+
+// ExportGNUPlots creates the gnuplot data file.
+func (s *Simulator) ExportGNUPlots(filepath string) error {
+	if filepath == "" {
+		return fmt.Errorf("empty filepath provided")
+	}
+
+	for name, net := range s.network {
+		createAndPopulateFile(fmt.Sprintf("%s-%s-nodes", filepath, name), net.GNUPlotNodes)
+		createAndPopulateFile(fmt.Sprintf("%s-%s-round", filepath, name), net.GNUPlotTotalEnergy)
+	}
+	return nil
+}
+
+func createAndPopulateFile(filepath string, data []string) error {
+	fp, err := os.Create(filepath)
+	if err != nil {
+		return err
+	}
+	defer fp.Close()
+	fp.WriteString(strings.Join(data, "\n"))
+	fp.Sync()
+
+	return nil
 }
 
 // create builds the simulator object according to a given configuration.

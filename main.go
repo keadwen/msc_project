@@ -67,6 +67,9 @@ func main() {
 	if err := s.ExportPlots(fmt.Sprintf("graphs/%d", time.Now().Nanosecond())); err != nil {
 		log.Fatalf("Failed to export plot: %v", err)
 	}
+	if err := s.ExportGNUPlots(fmt.Sprintf("plotdata/%d", time.Now().Nanosecond())); err != nil {
+		log.Fatalf("Failed to export GNUplot: %v", err)
+	}
 }
 
 func defaultConfigs() []*config.Config {

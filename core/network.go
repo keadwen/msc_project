@@ -17,6 +17,9 @@ type Network struct {
 	MaxRounds int64
 	MsgLength int64
 
+	GNUPlotNodes       []string
+	GNUPlotTotalEnergy []string
+
 	PlotTotalEnergy   *plot.Plot // An amount of total energy in the network per Round.
 	PlotNodes         *plot.Plot // A number of alive nodes in the network per Round.
 	NodesAlivePoints  plotter.XYs
@@ -127,6 +130,7 @@ func (net *Network) CheckNodes() int {
 }
 
 func (net *Network) PopulateEnergyPoints() {
+	var totalEnergy float64
 	net.Nodes.Range(func(_, n interface{}) bool {
 		net.NodesEnergyPoints[n.(*Node).Conf.GetId()] = append(
 			net.NodesEnergyPoints[n.(*Node).Conf.GetId()],
@@ -134,8 +138,10 @@ func (net *Network) PopulateEnergyPoints() {
 				X: float64(net.Round),
 				Y: n.(*Node).Energy,
 			}}...)
+		totalEnergy += n.(*Node).Energy
 		return true
 	})
+	net.GNUPlotTotalEnergy = append(net.GNUPlotTotalEnergy, fmt.Sprintf(" %v\t%v", net.Round, totalEnergy))
 }
 
 func (net *Network) PopulateNodesAlivePoints() {
@@ -143,4 +149,5 @@ func (net *Network) PopulateNodesAlivePoints() {
 		X: float64(net.Round),
 		Y: float64(net.CheckNodes()),
 	}}...)
+	net.GNUPlotNodes = append(net.GNUPlotNodes, fmt.Sprintf(" %v\t%v", net.Round, net.CheckNodes()))
 }
