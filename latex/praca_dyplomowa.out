@@ -2,4 +2,9 @@
 \BOOKMARK [1][-]{section.1.1}{Wprowadzenie}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Cel pracy}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Tworzenie projektu}{chapter.1}% 4
-\BOOKMARK [0][-]{chapter*.4}{Bibliografia}{}% 5
+\BOOKMARK [0][-]{chapter.2}{Wykorzystane technologie}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Jezyk programowania Go}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{Por\363wnanie Go z Python}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.2}{Por\363wnanie Go z C++}{section.2.1}% 8
+\BOOKMARK [1][-]{section.2.2}{Serializacja danych Protocol Buffers}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter*.4}{Bibliografia}{}% 10

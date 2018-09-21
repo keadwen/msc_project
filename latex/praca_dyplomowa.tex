@@ -117,10 +117,53 @@ Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końco
 Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
 Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontroli wersji git.
 
+%-----------------
+% Wykorzystane technologie
+%-----------------
+\chapter{Wykorzystane technologie}
+
+\section{Język programowania Go}
+Go (Golang) to język programistyczny stworzony jako wolne oprogramowanie (open source) na potrzeby firmy Google. 
+Głównymi architektami języka są Robert Griesemer, Rob Pike i Ken Thompson.
+Golang umożliwia tworzenie komercyjnego oprogramowania i jest wspierany na wielu sytemach opearcyjnych (Linux, Windows, Mac OS X).
+
+Język Go należy do kategorii języków kompilowanych, z statycznym definiowaniem typu zmiennych. Składnia języka jest zbliżona do C/C++ czy Python.
+
+\subsection{Porównanie Go z Python}
+
+\begin{itemize}
+ \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
+ \item Go jest językiem statycznym, co pozwala wyeliminować błedy typu runtime wynikające z typu zmiennej.
+ \item Go jest językiem samodokumentującym. Określony odgórnie format komentarzy umożliwia automatyczne tworzenie przejrzystej dokumentacji.
+ \item Go jest językiem kompilowalnym, co pozwala na szybsze uruchamianie i egzekucję oprogramowania.
+ \item Go wykorzystuje mniej pamięci. Przykład: W Go zmienna typu int32 wymaga 4 bajty pamięci, w Python 24 bajty.
+ \item Python umożliwia runtime reflection.
+ \item Python posiada większy bazę publiczych bibliotek.
+\end{itemize}
+
+\subsection{Porównanie Go z C++}
+
+\begin{itemize}
+ \item Go posiada system zarządzania pamięcią (garbage collector).
+ \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
+ \item Go jest językiem samodokumentującym. Nie wymaga tworzenia plików typu header.
+ \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (inheretance) została zastąpiona osadzaniem (embedding).
+ \item Go posiada możliwość użycia (zaimportowania) dowolnej bilbioteki C/C++.
+ \item C++ posiada osiągnać szybszą egzekujcę oprogramowaia.
+ \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (generics).
+ \item C++ nie posiada systemu zarządzania pamięcia (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikrokontrolerach).
+\end{itemize}
+
+\section{Serializacja danych Protocol Buffers}
+
+TODO(jakub): Opisać Protocol Buffers.
+
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibitem{Stevens}{W. R. Stevens, G. R. Wright, ,,Biblia TCP/IP tom 1'', RM, 
 1998.}
+
+
 
 
 \end{thebibliography}
