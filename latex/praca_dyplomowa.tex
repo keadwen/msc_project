@@ -19,6 +19,29 @@
 \usepackage{indentfirst}
 \usepackage[pdftex]{hyperref}
 
+% Pakiety oraz kolory pomocnicze do kodu źródłowego.
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
+}
+
 
 % rozmaite polecenia pomocnicze
 % gdzie rysunki?
@@ -156,7 +179,49 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
 
 \section{Serializacja danych Protocol Buffers}
 
-TODO(jakub): Opisać Protocol Buffers.
+Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google.
+Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowaia aplikacji czy platformy na którym uruchamiana jest aplikacja.
+Technologia ta definiuje strukturę danych (proto schema) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
+oraz złożonych komunikatów (message).
+Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
+(w przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP).
+Natomiast zserializowane dane zostają zapisane w formacie binarnym (wire format), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
+bez potrzeby wykonania dalszego kodowania. 
+Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
+operowania danymi w sposób natywny dla wybranego języka programowania.
+
+\begin{lstlisting}
+// example.proto
+syntax = "proto3";
+
+// Citizen represents a single citizen of Poland.
+message Citizen {
+  // The name of a citizen.
+  string name = 1;
+  // The surname of a citizen.
+  string surname = 2;
+  // (required) Unique Polish national identification number.
+  PESEL pesel = 3;
+}
+
+// PESEL represents Polish Universal Electronic System for
+// Registration of the Population.
+message PESEL {
+  // (required) Unique Polish national identification number.
+  uint64 number = 1;
+  bool active = 2;
+}
+\end{lstlisting}
+
+\section{System kontroli wersji git}
+
+Git to rozproszony system kontroli wersji stworzony jako wolne oprogramowanie (open source). 
+Głównymi architektem narzędzia jest Linus Torvalds. Git to oprogramowanie powszechnie stosowanym w przypadku zarządzania oprogramowaniem.
+Narzędzie to umożliwia tworzenie pobocznych gałęzi (branch) niezależych od głównej gałęzi. Funkcjonalność ta pozwala na niezależne wprowadzanie zmian
+w kodzie na określonej wersji kontrolej, które mogą następnie zostać wprowadzon ponownie do gałęzi głównej (merge).
+Architektura rozproszna git (w przeciwieństwie do zcentralizowanych systemów kontroli wersji) umożliwia programistom na posiadanie lokalnej kopii repozytorium,
+której zmiany mogą zostać następnie wprowadzone do gałęźi głównej.
+
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
