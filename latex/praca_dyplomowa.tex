@@ -145,8 +145,10 @@ Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontr
 %-----------------
 \chapter{Wykorzystane technologie}
 
+Rozdział ten zawiera opis technologii oraz narzędzi wykorzystanych w pracy dyplomowej.
+
 \section{Język programowania Go}
-Go (Golang) to język programistyczny stworzony jako wolne oprogramowanie (open source) na potrzeby firmy Google. 
+Go (Golang) to język programistyczny stworzony jako wolne oprogramowanie (open source) na potrzeby firmy Google, Inc. 
 Głównymi architektami języka są Robert Griesemer, Rob Pike i Ken Thompson.
 Golang umożliwia tworzenie komercyjnego oprogramowania i jest wspierany na wielu sytemach opearcyjnych (Linux, Windows, Mac OS X).
 
@@ -179,7 +181,7 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
 
 \section{Serializacja danych Protocol Buffers}
 
-Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google.
+Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google, Inc.
 Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowaia aplikacji czy platformy na którym uruchamiana jest aplikacja.
 Technologia ta definiuje strukturę danych (proto schema) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
 oraz złożonych komunikatów (message).
@@ -222,13 +224,23 @@ w kodzie na określonej wersji kontrolej, które mogą następnie zostać wprowa
 Architektura rozproszna git (w przeciwieństwie do zcentralizowanych systemów kontroli wersji) umożliwia programistom na posiadanie lokalnej kopii repozytorium,
 której zmiany mogą zostać następnie wprowadzone do gałęźi głównej.
 
+\section{Docker}
+
+Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc.
+Narzędzie to pozwala na tworzenie kontenerów, które izolują aplikację na poziomie systmeu operacyjnego. W przeciwieństwie do maszyn wirtualnych, kontener nie wymaga
+wirtualizowania systemu operacyjnego dla każdego z kontenerów. Wszystkie równolegle działające kontenery aplikacji działające na pojedynczym urządzeniu współdzielą
+parametry fizyczne maszyny oraz jądro systemu operacyjnego (np. Linux). Izolacja kontenerów widoczna jest na poziomie zależności (dependency) do określonych wersji
+bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parametrów.
+
+\section{Latex}
+
+Latex to narzędzie do formatowania tekstu przy wykorzystaniu znaczników. Praca nad dokumentem przy wykorzystaniu Latex ułatwia redagowanie artykułu, ze względu na
+odeseparowanie treści od struktury tekstu.
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibitem{Stevens}{W. R. Stevens, G. R. Wright, ,,Biblia TCP/IP tom 1'', RM, 
 1998.}
-
-
 
 
 \end{thebibliography}

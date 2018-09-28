@@ -9,4 +9,6 @@
 \contentsline {subsection}{\numberline {2.1.2}Por\IeC {\'o}wnanie Go z C++}{4}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Serializacja danych Protocol Buffers}{4}{section.2.2}
 \contentsline {section}{\numberline {2.3}System kontroli wersji git}{5}{section.2.3}
-\contentsline {chapter}{Bibliografia}{6}{chapter*.4}
+\contentsline {section}{\numberline {2.4}Docker}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Latex}{6}{section.2.5}
+\contentsline {chapter}{Bibliografia}{7}{chapter*.4}
