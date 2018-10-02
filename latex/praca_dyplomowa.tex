@@ -224,6 +224,10 @@ w kodzie na określonej wersji kontrolej, które mogą następnie zostać wprowa
 Architektura rozproszna git (w przeciwieństwie do zcentralizowanych systemów kontroli wersji) umożliwia programistom na posiadanie lokalnej kopii repozytorium,
 której zmiany mogą zostać następnie wprowadzone do gałęźi głównej.
 
+\section{GNUPlot}
+
+TODO
+
 \section{Docker}
 
 Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc.
@@ -236,6 +240,175 @@ bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parame
 
 Latex to narzędzie do formatowania tekstu przy wykorzystaniu znaczników. Praca nad dokumentem przy wykorzystaniu Latex ułatwia redagowanie artykułu, ze względu na
 odeseparowanie treści od struktury tekstu.
+
+%-----------------
+% Architektura systemu
+%-----------------
+\chapter{Architektura systemu}
+
+\section{Opis}
+
+System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależnożci sprawności energetycznej 
+węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS).
+
+\section{Komponenty systemu}
+
+Poniższy diagram przedstawia dekompozycję modułów, całkowitą architekturę systemu oraz kierunki interakcji i przepływu informacji.
+
+\subsection{Plik konfiguracyjny}
+
+Plik konfiguracyjny (config file) posiada dane wejściowe pozwalające na zbudowanie środowiska testowego. 
+Schemat pliku konfiguracyjnego 
+Informacje zawarte w pliku konfiguracyjnym można podzielić na dwie sekcje:
+
+\begin{itemize}
+ \item konfiguracja symulatora i sieci
+ \item konfiguracja węzła
+\end{itemize}
+
+\begin{lstlisting}
+syntax = "proto3";
+
+package config;
+
+enum E_Protocol {
+	UNSET = 0;
+	DIRECT = 1;
+	LEACH = 2;
+	APTEEN = 3;
+	PEGASIS = 4;
+}
+
+message Config {
+	// Simulation protocol.
+	E_Protocol protocol = 1;
+	// Number of maximum rounds in simulation. 
+	int64 max_rounds = 2;
+	// Percentage of cluster heads among all nodes [0, 1].
+	double p_cluster_heads = 3;
+	// Size of data sent by individual node (in Bytes).
+	int64 msg_length = 4;
+	// Nodes points to configuration for each node.
+	repeated Node nodes = 5;
+}
+
+// Node defines a configuration for a single node.
+message Node {
+	// Unique ID for a node.
+	int64 id = 1;
+	// Initial value of energy (in Joules). 
+	double initial_energy = 2;
+
+	// Location of a node in 2D space.
+	Location location = 4;
+	// Energy consumption of node operations.
+	EnergyCost energy_cost = 5;
+	// Time delays introduced by node operations
+	TimeDelay time_delay = 6;
+}
+
+// Location defines a X, Y coordinates of a node.
+message Location {
+	double X = 1;
+	double Y = 2;
+}
+
+// EnergyCost defines energy consumption for common node operations.
+message EnergyCost {
+	// Energy required to transmit one byte (in nanojoules).
+	int64 transmit = 1;
+	// Energy required to receive one byte (in nanojoules).
+	int64 receive = 2;
+	// Energy required to listen the channel for a second (in nanojoules).
+	int64 listen = 3;
+	// Energy required to process sensor data (in nanojoules).
+	int64 sensor_data_process = 4;
+	// Energy required to wake up MCU (in nanojoules).
+	int64 wake_up_mcu = 5;
+}
+
+// TimeDelay defines time delays for common node operations.
+message TimeDelay {
+	// Time required to process sensor data (in nanoseconds).
+	int64 sensor_data_process = 1;
+	// Time required to wake up MCU (in nanoseconds).
+	int64 wake_up_mcu = 2;
+}
+\end{lstlisting}
+
+\subsubsection{Konfiguracja symulatora i sieci}
+
+Konfiguracja symulatora i sieci składa się z pięciu zmiennych w komunikacie Config. Każda z tych wartości może być modyfikowana bez potrzeby
+ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych parametrów konfiguracyjnych:
+
+\begin{itemize}
+ \item protokoł (protocol) - zmienna ta zdefiniowana za pomocą komunikatu typu enum E\_Protocol pozwala symulatorowi wybrać odpowiedni 
+       protokół sterujący symulacją. Dokładny opis działania protokołów zostanie przedstawiony w dalszej części pracy.
+ \item wartości maksymalnej rund pomiarowych (max\_rounds) - zmienna ta pozwala określić wartość rund pomiarowych aktywnych węzłów w pojedynczej symulacji, 
+       po której całkowity przebieg symulacji zostanie zatrzymany.
+       Wyznaczenie tej wartości umożliwia użytkownikowi określenie dowolnej granicy, bez potrzeby oczekiwania na zakończenie symulacji (wykorzystanie 
+       całkowitej energii dostępnej przez węzły pomiarowe).
+ \item proporcji węzłów typu kluster do wszystkich węzłów (p\_cluster\_heads) - zmienna ta pozwala określić stosunek ilości węzłów pomiarowych 
+       odpowiedzialnych za pośredniczenie w przesyłaniu danych pomiarowych (klastrów) do ilości wszystkich węzłów w sieci. Parametr ten wykorzystywany jest
+       zależnie od protokołu.
+ \item długość wiadomości (msg\_length) - zmienna ta określa całkowity rozmiar wiadomości generowanych przez pojedynczy węzeł pomiary.
+       Długośc wyrażona jest w bajtach i jest sumą dwóch elementów, danych pomiarowych oraz dodatkowych danych generowanych w procesie enkapsulacji
+       (np. adresowanie, preambuły, itd.)
+ \item konfiguracja węzłów (nodes) - zmienna ta zdefiniowana za pomocą listy komunikatów typu Nodes. Symulacja musi składać się przynajmniej z dwóch węzłów.
+       Kolejność listy ma znaczenie, gdyż pierwszy węzeł pełni rolę głównego odbiornika danych (sink).
+       Dokładniejszy opis parametrów poszeczególnych węzłów przedstawiony został w kolejnym porozdziale `Konfiguracja węzła`. 
+\end{itemize}
+
+\subsubsection{Konfiguracja węzła}
+
+TODO
+
+\begin{itemize}
+ \item identyfikatora (id) zdefiniowanego jako 64 bahtowy ineteger.
+\end{itemize}
+
+
+
+
+
+
+\subsection{Moduł główny (Core)}
+
+TODO
+
+\subsubsection{Węzeł (Node)}
+
+TODO
+
+\subsubsection{Sieć (Network)}
+
+TODO
+
+\subsubsection{Protokół (Protocol)}
+
+TODO
+
+\subsection{Moduł symulatora (Simulator)}
+
+TODO
+
+\section{Obsługa systemu}
+
+\subsection{Generowanie scenariuszy}
+
+TODO
+
+\subsection{Uruchamianie scenariuszy}
+
+TODO
+
+\subsection{Generowanie wykresów}
+
+TODO
+
+\subsection{Dodawanie nowych protokołów}
+
+TODO
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}

@@ -9,6 +9,23 @@
 \contentsline {subsection}{\numberline {2.1.2}Por\IeC {\'o}wnanie Go z C++}{4}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Serializacja danych Protocol Buffers}{4}{section.2.2}
 \contentsline {section}{\numberline {2.3}System kontroli wersji git}{5}{section.2.3}
-\contentsline {section}{\numberline {2.4}Docker}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}Latex}{6}{section.2.5}
-\contentsline {chapter}{Bibliografia}{7}{chapter*.4}
+\contentsline {section}{\numberline {2.4}GNUPlot}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Docker}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Latex}{6}{section.2.6}
+\contentsline {chapter}{\numberline {3}Architektura systemu}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Opis}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Komponenty systemu}{7}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Plik konfiguracyjny}{7}{subsection.3.2.1}
+\contentsline {subsubsection}{Konfiguracja symulatora i sieci}{9}{section*.4}
+\contentsline {subsubsection}{Konfiguracja w\IeC {\k e}z\IeC {\l }a}{10}{section*.5}
+\contentsline {subsection}{\numberline {3.2.2}Modu\IeC {\l } g\IeC {\l }\IeC {\'o}wny (Core)}{10}{subsection.3.2.2}
+\contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{10}{section*.6}
+\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{10}{section*.7}
+\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{10}{section*.8}
+\contentsline {subsection}{\numberline {3.2.3}Modu\IeC {\l } symulatora (Simulator)}{10}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Obs\IeC {\l }uga systemu}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Generowanie scenariuszy}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Uruchamianie scenariuszy}{11}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Generowanie wykres\IeC {\'o}w}{11}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{11}{subsection.3.3.4}
+\contentsline {chapter}{Bibliografia}{12}{chapter*.9}
