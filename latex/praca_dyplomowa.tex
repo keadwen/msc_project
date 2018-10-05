@@ -300,11 +300,11 @@ message Node {
 	double initial_energy = 2;
 
 	// Location of a node in 2D space.
-	Location location = 4;
+	Location location = 3;
 	// Energy consumption of node operations.
-	EnergyCost energy_cost = 5;
+	EnergyCost energy_cost = 4;
 	// Time delays introduced by node operations
-	TimeDelay time_delay = 6;
+	TimeDelay time_delay = 5;
 }
 
 // Location defines a X, Y coordinates of a node.
@@ -315,16 +315,16 @@ message Location {
 
 // EnergyCost defines energy consumption for common node operations.
 message EnergyCost {
-	// Energy required to transmit one byte (in nanojoules).
-	int64 transmit = 1;
-	// Energy required to receive one byte (in nanojoules).
-	int64 receive = 2;
-	// Energy required to listen the channel for a second (in nanojoules).
-	int64 listen = 3;
-	// Energy required to process sensor data (in nanojoules).
-	int64 sensor_data_process = 4;
-	// Energy required to wake up MCU (in nanojoules).
-	int64 wake_up_mcu = 5;
+	// Energy required to transmit one byte (in Joules).
+	double transmit = 1;
+	// Energy required to receive one byte (in Joules).
+	double receive = 2;
+	// Energy required to listen the channel for a second (in Joules).
+	double listen = 3;
+	// Energy required to process sensor data (in Joules).
+	double sensor_data_process = 4;
+	// Energy required to wake up MCU (in Joules).
+	double wake_up_mcu = 5;
 }
 
 // TimeDelay defines time delays for common node operations.
@@ -354,23 +354,30 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
  \item długość wiadomości (msg\_length) - zmienna ta określa całkowity rozmiar wiadomości generowanych przez pojedynczy węzeł pomiary.
        Długośc wyrażona jest w bajtach i jest sumą dwóch elementów, danych pomiarowych oraz dodatkowych danych generowanych w procesie enkapsulacji
        (np. adresowanie, preambuły, itd.)
- \item konfiguracja węzłów (nodes) - zmienna ta zdefiniowana za pomocą listy komunikatów typu Nodes. Symulacja musi składać się przynajmniej z dwóch węzłów.
+ \item konfiguracja węzłów (nodes) - zmienna ta zdefiniowana za pomocą listy komunikatów typu Node. Symulacja musi składać się przynajmniej z dwóch węzłów.
        Kolejność listy ma znaczenie, gdyż pierwszy węzeł pełni rolę głównego odbiornika danych (sink).
        Dokładniejszy opis parametrów poszeczególnych węzłów przedstawiony został w kolejnym porozdziale `Konfiguracja węzła`. 
 \end{itemize}
 
 \subsubsection{Konfiguracja węzła}
 
-TODO
+Konfiguracja węzła składa się z pięciu zmiennych w komunikacje Node. Każda z tych wartości może być modyfikowana bez potrzeby
+ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych parametrów konfiguracyjnych:
 
 \begin{itemize}
- \item identyfikatora (id) zdefiniowanego jako 64 bahtowy ineteger.
+ \item indeks (id) - zmienna ta określa unikatowy identyfikator węzła. Parametr ten umożliwia identyfikację węzła podczas symulacji.
+ \item energia początkowa (initial\_energy) - zmienna ta określa ilość energii (mierzonej w [J]), którą posiada węzeł w momencie rozpoczęcia symulacji.
+       W przypadku zdefiniowania zerowej energii początkowej, węzeł nie będzie brał udziału w komunikacji ze względu na brak zasobów energetycznych na
+       przeprowadzenia jakiejkolwiek operacji.
+ \item pozycja (location) - zmienna ta zdefiniowana za pomocą komunikatu typu Location pozwala symulatorowi na umieszenie węzła w dwuwymiarowej przestrzenii.
+       Pozycja węzła wykorzystywana jest do określania odległości między węzłami i aplikowania kosztów energetycznych operacji (np. transmisji danych).
+ \item koszt energetyczny (energy\_cost) - zmienna ta zdefiniowana za pomocą komunikatu typu EnergyCost pozwala na wprowadzenie dodatkowych kosztów energetycznych
+       operacji dla poszczególnych węzłów. Podstawowy model posiada ogórnie zdefiniowane koszty energetyczne (model przedstawiony w sekcji TODO).
+       W przypadku zdefiniowana zmiennej EnergyCost dla węzła, koszt operacji (np. transmisji, odbioru, pomiaru i przetwarzania danych) ulega zmianie.
+ \item opóźnienia czasowe (time\_delay) - zmienna ta zdefiniowana za pomocą komunikatu typu TimeDelay pozwala symulatorowi na wprowadzenie dodatkowych parametrów czasowych
+       dla operacji wykonywanych przez węzeł. Iloczyn zmiennej (np. czasu przetwarzania danych węzła [ns]) i kosztu energetycznego działania węzła [J/s] 
+       reprezentuje dodatkowe parametry symulacji, które umożliwiają tworzenie zaawansowanych i precyzyjnych scenariuszy.
 \end{itemize}
-
-
-
-
-
 
 \subsection{Moduł główny (Core)}
 
