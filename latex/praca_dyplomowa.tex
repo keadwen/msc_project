@@ -381,11 +381,49 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
 
 \subsection{Moduł główny (Core)}
 
-TODO
+Moduł główny posiada najważniejsze cechy i funkcjonalności umożliwiające modelowanie systemu symulatora WSN.
+Wszystkie zaimplementpwane struktury (structs) znajdują się w jednej bibliotece (package) o nazwie `core`.
 
 \subsubsection{Węzeł (Node)}
 
-TODO
+Poniżej przedstawiona została struktura węzła oraz definicje funkcji przynależące do struktury.
+
+\begin{lstlisting}
+type Node struct {
+  Conf    config.Node
+  Ready   bool
+  nextHop *Node   // As a default set to Base Station.
+  Energy  float64 // Energy level of a node.
+
+  transmitQueue int64
+  receiveQueue  int64
+  // Statistics and aggregation variables.
+  dataSent     int64
+  dataReceived int64
+}
+
+func (n *Node) Transmit(msg int64, dst *Node) error
+func (n *Node) Receive(msg int64, src *Node) error
+func (n *Node) Info() string
+
+func (n *Node) distance(dst *Node) float64
+func (n *Node) consume(e float64) error
+\end{lstlisting}
+
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych węzła:
+
+\begin{itemize}
+ \item konfiguracja (Conf) - zmienna publiczna przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w `Konfiguracja węzła`).
+ \item gotowość (Ready) - zmienna publiczna przechowuje stan gotowości węzła. Wartość `true` oznacza, że węzeł jest gotowy do nadawania i odbierania informacji.
+ \item następny skok (nextHop) - zmienna prywatna przechowuje adres do zmiennej węzła, będącego odbiorcą informacji nadawanych przez węzeł. Wartością domyślna w momencie
+       rozpoczęcia symulacji jest adres głównego odbiornika danych (sink).
+ \item energia (Energy) - zmienna publiczna przechowuje aktualny stan energetyczny węzła. W przypadku wyczerpania energii, zmienna Ready zostaje ustawiona na `false`.
+ \item kolejka nadawania (transmitQueue) - zmienna prywatna przechowuje informację o ilości bajtów gotowych do przekazania do następnego węzła na końcu rundy.
+ \item kolejka odbioru (receiveQueue) - zmienna prywatna przechowuje informację o ilości bajtów odebranych przez węzeł na początku rundy.
+ \item dane nadane (dataSent) - zmienna prywatna przechowuje sumę bajtów nadanych przez węzeł.
+ \item dane odebrane (dataReceived) - zmienna prywatna przechowuje sumę bajtów odebranych przez węzeł.
+\end{itemize}
+
 
 \subsubsection{Sieć (Network)}
 
