@@ -386,6 +386,9 @@ Wszystkie zaimplementpwane struktury (structs) znajdują się w jednej bibliotec
 
 \subsubsection{Węzeł (Node)}
 
+Węzeł (Node) reprezentuje model węzła, będącego elementem podstawowym w sieci. Struktura ta przechowuje dane konfiguracyjne węzła,
+poziom energii czy dane historyczne, pozwalające na monitorowanie pracy oraz tworzenie grafów.
+
 Poniżej przedstawiona została struktura węzła oraz definicje funkcji przynależące do struktury.
 
 \begin{lstlisting}
@@ -410,7 +413,7 @@ func (n *Node) distance(dst *Node) float64
 func (n *Node) consume(e float64) error
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych węzła:
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury węzła (Node):
 
 \begin{itemize}
  \item konfiguracja (Conf) - zmienna publiczna przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w `Konfiguracja węzła`).
@@ -424,10 +427,74 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych wę
  \item dane odebrane (dataReceived) - zmienna prywatna przechowuje sumę bajtów odebranych przez węzeł.
 \end{itemize}
 
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
+
+\begin{itemize}
+ \item Transmit - funkcja pozwala na transmisję danych do węzła.
+ \item Receive - funkcja pozwala na odbieranie danych przez węzeł.
+ \item Info - funkcja generuje ciąg znaków w podstawowymi informacjami na temat węzła.
+ \item distance - funkcja wyznacza wartość odległości pomiędzy dwoma węzłami.
+ \item consume - funkcja obciąża energetycznie węzeł.
+\end{itemize}
 
 \subsubsection{Sieć (Network)}
 
-TODO
+Sieć (Network) reprezentuje model środowiska w którym odbywa się symulacja. Struktura ta przechowuje kontroluje przepływ informacji pomiędzy węzłami,
+zbiera i eksportuje informacje z poszczególnych rund.
+
+Poniżej przedstawiona została struktura sieci oraz definicje funkcji przynależące do struktury.
+
+\begin{lstlisting}
+type Network struct {
+  Protocol    Protocol
+  BaseStation *Node
+  Nodes       sync.Map
+
+  Round     int64
+  MaxRounds int64
+  MsgLength int64
+
+  GNUPlotNodes       []string
+  GNUPlotTotalEnergy []string
+
+  PlotTotalEnergy   *plot.Plot // An amount of total energy in the network per Round.
+  PlotNodes         *plot.Plot // A number of alive nodes in the network per Round.
+  NodesAlivePoints  plotter.XYs
+  NodesEnergyPoints map[int64]plotter.XYs
+}
+
+func (net *Network) AddNode(n *Node) error
+func (net *Network) Simulate() error
+func (net *Network) CheckNodes() int
+func (net *Network) PopulateEnergyPoints()
+func (net *Network) PopulateNodesAlivePoints()
+\end{lstlisting}
+
+Poniższa lista pzedstawia oraz opisuje znaczenie poszeczególnych zmiennych struktury sieci (Network):
+
+\begin{itemize}
+ \item protokół (Protocol) - zmienna publiczna przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
+ \item stacja bazowa (BaseStation) - zmienna publiczna przechowuje obiekt węzła głównego (sink).
+ \item węzły (Nodes) - zmienna publiczna przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (hashmap), który 
+       umożliwia operacje zapisu i odczytu w procesach równoległych. Kluczem dziennika jest unikatowy identyfikator węzła.
+ \item runda (Round) - zmienna publiczna przechowuje numer aktualnej rundy symulacji.
+ \item maksymalna ilość rund (MaxRounds) - zmienna publiczna przechowuje maksymalną ilość rund symulacji. W przypadku osiągnęcia wartości Round równej MaxRounds,
+       symulacja zostanie przerwana.
+ \item długość wiadomości (MsgLength) - zmienna publiczna przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana jest podczas rundy
+       przez każdy z węzłów. W skład tej wartości wchodzią dane pomiarowe i dodatkowy nakład informacji powstały w wyniku enkapsulacji.
+ \item GNUPlotNodes, GNUPlotTotalEnergy - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów przy użyciu narzędzia GNUPlot.
+ \item PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafiów przy użyciu biblioteki plotter.
+\end{itemize}
+
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
+
+\begin{itemize}
+ \item AddNode - funkcja pozwala na dodanie węzła do sieci.
+ \item Simulate - funkcja umożliwia rozpoczęcie symulacji.
+ \item CheckNodes - funkcja sprawdza ilość sprawnych węzłów w sieci.
+ \item PopulateEnergyPoints - funkcja sprawdza oraz przechowuje stany energetyczne węzłów.
+ \item PopulateNodesAlivePoints - funkcja sprawdza oraz przechowuje ilość sprawnych węzłów w sieci.
+\end{itemize}
 
 \subsubsection{Protokół (Protocol)}
 

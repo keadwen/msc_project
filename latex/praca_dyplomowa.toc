@@ -20,12 +20,12 @@
 \contentsline {subsubsection}{Konfiguracja w\IeC {\k e}z\IeC {\l }a}{10}{section*.5}
 \contentsline {subsection}{\numberline {3.2.2}Modu\IeC {\l } g\IeC {\l }\IeC {\'o}wny (Core)}{11}{subsection.3.2.2}
 \contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{11}{section*.6}
-\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{11}{section*.7}
-\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{11}{section*.8}
-\contentsline {subsection}{\numberline {3.2.3}Modu\IeC {\l } symulatora (Simulator)}{11}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Obs\IeC {\l }uga systemu}{11}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Generowanie scenariuszy}{11}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Uruchamianie scenariuszy}{11}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Generowanie wykres\IeC {\'o}w}{11}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{12}{subsection.3.3.4}
-\contentsline {chapter}{Bibliografia}{13}{chapter*.9}
+\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{13}{section*.7}
+\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{14}{section*.8}
+\contentsline {subsection}{\numberline {3.2.3}Modu\IeC {\l } symulatora (Simulator)}{14}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Obs\IeC {\l }uga systemu}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Generowanie scenariuszy}{15}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Uruchamianie scenariuszy}{15}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Generowanie wykres\IeC {\'o}w}{15}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{15}{subsection.3.3.4}
+\contentsline {chapter}{Bibliografia}{16}{chapter*.9}
