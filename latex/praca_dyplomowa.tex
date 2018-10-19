@@ -272,67 +272,67 @@ syntax = "proto3";
 package config;
 
 enum E_Protocol {
-	UNSET = 0;
-	DIRECT = 1;
-	LEACH = 2;
-	APTEEN = 3;
-	PEGASIS = 4;
+  UNSET = 0;
+  DIRECT = 1;
+  LEACH = 2;
+  APTEEN = 3;
+  PEGASIS = 4;
 }
 
 message Config {
-	// Simulation protocol.
-	E_Protocol protocol = 1;
-	// Number of maximum rounds in simulation. 
-	int64 max_rounds = 2;
-	// Percentage of cluster heads among all nodes [0, 1].
-	double p_cluster_heads = 3;
-	// Size of data sent by individual node (in Bytes).
-	int64 msg_length = 4;
-	// Nodes points to configuration for each node.
-	repeated Node nodes = 5;
+  // Simulation protocol.
+  E_Protocol protocol = 1;
+  // Number of maximum rounds in simulation. 
+  int64 max_rounds = 2;
+  // Percentage of cluster heads among all nodes [0, 1].
+  double p_cluster_heads = 3;
+  // Size of data sent by individual node (in Bytes).
+  int64 msg_length = 4;
+  // Nodes points to configuration for each node.
+  repeated Node nodes = 5;
 }
 
 // Node defines a configuration for a single node.
 message Node {
-	// Unique ID for a node.
-	int64 id = 1;
-	// Initial value of energy (in Joules). 
-	double initial_energy = 2;
+  // Unique ID for a node.
+  int64 id = 1;
+  // Initial value of energy (in Joules). 
+  double initial_energy = 2;
 
-	// Location of a node in 2D space.
-	Location location = 3;
-	// Energy consumption of node operations.
-	EnergyCost energy_cost = 4;
-	// Time delays introduced by node operations
-	TimeDelay time_delay = 5;
+  // Location of a node in 2D space.
+  Location location = 3;
+  // Energy consumption of node operations.
+  EnergyCost energy_cost = 4;
+  // Time delays introduced by node operations
+  TimeDelay time_delay = 5;
 }
 
 // Location defines a X, Y coordinates of a node.
 message Location {
-	double X = 1;
-	double Y = 2;
+  double X = 1;
+  double Y = 2;
 }
 
 // EnergyCost defines energy consumption for common node operations.
 message EnergyCost {
-	// Energy required to transmit one byte (in Joules).
-	double transmit = 1;
-	// Energy required to receive one byte (in Joules).
-	double receive = 2;
-	// Energy required to listen the channel for a second (in Joules).
-	double listen = 3;
-	// Energy required to process sensor data (in Joules).
-	double sensor_data_process = 4;
-	// Energy required to wake up MCU (in Joules).
-	double wake_up_mcu = 5;
+  // Energy required to transmit one byte (in Joules).
+  double transmit = 1;
+  // Energy required to receive one byte (in Joules).
+  double receive = 2;
+  // Energy required to listen the channel for a second (in Joules).
+  double listen = 3;
+  // Energy required to process sensor data (in Joules).
+  double sensor_data_process = 4;
+  // Energy required to wake up MCU (in Joules).
+  double wake_up_mcu = 5;
 }
 
 // TimeDelay defines time delays for common node operations.
 message TimeDelay {
-	// Time required to process sensor data (in nanoseconds).
-	int64 sensor_data_process = 1;
-	// Time required to wake up MCU (in nanoseconds).
-	int64 wake_up_mcu = 2;
+  // Time required to process sensor data (in nanoseconds).
+  int64 sensor_data_process = 1;
+  // Time required to wake up MCU (in nanoseconds).
+  int64 wake_up_mcu = 2;
 }
 \end{lstlisting}
 
@@ -382,7 +382,7 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
 \subsection{Moduł główny (Core)}
 
 Moduł główny posiada najważniejsze cechy i funkcjonalności umożliwiające modelowanie systemu symulatora WSN.
-Wszystkie zaimplementpwane struktury (structs) znajdują się w jednej bibliotece (package) o nazwie `core`.
+Wszystkie zaimplementowane struktury (structs) znajdują się w jednej bibliotece (package) o nazwie `core`.
 
 \subsubsection{Węzeł (Node)}
 
@@ -475,15 +475,16 @@ Poniższa lista pzedstawia oraz opisuje znaczenie poszeczególnych zmiennych str
 \begin{itemize}
  \item protokół (Protocol) - zmienna publiczna przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
  \item stacja bazowa (BaseStation) - zmienna publiczna przechowuje obiekt węzła głównego (sink).
- \item węzły (Nodes) - zmienna publiczna przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (hashmap), który 
-       umożliwia operacje zapisu i odczytu w procesach równoległych. Kluczem dziennika jest unikatowy identyfikator węzła.
+ \item węzły (Nodes) - zmienna publiczna przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (hashmap), 
+       który umożliwia operacje zapisu i odczytu w procesach równoległych. Kluczem dziennika jest unikatowy identyfikator węzła.
  \item runda (Round) - zmienna publiczna przechowuje numer aktualnej rundy symulacji.
- \item maksymalna ilość rund (MaxRounds) - zmienna publiczna przechowuje maksymalną ilość rund symulacji. W przypadku osiągnęcia wartości Round równej MaxRounds,
-       symulacja zostanie przerwana.
- \item długość wiadomości (MsgLength) - zmienna publiczna przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana jest podczas rundy
-       przez każdy z węzłów. W skład tej wartości wchodzią dane pomiarowe i dodatkowy nakład informacji powstały w wyniku enkapsulacji.
+ \item maksymalna ilość rund (MaxRounds) - zmienna publiczna przechowuje maksymalną ilość rund symulacji. 
+       W przypadku osiągnęcia wartości Round równej MaxRounds, symulacja zostanie przerwana.
+ \item długość wiadomości (MsgLength) - zmienna publiczna przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana
+       jest podczas rundy przez każdy z węzłów. W skład tej wartości wchodzią dane pomiarowe i dodatkowy nakład informacji powstały w wyniku enkapsulacji.
  \item GNUPlotNodes, GNUPlotTotalEnergy - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów przy użyciu narzędzia GNUPlot.
- \item PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafiów przy użyciu biblioteki plotter.
+ \item PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafiów
+       przy użyciu biblioteki plotter.
 \end{itemize}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
@@ -498,21 +499,107 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
 
 \subsubsection{Protokół (Protocol)}
 
-TODO
+Protokół (Protocol) reprezentuje model protokołu komunikacji między wezłami. 
+
+Poniżej przedstawiona został interfejs protokołu oraz definicje funkcji przynależące do interfejsu.
+
+\begin{lstlisting}
+type Protocol interface {
+  Setup(net *Network) ([]int64, error)
+  SetNodes(int)
+  SetClusters(int)
+}
+\end{lstlisting}
+
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
+
+\begin{itemize}
+ \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
+ \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
+ \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
+\end{itemize}
+
+Poniższa lista przedstawia zaimplementowane protokoły:
+
+\begin{itemize}
+ \item Komunikacja bezpośrednia	(Direct Communication) - wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (sink).
+ \item APTEEN (APTEEN) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji APTEEN.
+ \item PEGASIS (PEGASIS) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji PEGASIS.
+\end{itemize}
 
 \subsection{Moduł symulatora (Simulator)}
 
-TODO
+Symulator (Simulator) re
+
+\begin{lstlisting}
+type Simulator struct {
+  namespace map[string]bool
+  config    map[string]*config.Config
+  network   map[string]*core.Network
+
+  plotTotalEnergy *plot.Plot // An amount of total energy in the network per round.
+  plotNodes       *plot.Plot // A number of alive nodes in the network per round.
+}
+
+func Create() (*Simulator, error)
+
+func (s *Simulator) AddScenario(name string, conf *config.Config) error
+func (s *Simulator) Run() error
+func (s *Simulator) ExportPlots(filepath string) error
+func (s *Simulator) ExportGNUPlots(filepath string) error
+
+func createAndPopulateFile(filepath string, data []string) error
+func (s *Simulator) create(name string, conf *config.Config) error
+func createPlot(title, x, y string) (*plot.Plot, error)
+func (s *Simulator) plotter() error
+\end{lstlisting}
+
+Poniższa lista pzedstawia oraz opisuje znaczenie poszeczególnych zmiennych struktury symulatora (Simulator):
+
+\begin{itemize}
+ \item przestrzeń nazw (namespace) - zmienna prywatna przechowuje nazwy symulacji, które w jednoznaczy sposób identyfikują sięć i konfigurację.
+ \item przestrzeń konfiguracji (config) - zmienna prywatna przechowuje obiekt konfiguracji (Config) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
+ \item przestrzeń sieci (network) - zmienna prywatna przechowuje obiekt sieci (Network) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
+\end{itemize}
+
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symulatora (Simulator):
+
+\begin{itemize}
+ \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
+ \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
+ \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
+\end{itemize}
 
 \section{Obsługa systemu}
+ 
+\subsection{Konfiguracja środowiska i kompilacja}
 
-\subsection{Generowanie scenariuszy}
+Poprawna konfiguracja środowiska wymaga instalacji niezbędnych bibliotek i pakietów.
+
+\begin{enumerate}
+ \item Instalacja kompilatora i bilbiotek Golang w wersji 1.10.1, lub wyższej.
+\end{enumerate}
+
+\subsection{Generowanie konfiguracji}
+
+Wcześniej opisany plik konfiguracyjny jest elementem niezbędnym do uruchomienia symulacji.
 
 TODO
+
 
 \subsection{Uruchamianie scenariuszy}
 
-TODO
+Przykład uruchamiania projektu z dwoma plikami konfiguracyjnymi:
+\begin{lstlisting}
+ $ /go/src/github.com/keadwen/msc_project/msc_project \
+     --config_file=example1.proto,example2.proto
+\end{lstlisting}
+
+Przykład uruchamiania projektu bez pliku konfiguracyjnego:
+\begin{lstlisting}
+ $ /go/src/github.com/keadwen/msc_project/msc_project
+\end{lstlisting}
+
 
 \subsection{Generowanie wykresów}
 
@@ -520,14 +607,22 @@ TODO
 
 \subsection{Dodawanie nowych protokołów}
 
-TODO
+Architektura systemu umożliwia tworzenie nowych protokołów wymiany informacji pomiędzy węzłami.
+Poprawna implementacja wymaga modifikacji oprogramowania w kilku miejscach:
+
+\begin{enumerate}
+ \item Rozszerzenie definicji enum E\_Protocol w proto/config.proto.
+ \item Rozszerzenie mapProtocol w simulator/simulator.go
+ \item Stworzenie nowego pliku .go w folderze core. Struktura reprezentująca nowy protokołu musi posiadać zestaw funkcji zgodny z interfejsem Protocol.
+\end{enumerate}
+
+Po wykonaniu wszystkich z powyższych kroków, protokół może zostać wykorzystany w symulacji.
+Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały rekompilacji. W przeciwnym wypadku zmianny nie będą widoczne.
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibitem{Stevens}{W. R. Stevens, G. R. Wright, ,,Biblia TCP/IP tom 1'', RM, 
 1998.}
-
-
 \end{thebibliography}
 
 \zakonczenie  % wklejenie recenzji i opinii
