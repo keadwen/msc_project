@@ -174,7 +174,7 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
  \item Go jest językiem samodokumentującym. Nie wymaga tworzenia plików typu header.
  \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (inheretance) została zastąpiona osadzaniem (embedding).
  \item Go posiada możliwość użycia (zaimportowania) dowolnej bilbioteki C/C++.
- \item C++ posiada osiągnać szybszą egzekujcę oprogramowaia.
+ \item C++ posiada osiągnać szybszą egzekujcę oprogramowania.
  \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (generics).
  \item C++ nie posiada systemu zarządzania pamięcia (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikrokontrolerach).
 \end{itemize}
@@ -182,7 +182,7 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
 \section{Serializacja danych Protocol Buffers}
 
 Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google, Inc.
-Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowaia aplikacji czy platformy na którym uruchamiana jest aplikacja.
+Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowania aplikacji czy platformy na którym uruchamiana jest aplikacja.
 Technologia ta definiuje strukturę danych (proto schema) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
 oraz złożonych komunikatów (message).
 Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
@@ -578,14 +578,109 @@ Poprawna konfiguracja środowiska wymaga instalacji niezbędnych bibliotek i pak
 
 \begin{enumerate}
  \item Instalacja kompilatora i bilbiotek Golang w wersji 1.10.1, lub wyższej.
+ \item Instalacja kompilatora Protocol Buffer w wersji 3.6, lub wyżej.
 \end{enumerate}
+
+Weryfikacja konfiguracji Golang:
+
+\begin{lstlisting}
+ ! Poprawna konfiguracja Golang.
+ $ which go
+ /usr/local/go/bin/go
+ $ go version
+ go version go1.10.1 linux/amd64
+\end{lstlisting}
+
+Weryfikacja konfiguracji protoc:
+
+\begin{lstlisting}
+ ! Poprawna konfiguracja protoc.
+ $ which protoc
+ /usr/local/bin/protoc
+ $ protoc -version
+ libprotoc 3.6.0
+\end{lstlisting}
+
+Proces kompilacji (z poziomu folderu z kodem projektu):
+
+\begin{lstlisting}
+ $ pwd
+ /home/<username>/go/src/github.com/keadwen/msc_project
+ $ go build
+ ! Brak błędów powinien utworzyć plik o nazwie msc_project.
+\end{lstlisting}
 
 \subsection{Generowanie konfiguracji}
 
 Wcześniej opisany plik konfiguracyjny jest elementem niezbędnym do uruchomienia symulacji.
 
-TODO
+Przykładowy plik konfiguracjy (example.pbtxt) znajdują się w folderze proto:
 
+\begin{lstlisting}
+protocol: 1
+nodes: <
+  id: 0
+  initial_energy: 1.0e4
+  location: <
+    X: 0
+    Y: 0
+  >
+  energy_cost <
+  >
+  time_delay: <
+  >
+>
+nodes: <
+  id: 1
+  initial_energy: 10.0e-6
+  location: <
+    X: 300.0
+    Y: 0
+  >
+  energy_cost <
+  >
+  time_delay: <
+  >
+>
+nodes <
+  id: 2
+  initial_energy: 20.0e-6
+  location: <
+    X: 500.0
+    Y: 0
+  >
+  energy_cost: <
+  >
+  time_delay: <
+  >
+>
+\end{lstlisting}
+
+Oprogramowanie umożliwia również generowanie scenariuszy w dynamiczny sposób.
+W tym przypadku podczas uruchamiania oprogramowania (proces opisany w sekcji `Uruchamianie scenariuszy`)
+użytkownik nie podaje pliku konfiguracyjnego. Oprogramowanie stworzy identyczny zestaw konfiguracyjny
+dla każdego zaimplenetowanego protokołu. Parametry wygenerowanej konfiguracji dostępne poniżej:
+
+\begin{itemize}
+ \item Protokół: Bezpośrednia komunikacja, APTEEN, PEGASIS
+ \item Maksymalna ilość rund: 25000
+ \item Proporcja węzłów typu kluster do wszystkich węzłów: 0.15
+ \item Liczba węzłów głównych (sink): 1
+ \item Enegia węzła głównego: 100 [J]
+ \item Lokalizacja węzła głównego na osi X: 100
+ \item Lokalizacja węzła głównego na osi Y: 300
+ \item Liczba węzłów: 200
+ \item Enegia węzłów: 1 [J]
+ \item Lokalizacja węzłów na osi X: [0, 200]
+ \item Lokalizacja węzłów na osi Y: [0, 200]
+\end{itemize}
+
+Poniższa ilustracja przedstawia rozstawienie węzłów w sieci wygenerowanych dynamicznie:
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=10cm]{images/przykladowa_sieci_wygenerowana.png} 
+\end{figure}
 
 \subsection{Uruchamianie scenariuszy}
 

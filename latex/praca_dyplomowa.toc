@@ -26,7 +26,7 @@
 \contentsline {section}{\numberline {3.3}Obs\IeC {\l }uga systemu}{17}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{17}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Generowanie konfiguracji}{17}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Uruchamianie scenariuszy}{17}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Generowanie wykres\IeC {\'o}w}{17}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{17}{subsection.3.3.5}
-\contentsline {chapter}{Bibliografia}{19}{chapter*.9}
+\contentsline {subsection}{\numberline {3.3.3}Uruchamianie scenariuszy}{20}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Generowanie wykres\IeC {\'o}w}{20}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{20}{subsection.3.3.5}
+\contentsline {chapter}{Bibliografia}{21}{chapter*.9}
