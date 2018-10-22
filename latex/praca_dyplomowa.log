@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.18)  21 OCT 2018 11:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.18)  22 OCT 2018 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -751,7 +751,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 117.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<PWHead.png, id=108, 2015.53pt x 320.19624pt>
+<PWHead.png, id=148, 2015.53pt x 320.19624pt>
 File: PWHead.png Graphic file (type png)
 <use PWHead.png>
 Package pdftex.def Info: PWHead.png  used on input line 117. on input line 117.
@@ -763,7 +763,7 @@ Overfull \hbox (31.10086pt too wide) in paragraph at lines 117--117
 [] 
  []
 
-<mgrhead.png, id=109, 1392.20125pt x 303.1325pt>
+<mgrhead.png, id=149, 1392.20125pt x 303.1325pt>
 File: mgrhead.png Graphic file (type png)
 <use mgrhead.png>
 Package pdftex.def Info: mgrhead.png  used on input line 117. on input line 117
@@ -826,19 +826,20 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 ] [4
 
 ]
-(./praca_dyplomowa.toc)
+(./praca_dyplomowa.toc [1
+
+
+])
 \tf@toc=\write4
 \openout4 = `praca_dyplomowa.toc'.
 
- [1
+ [2] (./podziekowania.tex) [3] [4
 
-
-] (./podziekowania.tex) [2]
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 117.
 
 Rozdzia\l  1.
 [1
-
 
 ] [2]
 Rozdzia\l  2.
@@ -854,31 +855,31 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 195.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [4]
-Underfull \vbox (badness 1057) has occurred while \output is active []
-
- [5]
-[6]
+) [4] [5] [6]
 Rozdzia\l  3.
 [7
+
+] [8]
+Rozdzia\l  4.
+[9
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-[9] [10] [11] [12] [13]
-Overfull \hbox (1.41269pt too wide) in paragraph at lines 480--481
+ [10]
+[11] [12] [13] [14] [15]
+Overfull \hbox (1.41269pt too wide) in paragraph at lines 508--509
 []\T1/cmr/m/n/12 runda (Ro-und) - zmienna pu-bliczna prze-cho-wuje nu-mer ak-tu
 -al-nej rundy
  []
 
 
-Overfull \hbox (21.47015pt too wide) in paragraph at lines 497--498
+Overfull \hbox (21.47015pt too wide) in paragraph at lines 525--526
 []\T1/cmr/m/n/12 PopulateNodesAlivePoints - funk-cja spraw-dza oraz prze-cho-wu
 je ilo�� spraw-
  []
 
-[14] [15] [16]
+[16] [17] [18]
 
 ! Package inputenc Error: Unicode char �\lst@EC� (U+9F02)
 (inputenc)                not set up for use with LaTeX.
@@ -887,7 +888,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.610  ! Brak błędów 
+l.638  ! Brak błędów 
                         powinien utworzyć plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -901,7 +902,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.610  ! Brak błędów 
+l.638  ! Brak błędów 
                         powinien utworzyć plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -915,7 +916,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.610  ! Brak błędów 
+l.638  ! Brak błędów 
                         powinien utworzyć plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -929,41 +930,45 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.610  ! Brak błędów powinien utworzyć 
+l.638  ! Brak błędów powinien utworzyć 
                                            plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[17] [18]
-<images/przykladowa_sieci_wygenerowana.png, id=467, 369.38pt x 375.4025pt>
+[19] [20]
+<images/przykladowa_sieci_wygenerowana.png, id=533, 369.38pt x 375.4025pt>
 File: images/przykladowa_sieci_wygenerowana.png Graphic file (type png)
 <use images/przykladowa_sieci_wygenerowana.png>
 Package pdftex.def Info: images/przykladowa_sieci_wygenerowana.png  used on inp
-ut line 682. on input line 682.
+ut line 710. on input line 710.
 Package pdftex.def Info: Requested size: 284.52756pt x 289.16965pt on input lin
-e 682.
- [19 <./images/przykladowa_sieci_wygenerowana.png>] [20] [21
+e 710.
+ [21 <./images/przykladowa_sieci_wygenerowana.png>] [22] [23]
+Rozdzia\l  5.
+[24
 
-] [22
+] [25
 
-]
-(./opiniaopiekuna.tex) [23] (./recenzja.tex [24])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 725.
- [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 725.
- (./praca_dyplomowa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 725.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 725.
+] [26
+
+] (./opiniaopiekuna.tex) [27] (./recenzja.tex [28])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 788.
+ [29]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 788.
+
+(./praca_dyplomowa.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 788.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 788.
 Package rerunfilecheck Info: File `praca_dyplomowa.out' has not changed.
-(rerunfilecheck)             Checksum: 9FF8C99BB62AF3337F3C938E50DB8658;1751.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 725.
+(rerunfilecheck)             Checksum: 365EC52053FECC132D3668B08D463E84;2402.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 788.
  ) 
 Here is how much of TeX's memory you used:
- 9360 strings out of 494896
- 131508 string characters out of 6179975
- 273082 words of memory out of 5000000
- 12208 multiletter control sequences out of 15000+600000
+ 9393 strings out of 494896
+ 131914 string characters out of 6179975
+ 272082 words of memory out of 5000000
+ 12223 multiletter control sequences out of 15000+600000
  25730 words of font info for 49 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  28i,7n,40p,239b,1899s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -977,10 +982,10 @@ cbx1728.600pk> </home/jakubm/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec
 /ecbx1440.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on praca_dyplomowa.pdf (31 pages, 458533 bytes).
+Output written on praca_dyplomowa.pdf (37 pages, 470306 bytes).
 PDF statistics:
- 967 PDF objects out of 1000 (max. 8388607)
- 558 compressed objects within 6 object streams
- 286 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1068 PDF objects out of 1200 (max. 8388607)
+ 635 compressed objects within 7 object streams
+ 304 named destinations out of 1000 (max. 500000)
+ 304 words of extra memory for PDF output out of 10000 (max. 10000000)
 

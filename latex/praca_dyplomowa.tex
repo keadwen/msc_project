@@ -226,7 +226,8 @@ której zmiany mogą zostać następnie wprowadzone do gałęźi głównej.
 
 \section{GNUPlot}
 
-TODO
+GNUPlot to narzędzie do generowania wykresów funkcji w oparciu o dane wejściowe. Program dostępny jest niemal na każdym systemie operacyjnym.
+Przy pomocy GNUPlot generować można dwu- oraz trzywymiarowe wykresy, które zapisane mogą zostać w różnych formatach t.j. PNG, SVG czy JPEG.
 
 \section{Docker}
 
@@ -240,6 +241,33 @@ bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parame
 
 Latex to narzędzie do formatowania tekstu przy wykorzystaniu znaczników. Praca nad dokumentem przy wykorzystaniu Latex ułatwia redagowanie artykułu, ze względu na
 odeseparowanie treści od struktury tekstu.
+
+%-----------------
+% Teoria bezprzewodowych sieci sensorowych
+%-----------------
+\chapter{Teoria bezprzewodowych sieci sensorowych}
+
+\section{Opis}
+
+W tym rodziale przedstawiona zostanie najważniejsza część teoretyczna bezprzewodowych sieci sensorych, która jest niezbędna w celu zrozumienia problemu
+rozwiązywanego w pracy dyplomowej.
+
+\section{Wstęp do bezprzewodowych sieci sensorowych}
+Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również sieciami typu WSN.
+
+\section{Protokoły}
+
+\subsection{Komunikacja bezpośrednia}
+
+TODO
+
+\subsection{APTEEN}
+
+TODO
+
+\subsection{PEGASIS}
+
+TODO
 
 %-----------------
 % Architektura systemu
@@ -695,10 +723,32 @@ Przykład uruchamiania projektu bez pliku konfiguracyjnego:
  $ /go/src/github.com/keadwen/msc_project/msc_project
 \end{lstlisting}
 
-
 \subsection{Generowanie wykresów}
 
-TODO
+Generowanie wykresów odbywa się przy wykorzystaniu narzędzia GNUPlot. Proces tworzenia wykresów nie jest zautomatyzowany.
+Jest to dodatkowa czynność, która musi zostać wykonana manualnie po pomyślnie zakończonym procesie symulacji.
+W początkowym etapie tworzenia oprogramowania, zastosowane zostało rozwiązanie przy wykorzystaniu biblioteki plotter, która
+generowała dwa wykresy:
+
+\begin{itemize}
+ \item Wykres ilości aktywnych węzłów w każdej rundzie.
+ \item Wykres energii całkowitej posiadanej przez wszystkie węzły w każdej rundzie.
+\end{itemize}
+
+Rozwiązanie to pomimo zalet związanych z automatycznym tworzeniem wykresów, nie pozwalało na generowanie ich w jakości spełniającej
+wymagania pracy dyplomowej.
+
+W momencie poprawnego zakończenia symulacji, folder TODO powinien posiadać zestaw plików:
+
+\begin{lstlisting}
+ TODO ls folder
+\end{lstlisting}
+
+Pliki te należy następnie przekierować do GNUPlot w następujący sposób:
+
+\begin{lstlisting}
+ TODO gnuplot operations
+\end{lstlisting}
 
 \subsection{Dodawanie nowych protokołów}
 
@@ -713,6 +763,19 @@ Poprawna implementacja wymaga modifikacji oprogramowania w kilku miejscach:
 
 Po wykonaniu wszystkich z powyższych kroków, protokół może zostać wykorzystany w symulacji.
 Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały rekompilacji. W przeciwnym wypadku zmianny nie będą widoczne.
+
+%-----------------
+% Przedstawienie i opracowanie wyników
+%-----------------
+\chapter{Przedstawienie i opracowanie wyników}
+
+\section{Opis}
+
+W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy wykorzystaniu autorskiego oprogramowania.
+
+\section{TODO}
+
+TODO
 
 \begin{thebibliography}{99}
 \addcontentsline{toc}{chapter}{Bibliografia}
