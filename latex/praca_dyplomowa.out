@@ -14,23 +14,24 @@
 \BOOKMARK [0][-]{chapter.3}{Teoria bezprzewodowych sieci sensorowych}{}% 14
 \BOOKMARK [1][-]{section.3.1}{Opis}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.2}{Wstep do bezprzewodowych sieci sensorowych}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Protoko\233y}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.1}{Komunikacja bezposrednia}{section.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.2}{APTEEN}{section.3.3}% 19
-\BOOKMARK [2][-]{subsection.3.3.3}{PEGASIS}{section.3.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Architektura systemu}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Opis}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{Komponenty systemu}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.2.1}{Plik konfiguracyjny}{section.4.2}% 24
-\BOOKMARK [2][-]{subsection.4.2.2}{Modu\233 g\233\363wny \(Core\)}{section.4.2}% 25
-\BOOKMARK [2][-]{subsection.4.2.3}{Modu\233 symulatora \(Simulator\)}{section.4.2}% 26
-\BOOKMARK [1][-]{section.4.3}{Obs\233uga systemu}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.3.1}{Konfiguracja srodowiska i kompilacja}{section.4.3}% 28
-\BOOKMARK [2][-]{subsection.4.3.2}{Generowanie konfiguracji}{section.4.3}% 29
-\BOOKMARK [2][-]{subsection.4.3.3}{Uruchamianie scenariuszy}{section.4.3}% 30
-\BOOKMARK [2][-]{subsection.4.3.4}{Generowanie wykres\363w}{section.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.3.5}{Dodawanie nowych protoko\233\363w}{section.4.3}% 32
-\BOOKMARK [0][-]{chapter.5}{Przedstawienie i opracowanie wynik\363w}{}% 33
-\BOOKMARK [1][-]{section.5.1}{Opis}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.2}{TODO}{chapter.5}% 35
-\BOOKMARK [0][-]{chapter*.9}{Bibliografia}{}% 36
+\BOOKMARK [1][-]{section.3.3}{Model transmisji}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.4}{Protoko\233y}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.4.1}{Komunikacja bezposrednia}{section.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.4.2}{LEACH}{section.3.4}% 20
+\BOOKMARK [2][-]{subsection.3.4.3}{PEGASIS}{section.3.4}% 21
+\BOOKMARK [0][-]{chapter.4}{Architektura systemu}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Opis}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{Komponenty systemu}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.2.1}{Plik konfiguracyjny}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.2}{Modu\233 g\233\363wny \(Core\)}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.3}{Modu\233 symulatora \(Simulator\)}{section.4.2}% 27
+\BOOKMARK [1][-]{section.4.3}{Obs\233uga systemu}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.3.1}{Konfiguracja srodowiska i kompilacja}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.2}{Generowanie konfiguracji}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.3}{Uruchamianie scenariuszy}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.4}{Generowanie wykres\363w}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.5}{Dodawanie nowych protoko\233\363w}{section.4.3}% 33
+\BOOKMARK [0][-]{chapter.5}{Przedstawienie i opracowanie wynik\363w}{}% 34
+\BOOKMARK [1][-]{section.5.1}{Opis}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.2}{TODO}{chapter.5}% 36
+\BOOKMARK [0][-]{chapter*.9}{Bibliografia}{}% 37

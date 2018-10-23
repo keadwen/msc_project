@@ -173,7 +173,7 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem samodokumentującym. Nie wymaga tworzenia plików typu header.
  \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (inheretance) została zastąpiona osadzaniem (embedding).
- \item Go posiada możliwość użycia (zaimportowania) dowolnej bilbioteki C/C++.
+ \item Go posiada możliwość użycia (zaimportowania) dowolnej bilbioteki C, C++.
  \item C++ posiada osiągnać szybszą egzekujcę oprogramowania.
  \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (generics).
  \item C++ nie posiada systemu zarządzania pamięcia (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikrokontrolerach).
@@ -255,15 +255,43 @@ rozwiązywanego w pracy dyplomowej.
 \section{Wstęp do bezprzewodowych sieci sensorowych}
 Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również sieciami typu WSN.
 
+\section{Model transmisji}
+
+TODO
+ * Koszt transmisji
+ * Założenia dotyczące opóźnień i innych parametrów
+
 \section{Protokoły}
 
 \subsection{Komunikacja bezpośrednia}
 
-TODO
+Komunikacja bezpośrednia jest rozwiązaniem najprostrzym z perspektywy implementacji, jednakże nieefektywnym z poziomu energetycznego. 
+Węzły znajdujące się sieci nie są zaangażowane w podejmowanie decyzji dotyczących optymalizacji kosztów transmisji. 
+Adres węzła głównego (sink) może być zaprogramowany na poziomie pliku konfiguracyjnego.
+Dane wysyłane przez węzeł nadawane są bezpośrednio do węzła głównego.
+Model środowiska symulacyjnego definiuje koszt transmisji komunikacji. Wartość ta zależna jest od odległości między dwoma węzłami.
+Czas życia węzłów (posiadających identyczną ilość energii początkowej oraz wielkość przesyłanych informacji) wydłuża się, wraz z malejącym dystansem do węzła głównego.
 
-\subsection{APTEEN}
+Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się bezpośrednio z węzłem głównym:
+
+\begin{figure}
+ \centering
+ \includegraphics[width=10cm]{images/komunikacja_bezposrednia.png} 
+\end{figure}
+
+\subsection{LEACH}
 
 TODO
+ * Opis LEACH
+ * Przedstawienie algorytmu
+ * Korzyści oraz wyzwania związane z implementacją
+
+Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują protokół LEACH:
+
+\begin{figure}
+ \centering
+ \includegraphics[width=10cm]{images/komunikacja_leach.png} 
+\end{figure}
 
 \subsection{PEGASIS}
 
@@ -543,15 +571,15 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
 
 \begin{itemize}
  \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
- \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
- \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
+ \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
+ \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
 \end{itemize}
 
 Poniższa lista przedstawia zaimplementowane protokoły:
 
 \begin{itemize}
  \item Komunikacja bezpośrednia	(Direct Communication) - wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (sink).
- \item APTEEN (APTEEN) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji APTEEN.
+ \item LEACH (LEACH) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji LEACH.
  \item PEGASIS (PEGASIS) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji PEGASIS.
 \end{itemize}
 
@@ -594,8 +622,8 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symul
 
 \begin{itemize}
  \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
- \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
- \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. APTEEN, PEGASIS).
+ \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
+ \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
 \end{itemize}
 
 \section{Obsługa systemu}
@@ -690,7 +718,7 @@ użytkownik nie podaje pliku konfiguracyjnego. Oprogramowanie stworzy identyczny
 dla każdego zaimplenetowanego protokołu. Parametry wygenerowanej konfiguracji dostępne poniżej:
 
 \begin{itemize}
- \item Protokół: Bezpośrednia komunikacja, APTEEN, PEGASIS
+ \item Protokół: Bezpośrednia komunikacja, LEACH, PEGASIS
  \item Maksymalna ilość rund: 25000
  \item Proporcja węzłów typu kluster do wszystkich węzłów: 0.15
  \item Liczba węzłów głównych (sink): 1
