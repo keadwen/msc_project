@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.18)  23 OCT 2018 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.18)  23 OCT 2018 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -859,41 +859,38 @@ Rozdzia\l  3.
 File: images/komunikacja_bezposrednia.png Graphic file (type png)
 <use images/komunikacja_bezposrednia.png>
 Package pdftex.def Info: images/komunikacja_bezposrednia.png  used on input lin
-e 279. on input line 279.
+e 294. on input line 294.
 Package pdftex.def Info: Requested size: 284.52756pt x 289.16965pt on input lin
-e 279.
+e 294.
 <images/komunikacja_leach.png, id=282, 369.38pt x 375.4025pt>
 File: images/komunikacja_leach.png Graphic file (type png)
 <use images/komunikacja_leach.png>
-Package pdftex.def Info: images/komunikacja_leach.png  used on input line 293. 
-on input line 293.
+Package pdftex.def Info: images/komunikacja_leach.png  used on input line 308. 
+on input line 308.
 Package pdftex.def Info: Requested size: 284.52756pt x 289.16965pt on input lin
-e 293.
-
-Underfull \vbox (badness 3460) has occurred while \output is active []
-
- [8 <./images/komunikacja_bezposrednia.png>] [9 <./images/komunikacja_leach.png
->]
+e 308.
+ [8] [9 <./images/komunikacja_bezposrednia.png>] [10 <./images/komunikacja_leac
+h.png>]
 Rozdzia\l  4.
-[10
+[11
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12] [13] [14] [15] [16]
-Overfull \hbox (1.41269pt too wide) in paragraph at lines 536--537
+ [12]
+[13] [14] [15] [16] [17]
+Overfull \hbox (1.41269pt too wide) in paragraph at lines 551--552
 []\T1/cmr/m/n/12 runda (Ro-und) - zmienna pu-bliczna prze-cho-wuje nu-mer ak-tu
 -al-nej rundy
  []
 
 
-Overfull \hbox (21.47015pt too wide) in paragraph at lines 553--554
+Overfull \hbox (21.47015pt too wide) in paragraph at lines 568--569
 []\T1/cmr/m/n/12 PopulateNodesAlivePoints - funk-cja spraw-dza oraz prze-cho-wu
 je ilo�� spraw-
  []
 
-[17] [18] [19]
+[18] [19] [20]
 
 ! Package inputenc Error: Unicode char �\lst@EC� (U+9F02)
 (inputenc)                not set up for use with LaTeX.
@@ -902,7 +899,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.666  ! Brak błędów 
+l.681  ! Brak błędów 
                         powinien utworzyć plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -916,7 +913,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.666  ! Brak błędów 
+l.681  ! Brak błędów 
                         powinien utworzyć plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -930,7 +927,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.666  ! Brak błędów 
+l.681  ! Brak błędów 
                         powinien utworzyć plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -944,44 +941,44 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.666  ! Brak błędów powinien utworzyć 
+l.681  ! Brak błędów powinien utworzyć 
                                            plik o nazwie msc_project.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[20] [21]
-<images/przykladowa_sieci_wygenerowana.png, id=547, 369.38pt x 375.4025pt>
+[21] [22]
+<images/przykladowa_sieci_wygenerowana.png, id=551, 369.38pt x 375.4025pt>
 File: images/przykladowa_sieci_wygenerowana.png Graphic file (type png)
 <use images/przykladowa_sieci_wygenerowana.png>
 Package pdftex.def Info: images/przykladowa_sieci_wygenerowana.png  used on inp
-ut line 738. on input line 738.
+ut line 753. on input line 753.
 Package pdftex.def Info: Requested size: 284.52756pt x 289.16965pt on input lin
-e 738.
- [22 <./images/przykladowa_sieci_wygenerowana.png>] [23] [24]
+e 753.
+ [23 <./images/przykladowa_sieci_wygenerowana.png>] [24] [25]
 Rozdzia\l  5.
-[25
+[26
 
-] [26
+] [27
 
-] (./opiniaopiekuna.tex) [27
+] [28
 
-] (./recenzja.tex [28])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 816.
- [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 816.
+] (./opiniaopiekuna.tex) [29] (./recenzja.tex [30])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 831.
+ [31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 831.
 
 (./praca_dyplomowa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 816.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 816.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 831.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 831.
 Package rerunfilecheck Info: File `praca_dyplomowa.out' has not changed.
 (rerunfilecheck)             Checksum: 9902D7933800F61392E977518EB55B14;2464.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 816.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 831.
  ) 
 Here is how much of TeX's memory you used:
- 9405 strings out of 494896
- 132277 string characters out of 6179975
- 272082 words of memory out of 5000000
+ 9407 strings out of 494896
+ 132291 string characters out of 6179975
+ 273082 words of memory out of 5000000
  12232 multiletter control sequences out of 15000+600000
  25730 words of font info for 49 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
@@ -996,10 +993,10 @@ cbx1728.600pk> </home/jakubm/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec
 /ecbx1440.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on praca_dyplomowa.pdf (37 pages, 500303 bytes).
+Output written on praca_dyplomowa.pdf (39 pages, 502045 bytes).
 PDF statistics:
- 1080 PDF objects out of 1200 (max. 8388607)
- 640 compressed objects within 7 object streams
- 305 named destinations out of 1000 (max. 500000)
+ 1089 PDF objects out of 1200 (max. 8388607)
+ 647 compressed objects within 7 object streams
+ 307 named destinations out of 1000 (max. 500000)
  322 words of extra memory for PDF output out of 10000 (max. 10000000)
 

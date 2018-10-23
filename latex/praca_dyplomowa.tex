@@ -253,7 +253,22 @@ W tym rodziale przedstawiona zostanie najważniejsza część teoretyczna bezprz
 rozwiązywanego w pracy dyplomowej.
 
 \section{Wstęp do bezprzewodowych sieci sensorowych}
-Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również sieciami typu WSN.
+Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również bezprzewodowymi sieciami czujników.
+Sieć czujnikowa składa się z urzadzeń, których funkcją jest realizowanie określonego zadania.
+Pierwsze aplikacje i zastosowania bezprzewodowych sieci czujników zostały wdrożone na potrzeby wojskowe, jednakże przeciągu ostatnich lat, technologie te znalazły
+wiele nowych zastosowań w przemyśle (np. pomiary meteorologiczne) i aplikacjach codziennych (np. systemy domów inteligentnych).
+
+Rozwój technologii, malejący koszt elektroniki oraz dostępność produktów bezprzewodowej sieci czujnikowej, umożliwia tworzenie dedykowanych aplikacji.
+Na rynku dostępnych jest wiele urządzeń oraz rozwiązań, a proces wyboru uzależniony jest przede wszystkim od wymogów projektu oraz budżetu.
+Dla uproszczenia przyjąć można, że pojedynczy czujnik powinien składać się z procesora zdolnego wykonywać określone zadanie, pamięci zdolnej do przechowywania informacji
+oraz anteny, która umożliwia nadawanie i odbieranie informacji.
+
+Proces wymiany informacji między urządzeniami zależy od protokołów i implementacji.
+Niezaleznie jednak od protokołu i implementacji, cel pozostaje niezmienny. Informacje posiadane przez węzeł w sieci (np. pomiar temperatury otoczenia) musza zostać przekazane z węzła pomiarowego 
+do węzła głównego. Węzeł główny, zwany również `sink` jest odpowiedzialnym za agregację wszystkich informacji oraz ich dalsze przetwarzanie.  
+W dalszej części pracy, przedstawione zostaną dwa protokoły trasowania (routingu), których zadaniem jest zoptymalizowanie energetyczne procesu komunikacji, podwyższenie niezawodności systemu 
+oraz umożliwienie zautomatyzowanej organizacji topologii sieci.
+By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, niezbędnym jest przedstawienie najprostrzego schematu komunikacji, komunikacji bezpośredniej.
 
 \section{Model transmisji}
 
