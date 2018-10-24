@@ -296,6 +296,20 @@ Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się b
 
 \subsection{LEACH}
 
+LEACH (Low-energy adaptive clustering hierarchy) jest jednym z wielu algortmemów wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej.
+W przeciwieństwie do komunikacji bezpośredniej, LEACH jest protokołem w którym występuje hierarchia. Węzły uczestniczące w sieci dzielą się na dwie kategorie:
+
+\begin{itemize}
+ \item węzły typu cluster head (CH)
+ \item standardowe węzły (non-CH)
+\end{itemize}
+
+Standardowe węzły dokonują transmisji danych do najbliższego węzła typu cluster head, które następnie dokonują agregacji zebranch informacji oraz bezpośrednie przekazanie ich
+do węzła głównego (sink). Stworzenie środowiska w którym węzły dokonują pośredniczenia informacji, pozwala na ograniczenie kosztów energetycznych transmisji danych przez
+standardowe węzły (dystans do węzła typu cluster head jest mniejszy niż do sink). Należy jednak pamiętać, że koszt energetyczny transmisji węzłów typu cluster head rośnie, gdyż
+stają się one odpowiedzialne za odbieranie informacji, przetworzenie ich, a następnie wysłanie do całości do sink. Wielkość informacji (mierzona w bajtach), przetransmitowana 
+z węzłów typu cluster head jest zależna od ilości standardowych węzłów przynależących do CH oraz metody agregacji informacji.
+
 TODO
  * Opis LEACH
  * Przedstawienie algorytmu

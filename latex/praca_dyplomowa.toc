@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {3.4}Protoko\IeC {\l }y}{8}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Komunikacja bezpo\IeC {\'s}rednia}{8}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}LEACH}{8}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}PEGASIS}{9}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}PEGASIS}{10}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Architektura systemu}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}Opis}{11}{section.4.1}
 \contentsline {section}{\numberline {4.2}Komponenty systemu}{11}{section.4.2}
