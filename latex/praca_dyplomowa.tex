@@ -311,7 +311,6 @@ stają się one odpowiedzialne za odbieranie informacji, przetworzenie ich, a na
 z węzłów typu cluster head jest zależna od ilości standardowych węzłów przynależących do CH oraz metody agregacji informacji.
 
 TODO
- * Opis LEACH
  * Przedstawienie algorytmu
  * Korzyści oraz wyzwania związane z implementacją
 
@@ -614,7 +613,9 @@ Poniższa lista przedstawia zaimplementowane protokoły:
 
 \subsection{Moduł symulatora (Simulator)}
 
-Symulator (Simulator) re
+Symulator (Simulator) odpowiada za tworzenie środowisk symulacyjnych.
+Pojedynczy obiekt symulatora pozwala na zbudowanie wielu scenariuszy symulacji, a następnie ich uruchomienie oraz
+wygenerowanie metryk. Dane wyjściowe mogą zostać podanne dalszej analizie przy wykorzystaniu zewnętrznych narzędzi (np. GNUPlot).
 
 \begin{lstlisting}
 type Simulator struct {
@@ -798,12 +799,14 @@ wymagania pracy dyplomowej.
 W momencie poprawnego zakończenia symulacji, folder TODO powinien posiadać zestaw plików:
 
 \begin{lstlisting}
+ Uzupełnić w momencie tworzenia wyników do pracy.
  TODO ls folder
 \end{lstlisting}
 
 Pliki te należy następnie przekierować do GNUPlot w następujący sposób:
 
 \begin{lstlisting}
+ Uzupełnić w momencie tworzenia wyników do pracy.
  TODO gnuplot operations
 \end{lstlisting}
 
