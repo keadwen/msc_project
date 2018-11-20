@@ -121,41 +121,51 @@
 %-----------------
 \chapter{Wstęp}
 
-\section{Wprowadzenie}
+% \section{Wprowadzenie} % FIXME: zbędne rozdrobnienie podrozdziałów (chyba, że się rozrosną)
 W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinfromatycznych w zakresie bezprzewodowych sieci czujnikowych.
 Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych. Aktualnie, możliwości oferowane przez bezprzewodowe czujniki znajdują zastosowanie w nieskończonej 
-ilości aplikacji, zarówno w przemysłe (np. medycynie), jak również w sektorze prywatnym (np. inteligentny dom).
+liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. 
+inteligentny dom).
+
+% TODO: spellchecker
 
 \section{Cel pracy}
-Celem pracy jest przedstawienie problemów współbieżności w algorymatch sieci czujnikowej. Praca wykorzystuje ogólnie znane i udokumentowane algorytmy umożliwiające
+Celem pracy są badania problemów współbieżności w algorymatch sieci czujnikowej. Praca wykorzystuje 
+ogólnie znane i udokumentowane algorytmy umożliwiające
 transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest skończona ilość energii czujnika.
 
 Istotnym elementem pracy jest autorski symulator sieci sensorowej, która stanowi podstawowe narzędzie umożliwiąjące implementację oraz testowanie nowych algorytmów.
 Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania różnych algorytmów transmisji danych, bez potrzeby wykorzystania fizycznych urządzeń.
 
-\section{Tworzenie projektu}
-Koncepcja i projekt systemu symulującego model bezprzedowowej sieci czujnikowej został opracy przez autora pracy.
-Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
-Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się zajął się tworzeniem prototypu systemu symulującego. 
-Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
-Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontroli wersji git.
+% \section{Tworzenie projektu}
+% TODO: Przenieść na koniec bo to jest podsumowanie - czas przeszły
+% Koncepcja i projekt systemu symulującego model bezprzedowowej sieci czujnikowej został opracy przez autora pracy.
+% Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
+% Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się zajął się tworzeniem prototypu systemu symulującego. 
+% Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
+% Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontroli wersji git.
 
 %-----------------
 % Wykorzystane technologie
 %-----------------
 \chapter{Wykorzystane technologie}
 
-Rozdział ten zawiera opis technologii oraz narzędzi wykorzystanych w pracy dyplomowej.
+Rozdział ten zawiera opis technologii oraz narzędzi wykorzystanych w pracy dyplomowej. 
+% TODO: 3-4 zadania o tym, co znajduje się w rozdziale
 
 \section{Język programowania Go}
 Go (Golang) to język programistyczny stworzony jako wolne oprogramowanie (open source) na potrzeby firmy Google, Inc. 
 Głównymi architektami języka są Robert Griesemer, Rob Pike i Ken Thompson.
 Golang umożliwia tworzenie komercyjnego oprogramowania i jest wspierany na wielu sytemach opearcyjnych (Linux, Windows, Mac OS X).
 
-Język Go należy do kategorii języków kompilowanych, z statycznym definiowaniem typu zmiennych. Składnia języka jest zbliżona do C/C++ czy Python.
+Język Go należy do kategorii języków kompilowanych, z statycznym definiowaniem typu zmiennych. 
+
+% tutaj można jakieś małe przykłady pokazać, krótko przybliżyć język
+
+Składnia języka jest zbliżona do C/C++ czy Python.
 
 \subsection{Porównanie Go z Python}
-
+% FIXME: jeśli subsection to nie sama lista punktowana
 \begin{itemize}
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem statycznym, co pozwala wyeliminować błedy typu runtime wynikające z typu zmiennej.
@@ -167,6 +177,7 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
 \end{itemize}
 
 \subsection{Porównanie Go z C++}
+% FIXME: jeśli subsection to nie sama lista punktowana
 
 \begin{itemize}
  \item Go posiada system zarządzania pamięcią (garbage collector).
@@ -180,7 +191,7 @@ Język Go należy do kategorii języków kompilowanych, z statycznym definiowani
 \end{itemize}
 
 \section{Serializacja danych Protocol Buffers}
-
+% FIXME: ściana tekstu - brak obrazków
 Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google, Inc.
 Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowania aplikacji czy platformy na którym uruchamiana jest aplikacja.
 Technologia ta definiuje strukturę danych (proto schema) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
@@ -216,7 +227,7 @@ message PESEL {
 \end{lstlisting}
 
 \section{System kontroli wersji git}
-
+% FIXME: albo rozbudować (obrazki?) albo scalić pod jednym tytułem (``narzędzia dodatkowe''?)
 Git to rozproszony system kontroli wersji stworzony jako wolne oprogramowanie (open source). 
 Głównymi architektem narzędzia jest Linus Torvalds. Git to oprogramowanie powszechnie stosowanym w przypadku zarządzania oprogramowaniem.
 Narzędzie to umożliwia tworzenie pobocznych gałęzi (branch) niezależych od głównej gałęzi. Funkcjonalność ta pozwala na niezależne wprowadzanie zmian
@@ -225,11 +236,13 @@ Architektura rozproszna git (w przeciwieństwie do zcentralizowanych systemów k
 której zmiany mogą zostać następnie wprowadzone do gałęźi głównej.
 
 \section{GNUPlot}
+% FIXME: albo rozbudować (obrazki?) albo scalić pod jednym tytułem (``narzędzia dodatkowe''?)
 
 GNUPlot to narzędzie do generowania wykresów funkcji w oparciu o dane wejściowe. Program dostępny jest niemal na każdym systemie operacyjnym.
 Przy pomocy GNUPlot generować można dwu- oraz trzywymiarowe wykresy, które zapisane mogą zostać w różnych formatach t.j. PNG, SVG czy JPEG.
 
 \section{Docker}
+% FIXME: albo rozbudować (obrazki?) albo scalić pod jednym tytułem (``narzędzia dodatkowe''?)
 
 Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc.
 Narzędzie to pozwala na tworzenie kontenerów, które izolują aplikację na poziomie systmeu operacyjnego. W przeciwieństwie do maszyn wirtualnych, kontener nie wymaga
@@ -237,17 +250,18 @@ wirtualizowania systemu operacyjnego dla każdego z kontenerów. Wszystkie równ
 parametry fizyczne maszyny oraz jądro systemu operacyjnego (np. Linux). Izolacja kontenerów widoczna jest na poziomie zależności (dependency) do określonych wersji
 bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parametrów.
 
-\section{Latex}
-
-Latex to narzędzie do formatowania tekstu przy wykorzystaniu znaczników. Praca nad dokumentem przy wykorzystaniu Latex ułatwia redagowanie artykułu, ze względu na
-odeseparowanie treści od struktury tekstu.
+% kolofon :)
+% \section{Latex}
+% 
+% Latex to narzędzie do formatowania tekstu przy wykorzystaniu znaczników. Praca nad dokumentem przy wykorzystaniu Latex ułatwia redagowanie artykułu, ze względu na
+% odeseparowanie treści od struktury tekstu.
 
 %-----------------
 % Teoria bezprzewodowych sieci sensorowych
 %-----------------
-\chapter{Teoria bezprzewodowych sieci sensorowych}
+\chapter{Bezprzewodowe sieci czujnikowe}
 
-\section{Opis}
+% \section{Opis}
 
 W tym rodziale przedstawiona zostanie najważniejsza część teoretyczna bezprzewodowych sieci sensorych, która jest niezbędna w celu zrozumienia problemu
 rozwiązywanego w pracy dyplomowej.
@@ -272,7 +286,7 @@ By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, ni
 
 \section{Model transmisji}
 
-TODO
+TODO % TODO w komentarzu się ładnie koloruje w edytorze Kile (polecam)
  * Koszt transmisji
  * Założenia dotyczące opóźnień i innych parametrów
 
@@ -329,8 +343,9 @@ TODO
 % Architektura systemu
 %-----------------
 \chapter{Architektura systemu}
-
-\section{Opis}
+% TODO: ten rozdział ``robi robotę'' - pozytywnie się wyróżnia ale nadal kilka poniższych subsection
+% wymaga poprawy - albo rozbudować albo skonsolidować
+% \section{Opis} % zbędne section - można od tego zacząć rozdział
 
 System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależnożci sprawności energetycznej 
 węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS).
@@ -827,9 +842,9 @@ Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały rekom
 %-----------------
 % Przedstawienie i opracowanie wyników
 %-----------------
-\chapter{Przedstawienie i opracowanie wyników}
+\chapter{Przedstawienie i opracowanie wyników} % TODO: a może ``Opracowanie wyników eksperymentów''?
 
-\section{Opis}
+% \section{Opis}
 
 W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy wykorzystaniu autorskiego oprogramowania.
 
@@ -837,7 +852,10 @@ W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy 
 
 TODO
 
+
 \begin{thebibliography}{99}
+% Bibliografia w pracy mgr jest kluczowa - powinno pojawić się kilka artykułów naukowych (IEEE, 
+% ACM, Elsevier - ma Pan dostęp jako student PW)
 \addcontentsline{toc}{chapter}{Bibliografia}
 \bibitem{Stevens}{W. R. Stevens, G. R. Wright, ,,Biblia TCP/IP tom 1'', RM, 
 1998.}
