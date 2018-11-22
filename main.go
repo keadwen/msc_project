@@ -16,7 +16,7 @@ import (
 
 var (
 	configFile = flag.String("config_files", "", "location of node config files (comma separated)")
-	msg_length = flag.Int("msg_length", 0, "overwrites the config.Config msg_length value")
+	msg_length = flag.Int("msg_length", 0, "overwrites the config.Config message length value")
 )
 
 func main() {
@@ -45,7 +45,7 @@ func main() {
 			if len(conf.GetNodes()) < 2 {
 				log.Fatalf("Found %d nodes in config proto %q. Expectes more than 1.", len(conf.GetNodes()), file)
 			}
-			// Overwrites the message length defined in the configuration file.
+			// Overwrites the message length defined in the configuration file, if flag specified.
 			if *msg_length != 0 {
 				conf.MsgLength = int64(*msg_length)
 			}
