@@ -1,37 +1,30 @@
 \BOOKMARK [0][-]{chapter.1}{Wstep}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Wprowadzenie}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Cel pracy}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Tworzenie projektu}{chapter.1}% 4
-\BOOKMARK [0][-]{chapter.2}{Wykorzystane technologie}{}% 5
-\BOOKMARK [1][-]{section.2.1}{Jezyk programowania Go}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.1.1}{Por\363wnanie Go z Python}{section.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.1.2}{Por\363wnanie Go z C++}{section.2.1}% 8
-\BOOKMARK [1][-]{section.2.2}{Serializacja danych Protocol Buffers}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.3}{System kontroli wersji git}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.4}{GNUPlot}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.5}{Docker}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.6}{Latex}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Teoria bezprzewodowych sieci sensorowych}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Opis}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Wstep do bezprzewodowych sieci sensorowych}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Model transmisji}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Protoko\233y}{chapter.3}% 18
-\BOOKMARK [2][-]{subsection.3.4.1}{Komunikacja bezposrednia}{section.3.4}% 19
-\BOOKMARK [2][-]{subsection.3.4.2}{LEACH}{section.3.4}% 20
-\BOOKMARK [2][-]{subsection.3.4.3}{PEGASIS}{section.3.4}% 21
-\BOOKMARK [0][-]{chapter.4}{Architektura systemu}{}% 22
-\BOOKMARK [1][-]{section.4.1}{Opis}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.2}{Komponenty systemu}{chapter.4}% 24
-\BOOKMARK [2][-]{subsection.4.2.1}{Plik konfiguracyjny}{section.4.2}% 25
-\BOOKMARK [2][-]{subsection.4.2.2}{Modu\233 g\233\363wny \(Core\)}{section.4.2}% 26
-\BOOKMARK [2][-]{subsection.4.2.3}{Modu\233 symulatora \(Simulator\)}{section.4.2}% 27
-\BOOKMARK [1][-]{section.4.3}{Obs\233uga systemu}{chapter.4}% 28
-\BOOKMARK [2][-]{subsection.4.3.1}{Konfiguracja srodowiska i kompilacja}{section.4.3}% 29
-\BOOKMARK [2][-]{subsection.4.3.2}{Generowanie konfiguracji}{section.4.3}% 30
-\BOOKMARK [2][-]{subsection.4.3.3}{Uruchamianie scenariuszy}{section.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.3.4}{Generowanie wykres\363w}{section.4.3}% 32
-\BOOKMARK [2][-]{subsection.4.3.5}{Dodawanie nowych protoko\233\363w}{section.4.3}% 33
-\BOOKMARK [0][-]{chapter.5}{Przedstawienie i opracowanie wynik\363w}{}% 34
-\BOOKMARK [1][-]{section.5.1}{Opis}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.2}{TODO}{chapter.5}% 36
-\BOOKMARK [0][-]{chapter*.9}{Bibliografia}{}% 37
+\BOOKMARK [1][-]{section.1.1}{Cel pracy}{chapter.1}% 2
+\BOOKMARK [0][-]{chapter.2}{Wykorzystane technologie}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Jezyk programowania Go}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Serializacja danych Protocol Buffers}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.3}{Nardzedzia dodatkowe}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.3.1}{System kontroli wersji git}{section.2.3}% 7
+\BOOKMARK [2][-]{subsection.2.3.2}{GNUPlot}{section.2.3}% 8
+\BOOKMARK [2][-]{subsection.2.3.3}{Docker}{section.2.3}% 9
+\BOOKMARK [0][-]{chapter.3}{Bezprzewodowe sieci czujnikowe}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Wstep do bezprzewodowych sieci sensorowych}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{Model transmisji}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.3}{Protoko\233y}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.3.1}{Komunikacja bezposrednia}{section.3.3}% 14
+\BOOKMARK [2][-]{subsection.3.3.2}{LEACH}{section.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.3.3}{PEGASIS}{section.3.3}% 16
+\BOOKMARK [0][-]{chapter.4}{Architektura systemu}{}% 17
+\BOOKMARK [1][-]{section.4.1}{Komponenty systemu}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.1.1}{Plik konfiguracyjny}{section.4.1}% 19
+\BOOKMARK [2][-]{subsection.4.1.2}{Modu\233 g\233\363wny \(Core\)}{section.4.1}% 20
+\BOOKMARK [2][-]{subsection.4.1.3}{Modu\233 symulatora \(Simulator\)}{section.4.1}% 21
+\BOOKMARK [1][-]{section.4.2}{Obs\233uga systemu}{chapter.4}% 22
+\BOOKMARK [2][-]{subsection.4.2.1}{Konfiguracja srodowiska i kompilacja}{section.4.2}% 23
+\BOOKMARK [2][-]{subsection.4.2.2}{Generowanie konfiguracji}{section.4.2}% 24
+\BOOKMARK [2][-]{subsection.4.2.3}{Uruchamianie scenariuszy}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.4}{Generowanie wykres\363w}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.5}{Dodawanie nowych protoko\233\363w}{section.4.2}% 27
+\BOOKMARK [0][-]{chapter.5}{Opracowanie wynik\363w eksperyment\363w}{}% 28
+\BOOKMARK [1][-]{section.5.1}{TODO}{chapter.5}% 29
+\BOOKMARK [0][-]{chapter*.12}{Bibliografia}{}% 30

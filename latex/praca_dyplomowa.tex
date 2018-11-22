@@ -151,6 +151,10 @@ Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania ró
 \chapter{Wykorzystane technologie}
 
 Rozdział ten zawiera opis technologii oraz narzędzi wykorzystanych w pracy dyplomowej. 
+Przedstawiony zostanie język oprogramowania Go, w którym napisanym zostały najważniejsze komponenty pracy dyplomowej. Jak również
+metody i technologie niezbędne do wygenerowania danych wejściowych, technik serializacji danych oraz ich reprezentacji przy wykorzystaniu
+Protocol Buffers, GNUPlot, itd.
+
 % TODO: 3-4 zadania o tym, co znajduje się w rozdziale
 
 \section{Język programowania Go}
@@ -159,13 +163,49 @@ Głównymi architektami języka są Robert Griesemer, Rob Pike i Ken Thompson.
 Golang umożliwia tworzenie komercyjnego oprogramowania i jest wspierany na wielu sytemach opearcyjnych (Linux, Windows, Mac OS X).
 
 Język Go należy do kategorii języków kompilowanych, z statycznym definiowaniem typu zmiennych. 
+Poniżej przedstawiony został fragment kodu źródłowego napisane w języku Go.
 
-% tutaj można jakieś małe przykłady pokazać, krótko przybliżyć język
+\begin{lstlisting}
+package main
 
-Składnia języka jest zbliżona do C/C++ czy Python.
+import (
+  "fmt"
 
-\subsection{Porównanie Go z Python}
-% FIXME: jeśli subsection to nie sama lista punktowana
+  "github.com/golang/example/stringutil"
+)
+
+type Label struct {
+  Text string
+  X, Y int
+}
+
+func (l *Label) ReverseText() {
+  l.Text = stringutil.Reverse(l.Text)
+}
+
+func main() {
+  var x = 100
+  fmt.Printf("<%T>: %v", x, x)
+  // Expected output: <int>: 100
+  hello := Label{
+    Text: "Hello",
+    X:    100,
+    Y:    200,
+  }
+  
+  fmt.Println(hello.Text)
+  // Expected output: hello
+  hello.ReverseText()
+  fmt.Println(hello.Text)
+  // Expected output: olleh
+}
+
+\end{lstlisting}
+
+W powyższym przykładzie przedstawione zostało kilka innowacyjnych funkcjonalności języka Go.
+Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jednakże występuje kilka cech unikatowych dla Go.
+
+\paragraph{Porównanie Go z Python}
 \begin{itemize}
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem statycznym, co pozwala wyeliminować błedy typu runtime wynikające z typu zmiennej.
@@ -176,9 +216,7 @@ Składnia języka jest zbliżona do C/C++ czy Python.
  \item Python posiada większy bazę publiczych bibliotek.
 \end{itemize}
 
-\subsection{Porównanie Go z C++}
-% FIXME: jeśli subsection to nie sama lista punktowana
-
+\paragraph{Porównanie Go z C++}
 \begin{itemize}
  \item Go posiada system zarządzania pamięcią (garbage collector).
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
@@ -190,18 +228,23 @@ Składnia języka jest zbliżona do C/C++ czy Python.
  \item C++ nie posiada systemu zarządzania pamięcia (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikrokontrolerach).
 \end{itemize}
 
+\paragraph{Unikatowe cechy Go}
+\begin{itemize}
+ \item Produktem kompilacji jest plik egzekucyjny posiadający wszystkie niezbędne zależności.
+ \item Zarządzanie pakietami pozwala na importowanie rozwiązań bezpośrednio z GitHub (lub innych serwisów zewnętrznych).
+ \item Dynamiczna alokacja typu zmiennej statycznej.
+ \item Natywnie wspierane tworzenie oprogramowania wykorzystującego wielowątkowośc i współbieżność procesów.
+ \item Natywna metoda testowania funkcjonalności i bibliotek.
+ \item Pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (benchmarking), formatowania składni kodu zgodnie ze standardem (gofmt),
+       oraz wiele innych funkcjonalności.
+\end{itemize}
+
 \section{Serializacja danych Protocol Buffers}
 % FIXME: ściana tekstu - brak obrazków
 Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google, Inc.
 Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowania aplikacji czy platformy na którym uruchamiana jest aplikacja.
 Technologia ta definiuje strukturę danych (proto schema) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
-oraz złożonych komunikatów (message).
-Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
-(w przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP).
-Natomiast zserializowane dane zostają zapisane w formacie binarnym (wire format), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
-bez potrzeby wykonania dalszego kodowania. 
-Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
-operowania danymi w sposób natywny dla wybranego języka programowania.
+oraz złożonych komunikatów (message). Poniżej przedstawiona została przykładowa struktura.
 
 \begin{lstlisting}
 // example.proto
@@ -226,8 +269,20 @@ message PESEL {
 }
 \end{lstlisting}
 
-\section{System kontroli wersji git}
-% FIXME: albo rozbudować (obrazki?) albo scalić pod jednym tytułem (``narzędzia dodatkowe''?)
+Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
+(w przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP).
+Następnie, zserializowane dane zostają zapisane w formacie binarnym (wire format), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
+bez potrzeby wykonania dalszego kodowania. 
+Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
+operowania danymi w sposób natywny dla wybranego języka programowania.
+
+
+\section{Nardzędzia dodatkowe}
+
+Sekcja ta przedstawia zestaw narzędzi których funkcjonalności umożliwiły stworzenie oraz ułatwiły zarządzanie oprogramowaniem stworzonym w celach
+pracy dyplomowej. 
+
+\subsection{System kontroli wersji git}
 Git to rozproszony system kontroli wersji stworzony jako wolne oprogramowanie (open source). 
 Głównymi architektem narzędzia jest Linus Torvalds. Git to oprogramowanie powszechnie stosowanym w przypadku zarządzania oprogramowaniem.
 Narzędzie to umożliwia tworzenie pobocznych gałęzi (branch) niezależych od głównej gałęzi. Funkcjonalność ta pozwala na niezależne wprowadzanie zmian
@@ -235,26 +290,18 @@ w kodzie na określonej wersji kontrolej, które mogą następnie zostać wprowa
 Architektura rozproszna git (w przeciwieństwie do zcentralizowanych systemów kontroli wersji) umożliwia programistom na posiadanie lokalnej kopii repozytorium,
 której zmiany mogą zostać następnie wprowadzone do gałęźi głównej.
 
-\section{GNUPlot}
-% FIXME: albo rozbudować (obrazki?) albo scalić pod jednym tytułem (``narzędzia dodatkowe''?)
+\subsection{GNUPlot}
 
 GNUPlot to narzędzie do generowania wykresów funkcji w oparciu o dane wejściowe. Program dostępny jest niemal na każdym systemie operacyjnym.
 Przy pomocy GNUPlot generować można dwu- oraz trzywymiarowe wykresy, które zapisane mogą zostać w różnych formatach t.j. PNG, SVG czy JPEG.
 
-\section{Docker}
-% FIXME: albo rozbudować (obrazki?) albo scalić pod jednym tytułem (``narzędzia dodatkowe''?)
+\subsection{Docker}
 
 Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc.
 Narzędzie to pozwala na tworzenie kontenerów, które izolują aplikację na poziomie systmeu operacyjnego. W przeciwieństwie do maszyn wirtualnych, kontener nie wymaga
 wirtualizowania systemu operacyjnego dla każdego z kontenerów. Wszystkie równolegle działające kontenery aplikacji działające na pojedynczym urządzeniu współdzielą
 parametry fizyczne maszyny oraz jądro systemu operacyjnego (np. Linux). Izolacja kontenerów widoczna jest na poziomie zależności (dependency) do określonych wersji
 bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parametrów.
-
-% kolofon :)
-% \section{Latex}
-% 
-% Latex to narzędzie do formatowania tekstu przy wykorzystaniu znaczników. Praca nad dokumentem przy wykorzystaniu Latex ułatwia redagowanie artykułu, ze względu na
-% odeseparowanie treści od struktury tekstu.
 
 %-----------------
 % Teoria bezprzewodowych sieci sensorowych
@@ -593,12 +640,12 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
  \item Simulate - funkcja umożliwia rozpoczęcie symulacji.
  \item CheckNodes - funkcja sprawdza ilość sprawnych węzłów w sieci.
  \item PopulateEnergyPoints - funkcja sprawdza oraz przechowuje stany energetyczne węzłów.
- \item PopulateNodesAlivePoints - funkcja sprawdza oraz przechowuje ilość sprawnych węzłów w sieci.
+ \item PopulateNodesAlivePoints - funkcja sprawdza oraz przechowuje ilość sprawnych węzłów w sieci.
 \end{itemize}
 
 \subsubsection{Protokół (Protocol)}
 
-Protokół (Protocol) reprezentuje model protokołu komunikacji między wezłami. 
+Protokół (Protocol) reprezentuje model protokołu komunikacji między wezłami.
 
 Poniżej przedstawiona został interfejs protokołu oraz definicje funkcji przynależące do interfejsu.
 
@@ -813,16 +860,17 @@ wymagania pracy dyplomowej.
 
 W momencie poprawnego zakończenia symulacji, folder TODO powinien posiadać zestaw plików:
 
+% TODO: Uzupełnić w momencie tworzenia wyników do pracy.
+% TODO: ls folder
 \begin{lstlisting}
- Uzupełnić w momencie tworzenia wyników do pracy.
- TODO ls folder
 \end{lstlisting}
 
 Pliki te należy następnie przekierować do GNUPlot w następujący sposób:
 
+
+% TODO: Uzupełnić w momencie tworzenia wyników do pracy.
+% TODO: gnuplot operations
 \begin{lstlisting}
- Uzupełnić w momencie tworzenia wyników do pracy.
- TODO gnuplot operations
 \end{lstlisting}
 
 \subsection{Dodawanie nowych protokołów}
@@ -842,7 +890,7 @@ Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały rekom
 %-----------------
 % Przedstawienie i opracowanie wyników
 %-----------------
-\chapter{Przedstawienie i opracowanie wyników} % TODO: a może ``Opracowanie wyników eksperymentów''?
+\chapter{Opracowanie wyników eksperymentów}
 
 % \section{Opis}
 
@@ -850,7 +898,7 @@ W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy 
 
 \section{TODO}
 
-TODO
+% TODO
 
 
 \begin{thebibliography}{99}
