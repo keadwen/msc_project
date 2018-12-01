@@ -18,22 +18,22 @@
 \contentsline {subsection}{\numberline {3.3.1}Komunikacja bezpo\IeC {\'s}rednia}{8}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}LEACH}{8}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}PEGASIS}{10}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Architektura systemu}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}Komponenty systemu}{11}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Plik konfiguracyjny}{11}{subsection.4.1.1}
-\contentsline {subsubsection}{Konfiguracja symulatora i sieci}{13}{section*.7}
+\contentsline {chapter}{\numberline {4}Architektura systemu}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Komponenty systemu}{12}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Plik konfiguracyjny}{12}{subsection.4.1.1}
+\contentsline {subsubsection}{Konfiguracja symulatora i sieci}{12}{section*.7}
 \contentsline {subsubsection}{Konfiguracja w\IeC {\k e}z\IeC {\l }a}{14}{section*.8}
-\contentsline {subsection}{\numberline {4.1.2}Modu\IeC {\l } g\IeC {\l }\IeC {\'o}wny (Core)}{15}{subsection.4.1.2}
-\contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{15}{section*.9}
-\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{17}{section*.10}
-\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{18}{section*.11}
-\contentsline {subsection}{\numberline {4.1.3}Modu\IeC {\l } symulatora (Simulator)}{19}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Obs\IeC {\l }uga systemu}{21}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{21}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Generowanie konfiguracji}{21}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.1.2}Modu\IeC {\l } g\IeC {\l }\IeC {\'o}wny (Core)}{16}{subsection.4.1.2}
+\contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{16}{section*.9}
+\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{18}{section*.10}
+\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{20}{section*.11}
+\contentsline {subsection}{\numberline {4.1.3}Modu\IeC {\l } symulatora (Simulator)}{20}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Obs\IeC {\l }uga systemu}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Generowanie konfiguracji}{23}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Uruchamianie scenariuszy}{24}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Generowanie wykres\IeC {\'o}w}{24}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{24}{subsection.4.2.5}
-\contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}TODO}{26}{section.5.1}
-\contentsline {chapter}{Bibliografia}{27}{chapter*.12}
+\contentsline {subsection}{\numberline {4.2.4}Generowanie wykres\IeC {\'o}w}{25}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{26}{subsection.4.2.5}
+\contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}TODO}{27}{section.5.1}
+\contentsline {chapter}{Bibliografia}{28}{chapter*.12}

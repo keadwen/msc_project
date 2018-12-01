@@ -18,6 +18,7 @@
 \usepackage{verbatim}
 \usepackage{indentfirst}
 \usepackage[pdftex]{hyperref}
+\usepackage{amsmath}
 
 % Pakiety oraz kolory pomocnicze do kodu źródłowego.
 \usepackage{listings}
@@ -121,11 +122,9 @@
 %-----------------
 \chapter{Wstęp}
 
-% \section{Wprowadzenie} % FIXME: zbędne rozdrobnienie podrozdziałów (chyba, że się rozrosną)
 W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinfromatycznych w zakresie bezprzewodowych sieci czujnikowych.
-Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych. Aktualnie, możliwości oferowane przez bezprzewodowe czujniki znajdują zastosowanie w nieskończonej 
-liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. 
-inteligentny dom).
+Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych. Aktualnie, możliwości oferowane przez bezprzewodowe 
+czujniki znajdują zastosowanie w nieskończonej liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. inteligentny dom).
 
 % TODO: spellchecker
 
@@ -151,11 +150,9 @@ Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania ró
 \chapter{Wykorzystane technologie}
 
 Rozdział ten zawiera opis technologii oraz narzędzi wykorzystanych w pracy dyplomowej. 
-Przedstawiony zostanie język oprogramowania Go, w którym napisanym zostały najważniejsze komponenty pracy dyplomowej. Jak również
+Przedstawiony zostanie język oprogramowania Go, w którym napisanym zostały najważniejsze komponenty pracy dyplomowej. Rozdział zawiera również
 metody i technologie niezbędne do wygenerowania danych wejściowych, technik serializacji danych oraz ich reprezentacji przy wykorzystaniu
 Protocol Buffers, GNUPlot, itd.
-
-% TODO: 3-4 zadania o tym, co znajduje się w rozdziale
 
 \section{Język programowania Go}
 Go (Golang) to język programistyczny stworzony jako wolne oprogramowanie (open source) na potrzeby firmy Google, Inc. 
@@ -276,7 +273,6 @@ bez potrzeby wykonania dalszego kodowania.
 Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
 operowania danymi w sposób natywny dla wybranego języka programowania.
 
-
 \section{Nardzędzia dodatkowe}
 
 Sekcja ta przedstawia zestaw narzędzi których funkcjonalności umożliwiły stworzenie oraz ułatwiły zarządzanie oprogramowaniem stworzonym w celach
@@ -308,8 +304,6 @@ bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parame
 %-----------------
 \chapter{Bezprzewodowe sieci czujnikowe}
 
-% \section{Opis}
-
 W tym rodziale przedstawiona zostanie najważniejsza część teoretyczna bezprzewodowych sieci sensorych, która jest niezbędna w celu zrozumienia problemu
 rozwiązywanego w pracy dyplomowej.
 
@@ -333,7 +327,7 @@ By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, ni
 
 \section{Model transmisji}
 
-TODO % TODO w komentarzu się ładnie koloruje w edytorze Kile (polecam)
+% TODO w komentarzu się ładnie koloruje w edytorze Kile (polecam)
  * Koszt transmisji
  * Założenia dotyczące opóźnień i innych parametrów
 
@@ -357,34 +351,64 @@ Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się b
 
 \subsection{LEACH}
 
-LEACH (Low-energy adaptive clustering hierarchy) jest jednym z wielu algortmemów wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej.
-W przeciwieństwie do komunikacji bezpośredniej, LEACH jest protokołem w którym występuje hierarchia. Węzły uczestniczące w sieci dzielą się na dwie kategorie:
+LEACH (Low-Energy Adaptive Clustering Hierarchy) jest algorytmem wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej.
+W przeciwieństwie do komunikacji bezpośredniej, LEACH jest protokołem w którym występuje hierarchia. 
+
+Zestaw operacji w protokole LEACH nazywa się rundami (round). Każda z rund podzielona jest na dwie fazy.
+W pierwszej fazie, fazie konfiguracyjnej (setup), węzły dokonują podziału sieci na niezależne klastry (cluster).
+W drugiej fazie, fazie komunikacyjnej (steady state), węzły uczestniczące w sieci dokonują wymiany informacji za pomoca agregacji danych w klustrze, które następnie
+przesłane są do stacji bazowej.
+
+Faza konfiguracji (setup) zbudowana jest z trzech etapów.
+W pierwszym etapie węzły dokonują wyboru roli w rundzie. W LEACH występują dwa rodzaje węzłów:
 
 \begin{itemize}
  \item węzły typu cluster head (CH)
- \item standardowe węzły (non-CH)
+ \item węzły standardowe (non-CH)
 \end{itemize}
 
-Standardowe węzły dokonują transmisji danych do najbliższego węzła typu cluster head, które następnie dokonują agregacji zebranch informacji oraz bezpośrednie przekazanie ich
-do węzła głównego (sink). Stworzenie środowiska w którym węzły dokonują pośredniczenia informacji, pozwala na ograniczenie kosztów energetycznych transmisji danych przez
+Każdy z węzłów generuje losową wartość `n` z zakresu [0, 1]. Wartość ta podstawiona w poniższe równanie:
+
+\[
+T(n) = \begin{cases}
+\frac{P}{1 - P[r * mod(1/P)]} & \text{jeżeli } n \in G\\
+0 & \text{w innym przypadku}
+\end{cases}
+\]
+
+gdzie P oznacza wartość z zakresu (0, 1] definiujaca prawdopodobięństwa wyznaczenia węzła typu cluster head.
+G jest zbiorem węzłów które nie pełniły roli cluster head w ostatnich 1/P rundach.
+
+W momencie ustalenia roli przez węzły, każdy z węzłów informuje pozostałe węzły uczestniczące w sieci o swojej roli w rundzie.
+
+Kolejnym etapem fazy konfiguracji jest wyznaczenie klustra do którego zostaną przyłączone węzły standardowe.
+Każdy z węzłów standardowych wybiera jeden węzeł typu cluster head. W przypadku otrzymania informacji od kilku węzłów typu cluster head,
+węzeł standardowy wybiera węzeł CH znajdujący się najbliższej (węzeł którego sygnał jest najmocniejszy).
+
+Ostatnim etapem jest ukończenie formowania klusterów w którym znajduje się dokładnie jeden węzeł typu cluster head.
+Wystąpić może sytuacja w której węzeł typu cluster head nie posiada przynależących węzłów standardowych.
+Pozytywnie zakończona faza formowania klastrów tworzy stabilną sieci wymiany informacji.
+
+W tym momencie rozpoczyna się faza komunikacji (steady state) w której węzły standardowe dokonują transmisji danych do  węzła typu cluster head.
+Węzły CH dokonują agregacji zebranch informacji oraz bezpośrednie przekazanie ich do węzła głównego (sink).
+Stworzenie środowiska w którym węzły dokonują pośredniczenia informacji, pozwala na ograniczenie kosztów energetycznych transmisji danych przez
 standardowe węzły (dystans do węzła typu cluster head jest mniejszy niż do sink). Należy jednak pamiętać, że koszt energetyczny transmisji węzłów typu cluster head rośnie, gdyż
 stają się one odpowiedzialne za odbieranie informacji, przetworzenie ich, a następnie wysłanie do całości do sink. Wielkość informacji (mierzona w bajtach), przetransmitowana 
 z węzłów typu cluster head jest zależna od ilości standardowych węzłów przynależących do CH oraz metody agregacji informacji.
 
-TODO
- * Przedstawienie algorytmu
- * Korzyści oraz wyzwania związane z implementacją
-
 Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują protokół LEACH:
 
+%FIXME: For some reason this picture is not located in the correct place.
 \begin{figure}
- \centering
  \includegraphics[width=10cm]{images/komunikacja_leach.png} 
 \end{figure}
 
 \subsection{PEGASIS}
 
-TODO
+PEGASIS (Power-Efficient GAathering in Sensor Information Systems) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej.
+Sieci czujnikowa w której znajdują się węzły o ograniczonej energii (zasilane bateryjnie)
+
+% TODO
 
 %-----------------
 % Architektura systemu
@@ -392,7 +416,6 @@ TODO
 \chapter{Architektura systemu}
 % TODO: ten rozdział ``robi robotę'' - pozytywnie się wyróżnia ale nadal kilka poniższych subsection
 % wymaga poprawy - albo rozbudować albo skonsolidować
-% \section{Opis} % zbędne section - można od tego zacząć rozdział
 
 System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależnożci sprawności energetycznej 
 węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS).
@@ -401,86 +424,17 @@ węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEA
 
 Poniższy diagram przedstawia dekompozycję modułów, całkowitą architekturę systemu oraz kierunki interakcji i przepływu informacji.
 
+%TODO Diagram
+
 \subsection{Plik konfiguracyjny}
 
 Plik konfiguracyjny (config file) posiada dane wejściowe pozwalające na zbudowanie środowiska testowego. 
-Schemat pliku konfiguracyjnego 
 Informacje zawarte w pliku konfiguracyjnym można podzielić na dwie sekcje:
 
 \begin{itemize}
  \item konfiguracja symulatora i sieci
  \item konfiguracja węzła
 \end{itemize}
-
-\begin{lstlisting}
-syntax = "proto3";
-
-package config;
-
-enum E_Protocol {
-  UNSET = 0;
-  DIRECT = 1;
-  LEACH = 2;
-  APTEEN = 3;
-  PEGASIS = 4;
-}
-
-message Config {
-  // Simulation protocol.
-  E_Protocol protocol = 1;
-  // Number of maximum rounds in simulation. 
-  int64 max_rounds = 2;
-  // Percentage of cluster heads among all nodes [0, 1].
-  double p_cluster_heads = 3;
-  // Size of data sent by individual node (in Bytes).
-  int64 msg_length = 4;
-  // Nodes points to configuration for each node.
-  repeated Node nodes = 5;
-}
-
-// Node defines a configuration for a single node.
-message Node {
-  // Unique ID for a node.
-  int64 id = 1;
-  // Initial value of energy (in Joules). 
-  double initial_energy = 2;
-
-  // Location of a node in 2D space.
-  Location location = 3;
-  // Energy consumption of node operations.
-  EnergyCost energy_cost = 4;
-  // Time delays introduced by node operations
-  TimeDelay time_delay = 5;
-}
-
-// Location defines a X, Y coordinates of a node.
-message Location {
-  double X = 1;
-  double Y = 2;
-}
-
-// EnergyCost defines energy consumption for common node operations.
-message EnergyCost {
-  // Energy required to transmit one byte (in Joules).
-  double transmit = 1;
-  // Energy required to receive one byte (in Joules).
-  double receive = 2;
-  // Energy required to listen the channel for a second (in Joules).
-  double listen = 3;
-  // Energy required to process sensor data (in Joules).
-  double sensor_data_process = 4;
-  // Energy required to wake up MCU (in Joules).
-  double wake_up_mcu = 5;
-}
-
-// TimeDelay defines time delays for common node operations.
-message TimeDelay {
-  // Time required to process sensor data (in nanoseconds).
-  int64 sensor_data_process = 1;
-  // Time required to wake up MCU (in nanoseconds).
-  int64 wake_up_mcu = 2;
-}
-\end{lstlisting}
 
 \subsubsection{Konfiguracja symulatora i sieci}
 
@@ -505,6 +459,31 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
        Dokładniejszy opis parametrów poszeczególnych węzłów przedstawiony został w kolejnym porozdziale `Konfiguracja węzła`. 
 \end{itemize}
 
+Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji symulatora i sieci:
+
+\begin{lstlisting}
+enum E_Protocol {
+  UNSET = 0;
+  DIRECT = 1;
+  LEACH = 2;
+  APTEEN = 3;
+  PEGASIS = 4;
+}
+
+message Config {
+  // Simulation protocol.
+  E_Protocol protocol = 1;
+  // Number of maximum rounds in simulation. 
+  int64 max_rounds = 2;
+  // Percentage of cluster heads among all nodes [0, 1].
+  double p_cluster_heads = 3;
+  // Size of data sent by individual node (in Bytes).
+  int64 msg_length = 4;
+  // Nodes points to configuration for each node.
+  repeated Node nodes = 5;
+}
+\end{lstlisting}
+
 \subsubsection{Konfiguracja węzła}
 
 Konfiguracja węzła składa się z pięciu zmiennych w komunikacje Node. Każda z tych wartości może być modyfikowana bez potrzeby
@@ -524,6 +503,65 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
        dla operacji wykonywanych przez węzeł. Iloczyn zmiennej (np. czasu przetwarzania danych węzła [ns]) i kosztu energetycznego działania węzła [J/s] 
        reprezentuje dodatkowe parametry symulacji, które umożliwiają tworzenie zaawansowanych i precyzyjnych scenariuszy.
 \end{itemize}
+
+Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji węzła:
+
+\begin{lstlisting}
+// Node defines a configuration for a single node.
+message Node {
+  // Unique ID for a node.
+  int64 id = 1;
+  // Initial value of energy (in Joules). 
+  double initial_energy = 2;
+
+  // Location of a node in 2D space.
+  Location location = 3;
+  // Energy consumption of node operations.
+  EnergyCost energy_cost = 4;
+  // Time delays introduced by node operations
+  TimeDelay time_delay = 5;
+}
+\end{lstlisting}
+
+Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji lokalizacji węzła:
+
+\begin{lstlisting}
+// Location defines a X, Y coordinates of a node.
+message Location {
+  double X = 1;
+  double Y = 2;
+}
+\end{lstlisting}
+
+Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji kosztów energetycznych pracy węzła:
+
+\begin{lstlisting}
+// EnergyCost defines energy consumption for common node operations.
+message EnergyCost {
+  // Energy required to transmit one byte (in Joules).
+  double transmit = 1;
+  // Energy required to receive one byte (in Joules).
+  double receive = 2;
+  // Energy required to listen the channel for a second (in Joules).
+  double listen = 3;
+  // Energy required to process sensor data (in Joules).
+  double sensor_data_process = 4;
+  // Energy required to wake up MCU (in Joules).
+  double wake_up_mcu = 5;
+}
+\end{lstlisting}
+
+Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji opóźnień czasowych pracy węzła:
+
+\begin{lstlisting}
+// TimeDelay defines time delays for common node operations.
+message TimeDelay {
+  // Time required to process sensor data (in nanoseconds).
+  int64 sensor_data_process = 1;
+  // Time required to wake up MCU (in nanoseconds).
+  int64 wake_up_mcu = 2;
+}
+\end{lstlisting}
 
 \subsection{Moduł główny (Core)}
 
