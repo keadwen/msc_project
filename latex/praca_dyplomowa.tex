@@ -327,9 +327,26 @@ By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, ni
 
 \section{Model transmisji}
 
-% TODO w komentarzu się ładnie koloruje w edytorze Kile (polecam)
- * Koszt transmisji
- * Założenia dotyczące opóźnień i innych parametrów
+W pracy wykorzystany został model transmisji przedstawiony w pracy %TODO “Energy-efficient communication protocol for wireless microsensor networks”
+Model jest powszechnie wykorzystywany w planowaniu oraz symulowaniu aplikacji bezprzewodowych sieci czujników.
+Model przedstawia zależności transmisji danych w wolnej przestrzeni pomiędzy dwoma węzłami (nadawcą i odbiorcą) uwzględniając wielotorowość sygnału.
+Poniższy wzór pozwala na wyznaczenie całkowitego kosztu transmisji k-bitów do węzła oddalonego o d-metrów:
+
+\[
+E_{TX}(k,d) = E_{TX-elec}(k) + E_{TX-amp}(k,d) = \begin{cases}
+\frac k \times E_{elec} + k \times \varepsilon_{fs} \times d^2 & d < d_{d_{0}}\\
+\frac k \times E_{elec} + k \times \varepsilon_{fs} \times d^4 & d \geq d_{d_{0}}
+\end{cases}
+\]
+
+
+gdzie $E_{elec}$ jest energią wykorzystywaną przez nadajnik (np. praca mikroprocesora), $d_{0}$ wyznaczamy przez $\sqrt{\varepsilon_{fs} / \varepsilon_{mp}}$.
+W zależności od odległości na której odbywa się komunikacja, $\varepsilon_{fs}$ reprezentuje transmisję w wolnej przestrzeni, natomiast $\varepsilon_{mp}$
+wielotorowość transmisji.
+
+Poniższy wzór pozwala na wyznaczenie całkowitego kosztu odbioru k-bitów przez węzeł:
+
+\[E_{RX}(k,d) = E_{RX}(k) = k \times E_{elec}\]
 
 \section{Protokoły}
 
@@ -792,8 +809,7 @@ Proces kompilacji (z poziomu folderu z kodem projektu):
 \begin{lstlisting}
  $ pwd
  /home/<username>/go/src/github.com/keadwen/msc_project
- $ go build
- ! Brak błędów powinien utworzyć plik o nazwie msc_project.
+ $ go build .
 \end{lstlisting}
 
 \subsection{Generowanie konfiguracji}
