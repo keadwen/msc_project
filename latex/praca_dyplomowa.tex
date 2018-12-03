@@ -19,6 +19,7 @@
 \usepackage{indentfirst}
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath}
+\usepackage{float}
 
 % Pakiety oraz kolory pomocnicze do kodu źródłowego.
 \usepackage{listings}
@@ -74,7 +75,7 @@
 
 %%%%%%%%%%%%%%% Strona Tytułowa %%%%%%%%%%%%%%%%%
 % To trzeba wypelnic swoimi danymi
-\title{Tytuł pracy dyplomowej}
+\title{Problem współbieżności w algorytmach węzła sieci czujnikowej na przykładzie modelu w języku Go.}
 
 % autor
 \author{Jakub Młynarczyk}
@@ -339,7 +340,6 @@ E_{TX}(k,d) = E_{TX-elec}(k) + E_{TX-amp}(k,d) = \begin{cases}
 \end{cases}
 \]
 
-
 gdzie $E_{elec}$ jest energią wykorzystywaną przez nadajnik (np. praca mikroprocesora), $d_{0}$ wyznaczamy przez $\sqrt{\varepsilon_{fs} / \varepsilon_{mp}}$.
 W zależności od odległości na której odbywa się komunikacja, $\varepsilon_{fs}$ reprezentuje transmisję w wolnej przestrzeni, natomiast $\varepsilon_{mp}$
 wielotorowość transmisji.
@@ -349,6 +349,28 @@ Poniższy wzór pozwala na wyznaczenie całkowitego kosztu odbioru k-bitów prze
 \[E_{RX}(k,d) = E_{RX}(k) = k \times E_{elec}\]
 
 \section{Protokoły}
+
+Warstwa sieciowa w bezprzewodowych sieciach czujników jest elementem krytycznym działania całości systemu.
+Warstwa ta w przeciwieństwie do warstwy fizycznej, odpowiedzialna jest za logiczne skonfigurowanie węzłów i
+zaimplementowanie algorytmu trasowania danych pomiędzy węzłami.
+
+Istnieje wiele protokołów WSN, których dobór zależy od przede wszystkim od naszej aplikacji oraz
+paramatrów sieci które wymagają zoptymalizacji. Poniższej przedstawione zostały cztery aspekty, których dokładne określenie pozwoli
+na dopasowanie najbardziej optymalnego algorytmu:
+
+\begin{itemize}
+ \item koszty energetyczne - w sieci w której ilość energi węzła jest ograniczona, zalecanym jest stosowanie algorytmów pozwalających
+       na efektywną wymianę danych.
+ \item adresowania i rozpoznawania węzłów - w sieci w której występuje duża ilość węzłów, należy określić metodę adresacji.
+       Metoda statycza (np. wykorzystanie pliku konfiguracyjnego) lub dynamiczna (np. wygenerowanie unikatowego numeru identyfikującego).
+ \item skalowalności sieci - w sieci w której wystepuje duża ilość węzłów wymiana informacji może być utrudniona zarówno pod kątem fizycznym
+       (np. brak dostępnej przepustowości w paśmie bezprzewodowym), jak i logicznym (np. długi czas detekcji węzłów i budowania topologii sieci).
+ \item niezawodności wymiany danych - w sieci w której dane generowane przez poszeczgólne węzły nie mogą zostać utracone, zalecane jest wykorzystanie
+       algorytmu umożliwiającego detekcję brakujących fragmentów danych i retransmisję.
+\end{itemize}
+
+W następnej częsci pracy przedstawione zostaną 3 protokoły trasowania danych, które zostały zaimplementowane w symulatorze.
+Wybór ukierunkowany był na ograniczenie kosztów energetyczych w sieci, które umożliwia na wydłużenie czasu życia każdego z węzłów.
 
 \subsection{Komunikacja bezpośrednia}
 
@@ -361,9 +383,9 @@ Czas życia węzłów (posiadających identyczną ilość energii początkowej o
 
 Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się bezpośrednio z węzłem głównym:
 
-\begin{figure}
+\begin{figure}[H]
  \centering
- \includegraphics[width=10cm]{images/komunikacja_bezposrednia.png} 
+ \includegraphics[width=10cm]{images/komunikacja_bezposrednia.png}
 \end{figure}
 
 \subsection{LEACH}
@@ -415,17 +437,31 @@ z węzłów typu cluster head jest zależna od ilości standardowych węzłów p
 
 Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują protokół LEACH:
 
-%FIXME: For some reason this picture is not located in the correct place.
-\begin{figure}
+\begin{figure}[H]
+ \centering
  \includegraphics[width=10cm]{images/komunikacja_leach.png} 
 \end{figure}
 
 \subsection{PEGASIS}
 
 PEGASIS (Power-Efficient GAathering in Sensor Information Systems) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej.
-Sieci czujnikowa w której znajdują się węzły o ograniczonej energii (zasilane bateryjnie)
+W przeciwieństwie do komunikacji bezpośredniej, PEGASIS podobnie jak LEACH jest protokołem w którym występuje hierarchia.
 
-% TODO
+PEGASIS jest protokołem dokonującym usprawnień w protokole LEACH. W przypadku sieci czujnikowej, urządzenia pełniące rolę węzłów posiadają ograniczone ilości energii, wynikające np. z zasilania bateryjnego.
+Przebudowana metoda przekazywania danych zebranych przez węzły typu cluster head, pozwala na ukończenie rundy przy wykorzystaniu mniejszej ilości energii niż LEACH.
+
+Pierwsza faza, faza komunikacji, w której ustalane są role węzłów jest identyczna. Przebudowana została metoda transmisji zagregowanych informacji od węzłachów typu cluster head to węzła głównego (sink).
+Węzły typu cluster head formują łańcuch, w którym najdalej oddalony węzeł typu cluster head, przekazuje zebrane i zaagregowane dane do innego węzła typu cluster head znajdującego się w najbliższym 
+sąsiedztwie. Algorytm trasowania najmniejszym kosztem nazywana się typu `greedy`. 
+
+Efektem niekorzystym w protokole PEGASIS jest wydłużenie czasu każdej z rund, wynikające z sekwencyjnej wymiany danych w łańcuchu.
+Generowane w ten sposób są dodatkowe koszty energetyczne związane z utrzymaniem węzłów w stanie pracy, kosztem odbioru i przetworzenia informacji.
+Należy jednak podkreślić, że zysk energetyczny wynikający z transmisji danych na krótsze dystanse kompensuje poniesione straty, tym samym pozwalając na wydłużenie czasu pracy każdego z węzłów.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/komunikacja_pegasis.png} 
+\end{figure}
 
 %-----------------
 % Architektura systemu
@@ -879,7 +915,7 @@ dla każdego zaimplenetowanego protokołu. Parametry wygenerowanej konfiguracji 
 
 Poniższa ilustracja przedstawia rozstawienie węzłów w sieci wygenerowanych dynamicznie:
 
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/przykladowa_sieci_wygenerowana.png} 
 \end{figure}
