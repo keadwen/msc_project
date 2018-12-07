@@ -1,4 +1,4 @@
-\select@language {polish}
+\babel@toc {polish}{}
 \contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Cel pracy}{1}{section.1.1}
 \contentsline {chapter}{\numberline {2}Wykorzystane technologie}{2}{chapter.2}
@@ -27,7 +27,7 @@
 \contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{18}{section*.9}
 \contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{20}{section*.10}
 \contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{22}{section*.11}
-\contentsline {subsection}{\numberline {4.1.3}Modu\IeC {\l } symulatora (Simulator)}{22}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Modu\IeC {\l } symulatora (Simulator)}{23}{subsection.4.1.3}
 \contentsline {section}{\numberline {4.2}Obs\IeC {\l }uga systemu}{24}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{24}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Generowanie konfiguracji}{25}{subsection.4.2.2}
