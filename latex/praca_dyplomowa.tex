@@ -335,8 +335,8 @@ Poniższy wzór pozwala na wyznaczenie całkowitego kosztu transmisji k-bitów d
 
 \[
 E_{TX}(k,d) = E_{TX-elec}(k) + E_{TX-amp}(k,d) = \begin{cases}
-\frac k \times E_{elec} + k \times \varepsilon_{fs} \times d^2 & d < d_{d_{0}}\\
-\frac k \times E_{elec} + k \times \varepsilon_{fs} \times d^4 & d \geq d_{d_{0}}
+ k \times E_{elec} + k \times \varepsilon_{fs} \times d^2 & d < d_{d_{0}}\\
+ k \times E_{elec} + k \times \varepsilon_{fs} \times d^4 & d \geq d_{d_{0}}
 \end{cases}
 \]
 
@@ -733,6 +733,21 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
  \item PopulateEnergyPoints - funkcja sprawdza oraz przechowuje stany energetyczne węzłów.
  \item PopulateNodesAlivePoints - funkcja sprawdza oraz przechowuje ilość sprawnych węzłów w sieci.
 \end{itemize}
+
+\subsubsection{Koszty transmisji}
+
+Transmisja i odbiór danych w sieci obarczony jest kosztem energetycznym.
+Model transmisji przedstawiony w rozdziale `Model transmisji` wymaga zdefiniowania wartości liczbowych dla czterech parametrów:
+
+\begin{lstlisting}
+const (
+  // Energy values measured in [J/byte].
+  E_ELEC = 40e-9
+  E_RX   = 4e-9
+  E_MP   = 0.0104e-12
+  E_FS   = 80e-12
+)
+\end{lstlisting}
 
 \subsubsection{Protokół (Protocol)}
 
