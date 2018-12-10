@@ -477,7 +477,23 @@ węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEA
 
 Poniższy diagram przedstawia dekompozycję modułów, całkowitą architekturę systemu oraz kierunki interakcji i przepływu informacji.
 
-%TODO Diagram
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=13cm]{images/architektura_systemu.png} 
+\end{figure}
+
+Użytkownik (znajdujący się po lewej stronie) posiada możliwość uruchomienia oprogramowania na dwa sposoby: 
+
+\begin{itemize}
+ \item symulacja prekonfigurowana za pomocą pliku konfiguracyjnego
+ \item symulacja bez pliku konfiguracyjnego
+\end{itemize}
+
+Opcja symulacji bez pliku konfiguracyjnego powoduje wygenerowanie pliku konfiguracyjnego w którym znajduje się 200 węzłów, rozproszonych w sposób
+pseudolosowy na przestrzenii 200 x 200.
+
+Symulator tworzy wewnętrzną strukturę sieci i węzłów, które poddawane są symulacji. Wynik końcowy poszczególnych sieci zwracany jest do symulatora, który
+generuje pliki w formacie kompatybilnym z narzędziem GNU Plot. 
 
 \subsection{Plik konfiguracyjny}
 
