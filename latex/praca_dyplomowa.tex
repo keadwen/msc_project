@@ -112,6 +112,7 @@
 }
 
 \streszczenia{
+  %TODO Poprawnić na końcu ponieważ praca się rozrasta.
   \input{streszczenia.tex}
 }
 
@@ -136,14 +137,6 @@ transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest sko
 
 Istotnym elementem pracy jest autorski symulator sieci sensorowej, która stanowi podstawowe narzędzie umożliwiąjące implementację oraz testowanie nowych algorytmów.
 Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania różnych algorytmów transmisji danych, bez potrzeby wykorzystania fizycznych urządzeń.
-
-% \section{Tworzenie projektu}
-% TODO: Przenieść na koniec bo to jest podsumowanie - czas przeszły
-% Koncepcja i projekt systemu symulującego model bezprzedowowej sieci czujnikowej został opracy przez autora pracy.
-% Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
-% Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się zajął się tworzeniem prototypu systemu symulującego. 
-% Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
-% Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontroli wersji git.
 
 %-----------------
 % Wykorzystane technologie
@@ -415,7 +408,7 @@ T(n) = \begin{cases}
 \end{cases}
 \]
 
-gdzie P oznacza wartość z zakresu (0, 1] definiujaca prawdopodobięństwa wyznaczenia węzła typu cluster head.
+gdzie P oznacza wartość z zakresu (0, 1] definiujaca prawdopodobieństwa wyznaczenia węzła typu cluster head.
 G jest zbiorem węzłów które nie pełniły roli cluster head w ostatnich 1/P rundach.
 
 W momencie ustalenia roli przez węzły, każdy z węzłów informuje pozostałe węzły uczestniczące w sieci o swojej roli w rundzie.
@@ -1013,13 +1006,100 @@ Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały rekom
 %-----------------
 \chapter{Opracowanie wyników eksperymentów}
 
-% \section{Opis}
-
 W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy wykorzystaniu autorskiego oprogramowania.
 
-\section{TODO}
+\section{Dane wejściowe}
 
-% TODO
+Oprogramowanie posiada implementacje trzech algorytmów: komunikację bezpośrednią, LEACH oraz PEGASIS (dokładniejszy opis działania protokołów został przedstawiony w poprzednich rozdziałach).
+W celu porównania efektywności energetycznej pomiędzy trzema rozwiązaniami, niezbędne jest precyzyjne zdefiniowanie testów.
+W systemie posiadamy cztery parametry, których wartości będą modyfikowane i efekty zmian będą porównywane:
+
+\begin{itemize}
+ \item Wielkość wiadomości - parametr ten definiuje wielkość wiadomości wysyłanej pomiędzy węzłami (mierzone w Bajtach).
+ \item Ilość węzłów w sieci - parametr ten definiuje liczbę węzłów w pojedynczej sieci i symulacji.
+ \item Wielkość obszaru sieci - parametr ten definiiuje wielkość obszaru wymiany danych w sieci.
+ \item Parametr `p` - wartość prawdopodobieństwa wypromowania węzła na węzeł typu cluster head.
+\end{itemize}
+
+W celu zapewnienia poprawnej jakości porównywania testów, każdy z scenariuszy posiada dedykowany plik konfiguracyjny.
+W ten sposób zapewnione jest stworzenie identycznego środowiska testowego, niezależnego od testowanego protokołu.
+
+\section{Scenariusze}
+
+Każdy z testów oraz wartości przedstawione na grafie są wynikami uśrednionymi, uzyskanymi w procesie wielokrotnego uruchomienia identycznego scenariusza.
+Ilość uruchomień wynosi 100.
+
+\subsection{Test 1 - Wielkość wiadomości}
+
+Test `Wielkość wiadomości` ma na celu przedstawienie zalezności efektywności energetycznej dla trzech algorytmów względem wielkości wiadomości wysyłanej pomiędzy
+węzłami.
+
+Lista plików konfiguracyjnych:
+
+%TODO Stworzyć listę plików konfiguracyjnych.
+
+Uruchomienie oprogramowania:
+
+%TODO Przestawić komendę odpalającą oprogramowanie.
+
+Tabela uzyskanych wyników:
+
+%TODO Przedstawić tabelę dystrybucji wynikiów.
+%TODO Dodać grafy porównujące uzyskane wyniki.
+
+\subsection{Test 2 - Ilość węzłów w sieci}
+
+Test `Ilość węzłów w sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem ilości węzłów znajdujących się w sieci.
+
+List plików konfiguracyjnych:
+
+%TODO Stworzyć listę plików konfiguracyjnych.
+
+Uruchomienie oprogramowania:
+
+%TODO Przestawić komendę odpalającą oprogramowanie.
+
+\subsection{Test 3 - Wielkość obszaru sieci}
+
+Test `Wielkość obszaru sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem wielkości obszaru sieci na której
+znajdują się węzły w sieci.
+
+List plików konfiguracyjnych:
+
+%TODO Stworzyć listę plików konfiguracyjnych.
+
+Uruchomienie oprogramowania:
+
+%TODO Przestawić komendę odpalającą oprogramowanie.
+
+\subsection{Test 4 - Parametr `p`}
+
+Test `Parametr p` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem wartości prawdopodobieństwa wypromowania węzła na węzeł
+typu cluster head. 
+
+Istotna informacja: w przypadku algorytmu komunikacji bezpośredniej parametr `p` nie istnieje. Wynika to z charakterystyki komunikacji, gdyż w protokole
+tym nie występuje koncept węzła typu cluster head i każdy z węzłów przesyła informacje bezpośrednio do węzła głównego (sink). Dokonać można jednak założenia, że 
+transmisja w protokole komunikacji bezpośredniej jest specjalnym przypadkiem sieci typu LEACH, w której parametr \[ p = 1.0 \]
+Oznacza to, że każdy z węzłów pełni rolę węzła cluster head, który nie posiada przynależących węzłów standardowych i dokonuje transmisji tylko swoich dane.
+
+List plików konfiguracyjnych:
+
+%TODO Stworzyć listę plików konfiguracyjnych.
+
+Uruchomienie oprogramowania:
+
+%TODO Przestawić komendę odpalającą oprogramowanie.
+
+\section{Podsumowanie wyników}
+
+%TODO Opisać po przedstawieniu wyników.
+
+\chapter{Podsumowanie}
+Koncepcja i projekt systemu symulującego model bezprzedowowej sieci czujnikowej został opracowany przez autora pracy.
+Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
+Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się zajął się tworzeniem prototypu systemu symulującego. 
+Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
+Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontroli wersji git.
 
 
 \begin{thebibliography}{99}

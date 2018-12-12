@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.3)  10 DEC 2018 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.3)  13 DEC 2018 07:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,7 +499,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 119.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<PWHead.png, id=124, 2015.53pt x 320.19624pt>
+<PWHead.png, id=152, 2015.53pt x 320.19624pt>
 File: PWHead.png Graphic file (type png)
 <use PWHead.png>
 Package pdftex.def Info: PWHead.png  used on input line 119.
@@ -509,7 +509,7 @@ Overfull \hbox (31.10086pt too wide) in paragraph at lines 119--119
 [] 
  []
 
-<mgrhead.png, id=125, 1392.20125pt x 303.1325pt>
+<mgrhead.png, id=153, 1392.20125pt x 303.1325pt>
 File: mgrhead.png Graphic file (type png)
 <use mgrhead.png>
 Package pdftex.def Info: mgrhead.png  used on input line 119.
@@ -587,7 +587,7 @@ Rozdzia\l  1.
 
 ]
 Rozdzia\l  2.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 166.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 158.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -602,97 +602,101 @@ Rozdzia\l  3.
 [7
 
 ]
-Overfull \hbox (9.98535pt too wide) in paragraph at lines 331--335
+Overfull \hbox (9.98535pt too wide) in paragraph at lines 323--327
 \T1/cmr/m/n/12 apli-ka-cji bez-prze-wo-do-wych sieci czuj-ni-ków. Mo-del przed-
 sta-wia za-le»-no-±ci trans-
  []
 
 
-Overfull \hbox (12.74223pt too wide) detected at line 341
+Overfull \hbox (12.74223pt too wide) detected at line 333
 \OML/plm/m/it/12 E[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 k; d\OT4/cmr/m/n/12 ) = \
 OML/plm/m/it/12 E[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 k\OT4/cmr/m/n/12 ) + \OML/
 plm/m/it/12 E[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 k; d\OT4/cmr/m/n/12 ) = []
  []
 
 [8]
-<images/komunikacja_bezposrednia.png, id=295, 369.38pt x 375.4025pt>
+<images/komunikacja_bezposrednia.png, id=330, 369.38pt x 375.4025pt>
 File: images/komunikacja_bezposrednia.png Graphic file (type png)
 <use images/komunikacja_bezposrednia.png>
 Package pdftex.def Info: images/komunikacja_bezposrednia.png  used on input lin
-e 388.
+e 380.
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [9] [10 <./images/komunikacja_bezposrednia.png>]
-<images/komunikacja_leach.png, id=306, 369.38pt x 375.4025pt>
+<images/komunikacja_leach.png, id=341, 369.38pt x 375.4025pt>
 File: images/komunikacja_leach.png Graphic file (type png)
 <use images/komunikacja_leach.png>
-Package pdftex.def Info: images/komunikacja_leach.png  used on input line 442.
+Package pdftex.def Info: images/komunikacja_leach.png  used on input line 434.
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
 [12 <./images/komunikacja_leach.png>]
-<images/komunikacja_pegasis.png, id=317, 369.38pt x 375.4025pt>
+<images/komunikacja_pegasis.png, id=352, 369.38pt x 375.4025pt>
 File: images/komunikacja_pegasis.png Graphic file (type png)
 <use images/komunikacja_pegasis.png>
-Package pdftex.def Info: images/komunikacja_pegasis.png  used on input line 463
+Package pdftex.def Info: images/komunikacja_pegasis.png  used on input line 455
 .
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [13 <./images/komunikacja_pegasis.png>]
 Rozdzia\l  4.
-<images/architektura_systemu.png, id=323, 873.2625pt x 548.0475pt>
+<images/architektura_systemu.png, id=358, 873.2625pt x 548.0475pt>
 File: images/architektura_systemu.png Graphic file (type png)
 <use images/architektura_systemu.png>
-Package pdftex.def Info: images/architektura_systemu.png  used on input line 48
-2.
+Package pdftex.def Info: images/architektura_systemu.png  used on input line 47
+4.
 (pdftex.def)             Requested size: 369.88582pt x 232.13521pt.
 [14
 
  <./images/architektura_systemu.png>]
-Overfull \hbox (4.90337pt too wide) in paragraph at lines 492--494
+Overfull \hbox (4.90337pt too wide) in paragraph at lines 484--486
 []\T1/cmr/m/n/12 Opcja sy-mu-la-cji bez pliku kon-fi-gu-ra-cyj-nego po-wo-duje 
 wy-ge-ne-ro-wa-nie pliku
  []
 
 [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (1.41269pt too wide) in paragraph at lines 733--734
+Overfull \hbox (1.41269pt too wide) in paragraph at lines 725--726
 []\T1/cmr/m/n/12 runda (Ro-und) - zmienna pu-bliczna prze-cho-wuje nu-mer ak-tu
 -al-nej rundy
  []
 
 [22] [23] [24] [25] [26]
-<images/przykladowa_sieci_wygenerowana.png, id=570, 369.38pt x 375.4025pt>
+<images/przykladowa_sieci_wygenerowana.png, id=605, 369.38pt x 375.4025pt>
 File: images/przykladowa_sieci_wygenerowana.png Graphic file (type png)
 <use images/przykladowa_sieci_wygenerowana.png>
 Package pdftex.def Info: images/przykladowa_sieci_wygenerowana.png  used on inp
-ut line 951.
+ut line 943.
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [27] [28 <./images/przykladowa_sieci_wygenerowana.png>] [29]
 Rozdzia\l  5.
 [30
 
-] [31
+] [31] [32]
+Rozdzia\l  6.
+[33
 
-] [32
+] [34
 
-] (./opiniaopiekuna.tex) [33] (./recenzja.tex [34])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1035.
- [35]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1035.
+] (./opiniaopiekuna.tex) [35
+
+] (./recenzja.tex [36])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1114.
+ [37]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1114.
 
 (./praca_dyplomowa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1035.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1035.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1114.
 
 Package rerunfilecheck Info: File `praca_dyplomowa.out' has not changed.
-(rerunfilecheck)             Checksum: 5677B327448F2B3AFA4B8692EE323181;2059.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1035.
+(rerunfilecheck)             Checksum: 361CB2EE5D4EB78C12CCFBEF506FA148;2576.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1114.
  ) 
 Here is how much of TeX's memory you used:
- 9731 strings out of 492638
- 137618 string characters out of 6131710
+ 9747 strings out of 492638
+ 137836 string characters out of 6131710
  456321 words of memory out of 5000000
- 13086 multiletter control sequences out of 15000+600000
+ 13093 multiletter control sequences out of 15000+600000
  27260 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,9n,40p,249b,1920s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -714,10 +718,10 @@ ic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728
 mf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/publi
 c/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on praca_dyplomowa.pdf (43 pages, 627693 bytes).
+Output written on praca_dyplomowa.pdf (45 pages, 635347 bytes).
 PDF statistics:
- 774 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 343 named destinations out of 1000 (max. 500000)
- 276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 735 compressed objects within 8 object streams
+ 352 named destinations out of 1000 (max. 500000)
+ 332 words of extra memory for PDF output out of 10000 (max. 10000000)
 
