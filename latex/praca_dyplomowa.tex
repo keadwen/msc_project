@@ -131,11 +131,11 @@ czujniki znajdują zastosowanie w nieskończonej liczbie aplikacji, zarówno w p
 % TODO: spellchecker
 
 \section{Cel pracy}
-Celem pracy są badania problemów współbieżności w algorymatch sieci czujnikowej. Praca wykorzystuje 
+Celem pracy są badania problemów współbieżności w algorytmach sieci czujnikowej. Praca wykorzystuje 
 ogólnie znane i udokumentowane algorytmy umożliwiające
 transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest skończona ilość energii czujnika.
 
-Istotnym elementem pracy jest autorski symulator sieci sensorowej, która stanowi podstawowe narzędzie umożliwiąjące implementację oraz testowanie nowych algorytmów.
+Istotnym elementem pracy jest autorski symulator sieci sensorowej, która stanowi podstawowe narzędzie umożliwiająca implementację oraz testowanie nowych algorytmów.
 Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania różnych algorytmów transmisji danych, bez potrzeby wykorzystania fizycznych urządzeń.
 
 %-----------------
@@ -201,10 +201,10 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem statycznym, co pozwala wyeliminować błedy typu runtime wynikające z typu zmiennej.
  \item Go jest językiem samodokumentującym. Określony odgórnie format komentarzy umożliwia automatyczne tworzenie przejrzystej dokumentacji.
- \item Go jest językiem kompilowalnym, co pozwala na szybsze uruchamianie i egzekucję oprogramowania.
+ \item Go jest językiem kompilowanym, co pozwala na szybsze uruchamianie i egzekucję oprogramowania.
  \item Go wykorzystuje mniej pamięci. Przykład: W Go zmienna typu int32 wymaga 4 bajty pamięci, w Python 24 bajty.
  \item Python umożliwia runtime reflection.
- \item Python posiada większy bazę publiczych bibliotek.
+ \item Python posiada większy bazę publicznych bibliotek.
 \end{itemize}
 
 \paragraph{Porównanie Go z C++}
@@ -212,11 +212,11 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item Go posiada system zarządzania pamięcią (garbage collector).
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem samodokumentującym. Nie wymaga tworzenia plików typu header.
- \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (inheretance) została zastąpiona osadzaniem (embedding).
- \item Go posiada możliwość użycia (zaimportowania) dowolnej bilbioteki C, C++.
- \item C++ posiada osiągnać szybszą egzekujcę oprogramowania.
+ \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (inheritance) została zastąpiona osadzaniem (embedding).
+ \item Go posiada możliwość użycia (zaimportowania) dowolnej biblioteki C, C++.
+ \item C++ posiada osiągnąć szybszą egzekucję oprogramowania.
  \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (generics).
- \item C++ nie posiada systemu zarządzania pamięcia (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikrokontrolerach).
+ \item C++ nie posiada systemu zarządzania pamięcią (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikrokontrolerach).
 \end{itemize}
 
 \paragraph{Unikatowe cechy Go}
@@ -224,7 +224,7 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item Produktem kompilacji jest plik egzekucyjny posiadający wszystkie niezbędne zależności.
  \item Zarządzanie pakietami pozwala na importowanie rozwiązań bezpośrednio z GitHub (lub innych serwisów zewnętrznych).
  \item Dynamiczna alokacja typu zmiennej statycznej.
- \item Natywnie wspierane tworzenie oprogramowania wykorzystującego wielowątkowośc i współbieżność procesów.
+ \item Natywnie wspieranie tworzenie oprogramowania wykorzystującego wielowątkowość i współbieżność procesów.
  \item Natywna metoda testowania funkcjonalności i bibliotek.
  \item Pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (benchmarking), formatowania składni kodu zgodnie ze standardem (gofmt),
        oraz wiele innych funkcjonalności.
@@ -303,7 +303,7 @@ rozwiązywanego w pracy dyplomowej.
 
 \section{Wstęp do bezprzewodowych sieci sensorowych}
 Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również bezprzewodowymi sieciami czujników.
-Sieć czujnikowa składa się z urzadzeń, których funkcją jest realizowanie określonego zadania.
+Sieć czujnikowa składa się z urządzeń, których funkcją jest realizowanie określonego zadania.
 Pierwsze aplikacje i zastosowania bezprzewodowych sieci czujników zostały wdrożone na potrzeby wojskowe, jednakże przeciągu ostatnich lat, technologie te znalazły
 wiele nowych zastosowań w przemyśle (np. pomiary meteorologiczne) i aplikacjach codziennych (np. systemy domów inteligentnych).
 
@@ -463,7 +463,7 @@ Należy jednak podkreślić, że zysk energetyczny wynikający z transmisji dany
 % TODO: ten rozdział ``robi robotę'' - pozytywnie się wyróżnia ale nadal kilka poniższych subsection
 % wymaga poprawy - albo rozbudować albo skonsolidować
 
-System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależnożci sprawności energetycznej 
+System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależności sprawności energetycznej 
 węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS).
 
 \section{Komponenty systemu}
