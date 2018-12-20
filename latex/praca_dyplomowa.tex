@@ -1084,12 +1084,48 @@ Oznacza to, że każdy z węzłów pełni rolę węzła cluster head, który nie
 
 List plików konfiguracyjnych:
 
-%TODO Stworzyć listę plików konfiguracyjnych.
+\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_project$ ll testdata/test_4/
+total 320
+drwxr-xr-x 2 jakubm primarygroup  4096 Dec 20 15:04 ./
+drwxr-xr-x 3 jakubm primarygroup  4096 Dec 20 15:00 ../
+-rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:00 direct200.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:03 leach200_p005.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22422 Dec 20 15:01 leach200_p010.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:03 leach200_p015.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22422 Dec 20 15:03 leach200_p020.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:03 leach200_p025.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22422 Dec 20 15:03 leach200_p030.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p005.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22424 Dec 20 15:02 pegasis200_p010.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p015.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p020.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p025.pbtxt
+-rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p030.pbtxt
+\end{lstlisting}
 
 Uruchomienie oprogramowania:
 
-%TODO Przestawić komendę odpalającą oprogramowanie.
+\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_project$ ./msc_project --config_files=\
+testdata/test_4/direct200.pbtxt,\
+testdata/test_4/leach200_p005.pbtxt,\
+testdata/test_4/leach200_p010.pbtxt,\
+testdata/test_4/leach200_p015.pbtxt,\
+testdata/test_4/leach200_p020.pbtxt,\
+testdata/test_4/leach200_p025.pbtxt,\
+testdata/test_4/leach200_p030.pbtxt,\
+testdata/test_4/pegasis200_p005.pbtxt,\
+testdata/test_4/pegasis200_p010.pbtxt,\
+testdata/test_4/pegasis200_p015.pbtxt,\
+testdata/test_4/pegasis200_p020.pbtxt,\
+testdata/test_4/pegasis200_p025.pbtxt,\
+testdata/test_4/pegasis200_p030.pbtxt
+\end{lstlisting}
 
+\paragraph{Uzyskane wyniki}
+
+Oprogramowanie zostało uruchomione 
 \section{Podsumowanie wyników}
 
 %TODO Opisać po przedstawieniu wyników.
