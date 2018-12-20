@@ -114,7 +114,8 @@ func (net *Network) Simulate() error {
 	net.PopulateNodesAlivePoints()
 
 	// Display the final count of TX/RX data per node.
-	fmt.Printf("=== Final: %d\n%v\n\n", net.Round, net.BaseStation.Info())
+	// fmt.Printf("=== Final: %d\n%v\n\n", net.Round, net.BaseStation.Info())
+	fmt.Println(net.Round)
 	return nil
 }
 

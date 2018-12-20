@@ -15,8 +15,9 @@ import (
 )
 
 var (
-	configFile = flag.String("config_files", "", "location of node config files (comma separated)")
-	msg_length = flag.Int("msg_length", 0, "overwrites the config.Config message length value")
+	configFile   = flag.String("config_files", "", "location of node config files (comma separated)")
+	repeatConfig = flag.Int("repeat_config", 1, "how many time repeat the same simulation")
+	msgLength    = flag.Int("msg_length", 0, "overwrites the config.Config message length value")
 )
 
 func main() {
@@ -46,8 +47,8 @@ func main() {
 				log.Fatalf("Found %d nodes in config proto %q. Expectes more than 1.", len(conf.GetNodes()), file)
 			}
 			// Overwrites the message length defined in the configuration file, if flag specified.
-			if *msg_length != 0 {
-				conf.MsgLength = int64(*msg_length)
+			if *msgLength != 0 {
+				conf.MsgLength = int64(*msgLength)
 			}
 			configs = append(configs, conf)
 		}
@@ -55,11 +56,13 @@ func main() {
 
 	// Simulation section.
 	for id, conf := range configs {
-		name := fmt.Sprintf("%s-%v-%v-%d", conf.Protocol.String(), len(conf.GetNodes())-1, conf.Nodes[1].GetInitialEnergy(), id)
-		if err := s.AddScenario(name, conf); err != nil {
-			log.Fatalf("Failed to add scenario: %v", err)
+		for r := 1; r <= *repeatConfig; r++ {
+			name := fmt.Sprintf("%s-%v-%v-%d-%d", conf.Protocol.String(), len(conf.GetNodes())-1, conf.Nodes[1].GetInitialEnergy(), id, r)
+			if err := s.AddScenario(name, conf); err != nil {
+				log.Fatalf("Failed to add scenario: %v", err)
+			}
+			fmt.Printf("Added scenario: %s\n", name)
 		}
-		fmt.Printf("Added scenario: %s\n", name)
 	}
 	if err := s.Run(); err != nil {
 		log.Fatalf("Failed to run simulation: %v", err)
