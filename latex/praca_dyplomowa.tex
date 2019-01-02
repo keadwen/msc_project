@@ -20,6 +20,8 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{amsmath}
 \usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
 
 % Pakiety oraz kolory pomocnicze do kodu źródłowego.
 \usepackage{listings}
@@ -1082,7 +1084,7 @@ tym nie występuje koncept węzła typu cluster head i każdy z węzłów przesy
 transmisja w protokole komunikacji bezpośredniej jest specjalnym przypadkiem sieci typu LEACH, w której parametr \[ p = 1.0 \]
 Oznacza to, że każdy z węzłów pełni rolę węzła cluster head, który nie posiada przynależących węzłów standardowych i dokonuje transmisji tylko swoich dane.
 
-List plików konfiguracyjnych:
+Lista plików konfiguracyjnych:
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ll testdata/test_4/
@@ -1107,7 +1109,7 @@ drwxr-xr-x 3 jakubm primarygroup  4096 Dec 20 15:00 ../
 Uruchomienie oprogramowania:
 
 \begin{lstlisting}
-~/go/src/github.com/keadwen/msc_project$ ./msc_project --config_files=\
+~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
 testdata/test_4/direct200.pbtxt,\
 testdata/test_4/leach200_p005.pbtxt,\
 testdata/test_4/leach200_p010.pbtxt,\
@@ -1123,9 +1125,155 @@ testdata/test_4/pegasis200_p025.pbtxt,\
 testdata/test_4/pegasis200_p030.pbtxt
 \end{lstlisting}
 
-\paragraph{Uzyskane wyniki}
+Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych. 
 
-Oprogramowanie zostało uruchomione 
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Parametr `p`	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& - 	& -	& 359.00 \\*
+\midrule
+LEACH	& 0.05	& 1	& 355.98 \\*
+	&	& 5	& 362.90 \\*
+	&	& 10	& 364.90 \\*
+	&	& 30	& 387.00 \\*
+	&	& 50	& 396.00 \\*
+	&	& 70	& 415.00 \\*
+	&	& 90	& 435.20 \\*
+	&	& 95	& 455.05 \\*
+	&	& 99	& 476.08 \\*
+	&	& 100	& 484.00 \\*
+\midrule
+LEACH	& 0.10	& 1	& 364.00 \\*
+	&	& 5	& 366.00 \\*
+	&	& 10	& 372.90 \\*
+	&	& 30	& 387.00 \\*
+	&	& 50	& 400.00 \\*
+	&	& 70	& 411.00 \\*
+	&	& 90	& 430.00 \\*
+	&	& 95	& 436.00 \\*
+	&	& 99	& 455.19 \\*
+	&	& 100	& 474.00 \\*
+\midrule
+LEACH	& 0.15	& 1	& 356.93 \\*
+	&	& 5	& 366.95 \\*
+	&	& 10	& 371.00 \\*
+	&	& 30	& 387.70 \\*
+	&	& 50	& 398.50 \\*
+	&	& 70	& 414.30 \\*
+	&	& 90	& 434.30 \\*
+	&	& 95	& 442.25 \\*
+	&	& 99	& 455.19 \\*
+	&	& 100	& 470.00 \\*
+\midrule
+LEACH	& 0.20	& 1	& 362.00 \\*
+	&	& 5	& 365.95 \\*
+	&	& 10	& 371.80 \\*
+	&	& 30	& 387.70 \\*
+	&	& 50	& 402.50 \\*
+	&	& 70	& 417.60 \\*
+	&	& 90	& 442.20 \\*
+	&	& 95	& 451.00 \\*
+	&	& 99	& 471.10 \\*
+	&	& 100	& 481.00 \\*
+\midrule
+LEACH	& 0.25	& 1	& 358.99 \\*
+	&	& 5	& 363.00 \\*
+	&	& 10	& 370.70 \\*
+	&	& 30	& 386.70 \\*
+	&	& 50	& 403.50 \\*
+	&	& 70	& 423.30 \\*
+	&	& 90	& 439.20 \\*
+	&	& 95	& 450.00 \\*
+	&	& 99	& 454.11 \\*
+	&	& 100	& 465.00 \\*
+\midrule
+LEACH	& 0.30	& 1	& 351.99 \\*
+	&	& 5	& 368.90 \\*
+	&	& 10	& 372.90 \\*
+	&	& 30	& 389.40 \\*
+	&	& 50	& 399.00 \\*
+	&	& 70	& 416.30 \\*
+	&	& 90	& 431.20 \\*
+	&	& 95	& 444.10 \\*
+	&	& 99	& 456.14 \\*
+	&	& 100	& 470.00 \\*
+\midrule
+PEGASIS	& 0.05	& 1	& 345.00 \\*
+	&	& 5	& 351.00 \\*
+	&	& 10	& 351.90 \\*
+	&	& 30	& 358.00 \\*
+	&	& 50	& 365.00 \\*
+	&	& 70	& 370.30 \\*
+	&	& 90	& 377.00 \\*
+	&	& 95	& 380.05 \\*
+	&	& 99	& 387.02 \\*
+	&	& 100	& 389.00 \\*
+\midrule
+PEGASIS	& 0.10	& 1	& 340.99 \\*
+	&	& 5	& 346.95 \\*
+	&	& 10	& 351.00 \\*
+	&	& 30	& 360.00 \\*
+	&	& 50	& 363.50 \\*
+	&	& 70	& 369.30 \\*
+	&	& 90	& 377.00 \\*
+	&	& 95	& 380.05 \\*
+	&	& 99	& 388.07 \\*
+	&	& 100	& 395.00 \\*
+\midrule
+PEGASIS	& 0.15	& 1	& 339.95 \\*
+	&	& 5	& 346.00 \\*
+	&	& 10	& 350.00 \\*
+	&	& 30	& 356.00 \\*
+	&	& 50	& 364.50 \\*
+	&	& 70	& 370.00 \\*
+	&	& 90	& 382.10 \\*
+	&	& 95	& 386.25 \\*
+	&	& 99	& 402.09 \\*
+	&	& 100	& 411.00 \\*
+\midrule
+PEGASIS	& 0.20	& 1	& 346.97 \\*
+	&	& 5	& 349.00 \\*
+	&	& 10	& 352.00 \\*
+	&	& 30	& 360.70 \\*
+	&	& 50	& 367.00 \\*
+	&	& 70	& 372.00 \\*
+	&	& 90	& 378.00 \\*
+	&	& 95	& 382.05 \\*
+	&	& 99	& 388.09 \\*
+	&	& 100	& 397.00 \\*
+\midrule
+PEGASIS	& 0.25	& 1	& 338.99 \\*
+	&	& 5	& 346.90 \\*
+	&	& 10	& 349.90 \\*
+	&	& 30	& 357.70 \\*
+	&	& 50	& 362.00 \\*
+	&	& 70	& 368.30 \\*
+	&	& 90	& 381.00 \\*
+	&	& 95	& 385.05 \\*
+	&	& 99	& 397.09 \\*
+	&	& 100	& 406.00 \\*
+\midrule
+PEGASIS	& 0.30	& 1	& 347.94 \\*
+	&	& 5	& 349.95 \\*
+	&	& 10	& 354.00 \\*
+	&	& 30	& 360.70 \\*
+	&	& 50	& 365.50 \\*
+	&	& 70	& 371.00 \\*
+	&	& 90	& 377.10 \\*
+	&	& 95	& 385.05 \\*
+	&	& 99	& 389.01 \\*
+	&	& 100	& 390.00 \\*
+\bottomrule
+\end{longtable}
+
+\paragraph{Podsumowanie wyników testu}
+odyfikacja paramatru `p` umożliwiła wydłużenie czasu pracy sieci węzłów dla każdego z scenariuszy.
+W komunikacji bezpośredniej (DIRECT) możliwym było uzyskanie 359 rund wymiany informacji. W przypadku, najgorszego scenariusza (PEGASIS, p=0.30), percentyl 0.5 wyniósł 360.7.
+Najbardziej korzystne wyniki uzyskano dla scenariuszy (LEACH, p=0.10) oraz (LEACH, p=0.20), gdzie wartość percentyla 0.01 była większa niż 359.
+
 \section{Podsumowanie wyników}
 
 %TODO Opisać po przedstawieniu wyników.
@@ -1133,7 +1281,7 @@ Oprogramowanie zostało uruchomione
 \chapter{Podsumowanie}
 Koncepcja i projekt systemu symulującego model bezprzedowowej sieci czujnikowej został opracowany przez autora pracy.
 Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
-Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się zajął się tworzeniem prototypu systemu symulującego. 
+Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się tworzeniem prototypu systemu symulującego.
 Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
 Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontroli wersji git.
 

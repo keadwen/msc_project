@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{31}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{31}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{31}{subsection.5.2.4}
-\contentsline {paragraph}{Uzyskane wyniki}{33}{section*.13}
-\contentsline {section}{\numberline {5.3}Podsumowanie wynik\IeC {\'o}w}{33}{section.5.3}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{34}{chapter.6}
-\contentsline {chapter}{Bibliografia}{35}{chapter*.14}
+\contentsline {paragraph}{Podsumowanie testu}{37}{section*.13}
+\contentsline {section}{\numberline {5.3}Podsumowanie wynik\IeC {\'o}w}{37}{section.5.3}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{38}{chapter.6}
+\contentsline {chapter}{Bibliografia}{39}{chapter*.14}
