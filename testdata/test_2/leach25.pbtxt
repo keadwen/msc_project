@@ -1,0 +1,211 @@
+protocol: LEACH
+max_rounds: 10000
+p_cluster_heads: 0.1
+msg_length: 128
+nodes: <
+  initial_energy: 1e+100
+  location: <
+    X: 100
+    Y: 450
+  >
+>
+nodes: <
+  id: 1
+  initial_energy: 2.0
+  location: <
+    X: 199.36168179984253
+    Y: 67.36600933711391
+  >
+>
+nodes: <
+  id: 2
+  initial_energy: 2.0
+  location: <
+    X: 88.91310863948563
+    Y: 36.60553297569458
+  >
+>
+nodes: <
+  id: 3
+  initial_energy: 2.0
+  location: <
+    X: 19.295149762559976
+    Y: 72.49368923637391
+  >
+>
+nodes: <
+  id: 4
+  initial_energy: 2.0
+  location: <
+    X: 181.33926864734022
+    Y: 2.0102636220499936
+  >
+>
+nodes: <
+  id: 5
+  initial_energy: 2.0
+  location: <
+    X: 195.51239470437187
+    Y: 111.14328544319282
+  >
+>
+nodes: <
+  id: 6
+  initial_energy: 2.0
+  location: <
+    X: 75.89088472075748
+    Y: 146.59505205457364
+  >
+>
+nodes: <
+  id: 7
+  initial_energy: 2.0
+  location: <
+    X: 153.23642097371282
+    Y: 57.8575190160736
+  >
+>
+nodes: <
+  id: 8
+  initial_energy: 2.0
+  location: <
+    X: 91.11610376949123
+    Y: 126.81760013585746
+  >
+>
+nodes: <
+  id: 9
+  initial_energy: 2.0
+  location: <
+    X: 22.168573090360173
+    Y: 17.731684004119654
+  >
+>
+nodes: <
+  id: 10
+  initial_energy: 2.0
+  location: <
+    X: 171.53390619509764
+    Y: 138.11474775008918
+  >
+>
+nodes: <
+  id: 11
+  initial_energy: 2.0
+  location: <
+    X: 178.78074650585523
+    Y: 80.7496337663683
+  >
+>
+nodes: <
+  id: 12
+  initial_energy: 2.0
+  location: <
+    X: 34.99559928880805
+    Y: 59.17180490772036
+  >
+>
+nodes: <
+  id: 13
+  initial_energy: 2.0
+  location: <
+    X: 198.34907062745805
+    Y: 141.7869157169524
+  >
+>
+nodes: <
+  id: 14
+  initial_energy: 2.0
+  location: <
+    X: 110.5802228177258
+    Y: 160.62083671385693
+  >
+>
+nodes: <
+  id: 15
+  initial_energy: 2.0
+  location: <
+    X: 6.589663573066959
+    Y: 73.00097663707615
+  >
+>
+nodes: <
+  id: 16
+  initial_energy: 2.0
+  location: <
+    X: 33.38369542490563
+    Y: 87.94381364572581
+  >
+>
+nodes: <
+  id: 17
+  initial_energy: 2.0
+  location: <
+    X: 192.71636682180403
+    Y: 29.850811471937412
+  >
+>
+nodes: <
+  id: 18
+  initial_energy: 2.0
+  location: <
+    X: 186.64160279465443
+    Y: 4.960927074057211
+  >
+>
+nodes: <
+  id: 19
+  initial_energy: 2.0
+  location: <
+    X: 19.103311503198448
+    Y: 37.63818457057886
+  >
+>
+nodes: <
+  id: 20
+  initial_energy: 2.0
+  location: <
+    X: 153.59829982210294
+    Y: 104.56247228410325
+  >
+>
+nodes: <
+  id: 21
+  initial_energy: 2.0
+  location: <
+    X: 137.0831945195012
+    Y: 45.91688906631662
+  >
+>
+nodes: <
+  id: 22
+  initial_energy: 2.0
+  location: <
+    X: 11.917939854883572
+    Y: 152.02973161502598
+  >
+>
+nodes: <
+  id: 23
+  initial_energy: 2.0
+  location: <
+    X: 142.44031003121216
+    Y: 22.648902126490743
+  >
+>
+nodes: <
+  id: 24
+  initial_energy: 2.0
+  location: <
+    X: 167.57507873516485
+    Y: 63.058120837358466
+  >
+>
+nodes: <
+  id: 25
+  initial_energy: 2.0
+  location: <
+    X: 163.86836016322584
+    Y: 80.18689721687169
+  >
+>
