@@ -77,7 +77,7 @@ func (s *Simulator) Run() error {
 	var err error
 	for _, name := range names {
 		conf := s.config[name]
-		fmt.Printf("P(%v:%v:%v): ", conf.GetProtocol(), conf.GetPClusterHeads(), len(conf.GetNodes()))
+		fmt.Printf("P(%v:%v:%v:%v): ", conf.GetProtocol(), conf.GetPClusterHeads(), len(conf.GetNodes()), conf.GetMsgLength())
 		err = s.network[name].Simulate()
 		if err != nil {
 			return err
