@@ -1038,16 +1038,221 @@ węzłami.
 
 Lista plików konfiguracyjnych:
 
-%TODO Stworzyć listę plików konfiguracyjnych.
+\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_projec$ tree testdata/test_1/
+testdata/test_1/
+  direct200_m128.pbtxt
+  direct200_m256.pbtxt
+  direct200_m32.pbtxt
+  direct200_m64.pbtxt
+  leach200_m128.pbtxt
+  leach200_m256.pbtxt
+  leach200_m32.pbtxt
+  leach200_m64.pbtxt
+  pegasis200_m128.pbtxt
+  pegasis200_m256.pbtxt
+  pegasis200_m32.pbtxt
+  pegasis200_m64.pbtxt
+
+0 directories, 12 files
+\end{lstlisting}
+
 
 Uruchomienie oprogramowania:
 
-%TODO Przestawić komendę odpalającą oprogramowanie.
+\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
+testdata/test_1/direct200_m32.pbtxt,\
+testdata/test_1/direct200_m64.pbtxt,\
+testdata/test_1/direct200_m128.pbtxt,\
+testdata/test_1/direct200_m256.pbtxt,\
+testdata/test_1/leach200_m32.pbtxt,\
+testdata/test_1/leach200_m64.pbtxt,\
+testdata/test_1/leach200_m128.pbtxt,\
+testdata/test_1/leach200_m256.pbtxt,\
+testdata/test_1/pegasis200_m32.pbtxt,\
+testdata/test_1/pegasis200_m64.pbtxt,\
+testdata/test_1/pegasis200_m128.pbtxt,\
+testdata/test_1/pegasis200_m256.pbtxt
+\end{lstlisting}
 
 Tabela uzyskanych wyników:
 
-%TODO Przedstawić tabelę dystrybucji wynikiów.
-%TODO Dodać grafy porównujące uzyskane wyniki.
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Wielkość wiadomości (B)	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 32 	& -	& 1434.00 \\*
+\midrule
+LEACH	& 32	& 1	& 1430.85 \\*
+	&	& 5	& 1499.10 \\*
+	&	& 10	& 1518.00 \\*
+	&	& 25	& 1570.75 \\*
+	&	& 50	& 1635.00 \\*
+	&	& 75	& 1696.75 \\*
+	&	& 90	& 1764.50 \\*
+	&	& 95	& 1783.05 \\*
+	&	& 99	& 1805.26 \\*
+	&	& 100	& 1831.00 \\*
+\midrule
+PEGASIS	& 32	& 1	& 1135.76 \\*
+	&	& 5	& 1146.90 \\*
+	&	& 10	& 1152.00 \\*
+	&	& 25	& 1165.75 \\*
+	&	& 50	& 1184.50 \\*
+	&	& 75	& 1203.00 \\*
+	&	& 90	& 1224.00 \\*
+	&	& 95	& 1234.25 \\*
+	&	& 99	& 1262.12 \\*
+	&	& 100	& 1274.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m32.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie (m=32B).}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m32.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=32B).}
+\end{figure}
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Wielkość wiadomości (B)	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 64 	& -	& 717.00 \\*
+\midrule
+LEACH	& 64	& 1	& 774.87 \\*
+	&	& 5	& 759.65 \\*
+	&	& 10	& 769.80 \\*
+	&	& 25	& 800.75 \\*
+	&	& 50	& 830.50 \\*
+	&	& 75	& 872.25 \\*
+	&	& 90	& 893.20 \\*
+	&	& 95	& 908.40 \\*
+	&	& 99	& 935.19 \\*
+	&	& 100	& 954.00 \\*
+\midrule
+PEGASIS	& 64	& 1	& 575.95 \\*
+	&	& 5	& 583.95 \\*
+	&	& 10	& 587.00 \\*
+	&	& 25	& 594.00 \\*
+	&	& 50	& 607.50 \\*
+	&	& 75	& 622.25 \\*
+	&	& 90	& 629.10 \\*
+	&	& 95	& 635.10 \\*
+	&	& 99	& 669.16 \\*
+	&	& 100	& 685.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m64.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie (m=64B).}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m64.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=64B).}
+\end{figure}
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Wielkość wiadomości (B)	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 128 	& -	& 359.00 \\*
+\midrule
+LEACH	& 128	& 1	& 387.85 \\*
+	&	& 5	& 391.95 \\*
+	&	& 10	& 398.70 \\*
+	&	& 25	& 408.75 \\*
+	&	& 50	& 432.00 \\*
+	&	& 75	& 453.25 \\*
+	&	& 90	& 478.60 \\*
+	&	& 95	& 492.05 \\*
+	&	& 99	& 508.29 \\*
+	&	& 100	& 537.00 \\*
+\midrule
+PEGASIS	& 128	& 1	& 290.99 \\*
+	&	& 5	& 295.00 \\*
+	&	& 10	& 299.90 \\*
+	&	& 25	& 305.00 \\*
+	&	& 50	& 312.00 \\*
+	&	& 75	& 318.00 \\*
+	&	& 90	& 327.00 \\*
+	&	& 95	& 330.10 \\*
+	&	& 99	& 336.05 \\*
+	&	& 100	& 341.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m128.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie (m=128B).}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m128.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=128B).}
+\end{figure}
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Wielkość wiadomości (B)	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 256 	& -	& 180.00 \\*
+\midrule
+LEACH	& 256	& 1	& 206.88 \\*
+	&	& 5	& 211.90 \\*
+	&	& 10	& 214.90 \\*
+	&	& 25	& 224.00 \\*
+	&	& 50	& 239.00 \\*
+	&	& 75	& 252.00 \\*
+	&	& 90	& 267.40 \\*
+	&	& 95	& 281.10 \\*
+	&	& 99	& 289.01 \\*
+	&	& 100	& 290.00 \\*
+\midrule
+PEGASIS	& 256	& 1	& 154.97 \\*
+	&	& 5	& 157.00 \\*
+	&	& 10	& 158.00 \\*
+	&	& 25	& 162.00 \\*
+	&	& 50	& 166.00 \\*
+	&	& 75	& 170.00 \\*
+	&	& 90	& 175.10 \\*
+	&	& 95	& 179.00 \\*
+	&	& 99	& 181.08 \\*
+	&	& 100	& 188.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m256.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie (m=256B).}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m256.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=128B).}
+\end{figure}
 
 \subsection{Test 2 - Ilość węzłów w sieci}
 
@@ -1056,26 +1261,25 @@ Test `Ilość węzłów w sieci` ma na celu przedstawienie zależności efektyw
 List plików konfiguracyjnych:
 
 \begin{lstlisting}
-~/go/src/github.com/keadwen/msc_project$ ll testdata/test_2/
-total 212
-drwxr-xr-x 2 jakubm primarygroup  4096 Jan  5 11:26 ./
-drwxr-xr-x 4 jakubm primarygroup  4096 Jan  5 11:19 ../
--rw-r--r-- 1 jakubm primarygroup 11241 Jan  5 11:22 direct100.pbtxt
--rw-r--r-- 1 jakubm primarygroup 16830 Jan  5 11:23 direct150.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22423 Jan  5 11:20 direct200.pbtxt
--rw-r--r-- 1 jakubm primarygroup  2916 Jan  5 11:22 direct25.pbtxt
--rw-r--r-- 1 jakubm primarygroup  5690 Jan  5 11:22 direct50.pbtxt
--rw-r--r-- 1 jakubm primarygroup 11240 Jan  5 11:24 leach100.pbtxt
--rw-r--r-- 1 jakubm primarygroup 16829 Jan  5 11:24 leach150.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22422 Jan  5 11:20 leach200.pbtxt
--rw-r--r-- 1 jakubm primarygroup  2915 Jan  5 11:24 leach25.pbtxt
--rw-r--r-- 1 jakubm primarygroup  5689 Jan  5 11:24 leach50.pbtxt
--rw-r--r-- 1 jakubm primarygroup 11242 Jan  5 11:25 pegasis100.pbtxt
--rw-r--r-- 1 jakubm primarygroup 16831 Jan  5 11:26 pegasis150.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22424 Jan  5 11:20 pegasis200.pbtxt
--rw-r--r-- 1 jakubm primarygroup  2917 Jan  5 11:25 pegasis25.pbtxt
--rw-r--r-- 1 jakubm primarygroup  5691 Jan  5 11:25 pegasis50.pbtxt
+~/go/src/github.com/keadwen/msc_project$ tree testdata/test_2/
+testdata/test_2/
+  direct100.pbtxt
+  direct150.pbtxt
+  direct200.pbtxt
+  direct25.pbtxt
+  direct50.pbtxt
+  leach100.pbtxt
+  leach150.pbtxt
+  leach200.pbtxt
+  leach25.pbtxt
+  leach50.pbtxt
+  pegasis100.pbtxt
+  pegasis150.pbtxt
+  pegasis200.pbtxt
+  pegasis25.pbtxt
+  pegasis50.pbtxt
 
+0 directories, 15 files
 \end{lstlisting}
 
 Uruchomienie oprogramowania:
@@ -1345,23 +1549,22 @@ Oznacza to, że każdy z węzłów pełni rolę węzła cluster head, który nie
 Lista plików konfiguracyjnych:
 
 \begin{lstlisting}
-~/go/src/github.com/keadwen/msc_project$ ll testdata/test_4/
-total 320
-drwxr-xr-x 2 jakubm primarygroup  4096 Dec 20 15:04 ./
-drwxr-xr-x 3 jakubm primarygroup  4096 Dec 20 15:00 ../
--rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:00 direct200.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:03 leach200_p005.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22422 Dec 20 15:01 leach200_p010.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:03 leach200_p015.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22422 Dec 20 15:03 leach200_p020.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22423 Dec 20 15:03 leach200_p025.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22422 Dec 20 15:03 leach200_p030.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p005.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22424 Dec 20 15:02 pegasis200_p010.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p015.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p020.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p025.pbtxt
--rw-r--r-- 1 jakubm primarygroup 22425 Dec 20 15:04 pegasis200_p030.pbtxt
+~/go/src/github.com/keadwen/msc_project$ tree testdata/test_4/
+testdata/test_4/
+  direct200.pbtxt
+  leach200_p005.pbtxt
+  leach200_p010.pbtxt
+  leach200_p015.pbtxt
+  leach200_p020.pbtxt
+  leach200_p025.pbtxt
+  leach200_p030.pbtxt
+  pegasis200_p005.pbtxt
+  pegasis200_p010.pbtxt
+  pegasis200_p015.pbtxt
+  pegasis200_p020.pbtxt
+  pegasis200_p030.pbtxt
+
+0 directories, 13 files
 \end{lstlisting}
 
 Uruchomienie oprogramowania:
