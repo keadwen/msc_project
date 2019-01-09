@@ -462,8 +462,6 @@ Należy jednak podkreślić, że zysk energetyczny wynikający z transmisji dany
 % Architektura systemu
 %-----------------
 \chapter{Architektura systemu}
-% TODO: ten rozdział ``robi robotę'' - pozytywnie się wyróżnia ale nadal kilka poniższych subsection
-% wymaga poprawy - albo rozbudować albo skonsolidować
 
 System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależności sprawności energetycznej 
 węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS).
@@ -1126,7 +1124,7 @@ Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.5\% dla wartości mi
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par 
-Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest bardzo podobny.
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 1000 rund.
 
 \begin{longtable}{*{4}{c}}
@@ -1176,7 +1174,7 @@ Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.4\% dla wartości mi
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
-Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest bardzo podobny.
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 500 rund. 
 
 \begin{longtable}{*{4}{c}}
@@ -1226,7 +1224,7 @@ Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -19.2\% dla wartości mi
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
-Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest bardzo podobny.
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 250 rund.
 
 \begin{longtable}{*{4}{c}}
@@ -1266,17 +1264,17 @@ PEGASIS	& 256	& 1	& 154.97 \\*
  \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m256.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (m=256B).}
  \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m256.png}
- \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=128B).}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=256B).}
 \end{figure}
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 180.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +8.3\% dla wartości minimalnej (195.00), +32.8\% dla mediany (239.00), +61.1\% dla wartości maksymalnej (290.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -15.6\% dla wartości minimalnej (152.00), -7.8\% dla mediany (166.00), oraz wydłużenie czasu pracy na pozioie +4.4\% dla wartości maksymalnej (188.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -15.6\% dla wartości minimalnej (152.00), -7.8\% dla mediany (166.00), oraz wydłużenie czasu pracy na poziomie +4.4\% dla wartości maksymalnej (188.00).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
-Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest bardzo podobny.
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 120 rund.
 
 \subsection{Test 2 - Ilość węzłów w sieci}
@@ -1331,7 +1329,7 @@ testdata/test_2/pegasis200.pbtxt
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Percentyl	& Wartość \\
+Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
 DIRECT	& 25 	& -	& 214.00 \\*
@@ -1364,18 +1362,24 @@ PEGASIS	& 25	& 1	& 169.95 \\*
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_25.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (n=25).}
-\end{figure}
-
-\begin{figure}[H]
- \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_25.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=25).}
 \end{figure}
 
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 214 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -16.8\% dla wartości minimalnej (178.00), oraz wydłużenie czasu pracy na poziomie +7.2\% dla mediany (229.50), +38.3\% dla wartości maksymalnej (296.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -32.9\% dla wartości minimalnej (165.00), -12.9\% dla mediany (186.50), oraz wydłużenie czasu pracy na poziomie +0.9\% dla wartości maksymalnej (216.00).
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
+\par
+Rozkład ilości energii całkowitej wszystkich węzłów uwidaczania różnice pomiędzy efektywnością energetyczną protokołów.
+Zauważyć można, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 150 rund.
+
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Percentyl	& Wartość \\
+Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
 DIRECT	& 50 	& -	& 359.00 \\*
@@ -1408,18 +1412,24 @@ PEGASIS	& 50	& 1	& 284.87 \\*
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_50.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (n=50).}
-\end{figure}
-
-\begin{figure}[H]
- \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_50.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=50).}
 \end{figure}
 
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -22.3\% dla wartości minimalnej (279.00), oraz wydłużenie czasu pracy na poziomie +6.4\% dla mediany (382.00), +30.1\% dla wartości maksymalnej (467.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -34.2\% dla wartości minimalnej (272.00), -10.9\% dla mediany (320.00), -0.6\% dla wartości maksymalnej (357.00).
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
+\par
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
+Zauważyć można, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 250 rund.  Komunikacja bezpośrednia jest widocznie mniej efektywna.
+
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Percentyl	& Wartość \\
+Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
 DIRECT	& 100 	& -	& 359.00 \\*
@@ -1452,18 +1462,23 @@ PEGASIS	& 100	& 1	& 268.98 \\*
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_100.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (n=100).}
-\end{figure}
-
-\begin{figure}[H]
- \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_100.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=100).}
 \end{figure}
 
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -9.7\% dla wartości minimalnej (324.00), oraz wydłużenie czasu pracy na poziomie +14.9\% dla mediany (412.50), +39.0\% dla wartości maksymalnej (499.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -25.6\% dla wartości minimalnej (267.00), -18.9\% dla mediany (291.00), -7.2\% dla wartości maksymalnej (333.00).
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
+\par
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie dla LEACH i PEGASIS jest niemal identyczny. Komunikacja bezpośrednia jest widocznie mniej efektywna.
+
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Percentyl	& Wartość \\
+Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
 DIRECT	& 150 	& -	& 359.00 \\*
@@ -1496,18 +1511,23 @@ PEGASIS	& 150	& 1	& 286.99 \\*
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_150.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (n=150).}
-\end{figure}
-
-\begin{figure}[H]
- \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_150.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=150).}
 \end{figure}
 
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.3\% dla wartości minimalnej (360.00), +18.2\% dla mediany (424.50), +52.4\% dla wartości maksymalnej (547.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.3\% dla wartości minimalnej (286.00), -13.1\% dla mediany (312.00), -4.5\% dla wartości maksymalnej (343.00).
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
+\par
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal identyczny.
+
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Percentyl	& Wartość \\
+Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
 DIRECT	& 200 	& -	& 359.00 \\*
@@ -1540,13 +1560,18 @@ PEGASIS	& 200	& 1	& 296.96 \\*
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_200.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (n=200).}
-\end{figure}
-
-\begin{figure}[H]
- \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_200.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=200).}
 \end{figure}
+
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373.00), +19.6\% dla mediany (429.50), +47.9\% dla wartości maksymalnej (531.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -18.4\% dla wartości minimalnej (293.00), -12.8\% dla mediany (313.00), -1.9\% dla wartości maksymalnej (352.00).
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
+\par
+Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal identyczny.
 
 \subsection{Test 3 - Wielkość obszaru sieci}
 
