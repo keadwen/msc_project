@@ -974,19 +974,16 @@ generowała dwa wykresy:
 Rozwiązanie to pomimo zalet związanych z automatycznym tworzeniem wykresów, nie pozwalało na generowanie ich w jakości spełniającej
 wymagania pracy dyplomowej.
 
-W momencie poprawnego zakończenia symulacji, folder TODO powinien posiadać zestaw plików:
+W momencie poprawnego zakończenia symulacji, folder plotdata powinien posiadać zestaw plików w formacie GNU plot.
+Pliki te należy następnie przekierować do GNUPlot. Poniżej przedstawiona została lista operacji umożliwiająca wygenerowanie wykresów:
 
-% TODO: Uzupełnić w momencie tworzenia wyników do pracy.
-% TODO: ls folder
 \begin{lstlisting}
-\end{lstlisting}
-
-Pliki te należy następnie przekierować do GNUPlot w następujący sposób:
-
-
-% TODO: Uzupełnić w momencie tworzenia wyników do pracy.
-% TODO: gnuplot operations
-\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_project$ gnuplot
+gnuplot> set grid
+gnuplot> plot \
+  "< cat ./latex/gnuplot_data/test_1/leach200_m32/*" using 1:2 smooth sbezier ls 1 title "LEACH (m=32B)", \
+  "< cat ./latex/gnuplot_data/test_1/pegasis200_m32/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (m=32B)", \
+  "< cat ./latex/gnuplot_data/test_1/direct200_m32/*" using 1:2 smooth sbezier ls 4 title "DIRECT (m=32B)"
 \end{lstlisting}
 
 \subsection{Dodawanie nowych protokołów}
