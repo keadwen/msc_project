@@ -1,0 +1,1612 @@
+protocol: DIRECT
+max_rounds: 10000
+p_cluster_heads: 0.1
+msg_length: 128
+nodes: <
+  initial_energy: 1e+100
+  location: <
+    X: 400
+    Y: 1800
+  >
+>
+nodes: <
+  id: 1
+  initial_energy: 2
+  location: <
+    X: 797.4467271993701
+    Y: 269.46403734845563
+  >
+>
+nodes: <
+  id: 2
+  initial_energy: 2
+  location: <
+    X: 355.6524345579425
+    Y: 146.42213190277832
+  >
+>
+nodes: <
+  id: 3
+  initial_energy: 2
+  location: <
+    X: 77.1805990502399
+    Y: 289.97475694549564
+  >
+>
+nodes: <
+  id: 4
+  initial_energy: 2
+  location: <
+    X: 725.3570745893609
+    Y: 8.041054488199974
+  >
+>
+nodes: <
+  id: 5
+  initial_energy: 2
+  location: <
+    X: 782.0495788174875
+    Y: 444.5731417727713
+  >
+>
+nodes: <
+  id: 6
+  initial_energy: 2
+  location: <
+    X: 303.56353888302993
+    Y: 586.3802082182946
+  >
+>
+nodes: <
+  id: 7
+  initial_energy: 2
+  location: <
+    X: 612.9456838948513
+    Y: 231.4300760642944
+  >
+>
+nodes: <
+  id: 8
+  initial_energy: 2
+  location: <
+    X: 364.46441507796493
+    Y: 507.27040054342984
+  >
+>
+nodes: <
+  id: 9
+  initial_energy: 2
+  location: <
+    X: 88.67429236144069
+    Y: 70.92673601647861
+  >
+>
+nodes: <
+  id: 10
+  initial_energy: 2
+  location: <
+    X: 686.1356247803906
+    Y: 552.4589910003567
+  >
+>
+nodes: <
+  id: 11
+  initial_energy: 2
+  location: <
+    X: 715.1229860234209
+    Y: 322.9985350654732
+  >
+>
+nodes: <
+  id: 12
+  initial_energy: 2
+  location: <
+    X: 139.9823971552322
+    Y: 236.68721963088143
+  >
+>
+nodes: <
+  id: 13
+  initial_energy: 2
+  location: <
+    X: 793.3962825098322
+    Y: 567.1476628678096
+  >
+>
+nodes: <
+  id: 14
+  initial_energy: 2
+  location: <
+    X: 442.3208912709032
+    Y: 642.4833468554277
+  >
+>
+nodes: <
+  id: 15
+  initial_energy: 2
+  location: <
+    X: 26.358654292267836
+    Y: 292.0039065483046
+  >
+>
+nodes: <
+  id: 16
+  initial_energy: 2
+  location: <
+    X: 133.53478169962253
+    Y: 351.77525458290324
+  >
+>
+nodes: <
+  id: 17
+  initial_energy: 2
+  location: <
+    X: 770.8654672872161
+    Y: 119.40324588774965
+  >
+>
+nodes: <
+  id: 18
+  initial_energy: 2
+  location: <
+    X: 746.5664111786177
+    Y: 19.843708296228844
+  >
+>
+nodes: <
+  id: 19
+  initial_energy: 2
+  location: <
+    X: 76.41324601279379
+    Y: 150.55273828231543
+  >
+>
+nodes: <
+  id: 20
+  initial_energy: 2
+  location: <
+    X: 614.3931992884118
+    Y: 418.249889136413
+  >
+>
+nodes: <
+  id: 21
+  initial_energy: 2
+  location: <
+    X: 548.3327780780048
+    Y: 183.66755626526648
+  >
+>
+nodes: <
+  id: 22
+  initial_energy: 2
+  location: <
+    X: 47.67175941953429
+    Y: 608.1189264601039
+  >
+>
+nodes: <
+  id: 23
+  initial_energy: 2
+  location: <
+    X: 569.7612401248487
+    Y: 90.59560850596297
+  >
+>
+nodes: <
+  id: 24
+  initial_energy: 2
+  location: <
+    X: 670.3003149406594
+    Y: 252.23248334943386
+  >
+>
+nodes: <
+  id: 25
+  initial_energy: 2
+  location: <
+    X: 655.4734406529034
+    Y: 320.74758886748674
+  >
+>
+nodes: <
+  id: 26
+  initial_energy: 2
+  location: <
+    X: 517.3471664977098
+    Y: 144.2250340987652
+  >
+>
+nodes: <
+  id: 27
+  initial_energy: 2
+  location: <
+    X: 789.4558124248731
+    Y: 574.1572123667803
+  >
+>
+nodes: <
+  id: 28
+  initial_energy: 2
+  location: <
+    X: 578.8477851755304
+    Y: 625.8964569615332
+  >
+>
+nodes: <
+  id: 29
+  initial_energy: 2
+  location: <
+    X: 578.5742705681248
+    Y: 284.4256449773827
+  >
+>
+nodes: <
+  id: 30
+  initial_energy: 2
+  location: <
+    X: 420.04296198973566
+    Y: 633.5193350782567
+  >
+>
+nodes: <
+  id: 31
+  initial_energy: 2
+  location: <
+    X: 102.38893642036628
+    Y: 540.065123896117
+  >
+>
+nodes: <
+  id: 32
+  initial_energy: 2
+  location: <
+    X: 637.4273753044006
+    Y: 124.28581639807312
+  >
+>
+nodes: <
+  id: 33
+  initial_energy: 2
+  location: <
+    X: 781.999577434302
+    Y: 314.99014846900184
+  >
+>
+nodes: <
+  id: 34
+  initial_energy: 2
+  location: <
+    X: 264.7062519991569
+    Y: 791.4635561241518
+  >
+>
+nodes: <
+  id: 35
+  initial_energy: 2
+  location: <
+    X: 580.2342320379909
+    Y: 122.02322077362847
+  >
+>
+nodes: <
+  id: 36
+  initial_energy: 2
+  location: <
+    X: 41.62100772531521
+    Y: 714.5154238483403
+  >
+>
+nodes: <
+  id: 37
+  initial_energy: 2
+  location: <
+    X: 745.1797462083628
+    Y: 51.517034596828935
+  >
+>
+nodes: <
+  id: 38
+  initial_energy: 2
+  location: <
+    X: 109.32675442628981
+    Y: 256.54820647539236
+  >
+>
+nodes: <
+  id: 39
+  initial_energy: 2
+  location: <
+    X: 263.95725048296316
+    Y: 671.2778368544359
+  >
+>
+nodes: <
+  id: 40
+  initial_energy: 2
+  location: <
+    X: 46.961276141629504
+    Y: 460.34561951899053
+  >
+>
+nodes: <
+  id: 41
+  initial_energy: 2
+  location: <
+    X: 573.1145952236255
+    Y: 700.5762022145371
+  >
+>
+nodes: <
+  id: 42
+  initial_energy: 2
+  location: <
+    X: 4.084672443132072
+    Y: 340.5766306181612
+  >
+>
+nodes: <
+  id: 43
+  initial_energy: 2
+  location: <
+    X: 552.6865957660727
+    Y: 448.51493998528895
+  >
+>
+nodes: <
+  id: 44
+  initial_energy: 2
+  location: <
+    X: 716.6450123364228
+    Y: 738.3947811643025
+  >
+>
+nodes: <
+  id: 45
+  initial_energy: 2
+  location: <
+    X: 318.7848407075677
+    Y: 429.954953590161
+  >
+>
+nodes: <
+  id: 46
+  initial_energy: 2
+  location: <
+    X: 737.0974007599757
+    Y: 271.07326303426635
+  >
+>
+nodes: <
+  id: 47
+  initial_energy: 2
+  location: <
+    X: 656.2667432457572
+    Y: 635.5328603745006
+  >
+>
+nodes: <
+  id: 48
+  initial_energy: 2
+  location: <
+    X: 488.7038246716439
+    Y: 525.1143702634494
+  >
+>
+nodes: <
+  id: 49
+  initial_energy: 2
+  location: <
+    X: 42.4177613333059
+    Y: 246.1920493347567
+  >
+>
+nodes: <
+  id: 50
+  initial_energy: 2
+  location: <
+    X: 298.9164482903695
+    Y: 655.2581574948716
+  >
+>
+nodes: <
+  id: 51
+  initial_energy: 2
+  location: <
+    X: 655.298571409448
+    Y: 77.36353988845491
+  >
+>
+nodes: <
+  id: 52
+  initial_energy: 2
+  location: <
+    X: 241.53378646178624
+    Y: 514.8947640833106
+  >
+>
+nodes: <
+  id: 53
+  initial_energy: 2
+  location: <
+    X: 619.6566296482717
+    Y: 53.45386832265601
+  >
+>
+nodes: <
+  id: 54
+  initial_energy: 2
+  location: <
+    X: 692.9591300896515
+    Y: 119.84311315644732
+  >
+>
+nodes: <
+  id: 55
+  initial_energy: 2
+  location: <
+    X: 141.9935173083851
+    Y: 429.5603206674732
+  >
+>
+nodes: <
+  id: 56
+  initial_energy: 2
+  location: <
+    X: 22.719742443986114
+    Y: 463.76812907952257
+  >
+>
+nodes: <
+  id: 57
+  initial_energy: 2
+  location: <
+    X: 430.5813299375209
+    Y: 238.40096550016713
+  >
+>
+nodes: <
+  id: 58
+  initial_energy: 2
+  location: <
+    X: 495.55603398009225
+    Y: 26.544408540799637
+  >
+>
+nodes: <
+  id: 59
+  initial_energy: 2
+  location: <
+    X: 508.61355634844523
+    Y: 285.43827535906365
+  >
+>
+nodes: <
+  id: 60
+  initial_energy: 2
+  location: <
+    X: 267.34177580802486
+    Y: 507.9082629977007
+  >
+>
+nodes: <
+  id: 61
+  initial_energy: 2
+  location: <
+    X: 191.92051997310116
+    Y: 335.7824413347005
+  >
+>
+nodes: <
+  id: 62
+  initial_energy: 2
+  location: <
+    X: 706.1830955067687
+    Y: 380.4132191452464
+  >
+>
+nodes: <
+  id: 63
+  initial_energy: 2
+  location: <
+    X: 490.9818882766249
+    Y: 601.6839833116701
+  >
+>
+nodes: <
+  id: 64
+  initial_energy: 2
+  location: <
+    X: 754.4378884908007
+    Y: 502.2555259150925
+  >
+>
+nodes: <
+  id: 65
+  initial_energy: 2
+  location: <
+    X: 669.2559771968475
+    Y: 519.4647262332292
+  >
+>
+nodes: <
+  id: 66
+  initial_energy: 2
+  location: <
+    X: 770.9728569703041
+    Y: 452.00393824834146
+  >
+>
+nodes: <
+  id: 67
+  initial_energy: 2
+  location: <
+    X: 238.65800128102893
+    Y: 381.2066139930263
+  >
+>
+nodes: <
+  id: 68
+  initial_energy: 2
+  location: <
+    X: 408.56829986961276
+    Y: 274.55478870163495
+  >
+>
+nodes: <
+  id: 69
+  initial_energy: 2
+  location: <
+    X: 480.6644286457237
+    Y: 280.97970400480136
+  >
+>
+nodes: <
+  id: 70
+  initial_energy: 2
+  location: <
+    X: 551.1524625349513
+    Y: 620.7847086047991
+  >
+>
+nodes: <
+  id: 71
+  initial_energy: 2
+  location: <
+    X: 97.88289926893859
+    Y: 20.73830399296145
+  >
+>
+nodes: <
+  id: 72
+  initial_energy: 2
+  location: <
+    X: 175.4822486618712
+    Y: 418.6681269594205
+  >
+>
+nodes: <
+  id: 73
+  initial_energy: 2
+  location: <
+    X: 53.0152200875757
+    Y: 331.1747562263437
+  >
+>
+nodes: <
+  id: 74
+  initial_energy: 2
+  location: <
+    X: 56.49443782985786
+    Y: 261.84631798992217
+  >
+>
+nodes: <
+  id: 75
+  initial_energy: 2
+  location: <
+    X: 791.8404655887483
+    Y: 656.1261878017086
+  >
+>
+nodes: <
+  id: 76
+  initial_energy: 2
+  location: <
+    X: 797.9030754085568
+    Y: 236.39010669740537
+  >
+>
+nodes: <
+  id: 77
+  initial_energy: 2
+  location: <
+    X: 705.9786083234027
+    Y: 384.21671656917397
+  >
+>
+nodes: <
+  id: 78
+  initial_energy: 2
+  location: <
+    X: 706.0195554286066
+    Y: 396.1760047880094
+  >
+>
+nodes: <
+  id: 79
+  initial_energy: 2
+  location: <
+    X: 530.5722184865353
+    Y: 83.60165304529359
+  >
+>
+nodes: <
+  id: 80
+  initial_energy: 2
+  location: <
+    X: 706.3562753946732
+    Y: 221.6281952991967
+  >
+>
+nodes: <
+  id: 81
+  initial_energy: 2
+  location: <
+    X: 73.40356199860206
+    Y: 333.87806763292815
+  >
+>
+nodes: <
+  id: 82
+  initial_energy: 2
+  location: <
+    X: 422.3236699384621
+    Y: 408.0853042359387
+  >
+>
+nodes: <
+  id: 83
+  initial_energy: 2
+  location: <
+    X: 678.3923189976505
+    Y: 180.103730596532
+  >
+>
+nodes: <
+  id: 84
+  initial_energy: 2
+  location: <
+    X: 366.51984296145156
+    Y: 284.30026913652404
+  >
+>
+nodes: <
+  id: 85
+  initial_energy: 2
+  location: <
+    X: 166.15529252185524
+    Y: 111.82504240846644
+  >
+>
+nodes: <
+  id: 86
+  initial_energy: 2
+  location: <
+    X: 506.14334820642995
+    Y: 66.30193982954373
+  >
+>
+nodes: <
+  id: 87
+  initial_energy: 2
+  location: <
+    X: 522.5142266065378
+    Y: 257.30474582595247
+  >
+>
+nodes: <
+  id: 88
+  initial_energy: 2
+  location: <
+    X: 786.0356712174822
+    Y: 196.78570211663182
+  >
+>
+nodes: <
+  id: 89
+  initial_energy: 2
+  location: <
+    X: 551.490210848913
+    Y: 411.8329711086195
+  >
+>
+nodes: <
+  id: 90
+  initial_energy: 2
+  location: <
+    X: 492.5048758220999
+    Y: 699.8718506269435
+  >
+>
+nodes: <
+  id: 91
+  initial_energy: 2
+  location: <
+    X: 99.23144664197481
+    Y: 578.3739849523208
+  >
+>
+nodes: <
+  id: 92
+  initial_energy: 2
+  location: <
+    X: 776.5536942097816
+    Y: 685.4242997401772
+  >
+>
+nodes: <
+  id: 93
+  initial_energy: 2
+  location: <
+    X: 370.8816013359654
+    Y: 132.83449937176533
+  >
+>
+nodes: <
+  id: 94
+  initial_energy: 2
+  location: <
+    X: 214.07206958853382
+    Y: 661.1110807498978
+  >
+>
+nodes: <
+  id: 95
+  initial_energy: 2
+  location: <
+    X: 441.75173740878
+    Y: 745.1400473104733
+  >
+>
+nodes: <
+  id: 96
+  initial_energy: 2
+  location: <
+    X: 404.39505114855876
+    Y: 128.75803907625158
+  >
+>
+nodes: <
+  id: 97
+  initial_energy: 2
+  location: <
+    X: 392.28626807696327
+    Y: 498.7503619361272
+  >
+>
+nodes: <
+  id: 98
+  initial_energy: 2
+  location: <
+    X: 7.6161325988271305
+    Y: 752.0009975863662
+  >
+>
+nodes: <
+  id: 99
+  initial_energy: 2
+  location: <
+    X: 184.6035415856939
+    Y: 551.2600353414017
+  >
+>
+nodes: <
+  id: 100
+  initial_energy: 2
+  location: <
+    X: 711.9453639317669
+    Y: 231.1889830407181
+  >
+>
+nodes: <
+  id: 101
+  initial_energy: 2
+  location: <
+    X: 113.38470371904333
+    Y: 362.17786789008613
+  >
+>
+nodes: <
+  id: 102
+  initial_energy: 2
+  location: <
+    X: 215.13344999994527
+    Y: 207.71486287908652
+  >
+>
+nodes: <
+  id: 103
+  initial_energy: 2
+  location: <
+    X: 605.5340286168008
+    Y: 165.26990945066714
+  >
+>
+nodes: <
+  id: 104
+  initial_energy: 2
+  location: <
+    X: 267.20820274230476
+    Y: 36.72444726782992
+  >
+>
+nodes: <
+  id: 105
+  initial_energy: 2
+  location: <
+    X: 158.02139444877733
+    Y: 176.48970925354638
+  >
+>
+nodes: <
+  id: 106
+  initial_energy: 2
+  location: <
+    X: 376.11073913316926
+    Y: 133.42829788006364
+  >
+>
+nodes: <
+  id: 107
+  initial_energy: 2
+  location: <
+    X: 321.3304982837454
+    Y: 144.1834078489261
+  >
+>
+nodes: <
+  id: 108
+  initial_energy: 2
+  location: <
+    X: 293.24733267111066
+    Y: 551.0862404449608
+  >
+>
+nodes: <
+  id: 109
+  initial_energy: 2
+  location: <
+    X: 492.7400875103973
+    Y: 301.00228138952303
+  >
+>
+nodes: <
+  id: 110
+  initial_energy: 2
+  location: <
+    X: 526.2914268233952
+    Y: 370.31235576974086
+  >
+>
+nodes: <
+  id: 111
+  initial_energy: 2
+  location: <
+    X: 627.4755141113976
+    Y: 493.7429099808488
+  >
+>
+nodes: <
+  id: 112
+  initial_energy: 2
+  location: <
+    X: 411.57917408929177
+    Y: 548.8218756109177
+  >
+>
+nodes: <
+  id: 113
+  initial_energy: 2
+  location: <
+    X: 284.3718403871114
+    Y: 720.6751972429261
+  >
+>
+nodes: <
+  id: 114
+  initial_energy: 2
+  location: <
+    X: 199.7788481951471
+    Y: 560.3494815196209
+  >
+>
+nodes: <
+  id: 115
+  initial_energy: 2
+  location: <
+    X: 174.9843743613647
+    Y: 771.1150370800439
+  >
+>
+nodes: <
+  id: 116
+  initial_energy: 2
+  location: <
+    X: 625.6764694889223
+    Y: 627.5283453841984
+  >
+>
+nodes: <
+  id: 117
+  initial_energy: 2
+  location: <
+    X: 380.31616356873
+    Y: 747.8902548763404
+  >
+>
+nodes: <
+  id: 118
+  initial_energy: 2
+  location: <
+    X: 294.71475771550627
+    Y: 314.3764142550565
+  >
+>
+nodes: <
+  id: 119
+  initial_energy: 2
+  location: <
+    X: 377.22517045432096
+    Y: 120.59287681841883
+  >
+>
+nodes: <
+  id: 120
+  initial_energy: 2
+  location: <
+    X: 13.140252540220965
+    Y: 620.1273233839876
+  >
+>
+nodes: <
+  id: 121
+  initial_energy: 2
+  location: <
+    X: 737.1232801910077
+    Y: 391.20524393801514
+  >
+>
+nodes: <
+  id: 122
+  initial_energy: 2
+  location: <
+    X: 153.92896861379438
+    Y: 358.10138030053713
+  >
+>
+nodes: <
+  id: 123
+  initial_energy: 2
+  location: <
+    X: 96.5957185763765
+    Y: 277.05454887383405
+  >
+>
+nodes: <
+  id: 124
+  initial_energy: 2
+  location: <
+    X: 384.85235637923756
+    Y: 227.71355108349064
+  >
+>
+nodes: <
+  id: 125
+  initial_energy: 2
+  location: <
+    X: 598.3783830924755
+    Y: 271.2012818313959
+  >
+>
+nodes: <
+  id: 126
+  initial_energy: 2
+  location: <
+    X: 769.0820004021549
+    Y: 236.170550781233
+  >
+>
+nodes: <
+  id: 127
+  initial_energy: 2
+  location: <
+    X: 487.4338726434923
+    Y: 774.5318610647738
+  >
+>
+nodes: <
+  id: 128
+  initial_energy: 2
+  location: <
+    X: 345.04708731874484
+    Y: 242.52188474187074
+  >
+>
+nodes: <
+  id: 129
+  initial_energy: 2
+  location: <
+    X: 61.54868240005597
+    Y: 447.21038710412444
+  >
+>
+nodes: <
+  id: 130
+  initial_energy: 2
+  location: <
+    X: 328.59453812929667
+    Y: 546.479244372643
+  >
+>
+nodes: <
+  id: 131
+  initial_energy: 2
+  location: <
+    X: 777.5664071570269
+    Y: 650.8462559640269
+  >
+>
+nodes: <
+  id: 132
+  initial_energy: 2
+  location: <
+    X: 591.9417368075539
+    Y: 113.88366310507291
+  >
+>
+nodes: <
+  id: 133
+  initial_energy: 2
+  location: <
+    X: 111.05118412392285
+    Y: 358.63912909493195
+  >
+>
+nodes: <
+  id: 134
+  initial_energy: 2
+  location: <
+    X: 741.2135025924655
+    Y: 582.3263136697964
+  >
+>
+nodes: <
+  id: 135
+  initial_energy: 2
+  location: <
+    X: 134.9291446171381
+    Y: 279.6316054152313
+  >
+>
+nodes: <
+  id: 136
+  initial_energy: 2
+  location: <
+    X: 561.741764747258
+    Y: 68.96434514496933
+  >
+>
+nodes: <
+  id: 137
+  initial_energy: 2
+  location: <
+    X: 255.25403041256013
+    Y: 503.33402209991516
+  >
+>
+nodes: <
+  id: 138
+  initial_energy: 2
+  location: <
+    X: 342.3720467861477
+    Y: 172.9753184191103
+  >
+>
+nodes: <
+  id: 139
+  initial_energy: 2
+  location: <
+    X: 413.86033517069
+    Y: 224.60760544985382
+  >
+>
+nodes: <
+  id: 140
+  initial_energy: 2
+  location: <
+    X: 111.26972253900855
+    Y: 470.01644663122806
+  >
+>
+nodes: <
+  id: 141
+  initial_energy: 2
+  location: <
+    X: 163.4805834796149
+    Y: 67.63725618047657
+  >
+>
+nodes: <
+  id: 142
+  initial_energy: 2
+  location: <
+    X: 221.21107361243878
+    Y: 276.39727540941317
+  >
+>
+nodes: <
+  id: 143
+  initial_energy: 2
+  location: <
+    X: 342.7059515043617
+    Y: 539.3884731654432
+  >
+>
+nodes: <
+  id: 144
+  initial_energy: 2
+  location: <
+    X: 143.8590659163719
+    Y: 328.28370918736516
+  >
+>
+nodes: <
+  id: 145
+  initial_energy: 2
+  location: <
+    X: 652.2180842130037
+    Y: 375.30555839925177
+  >
+>
+nodes: <
+  id: 146
+  initial_energy: 2
+  location: <
+    X: 227.42857257253283
+    Y: 751.1813353367144
+  >
+>
+nodes: <
+  id: 147
+  initial_energy: 2
+  location: <
+    X: 269.8483665723054
+    Y: 251.55982792838327
+  >
+>
+nodes: <
+  id: 148
+  initial_energy: 2
+  location: <
+    X: 150.01137692791454
+    Y: 372.7031156644618
+  >
+>
+nodes: <
+  id: 149
+  initial_energy: 2
+  location: <
+    X: 727.4826573505676
+    Y: 640.0905692137824
+  >
+>
+nodes: <
+  id: 150
+  initial_energy: 2
+  location: <
+    X: 380.43312229227644
+    Y: 274.1187738726614
+  >
+>
+nodes: <
+  id: 151
+  initial_energy: 2
+  location: <
+    X: 644.7703426263547
+    Y: 38.26033595713321
+  >
+>
+nodes: <
+  id: 152
+  initial_energy: 2
+  location: <
+    X: 194.15006228457662
+    Y: 349.5293404537134
+  >
+>
+nodes: <
+  id: 153
+  initial_energy: 2
+  location: <
+    X: 38.51625893716602
+    Y: 466.1479456141355
+  >
+>
+nodes: <
+  id: 154
+  initial_energy: 2
+  location: <
+    X: 682.0878421789483
+    Y: 652.7887611172245
+  >
+>
+nodes: <
+  id: 155
+  initial_energy: 2
+  location: <
+    X: 332.9511460744737
+    Y: 595.6409996767717
+  >
+>
+nodes: <
+  id: 156
+  initial_energy: 2
+  location: <
+    X: 560.0125228885878
+    Y: 619.0220354691942
+  >
+>
+nodes: <
+  id: 157
+  initial_energy: 2
+  location: <
+    X: 148.59197340975038
+    Y: 752.6482424181648
+  >
+>
+nodes: <
+  id: 158
+  initial_energy: 2
+  location: <
+    X: 35.710941394650376
+    Y: 527.0908373594355
+  >
+>
+nodes: <
+  id: 159
+  initial_energy: 2
+  location: <
+    X: 726.565916211165
+    Y: 501.29262140079317
+  >
+>
+nodes: <
+  id: 160
+  initial_energy: 2
+  location: <
+    X: 49.24940496253556
+    Y: 765.3299998184664
+  >
+>
+nodes: <
+  id: 161
+  initial_energy: 2
+  location: <
+    X: 394.1925303716493
+    Y: 611.3012196138747
+  >
+>
+nodes: <
+  id: 162
+  initial_energy: 2
+  location: <
+    X: 404.41061153402285
+    Y: 40.2648335256585
+  >
+>
+nodes: <
+  id: 163
+  initial_energy: 2
+  location: <
+    X: 517.4387496649474
+    Y: 741.7471608620141
+  >
+>
+nodes: <
+  id: 164
+  initial_energy: 2
+  location: <
+    X: 42.153121518521836
+    Y: 624.5415602042369
+  >
+>
+nodes: <
+  id: 165
+  initial_energy: 2
+  location: <
+    X: 69.3163217589929
+    Y: 625.6669162543126
+  >
+>
+nodes: <
+  id: 166
+  initial_energy: 2
+  location: <
+    X: 313.618354342054
+    Y: 723.3492298709748
+  >
+>
+nodes: <
+  id: 167
+  initial_energy: 2
+  location: <
+    X: 10.968572460896253
+    Y: 549.4970471032584
+  >
+>
+nodes: <
+  id: 168
+  initial_energy: 2
+  location: <
+    X: 558.2301356018831
+    Y: 557.132592930471
+  >
+>
+nodes: <
+  id: 169
+  initial_energy: 2
+  location: <
+    X: 657.4427027986272
+    Y: 25.101400128554346
+  >
+>
+nodes: <
+  id: 170
+  initial_energy: 2
+  location: <
+    X: 577.1736551719521
+    Y: 515.543298478788
+  >
+>
+nodes: <
+  id: 171
+  initial_energy: 2
+  location: <
+    X: 18.034124577923166
+    Y: 25.025363925979317
+  >
+>
+nodes: <
+  id: 172
+  initial_energy: 2
+  location: <
+    X: 509.93908551196006
+    Y: 651.8459639377774
+  >
+>
+nodes: <
+  id: 173
+  initial_energy: 2
+  location: <
+    X: 78.42341557752616
+    Y: 257.58248462287787
+  >
+>
+nodes: <
+  id: 174
+  initial_energy: 2
+  location: <
+    X: 668.7813463412195
+    Y: 45.66002450874378
+  >
+>
+nodes: <
+  id: 175
+  initial_energy: 2
+  location: <
+    X: 503.37828043837226
+    Y: 36.7398600347948
+  >
+>
+nodes: <
+  id: 176
+  initial_energy: 2
+  location: <
+    X: 72.58677075389934
+    Y: 433.9066210970799
+  >
+>
+nodes: <
+  id: 177
+  initial_energy: 2
+  location: <
+    X: 110.64702417881466
+    Y: 552.2286786402528
+  >
+>
+nodes: <
+  id: 178
+  initial_energy: 2
+  location: <
+    X: 531.3073731785589
+    Y: 571.5687924405016
+  >
+>
+nodes: <
+  id: 179
+  initial_energy: 2
+  location: <
+    X: 706.1643813468864
+    Y: 751.8615484442671
+  >
+>
+nodes: <
+  id: 180
+  initial_energy: 2
+  location: <
+    X: 633.8381186942815
+    Y: 149.79494349131198
+  >
+>
+nodes: <
+  id: 181
+  initial_energy: 2
+  location: <
+    X: 424.2255304725398
+    Y: 100.34429336938831
+  >
+>
+nodes: <
+  id: 182
+  initial_energy: 2
+  location: <
+    X: 630.1308893236717
+    Y: 687.0728862135586
+  >
+>
+nodes: <
+  id: 183
+  initial_energy: 2
+  location: <
+    X: 91.10959515150651
+    Y: 607.9381432731515
+  >
+>
+nodes: <
+  id: 184
+  initial_energy: 2
+  location: <
+    X: 425.1102505232465
+    Y: 600.4977114555935
+  >
+>
+nodes: <
+  id: 185
+  initial_energy: 2
+  location: <
+    X: 788.5739842230051
+    Y: 682.4744673858831
+  >
+>
+nodes: <
+  id: 186
+  initial_energy: 2
+  location: <
+    X: 27.12416196677178
+    Y: 711.5149033836008
+  >
+>
+nodes: <
+  id: 187
+  initial_energy: 2
+  location: <
+    X: 234.98443347289793
+    Y: 161.2247901295369
+  >
+>
+nodes: <
+  id: 188
+  initial_energy: 2
+  location: <
+    X: 691.4087116295923
+    Y: 568.3573112688032
+  >
+>
+nodes: <
+  id: 189
+  initial_energy: 2
+  location: <
+    X: 422.1733919445858
+    Y: 421.3865366092584
+  >
+>
+nodes: <
+  id: 190
+  initial_energy: 2
+  location: <
+    X: 794.2655699790296
+    Y: 294.35298274072716
+  >
+>
+nodes: <
+  id: 191
+  initial_energy: 2
+  location: <
+    X: 496.1398577105404
+    Y: 437.27603011490254
+  >
+>
+nodes: <
+  id: 192
+  initial_energy: 2
+  location: <
+    X: 187.74559284510218
+    Y: 289.2129952808031
+  >
+>
+nodes: <
+  id: 193
+  initial_energy: 2
+  location: <
+    X: 584.8957272509423
+    Y: 301.1709526303465
+  >
+>
+nodes: <
+  id: 194
+  initial_energy: 2
+  location: <
+    X: 781.982374649024
+    Y: 213.45978441087655
+  >
+>
+nodes: <
+  id: 195
+  initial_energy: 2
+  location: <
+    X: 789.9128038129135
+    Y: 761.4831609336742
+  >
+>
+nodes: <
+  id: 196
+  initial_energy: 2
+  location: <
+    X: 143.85274738249544
+    Y: 666.0943868919265
+  >
+>
+nodes: <
+  id: 197
+  initial_energy: 2
+  location: <
+    X: 480.88654727378184
+    Y: 104.43435814107048
+  >
+>
+nodes: <
+  id: 198
+  initial_energy: 2
+  location: <
+    X: 226.88308851908693
+    Y: 388.90697298916
+  >
+>
+nodes: <
+  id: 199
+  initial_energy: 2
+  location: <
+    X: 528.0850115219581
+    Y: 167.37925937810553
+  >
+>
+nodes: <
+  id: 200
+  initial_energy: 2
+  location: <
+    X: 619.818209686094
+    Y: 261.0057761011296
+  >
+>
+
