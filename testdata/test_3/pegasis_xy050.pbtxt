@@ -1,5 +1,5 @@
 protocol: PEGASIS
-max_rounds: 10000
+max_rounds: 50000
 p_cluster_heads: 0.1
 msg_length: 128
 nodes: <
