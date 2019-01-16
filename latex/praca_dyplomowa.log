@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.3)  9 JAN 2019 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.3)  16 JAN 2019 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -990,245 +990,395 @@ gure.5.18}) has been already used, duplicate ignored
 l.1573 \par
             <./images/gnuplot/test_2/nodes_in_round_200.png (PNG copy)> <./imag
 es/gnuplot/test_2/energy_in_round_200.png (PNG copy)>] [51] [52]
-<images/gnuplot/test_4/nodes_in_round_p005.png, id=895, 481.8pt x 361.35pt>
-File: images/gnuplot/test_4/nodes_in_round_p005.png Graphic file (type png)
-<use images/gnuplot/test_4/nodes_in_round_p005.png>
-Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p005.png  used on
- input line 1675.
+<images/gnuplot/test_3/nodes_in_round_xy050.png, id=898, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/nodes_in_round_xy050.png Graphic file (type png)
+<use images/gnuplot/test_3/nodes_in_round_xy050.png>
+Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy050.png  used o
+n input line 1664.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+<images/gnuplot/test_3/energy_in_round_xy050.png, id=899, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/energy_in_round_xy050.png Graphic file (type png)
+<use images/gnuplot/test_3/energy_in_round_xy050.png>
+Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy050.png  used 
+on input line 1670.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-<images/gnuplot/test_4/energy_in_round_p005.png, id=901, 481.8pt x 361.35pt>
+ [53pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1673 
+        <./images/gnuplot/test_3/nodes_in_round_xy050.png (PNG copy)>] [54pdfTe
+X warning (ext4): destination with the same identifier (name{figure.5.20}) has 
+been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1706 \end{longtable}
+                       <./images/gnuplot/test_3/energy_in_round_xy050.png (PNG 
+copy)>]
+<images/gnuplot/test_3/nodes_in_round_xy100.png, id=912, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/nodes_in_round_xy100.png Graphic file (type png)
+<use images/gnuplot/test_3/nodes_in_round_xy100.png>
+Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy100.png  used o
+n input line 1710.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+<images/gnuplot/test_3/energy_in_round_xy100.png, id=913, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/energy_in_round_xy100.png Graphic file (type png)
+<use images/gnuplot/test_3/energy_in_round_xy100.png>
+Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy100.png  used 
+on input line 1716.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1719 
+        <./images/gnuplot/test_3/nodes_in_round_xy100.png (PNG copy)>] [56pdfTe
+X warning (ext4): destination with the same identifier (name{figure.5.22}) has 
+been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1752 \end{longtable}
+                       <./images/gnuplot/test_3/energy_in_round_xy100.png (PNG 
+copy)>]
+<images/gnuplot/test_3/nodes_in_round_xy200.png, id=925, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/nodes_in_round_xy200.png Graphic file (type png)
+<use images/gnuplot/test_3/nodes_in_round_xy200.png>
+Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy200.png  used o
+n input line 1756.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+<images/gnuplot/test_3/energy_in_round_xy200.png, id=926, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/energy_in_round_xy200.png Graphic file (type png)
+<use images/gnuplot/test_3/energy_in_round_xy200.png>
+Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy200.png  used 
+on input line 1762.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+23}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1765 
+        <./images/gnuplot/test_3/nodes_in_round_xy200.png (PNG copy)>] [58pdfTe
+X warning (ext4): destination with the same identifier (name{figure.5.24}) has 
+been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1798 \end{longtable}
+                       <./images/gnuplot/test_3/energy_in_round_xy200.png (PNG 
+copy)>]
+<images/gnuplot/test_3/nodes_in_round_xy400.png, id=938, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/nodes_in_round_xy400.png Graphic file (type png)
+<use images/gnuplot/test_3/nodes_in_round_xy400.png>
+Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy400.png  used o
+n input line 1802.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+<images/gnuplot/test_3/energy_in_round_xy400.png, id=939, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/energy_in_round_xy400.png Graphic file (type png)
+<use images/gnuplot/test_3/energy_in_round_xy400.png>
+Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy400.png  used 
+on input line 1808.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+25}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1811 
+        <./images/gnuplot/test_3/nodes_in_round_xy400.png (PNG copy)>] [60pdfTe
+X warning (ext4): destination with the same identifier (name{figure.5.26}) has 
+been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1844 \end{longtable}
+                       <./images/gnuplot/test_3/energy_in_round_xy400.png (PNG 
+copy)>]
+<images/gnuplot/test_3/nodes_in_round_xy800.png, id=952, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/nodes_in_round_xy800.png Graphic file (type png)
+<use images/gnuplot/test_3/nodes_in_round_xy800.png>
+Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy800.png  used o
+n input line 1848.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+<images/gnuplot/test_3/energy_in_round_xy800.png, id=953, 481.8pt x 361.35pt>
+File: images/gnuplot/test_3/energy_in_round_xy800.png Graphic file (type png)
+<use images/gnuplot/test_3/energy_in_round_xy800.png>
+Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy800.png  used 
+on input line 1854.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+27}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1857 
+        <./images/gnuplot/test_3/nodes_in_round_xy800.png (PNG copy)>] [62pdfTe
+X warning (ext4): destination with the same identifier (name{figure.5.28}) has 
+been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1879   leach200_p020.
+                       pbtxt <./images/gnuplot/test_3/energy_in_round_xy800.png
+ (PNG copy)>] [63]
+<images/gnuplot/test_4/nodes_in_round_p005.png, id=1002, 481.8pt x 361.35pt>
+File: images/gnuplot/test_4/nodes_in_round_p005.png Graphic file (type png)
+<use images/gnuplot/test_4/nodes_in_round_p005.png>
+Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p005.png  used on
+ input line 1946.
+(pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]
+<images/gnuplot/test_4/energy_in_round_p005.png, id=1007, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p005.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p005.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p005.png  used o
-n input line 1681.
+n input line 1952.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
-[54pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[65pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
 9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1713 	&
+l.1984 	&
          	& 100	& 395.00 \\*pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.5.20}) has been already used, duplicate ignored
+entifier (name{figure.5.30}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1713 	&
+l.1984 	&
          	& 100	& 395.00 \\* <./images/gnuplot/test_4/nodes_in_round_p005.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_p005.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p010.png, id=909, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p010.png, id=1016, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p010.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p010.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p010.png  used on
- input line 1719.
+ input line 1990.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
-<images/gnuplot/test_4/energy_in_round_p010.png, id=914, 481.8pt x 361.35pt>
+ [66]
+<images/gnuplot/test_4/energy_in_round_p010.png, id=1021, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p010.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p010.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p010.png  used o
-n input line 1725.
+n input line 1996.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
-[56pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+[67pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1757 	&
+l.2028 	&
          	& 100	& 411.00 \\*pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.5.22}) has been already used, duplicate ignored
+entifier (name{figure.5.32}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1757 	&
+l.2028 	&
          	& 100	& 411.00 \\* <./images/gnuplot/test_4/nodes_in_round_p010.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_p010.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p015.png, id=922, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p015.png, id=1029, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p015.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p015.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p015.png  used on
- input line 1763.
+ input line 2034.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57]
-<images/gnuplot/test_4/energy_in_round_p015.png, id=927, 481.8pt x 361.35pt>
+ [68]
+<images/gnuplot/test_4/energy_in_round_p015.png, id=1034, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p015.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p015.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p015.png  used o
-n input line 1769.
+n input line 2040.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
-[58pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+[69pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1801 	&
+l.2072 	&
          	& 100	& 397.00 \\*pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.5.24}) has been already used, duplicate ignored
+entifier (name{figure.5.34}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1801 	&
+l.2072 	&
          	& 100	& 397.00 \\* <./images/gnuplot/test_4/nodes_in_round_p015.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_p015.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p020.png, id=935, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p020.png, id=1042, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p020.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p020.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p020.png  used on
- input line 1807.
+ input line 2078.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
-<images/gnuplot/test_4/energy_in_round_p020.png, id=941, 481.8pt x 361.35pt>
+ [70]
+<images/gnuplot/test_4/energy_in_round_p020.png, id=1047, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p020.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p020.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p020.png  used o
-n input line 1813.
+n input line 2084.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
-[60pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+[71pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1845 	&
+l.2116 	&
          	& 100	& 406.00 \\*pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.5.26}) has been already used, duplicate ignored
+entifier (name{figure.5.36}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1845 	&
+l.2116 	&
          	& 100	& 406.00 \\* <./images/gnuplot/test_4/nodes_in_round_p020.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_p020.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p025.png, id=949, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p025.png, id=1056, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p025.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p025.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p025.png  used on
- input line 1851.
+ input line 2122.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61]
-<images/gnuplot/test_4/energy_in_round_p025.png, id=954, 481.8pt x 361.35pt>
+ [72]
+<images/gnuplot/test_4/energy_in_round_p025.png, id=1061, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p025.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p025.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p025.png  used o
-n input line 1857.
+n input line 2128.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
-[62pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+[73pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1889 	&
+l.2160 	&
          	& 100	& 390.00 \\*pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.5.28}) has been already used, duplicate ignored
+entifier (name{figure.5.38}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1889 	&
+l.2160 	&
          	& 100	& 390.00 \\* <./images/gnuplot/test_4/nodes_in_round_p025.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_p025.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p030.png, id=962, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p030.png, id=1069, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p030.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p030.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p030.png  used on
- input line 1895.
+ input line 2166.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-<images/gnuplot/test_4/energy_in_round_p030.png, id=967, 481.8pt x 361.35pt>
+ [74]
+<images/gnuplot/test_4/energy_in_round_p030.png, id=1074, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p030.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p030.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p030.png  used o
-n input line 1901.
+n input line 2172.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/nodes_in_round_all.png, id=968, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_all.png, id=1075, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_all.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_all.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_all.png  used on 
-input line 1907.
+input line 2178.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-29}) has been already used, duplicate ignored
+ [75pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+39}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1910 
+l.2181 
        pdfTeX warning (ext4): destination with the same identifier (name{figure
-.5.30}) has been already used, duplicate ignored
+.5.40}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1910 
+l.2181 
         <./images/gnuplot/test_4/nodes_in_round_p030.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p030.png (PNG copy)>]
-<images/gnuplot/test_4/energy_in_round_all.png, id=975, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_all.png, id=1082, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_all.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_all.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_all.png  used on
- input line 1913.
+ input line 2184.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
- [65pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-31}) has been already used, duplicate ignored
+ [76pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+41}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1921 \chapter
+l.2192 \chapter
                {Podsumowanie}pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.5.32}) has been already used, duplicate ignored
+dentifier (name{figure.5.42}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1921 \chapter
+l.2192 \chapter
                {Podsumowanie} <./images/gnuplot/test_4/nodes_in_round_all.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_all.png (PNG copy)>]
 Rozdzia\l  6.
-[66
+[77
 
-] [67
+] [78
 
-] [68
+] (./opiniaopiekuna.tex) [79
 
-] (./opiniaopiekuna.tex) [69] (./recenzja.tex [70])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1939.
- [71]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1939.
+] (./recenzja.tex [80])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2210.
+ [81]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2210.
 
 (./praca_dyplomowa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1939.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1939.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2210.
 
 Package rerunfilecheck Info: File `praca_dyplomowa.out' has not changed.
 (rerunfilecheck)             Checksum: 361CB2EE5D4EB78C12CCFBEF506FA148;2576.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1939.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2210.
  ) 
 Here is how much of TeX's memory you used:
- 10306 strings out of 492638
- 149991 string characters out of 6131710
+ 10438 strings out of 492638
+ 153378 string characters out of 6131710
  458816 words of memory out of 5000000
- 13424 multiletter control sequences out of 15000+600000
+ 13485 multiletter control sequences out of 15000+600000
  27260 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,9n,40p,282b,1920s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1250,10 +1400,10 @@ ic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728
 mf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/publi
 c/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on praca_dyplomowa.pdf (79 pages, 1653595 bytes).
+Output written on praca_dyplomowa.pdf (89 pages, 1944730 bytes).
 PDF statistics:
- 1186 PDF objects out of 1200 (max. 8388607)
- 1033 compressed objects within 11 object streams
- 538 named destinations out of 1000 (max. 500000)
- 492 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1300 PDF objects out of 1440 (max. 8388607)
+ 1126 compressed objects within 12 object streams
+ 598 named destinations out of 1000 (max. 500000)
+ 542 words of extra memory for PDF output out of 10000 (max. 10000000)
 

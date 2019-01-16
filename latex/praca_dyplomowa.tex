@@ -1578,13 +1578,284 @@ Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal 
 Test `Wielkość obszaru sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem wielkości obszaru sieci na której
 znajdują się węzły w sieci.
 
+Istotna informacja: lokalizacja węzłów w scenariuszu 200 jest niezmienna względem pozostałych testów. Wielkość obszaru sieci była manimulowana przy użyciu skali (0.25, 0.50, 2.00, 4.00).
+Oznacza to, że koordynaty (X, Y) węzłów zostały przemnożone przez wartość skali. Proporcja odległości pomiędzy węzłami zostaje taka same, jednakże zmianie ulega koszt komunikacji, gdyż 
+funkcja kosztów energetycznych jest zależna od dystansu.
+
 List plików konfiguracyjnych:
 
-%TODO Stworzyć listę plików konfiguracyjnych.
+\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_project$ tree testdata/test_3/
+testdata/test_3/
+  direct_xy050.pbtxt
+  direct_xy100.pbtxt
+  direct_xy200.pbtxt
+  direct_xy400.pbtxt
+  direct_xy800.pbtxt
+  leach_xy050.pbtxt
+  leach_xy100.pbtxt
+  leach_xy200.pbtxt
+  leach_xy400.pbtxt
+  leach_xy800.pbtxt
+  pegasis_xy050.pbtxt
+  pegasis_xy100.pbtxt
+  pegasis_xy200.pbtxt
+  pegasis_xy400.pbtxt
+  pegasis_xy800.pbtxt
+\end{lstlisting}
 
 Uruchomienie oprogramowania:
 
-%TODO Przestawić komendę odpalającą oprogramowanie.
+\begin{lstlisting}
+~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
+testdata/test_3/direct_xy050.pbtxt,\
+testdata/test_3/direct_xy100.pbtxt,\
+testdata/test_3/direct_xy200.pbtxt,\
+testdata/test_3/direct_xy400.pbtxt,\
+testdata/test_3/direct_xy800.pbtxt,\
+testdata/test_3/leach_xy050.pbtxt,\
+testdata/test_3/leach_xy100.pbtxt,\
+testdata/test_3/leach_xy200.pbtxt,\
+testdata/test_3/leach_xy400.pbtxt,\
+testdata/test_3/leach_xy800.pbtxt,\
+testdata/test_3/pegasis_xy050.pbtxt,\
+testdata/test_3/pegasis_xy100.pbtxt,\
+testdata/test_3/pegasis_xy200.pbtxt,\
+testdata/test_3/pegasis_xy400.pbtxt,\
+testdata/test_3/pegasis_xy800.pbtxt
+\end{lstlisting}
+
+Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych. 
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Skala sieci	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 0.25 	& -	& 42976.00 \\*
+\midrule
+LEACH	& 0.25	& 1	& 43417.42 \\*
+	&	& 5	& 44197.10 \\*
+	&	& 10	& 45130.10 \\*
+	&	& 25	& 45789.50 \\*
+	&	& 50	& 46909.50 \\*
+	&	& 75	& 48151.00 \\*
+	&	& 90	& 49309.70 \\*
+	&	& 95	& 50096.95 \\*
+	&	& 99	& 51908.73 \\*
+	&	& 100	& 52278.00 \\*
+\midrule
+PEGASIS	& 0.25	& 1	& 38521.39 \\*
+	&	& 5	& 38723.70 \\*
+	&	& 10	& 38847.20 \\*
+	&	& 25	& 39050.25 \\*
+	&	& 50	& 39278.50 \\*
+	&	& 75	& 39543.75 \\*
+	&	& 90	& 39756.10 \\*
+	&	& 95	& 39827.65 \\*
+	&	& 99	& 40037.81 \\*
+	&	& 100	& 40316.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy050.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy050.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
+\end{figure}
+
+% TODO Opis wyników.
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Skala sieci	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 0.50 	& -	& 5657.00 \\*
+\midrule
+LEACH	& 0.50	& 1	& 5598.30 \\*
+	&	& 5	& 5744.20 \\*
+	&	& 10	& 5872.20 \\*
+	&	& 25	& 6035.00 \\*
+	&	& 50	& 6292.50 \\*
+	&	& 75	& 6563.50 \\*
+	&	& 90	& 6779.70 \\*
+	&	& 95	& 6919.75 \\*
+	&	& 99	& 7213.70 \\*
+	&	& 100	& 7580.00 \\*
+\midrule
+PEGASIS	& 0.50	& 1	& 4406.99 \\*
+	&	& 5	& 4454.90 \\*
+	&	& 10	& 4472.70 \\*
+	&	& 25	& 4516.00 \\*
+	&	& 50	& 4576.50 \\*
+	&	& 75	& 4627.00 \\*
+	&	& 90	& 4691.20 \\*
+	&	& 95	& 4708.45 \\*
+	&	& 99	& 4776.45 \\*
+	&	& 100	& 4920.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy100.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy100.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
+\end{figure}
+
+% TODO Opis wyników.
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Skala sieci	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 1.00 	& -	& 359.00 \\*
+\midrule
+LEACH	& 1.00	& 1	& 384.97 \\*
+	&	& 5	& 392.80 \\*
+	&	& 10	& 399.90 \\*
+	&	& 25	& 415.75 \\*
+	&	& 50	& 428.00 \\*
+	&	& 75	& 450.50 \\*
+	&	& 90	& 476.30 \\*
+	&	& 95	& 493.15 \\*
+	&	& 99	& 533.22 \\*
+	&	& 100	& 555.00 \\*
+\midrule
+PEGASIS	& 1.00	& 1	& 296.92 \\*
+	&	& 5	& 298.95 \\*
+	&	& 10	& 301.00 \\*
+	&	& 25	& 307.75 \\*
+	&	& 50	& 313.50 \\*
+	&	& 75	& 320.25 \\*
+	&	& 90	& 328.00 \\*
+	&	& 95	& 331.00 \\*
+	&	& 99	& 340.02 \\*
+	&	& 100	& 342.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy200.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy200.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
+\end{figure}
+
+% TODO Opis wyników.
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Skala sieci	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 2.00 	& -	& 23.00 \\*
+\midrule
+LEACH	& 2.00	& 1	& 49.00 \\*	
+	&	& 5	& 50.95 \\*
+	&	& 10	& 51.00 \\*
+	&	& 25	& 53.00 \\*
+	&	& 50	& 55.00 \\*
+	&	& 75	& 58.00 \\*
+	&	& 90	& 60.00 \\*
+	&	& 95	& 61.05 \\*
+	&	& 99	& 63.02 \\*
+	&	& 100	& 65.00 \\*
+\midrule
+PEGASIS	& 2.00	& 1	& 27.00 \\*
+	&	& 5	& 28.95 \\*
+	&	& 10	& 29.00 \\*
+	&	& 25	& 30.00 \\*
+	&	& 50	& 32.00 \\*
+	&	& 75	& 33.00 \\*
+	&	& 90	& 34.10 \\*
+	&	& 95	& 36.05 \\*
+	&	& 99	& 37.01 \\*
+	&	& 100	& 38.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy400.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy400.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
+\end{figure}
+
+% TODO Opis wyników.
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Skala sieci	& Percentyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& 4.00 	& -	& 2.00 \\*
+\midrule
+LEACH	& 4.00	& 1	& 27.00 \\*
+	&	& 5	& 28.00 \\*
+	&	& 10	& 29.00 \\*
+	&	& 25	& 29.00 \\*
+	&	& 50	& 30.00 \\*
+	&	& 75	& 31.00 \\*
+	&	& 90	& 32.00 \\*
+	&	& 95	& 32.00 \\*
+	&	& 99	& 33.00 \\*
+	&	& 100	& 33.00 \\*
+\midrule
+PEGASIS	& 4.00	& 1	& 7.00 \\*
+	&	& 5	& 8.00 \\*
+	&	& 10	& 8.90 \\*
+	&	& 25	& 9.00 \\*
+	&	& 50	& 10.00 \\*
+	&	& 75	& 11.00 \\*
+	&	& 90	& 11.00 \\*
+	&	& 95	& 12.00 \\*
+	&	& 99	& 13.00 \\*
+	&	& 100	& 13.00 \\*
+\bottomrule
+\end{longtable}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy800.png}
+ \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy800.png}
+ \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
+\end{figure}
+
+% TODO Opis wyników.
 
 \subsection{Test 4 - Parametr `p`}
 
