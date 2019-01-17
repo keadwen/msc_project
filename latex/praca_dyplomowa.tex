@@ -1671,7 +1671,11 @@ PEGASIS	& 0.25	& 1	& 38521.39 \\*
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
-% TODO Opis wyników.
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 42976 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.9\% dla wartości minimalnej (43360.00), +9.2\% dla mediany (46909.50), +21.6\% dla wartości maksymalnej (52278.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -10.7\% dla wartości minimalnej (38362.00), -8.6\% dla mediany (39278.50), -6.2\% dla wartości maksymalnej (40316.00).
+Odległości węzłów do 'sink' są czterokrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
 \begin{longtable}{*{4}{c}}
 \toprule
@@ -1717,53 +1721,11 @@ PEGASIS	& 0.50	& 1	& 4406.99 \\*
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
-% TODO Opis wyników.
-
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Skala sieci	& Percentyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 1.00 	& -	& 359.00 \\*
-\midrule
-LEACH	& 1.00	& 1	& 384.97 \\*
-	&	& 5	& 392.80 \\*
-	&	& 10	& 399.90 \\*
-	&	& 25	& 415.75 \\*
-	&	& 50	& 428.00 \\*
-	&	& 75	& 450.50 \\*
-	&	& 90	& 476.30 \\*
-	&	& 95	& 493.15 \\*
-	&	& 99	& 533.22 \\*
-	&	& 100	& 555.00 \\*
-\midrule
-PEGASIS	& 1.00	& 1	& 296.92 \\*
-	&	& 5	& 298.95 \\*
-	&	& 10	& 301.00 \\*
-	&	& 25	& 307.75 \\*
-	&	& 50	& 313.50 \\*
-	&	& 75	& 320.25 \\*
-	&	& 90	& 328.00 \\*
-	&	& 95	& 331.00 \\*
-	&	& 99	& 340.02 \\*
-	&	& 100	& 342.00 \\*
-\bottomrule
-\end{longtable}
-
-\begin{figure}[H]
- \centering
- \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy200.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie.}
-\end{figure}
-
-\begin{figure}[H]
- \centering
- \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy200.png}
- \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
-\end{figure}
-
-% TODO Opis wyników.
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 5657 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.3\% dla wartości minimalnej (5529.00), oraz wydłużenie czasu pracy na poziomie +11.2\% dla mediany (6292.50), +34.0\% dla wartości maksymalnej (7580.00).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.1\% dla wartości minimalnej (4406.00), -19.1\% dla mediany (4576.50), -13.0\% dla wartości maksymalnej (4920.00).
+Odległości węzłów do 'sink' są dwukrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
 \begin{longtable}{*{4}{c}}
 \toprule
@@ -1809,7 +1771,11 @@ PEGASIS	& 2.00	& 1	& 27.00 \\*
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
-% TODO Opis wyników.
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 23 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +213.0\% dla wartości minimalnej (49.00), +239.1\% dla mediany (55.00), +282.6\% dla wartości maksymalnej (65.00).
+Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +117.4\% dla wartości minimalnej (27.00), +139.1\% dla mediany (32.00), +165.2\% dla wartości maksymalnej (38.00).
+Odległości węzłów do 'sink' są dwukrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
 \begin{longtable}{*{4}{c}}
 \toprule
@@ -1855,7 +1821,11 @@ PEGASIS	& 4.00	& 1	& 7.00 \\*
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
-% TODO Opis wyników.
+\par
+Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 2 (uzsykana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1350.0\% dla wartości minimalnej (27.00), +1500.0\% dla mediany (30.00), +1650.0\% dla wartości maksymalnej (33.00).
+Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +350.0\% dla wartości minimalnej (7.00), +500.0\% dla mediany (10.00), +650.0\% dla wartości maksymalnej (13.00).
+Odległości węzłów do 'sink' są czterokrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
 \subsection{Test 4 - Parametr `p`}
 
