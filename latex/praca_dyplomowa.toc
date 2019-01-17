@@ -42,6 +42,6 @@
 \contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{40}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{51}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{61}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Podsumowanie wynik\IeC {\'o}w}{75}{section.5.3}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{76}{chapter.6}
-\contentsline {chapter}{Bibliografia}{77}{chapter*.13}
+\contentsline {section}{\numberline {5.3}Podsumowanie wynik\IeC {\'o}w}{77}{section.5.3}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{78}{chapter.6}
+\contentsline {chapter}{Bibliografia}{79}{chapter*.13}
