@@ -323,7 +323,7 @@ By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, ni
 
 \section{Model transmisji}
 
-W pracy wykorzystany został model transmisji przedstawiony w pracy %TODO “Energy-efficient communication protocol for wireless microsensor networks”
+W pracy wykorzystany został model transmisji przedstawiony w pracy \cite{Heinzelman}.
 Model jest powszechnie wykorzystywany w planowaniu oraz symulowaniu aplikacji bezprzewodowych sieci czujników.
 Model przedstawia zależności transmisji danych w wolnej przestrzeni pomiędzy dwoma węzłami (nadawcą i odbiorcą) uwzględniając wielotorowość sygnału.
 Poniższy wzór pozwala na wyznaczenie całkowitego kosztu transmisji k-bitów do węzła oddalonego o d-metrów:
@@ -1578,8 +1578,8 @@ Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal 
 Test `Wielkość obszaru sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem wielkości obszaru sieci na której
 znajdują się węzły w sieci.
 
-Istotna informacja: lokalizacja węzłów w scenariuszu 200 jest niezmienna względem pozostałych testów. Wielkość obszaru sieci była manimulowana przy użyciu skali (0.25, 0.50, 2.00, 4.00).
-Oznacza to, że koordynaty (X, Y) węzłów zostały przemnożone przez wartość skali. Proporcja odległości pomiędzy węzłami zostaje taka same, jednakże zmianie ulega koszt komunikacji, gdyż 
+Istotna informacja: lokalizacja węzłów w scenariuszu 200 jest niezmienna względem pozostałych testów. Wielkość obszaru sieci była manipulowana przy użyciu skali (0.25, 0.50, 2.00, 4.00).
+Oznacza to, że koordynaty (X, Y) węzłów zostały przemnożone przez wartość skali. Proporcja odległości pomiędzy węzłami zostaje taka sama, jednakże zmianie ulega koszt komunikacji, gdyż 
 funkcja kosztów energetycznych jest zależna od dystansu.
 
 List plików konfiguracyjnych:
@@ -2166,7 +2166,8 @@ Projekt zrealizowano w języku Go, przy wykrzystaniu rozszerzonego systmeu kontr
 % Bibliografia w pracy mgr jest kluczowa - powinno pojawić się kilka artykułów naukowych (IEEE, 
 % ACM, Elsevier - ma Pan dostęp jako student PW)
 \addcontentsline{toc}{chapter}{Bibliografia}
-\bibitem{Stevens}{W. R. Stevens, G. R. Wright, ,,Biblia TCP/IP tom 1'', RM, 1998.}
+\bibitem{Akyildiz}{I.F. Akyildiz, W. Su, Y. Sankarasubramaniam, E. Cayirci, ,,Wireless sensor networks: a survey'', Georgia Institute of Technology, December 2001.}
+\bibitem{Heinzelman}{W. R. Heinzelman, A. Chandrakasan, H. Balakrishnan, ,,Energy-Efficient Communication Protocol for Wireless Microsensor Networks'', MIT, 2000.}
 \end{thebibliography}
 
 \zakonczenie  % wklejenie recenzji i opinii
