@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.4)  27 JAN 2019 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.4)  27 JAN 2019 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,7 +537,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 122.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<PWHead.png, id=152, 2015.53pt x 320.19624pt>
+<PWHead.png, id=148, 2015.53pt x 320.19624pt>
 File: PWHead.png Graphic file (type png)
 <use PWHead.png>
 Package pdftex.def Info: PWHead.png  used on input line 122.
@@ -547,7 +547,7 @@ Overfull \hbox (31.10086pt too wide) in paragraph at lines 122--122
 [] 
  []
 
-<mgrhead.png, id=153, 1392.20125pt x 303.1325pt>
+<mgrhead.png, id=149, 1392.20125pt x 303.1325pt>
 File: mgrhead.png Graphic file (type png)
 <use mgrhead.png>
 Package pdftex.def Info: mgrhead.png  used on input line 122.
@@ -593,7 +593,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./PWHead.png (PNG copy)> <
-./mgrhead.png (PNG copy)>]) [2]
+./mgrhead.png (PNG copy)>] [2]) [3] [4
+
+]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 122.
 
 
@@ -602,10 +604,9 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 122.
- [3
+ [5
 
-
-] [4
+] [6
 
 ]
 (./praca_dyplomowa.toc [1
@@ -647,14 +648,14 @@ plm/m/it/12 E[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 k; d\OT4/cmr/m/n/12 ) = []
  []
 
 [9]
-<images/komunikacja_bezposrednia.png, id=336, 369.38pt x 375.4025pt>
+<images/komunikacja_bezposrednia.png, id=338, 369.38pt x 375.4025pt>
 File: images/komunikacja_bezposrednia.png Graphic file (type png)
 <use images/komunikacja_bezposrednia.png>
 Package pdftex.def Info: images/komunikacja_bezposrednia.png  used on input lin
 e 381.
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [10] [11 <./images/komunikacja_bezposrednia.png>]
-<images/komunikacja_leach.png, id=348, 369.38pt x 375.4025pt>
+<images/komunikacja_leach.png, id=349, 369.38pt x 375.4025pt>
 File: images/komunikacja_leach.png Graphic file (type png)
 <use images/komunikacja_leach.png>
 Package pdftex.def Info: images/komunikacja_leach.png  used on input line 435.
@@ -664,7 +665,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
 [13 <./images/komunikacja_leach.png>]
-<images/komunikacja_pegasis.png, id=358, 369.38pt x 375.4025pt>
+<images/komunikacja_pegasis.png, id=359, 369.38pt x 375.4025pt>
 File: images/komunikacja_pegasis.png Graphic file (type png)
 <use images/komunikacja_pegasis.png>
 Package pdftex.def Info: images/komunikacja_pegasis.png  used on input line 456
@@ -672,7 +673,7 @@ Package pdftex.def Info: images/komunikacja_pegasis.png  used on input line 456
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [14 <./images/komunikacja_pegasis.png>]
 Rozdzia\l  4.
-<images/architektura_systemu.png, id=364, 873.2625pt x 548.0475pt>
+<images/architektura_systemu.png, id=365, 873.2625pt x 548.0475pt>
 File: images/architektura_systemu.png Graphic file (type png)
 <use images/architektura_systemu.png>
 Package pdftex.def Info: images/architektura_systemu.png  used on input line 47
@@ -699,7 +700,7 @@ ze-cho-wuje obiekt
  []
 
 [25] [26] [27]
-<images/przykladowa_sieci_wygenerowana.png, id=611, 369.38pt x 375.4025pt>
+<images/przykladowa_sieci_wygenerowana.png, id=613, 369.38pt x 375.4025pt>
 File: images/przykladowa_sieci_wygenerowana.png Graphic file (type png)
 <use images/przykladowa_sieci_wygenerowana.png>
 Package pdftex.def Info: images/przykladowa_sieci_wygenerowana.png  used on inp
@@ -714,13 +715,13 @@ Underfull \vbox (badness 10000) detected at line 1054
  []
 
 [32] [33] [34] [35] [36] [37]
-<images/gnuplot/test_1/nodes_in_round_m32.png, id=707, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m32.png, id=708, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m32.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m32.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m32.png  used on 
 input line 1319.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m32.png, id=708, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m32.png, id=709, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m32.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m32.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m32.png  used on
@@ -744,13 +745,13 @@ gure.5.2}) has been already used, duplicate ignored
 l.1331 \par
             <./images/gnuplot/test_1/nodes_in_round_m32.png (PNG copy)> <./imag
 es/gnuplot/test_1/energy_in_round_m32.png (PNG copy)>]
-<images/gnuplot/test_1/nodes_in_round_m64.png, id=732, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m64.png, id=734, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m64.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m64.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m64.png  used on 
 input line 1369.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m64.png, id=733, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m64.png, id=735, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m64.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m64.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m64.png  used on
@@ -774,13 +775,13 @@ gure.5.4}) has been already used, duplicate ignored
 l.1381 \par
             <./images/gnuplot/test_1/nodes_in_round_m64.png (PNG copy)> <./imag
 es/gnuplot/test_1/energy_in_round_m64.png (PNG copy)>]
-<images/gnuplot/test_1/nodes_in_round_m128.png, id=747, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m128.png, id=748, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m128.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m128.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m128.png  used on
  input line 1419.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m128.png, id=748, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m128.png, id=749, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m128.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m128.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m128.png  used o
@@ -804,13 +805,13 @@ gure.5.6}) has been already used, duplicate ignored
 l.1431 \par
             <./images/gnuplot/test_1/nodes_in_round_m128.png (PNG copy)> <./ima
 ges/gnuplot/test_1/energy_in_round_m128.png (PNG copy)>]
-<images/gnuplot/test_1/nodes_in_round_m256.png, id=760, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m256.png, id=761, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m256.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m256.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m256.png  used on
  input line 1469.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m256.png, id=761, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m256.png, id=762, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m256.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m256.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m256.png  used o
@@ -834,13 +835,13 @@ gure.5.8}) has been already used, duplicate ignored
 l.1481 \par
             <./images/gnuplot/test_1/nodes_in_round_m256.png (PNG copy)> <./ima
 ges/gnuplot/test_1/energy_in_round_m256.png (PNG copy)>] [46]
-<images/gnuplot/test_2/nodes_in_round_25.png, id=799, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_25.png, id=801, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_25.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_25.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_25.png  used on i
 nput line 1568.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_25.png, id=800, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_25.png, id=802, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_25.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_25.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_25.png  used on 
@@ -864,13 +865,13 @@ gure.5.10}) has been already used, duplicate ignored
 l.1580 \par
             <./images/gnuplot/test_2/nodes_in_round_25.png (PNG copy)> <./image
 s/gnuplot/test_2/energy_in_round_25.png (PNG copy)>]
-<images/gnuplot/test_2/nodes_in_round_50.png, id=828, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_50.png, id=829, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_50.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_50.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_50.png  used on i
 nput line 1618.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_50.png, id=829, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_50.png, id=830, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_50.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_50.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_50.png  used on 
@@ -894,13 +895,13 @@ gure.5.12}) has been already used, duplicate ignored
 l.1630 \par
             <./images/gnuplot/test_2/nodes_in_round_50.png (PNG copy)> <./image
 s/gnuplot/test_2/energy_in_round_50.png (PNG copy)>]
-<images/gnuplot/test_2/nodes_in_round_100.png, id=841, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_100.png, id=842, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_100.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_100.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_100.png  used on 
 input line 1668.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_100.png, id=842, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_100.png, id=843, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_100.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_100.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_100.png  used on
@@ -924,13 +925,13 @@ gure.5.14}) has been already used, duplicate ignored
 l.1680 \par
             <./images/gnuplot/test_2/nodes_in_round_100.png (PNG copy)> <./imag
 es/gnuplot/test_2/energy_in_round_100.png (PNG copy)>]
-<images/gnuplot/test_2/nodes_in_round_150.png, id=854, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_150.png, id=856, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_150.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_150.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_150.png  used on 
 input line 1717.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_150.png, id=855, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_150.png, id=857, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_150.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_150.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_150.png  used on
@@ -959,13 +960,13 @@ gure.5.16}) has been already used, duplicate ignored
 l.1729 \par
             <./images/gnuplot/test_2/nodes_in_round_150.png (PNG copy)> <./imag
 es/gnuplot/test_2/energy_in_round_150.png (PNG copy)>]
-<images/gnuplot/test_2/nodes_in_round_200.png, id=868, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_200.png, id=869, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_200.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_200.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_200.png  used on 
 input line 1766.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_200.png, id=869, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_200.png, id=870, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_200.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_200.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_200.png  used on
@@ -994,13 +995,13 @@ gure.5.18}) has been already used, duplicate ignored
 l.1778 \par
             <./images/gnuplot/test_2/nodes_in_round_200.png (PNG copy)> <./imag
 es/gnuplot/test_2/energy_in_round_200.png (PNG copy)>] [57] [58]
-<images/gnuplot/test_3/nodes_in_round_xy050.png, id=926, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy050.png, id=928, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy050.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy050.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy050.png  used o
 n input line 1869.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy050.png, id=927, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy050.png, id=929, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy050.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy050.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy050.png  used 
@@ -1024,13 +1025,13 @@ l.1880
 l.1880 
         <./images/gnuplot/test_3/nodes_in_round_xy050.png (PNG copy)> <./images
 /gnuplot/test_3/energy_in_round_xy050.png (PNG copy)>]
-<images/gnuplot/test_3/nodes_in_round_xy100.png, id=939, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy100.png, id=940, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy100.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy100.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy100.png  used o
 n input line 1915.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy100.png, id=940, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy100.png, id=941, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy100.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy100.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy100.png  used 
@@ -1054,13 +1055,13 @@ l.1926
 l.1926 
         <./images/gnuplot/test_3/nodes_in_round_xy100.png (PNG copy)> <./images
 /gnuplot/test_3/energy_in_round_xy100.png (PNG copy)>]
-<images/gnuplot/test_3/nodes_in_round_xy400.png, id=952, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy400.png, id=953, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy400.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy400.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy400.png  used o
 n input line 1961.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy400.png, id=953, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy400.png, id=954, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy400.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy400.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy400.png  used 
@@ -1084,13 +1085,13 @@ l.1972
 l.1972 
         <./images/gnuplot/test_3/nodes_in_round_xy400.png (PNG copy)> <./images
 /gnuplot/test_3/energy_in_round_xy400.png (PNG copy)>]
-<images/gnuplot/test_3/nodes_in_round_xy800.png, id=965, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy800.png, id=967, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy800.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy800.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy800.png  used o
 n input line 2007.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy800.png, id=966, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy800.png, id=968, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy800.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy800.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy800.png  used 
@@ -1114,13 +1115,13 @@ l.2018
 l.2018 
         <./images/gnuplot/test_3/nodes_in_round_xy800.png (PNG copy)> <./images
 /gnuplot/test_3/energy_in_round_xy800.png (PNG copy)>] [67] [68]
-<images/gnuplot/test_4/nodes_in_round_p005.png, id=1021, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p005.png, id=1022, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p005.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p005.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p005.png  used on
  input line 2105.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p005.png, id=1022, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p005.png, id=1023, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p005.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p005.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p005.png  used o
@@ -1144,13 +1145,13 @@ l.2116
 l.2116 
         <./images/gnuplot/test_4/nodes_in_round_p005.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p005.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p010.png, id=1033, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p010.png, id=1035, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p010.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p010.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p010.png  used on
  input line 2151.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p010.png, id=1034, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p010.png, id=1036, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p010.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p010.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p010.png  used o
@@ -1179,13 +1180,13 @@ l.2161
 l.2161 
         <./images/gnuplot/test_4/nodes_in_round_p010.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p010.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p015.png, id=1047, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p015.png, id=1048, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p015.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p015.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p015.png  used on
  input line 2196.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p015.png, id=1048, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p015.png, id=1049, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p015.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p015.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p015.png  used o
@@ -1209,13 +1210,13 @@ l.2207
 l.2207 
         <./images/gnuplot/test_4/nodes_in_round_p015.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p015.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p020.png, id=1060, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p020.png, id=1061, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p020.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p020.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p020.png  used on
  input line 2242.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p020.png, id=1061, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p020.png, id=1062, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p020.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p020.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p020.png  used o
@@ -1244,13 +1245,13 @@ l.2253
 l.2253 
         <./images/gnuplot/test_4/nodes_in_round_p020.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p020.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p025.png, id=1073, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p025.png, id=1075, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p025.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p025.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p025.png  used on
  input line 2288.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p025.png, id=1074, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p025.png, id=1076, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p025.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p025.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p025.png  used o
@@ -1274,13 +1275,13 @@ l.2299
 l.2299 
         <./images/gnuplot/test_4/nodes_in_round_p025.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p025.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_p030.png, id=1087, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p030.png, id=1088, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p030.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p030.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p030.png  used on
  input line 2334.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p030.png, id=1088, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p030.png, id=1089, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p030.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p030.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p030.png  used o
@@ -1304,13 +1305,13 @@ l.2345
 l.2345 
         <./images/gnuplot/test_4/nodes_in_round_p030.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p030.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_all.png, id=1100, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_all.png, id=1101, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_all.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_all.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_all.png  used on 
 input line 2348.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_all.png, id=1101, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_all.png, id=1102, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_all.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_all.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_all.png  used on
@@ -1325,21 +1326,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2362 \chapter
+l.2358 \chapter
                {Podsumowanie}pdfTeX warning (ext4): destination with the same i
 dentifier (name{figure.5.40}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2362 \chapter
+l.2358 \chapter
                {Podsumowanie} <./images/gnuplot/test_4/nodes_in_round_all.png (
 PNG copy)> <./images/gnuplot/test_4/energy_in_round_all.png (PNG copy)>]
-[83]
 Rozdzia\l  6.
-[84
+[83
 
-]
-Underfull \hbox (badness 1400) in paragraph at lines 2375--2376
+] [84]
+Underfull \hbox (badness 1400) in paragraph at lines 2396--2397
 []\T1/cmr/m/n/12 W. R. He-in-zel-man, A. Chan-dra-ka-san, H. Ba-la-kri-sh-nan, 
 ,,Energy-
  []
@@ -1349,23 +1349,23 @@ Underfull \hbox (badness 1400) in paragraph at lines 2375--2376
 ] [86
 
 ] (./opiniaopiekuna.tex) [87] (./recenzja.tex [88])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2380.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2401.
  [89]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2380.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2401.
 
 (./praca_dyplomowa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2380.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2380.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2401.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2401.
 
 Package rerunfilecheck Info: File `praca_dyplomowa.out' has not changed.
-(rerunfilecheck)             Checksum: C94D534E89DD1E49544EF4306E99B748;2575.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2380.
+(rerunfilecheck)             Checksum: 4CA6110A528B351AB7F5BB5BE7E8A4A4;2505.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2401.
  ) 
 Here is how much of TeX's memory you used:
- 10436 strings out of 494549
- 152982 string characters out of 6176898
+ 10434 strings out of 494549
+ 152958 string characters out of 6176898
  453909 words of memory out of 5000000
- 13230 multiletter control sequences out of 15000+600000
+ 13229 multiletter control sequences out of 15000+600000
  27260 words of font info for 51 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  28i,9n,40p,282b,1920s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1389,10 +1389,10 @@ dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
 st/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 r8a.pfb>
-Output written on praca_dyplomowa.pdf (97 pages, 1875506 bytes).
+Output written on praca_dyplomowa.pdf (99 pages, 1878840 bytes).
 PDF statistics:
- 1727 PDF objects out of 1728 (max. 8388607)
- 1159 compressed objects within 12 object streams
- 605 named destinations out of 1000 (max. 500000)
- 532 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1728 PDF objects out of 1728 (max. 8388607)
+ 1158 compressed objects within 12 object streams
+ 604 named destinations out of 1000 (max. 500000)
+ 524 words of extra memory for PDF output out of 10000 (max. 10000000)
 

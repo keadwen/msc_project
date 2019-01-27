@@ -2355,17 +2355,38 @@ Ilość węzłów typu cluster head jest trzykrotnie większa niż w konfiguracj
 Powyższe dwa wykresy nakładają przebiegi funkcji uzyskane dla wszystkich sześciu scenariuszy testu.
 Zauważyć można zależność, że efektywność energetyczna LEACH oraz PEGASIS przynosi pozytywne rezultaty, pozwalające na wydłużenie czasu pracy węzłów.
 
-\section{Podsumowanie wyników}
-
-%TODO Opisać po przedstawieniu wyników.
-
 \chapter{Podsumowanie}
+\par
 Koncepcja i projekt systemu symulującego model bezprzewodowej sieci czujnikowej został opracowany przez autora pracy.
 Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
 Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się tworzeniem prototypu systemu symulującego.
 Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
 Projekt zrealizowano w języku Go, przy wykorzystaniu rozszerzonego systemu kontroli wersji git.
-
+\par
+Proces zbieranie wyników generowanych przez system symulacyjny został podzielony na cztery główne testy.
+W każdym z testów zdefiniowany został jeden parametr konfiguracji, który podlegał wielokrotnym zmianom mającym na celu zaobserwowanie zależności czasu i efektywności pracy
+sieci.
+\par
+Najistotniejszym wnioskiem zaobserwowanym zarówno w momencie tworzenia pracy, jak i procesie tworzenia wyników jest silna zależność między uzyskanymi wynikami a konfiguracją sieci.
+Oznacza to, że niemalże niemożliwym jest określenie stałej (przewidywalnej) efektywności energetycznej sieci w momencie wdrożenia LEACH, PEGASIS czy innego algorytmu usprawniającego
+wymianę danych w bezprzewodowej sieci czujników. W przypadku scenariusza wygenerowanego w ramach pracy dyplomowej zauważyć można, że węzeł 171 (X: 4.508531144480791, Y: 6.256340981494829) 
+znajduje się bardzo blisko `sink`. Czas życia tego węzła będzie kilkukrotnie dłuższy niż w przypadku węzła najbardziej oddalonego, węzła 195 (X: 197.47820095322837, Y: 190.37079023341855).
+\par
+Każdy z testów definiuje kilka wartości parametru modyfikowanego, np. domyślna wielkość wiadomości wynosi 128 [B], dlatego też test składa się z mniejszych testów w których
+praca węzłów podlega symulacji przy wykorzystaniu identycznej lokalizacji węzłów zdefiniowanej w konfiguracja domyślna symulowana, jedynie ze zmianą wielkości wiadomości wysyłanej pomiędzy węzłami.
+Wielkości te wynosiły 32, 64, 128 i 256 [B].
+\par
+Najlepsze korzyści płynące z implementacji protokołów LEACH oraz PEGASIS uzyskano dla testu numer 3, w którym dystanse pomiędzy węzłami uległy powiększeniu.
+Dla sieci o wielkości X: 800, Y: 800 (konfiguracja domyślna X: 200, Y: 200), uzyskano jedynie 2 rundy dla komunikacji bezpośredniej.
+Gdzie w przypadku identycznego scenariusza w wykorzystaniem PEGASIS uzyskano w najgorszym przypadku 7 rund, w najlepszym 13. Natomiast LEACH umożliwiło utrzymanie pracy węzłów 
+w 27 rundach dla najgorszego przypadku, oraz 33 rundach dla przypadku najlepszego.
+\par
+Spodziewać się można było, że PEGASIS będący usprawnieniem protokołu LEACH umożliwi uzyskanie dłuższego czasu pracy sieci.
+Na pierwszy rzut oka, wyniki tego nie odzwierciedlają. Dystrybucja maksymalnego czas pracy w LEACH jest dłuższa, jednakże wykresy pozwalają zauważyć pewną, że ilość węzłów aktywnych
+w protokole PEGASIS jest wyższa w początkowej fazie symulacji scenariusza (zwłaszcza w pierwszej połowie uzyskanych rund). Oznacza to, że węzeł główny `sink` uzyskuje większą ilość
+danych z większej puli węzłów.
+W scenariuszach w których odległości pomiędzy węzłami zwiększają się, koszt przekazywania informacji PEGASIS przy pomocy algorytmu `greedy` jest bardzo kosztowny. Każdy kolejny węzeł
+odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energetyczny.
 
 \begin{thebibliography}{99}
 % Bibliografia w pracy mgr jest kluczowa - powinno pojawić się kilka artykułów naukowych (IEEE, 

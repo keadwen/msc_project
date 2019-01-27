@@ -1,20 +1,22 @@
 \newpage
 \begin{center}
 \large \bf
-Problem współbieżności w algorytmach węzła sieci czujnikowej na przykładzie modelu w języku Go.
+Problemy współbieżności w algorytmach węzła sieci czujnikowej na przykładzie modelu w języku Go.
 \end{center}
 
 \section*{Streszczenie}
-Praca składa się z krótkiego wstępu jasno i wyczerpująco opisującego oraz uzasadniającego cel pracy, dwóch rozdziałów (2-3)
-zawierających opis istniejących technologii, dostępnych rozwiązań oraz opisuje autorski system środowiska symulacyjnego.
-Rozdział treci przedstawia szczegóły implementacji środowiska symulacyjnego.
-Ostatni rozdział pracy to opis możliwości dalszego rozwoju projektu. 
+Praca składa się z krótkiego wstępu jasno i wyczerpująco opisującego oraz uzasadniającego cel pracy.
+Rozdział drugi `Wykorzystane technologie` opisuje technologie, narzędzia oraz systemu wykorzystane w celu wykonania pracy.
+Rozdział trzeci `Bezprzewodowe sieci czujnikowe` przedstawia podstawowe zagadnienia związane z bezprzewodowymi sieci czujników, algorytmami i protokołami
+stosowanymi w celach uzyskania lepszej efektywności procesu wymiany informacji.
+Rozdział czwarty `Architektura systemu` opisuje wymagania oraz implementację autorskiego systemu środowiska symulacyjnego.
+Rozdział piąty `Opracowanie wyników eksperymentów` definiuje zakres testów, prezentuje uzyskane wyniki oraz krótko opisuje uzyskane wartości.
+Ostatni rozdział pracy `Podsumowanie` to holistyczny opis uzyskanych wyników, zaobserwowanych zależności w bezprzewodowych sieciach czujnikowych oraz możliwościach dalszego rozwoju projektu. 
 
 \bigskip
-{\noindent\bf Słowa kluczowe:} wsn, sieci czujnikowe, golang 
+{\noindent\bf Słowa kluczowe:} wsn, sieci czujnikowe, golang, LEACH, PEGASIS
 
 \vskip 2cm
-
 
 \begin{center}
 \large \bf
@@ -22,16 +24,16 @@ Challenges of concurrency in wireless sensor network, based on a model developed
 \end{center}
 
 \section*{Abstract}
-This thesis presents a novel way of using a novel algorithm to present complex
-problems of concurrency in wireless sensor networks. 
-In the first chapter presents the fundamentals of wireless sensor networks and technologies, currently
-available solutions, as well as authored new design proposal.
-The second chapter presents the authored simulation tool. I
-In the third chapter presents the implementation of the simulation environemtn in Go programming language. 
-The fourth chapter contains results of tests which compare existing wireless sensor network protocols and proves simulator correctness.
-Finally some posibilities of further development of the invented algoriths are proposed.
+This thesis presents a novel way of using a novel algorithm to present complex problems of concurrency in wireless sensor networks. 
+In the first chapter briefly presents presents the objectives and goals of the document.
+The second chapter describes all available tools, technologies and utilities used in the process of writing.
+The third chapter presents the fundamentals of wireless sensor networks and technologies.
+The fourth chapter presents requirements and implementation details of custom-made simulation environment written in Go programming language.
+The fifth chapter defines a set of tests and sub-tests, as well as presents results of those tests, which enable to compare existing wireless sensor network protocols
+and proves the correctness of end-to-end simulator.
+Final chapter summarizes all the tests results, discovered dependencies and points some new possibilities of further development of the simulator.
 
 \bigskip
-{\noindent\bf Keywords:} wsn, wireless sensor networks, golang
+{\noindent\bf Keywords:} wsn, wireless sensor networks, golang, LEACH, PEGASIS
 
 \vfill
