@@ -38,10 +38,10 @@
 \contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}Dane wej\IeC {\'s}ciowe}{31}{section.5.1}
 \contentsline {section}{\numberline {5.2}Scenariusze}{32}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Test 1 - Wielko\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }wiadomo\IeC {\'s}ci}{32}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{41}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{52}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{62}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Podsumowanie wynik\IeC {\'o}w}{78}{section.5.3}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{79}{chapter.6}
-\contentsline {chapter}{Bibliografia}{80}{chapter*.13}
+\contentsline {subsection}{\numberline {5.2.1}Test 1 - Wielko\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }wiadomo\IeC {\'s}ci}{37}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{46}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{57}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{67}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Podsumowanie wynik\IeC {\'o}w}{83}{section.5.3}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{84}{chapter.6}
+\contentsline {chapter}{Bibliografia}{85}{chapter*.13}
