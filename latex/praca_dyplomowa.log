@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.4)  30 JAN 2019 06:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.4)  30 JAN 2019 21:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -845,13 +845,13 @@ gure.5.9}) has been already used, duplicate ignored
 l.1279 \par
             <./images/gnuplot/test_1/nodes_in_round_m256.png (PNG copy)> <./ima
 ges/gnuplot/test_1/energy_in_round_m256.png (PNG copy)>] [42]
-<images/gnuplot/test_2/nodes_in_round_25.png, id=785, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_25.png, id=786, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_25.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_25.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_25.png  used on i
 nput line 1366.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_25.png, id=786, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_25.png, id=787, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_25.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_25.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_25.png  used on 
@@ -951,11 +951,6 @@ Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_150.png  used on
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [49]
-Overfull \hbox (15.40643pt too wide) in paragraph at lines 1522--1527
-\T1/cmr/m/n/12 (286.00), -13.1% dla me-diany (312.00), -4.5% dla war-to-±ci mak
--sy-mal-nej (343.00).
- []
-
 [50pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 6}) has been already used, duplicate ignored
 
@@ -986,11 +981,6 @@ Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_200.png  used on
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
-Overfull \hbox (15.40643pt too wide) in paragraph at lines 1571--1576
-\T1/cmr/m/n/12 (293.00), -12.8% dla me-diany (313.00), -1.9% dla war-to-±ci mak
--sy-mal-nej (352.00).
- []
-
 [52pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 8}) has been already used, duplicate ignored
 
@@ -1171,11 +1161,6 @@ n input line 1951.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-Overfull \hbox (11.13179pt too wide) in paragraph at lines 1956--1959
-\T1/cmr/m/n/12 (345.00), oraz wy-dªu-»e-nie czasu pracy na po-zio-mie +1.3% dla
- me-diany (363.50),
- []
-
 [68pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 0}) has been already used, duplicate ignored
 
@@ -1236,11 +1221,6 @@ n input line 2042.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71]
-Overfull \hbox (11.13179pt too wide) in paragraph at lines 2047--2051
-\T1/cmr/m/n/12 (344.00), oraz wy-dªu-»e-nie czasu pracy na po-zio-mie +2.2% dla
- me-diany (367.00),
- []
-
 [72pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
 4}) has been already used, duplicate ignored
 
@@ -1327,24 +1307,20 @@ File: images/gnuplot/test_4/energy_in_round_all.png Graphic file (type png)
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_all.png  used on
  input line 2148.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [77]
-[78pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
-0}) has been already used, duplicate ignored
+ [77pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+40}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2156 \chapter
-               {Podsumowanie}pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.5.41}) has been already used, duplicate ignored
+l.2155 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.5.41}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2156 \chapter
-               {Podsumowanie} <./images/gnuplot/test_4/nodes_in_round_all.png (
-PNG copy)> <./images/gnuplot/test_4/energy_in_round_all.png (PNG copy)>]
+l.2155 
+        <./images/gnuplot/test_4/nodes_in_round_all.png (PNG copy)> <./images/g
+nuplot/test_4/energy_in_round_all.png (PNG copy)>] [78]
 Rozdzia\l  6.
 
 Overfull \hbox (2.24794pt too wide) in paragraph at lines 2167--2171
@@ -1405,7 +1381,7 @@ dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
 st/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 r8a.pfb>
-Output written on praca_dyplomowa.pdf (95 pages, 1902703 bytes).
+Output written on praca_dyplomowa.pdf (95 pages, 2095977 bytes).
 PDF statistics:
  1727 PDF objects out of 1728 (max. 8388607)
  1156 compressed objects within 12 object streams

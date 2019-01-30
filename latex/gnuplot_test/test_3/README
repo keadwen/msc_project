@@ -1,0 +1,49 @@
+--- ENERGY
+set grid
+set xlabel "Numer rundy"
+set ylabel "Energia calkowita [J]"
+
+plot "< cat ./leach_xy050/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=0.25)", \
+     "< cat ./pegasis_xy050/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=0.25)", \
+     "< cat ./direct_xy050/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=0.25)"
+
+plot "< cat ./leach_xy100/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=0.5)", \
+     "< cat ./pegasis_xy100/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=0.5)", \
+     "< cat ./direct_xy100/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=0.5)"
+
+plot "< cat ./leach_xy200/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=1.0)", \
+     "< cat ./pegasis_xy200/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=1.0)", \
+     "< cat ./direct_xy200/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=1.0)"
+
+plot "< cat ./leach_xy400/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=2.0)", \
+     "< cat ./pegasis_xy400/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=2.0)", \
+     "< cat ./direct_xy400/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=2.0)"
+
+plot "< cat ./leach_xy800/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=4.0)", \
+     "< cat ./pegasis_xy800/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=4.0)", \
+     "< cat ./direct_xy800/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=4.0)"
+
+--- NODES
+set grid
+set xlabel "Numer rundy"
+set ylabel "Ilosc wezlow aktywnych"
+
+plot "< cat ./leach_xy050/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=0.25)", \
+     "< cat ./pegasis_xy050/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=0.25)", \
+     "< cat ./direct_xy050/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=0.25)"
+
+plot "< cat ./leach_xy100/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=0.5)", \
+     "< cat ./pegasis_xy100/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=0.5)", \
+     "< cat ./direct_xy100/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=0.5)"
+
+plot "< cat ./leach_xy200/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=1.0)", \
+     "< cat ./pegasis_xy200/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=1.0)", \
+     "< cat ./direct_xy200/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=1.0)"
+
+plot "< cat ./leach_xy400/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=2.0)", \
+     "< cat ./pegasis_xy400/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=2.0)", \
+     "< cat ./direct_xy400/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=2.0)"
+
+plot "< cat ./leach_xy800/*" using 1:2 smooth sbezier ls 1 title "LEACH (scale=4.0)", \
+     "< cat ./pegasis_xy800/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (scale=4.0)", \
+     "< cat ./direct_xy800/*" using 1:2 smooth sbezier ls 4 title "DIRECT (scale=4.0)"
