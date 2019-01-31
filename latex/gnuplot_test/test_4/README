@@ -1,0 +1,72 @@
+--- ENERGY
+set grid
+set xlabel "Numer rundy"
+set ylabel "Energia calkowita [J]"
+
+plot "< cat ./leach-p005/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.05)", \
+     "< cat ./pegasis-p005/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.05)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p010/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.10)", \
+     "< cat ./pegasis-p010/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.10)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p015/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.15)", \
+     "< cat ./pegasis-p015/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.15)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p020/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.20)", \
+     "< cat ./pegasis-p020/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.20)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p025/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.25)", \
+     "< cat ./pegasis-p025/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.25)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p030/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.30)", \
+     "< cat ./pegasis-p030/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.30)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+--- ALL
+plot "< cat ./leach-p005/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.05)", \
+     "< cat ./leach-p010/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.10)", \
+     "< cat ./leach-p015/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.15)", \
+     "< cat ./leach-p020/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.20)", \
+     "< cat ./leach-p025/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.25)", \
+     "< cat ./leach-p030/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.30)", \
+     "< cat ./pegasis-p005/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.05)", \
+     "< cat ./pegasis-p010/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.10)", \
+     "< cat ./pegasis-p015/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.15)", \
+     "< cat ./pegasis-p020/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.20)", \
+     "< cat ./pegasis-p025/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.25)", \
+     "< cat ./pegasis-p030/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.30)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+--- NODES
+set grid
+set xlabel "Numer rundy"
+set ylabel "Ilosc wezlow aktywnych"
+
+plot "< cat ./leach-p005/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.05)", \
+     "< cat ./pegasis-p005/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.05)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p010/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.10)", \
+     "< cat ./pegasis-p010/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.10)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p015/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.15)", \
+     "< cat ./pegasis-p015/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.15)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p020/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.20)", \
+     "< cat ./pegasis-p020/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.20)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p025/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.25)", \
+     "< cat ./pegasis-p025/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.25)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"
+
+plot "< cat ./leach-p030/*" using 1:2 smooth sbezier ls 1 title "LEACH (p=0.30)", \
+     "< cat ./pegasis-p030/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (p=0.30)", \
+     "< cat ./direct/*" using 1:2 smooth sbezier ls 4 title "DIRECT"

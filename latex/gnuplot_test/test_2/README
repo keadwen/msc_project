@@ -1,0 +1,49 @@
+--- ENERGY
+set grid
+set xlabel "Numer rundy"
+set ylabel "Energia calkowita [J]"
+
+plot "< cat ./leach25/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=25)", \
+     "< cat ./pegasis25/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=25)", \
+     "< cat ./direct25/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=25)"
+
+plot "< cat ./leach50/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=50)", \
+     "< cat ./pegasis50/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=50)", \
+     "< cat ./direct50/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=50)"
+
+plot "< cat ./leach100/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=100)", \
+     "< cat ./pegasis100/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=100)", \
+     "< cat ./direct100/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=100)"
+
+plot "< cat ./leach150/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=150)", \
+     "< cat ./pegasis150/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=150)", \
+     "< cat ./direct150/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=150)"
+
+plot "< cat ./leach200/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=200)", \
+     "< cat ./pegasis200/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=200)", \
+     "< cat ./direct200/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=200)"
+
+--- NODES
+set grid
+set xlabel "Numer rundy"
+set ylabel "Ilosc wezlow aktywnych"
+
+plot "< cat ./leach25/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=25)", \
+     "< cat ./pegasis25/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=25)", \
+     "< cat ./direct25/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=25)"
+
+plot "< cat ./leach50/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=50)", \
+     "< cat ./pegasis50/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=50)", \
+     "< cat ./direct50/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=50)"
+
+plot "< cat ./leach100/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=100)", \
+     "< cat ./pegasis100/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=100)", \
+     "< cat ./direct100/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=100)"
+
+plot "< cat ./leach150/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=150)", \
+     "< cat ./pegasis150/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=150)", \
+     "< cat ./direct150/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=150)"
+
+plot "< cat ./leach200/*" using 1:2 smooth sbezier ls 1 title "LEACH (nodes=200)", \
+     "< cat ./pegasis200/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (nodes=200)", \
+     "< cat ./direct200/*" using 1:2 smooth sbezier ls 4 title "DIRECT (nodes=200)"

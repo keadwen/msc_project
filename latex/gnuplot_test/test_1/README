@@ -1,0 +1,41 @@
+--- ENERGY
+set grid
+set xlabel "Numer rundy"
+set ylabel "Energia calkowita [J]"
+
+plot "< cat ./leach200_m32/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=32 [B])", \
+     "< cat ./pegasis200_m32/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=32 [B])", \
+     "< cat ./direct200_m32/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=32 [B])"
+
+plot "< cat ./leach200_m64/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=64 [B])", \
+     "< cat ./pegasis200_m64/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=64 [B])", \
+     "< cat ./direct200_m64/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=64 [B])"
+
+plot "< cat ./leach200_m128/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=128 [B])", \
+     "< cat ./pegasis200_m128/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=128 [B])", \
+     "< cat ./direct200_m128/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=128 [B])"
+
+plot "< cat ./leach200_m256/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=256 [B])", \
+     "< cat ./pegasis200_m256/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=256 [B])", \
+     "< cat ./direct200_m256/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=256 [B])"
+
+--- NODES
+set grid
+set xlabel "Numer rundy"
+set ylabel "Ilosc wezlow aktywnych"
+
+plot "< cat ./leach200_m32/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=32 [B])", \
+     "< cat ./pegasis200_m32/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=32 [B])", \
+     "< cat ./direct200_m32/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=32 [B])"
+
+plot "< cat ./leach200_m64/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=64 [B])", \
+     "< cat ./pegasis200_m64/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=64 [B])", \
+     "< cat ./direct200_m64/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=64 [B])"
+
+plot "< cat ./leach200_m128/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=128 [B])", \
+     "< cat ./pegasis200_m128/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=128 [B])", \
+     "< cat ./direct200_m128/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=128 [B])"
+
+plot "< cat ./leach200_m256/*" using 1:2 smooth sbezier ls 1 title "LEACH (msg=256 [B])", \
+     "< cat ./pegasis200_m256/*" using 1:2 smooth sbezier ls 2 title "PEGASIS (msg=256 [B])", \
+     "< cat ./direct200_m256/*" using 1:2 smooth sbezier ls 4 title "DIRECT (msg=256 [B])"

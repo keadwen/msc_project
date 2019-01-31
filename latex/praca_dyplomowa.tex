@@ -1035,215 +1035,13 @@ Ilość uruchomień zdefiniowana dla każdego z testów (domyślenie wynosi 100)
 W celach testów wygenerowana została `konfiguracja domyślna`, w której zdefiniowana jest lokalizacja 200 unikatowych węzłów o energii początkowej wynoszącej 2 [J], 
 rozdystrybuowanych w sposób pseudolosowy na przestrzeni X: [0, 200], Y: [0, 200]. Lokalizacja węzła typu `sink` to X:100, Y: 450.
 Scenariusze wykorzystujące np. 50 węzłów, korzystają z podzbioru węzłów domyślnych, czyli z pierwszych 50 węzłów konfiguracji domyślnej.
+Poniższy rysunek przedstawia rozmieszczenie 200 węzłów standardowych oraz 1 węzła głównego na płaszczyźnie sieci.
 
-Poniższa tabela przedstawia lokalizację 200 węzłów znajdujących się w 200 węzłów w konfiguracji domyślnej.
-\begin{longtable}{*{3}{c}}
-\toprule
-\multicolumn{3}{c}{Tabela lokalizacji węzłów} \\
-Numer węzła	& Pozycja X	& Pozycja Y \\
-\midrule
-1	& 199.36168179984253	& 67.36600933711391	\\
-2	& 88.91310863948563	& 36.60553297569458	\\
-3	& 19.295149762559976	& 72.49368923637391	\\
-4	& 181.33926864734022	& 2.0102636220499934	\\
-5	& 195.51239470437187	& 111.14328544319282	\\
-6	& 75.89088472075748	& 146.59505205457364	\\
-7	& 153.23642097371282	& 57.8575190160736	\\
-8	& 91.11610376949123	& 126.81760013585746	\\
-9	& 22.168573090360173	& 17.731684004119654	\\
-10	& 171.53390619509764	& 138.11474775008918	\\
-11	& 178.78074650585523	& 80.7496337663683	\\
-12	& 34.99559928880805	& 59.17180490772036	\\
-13	& 198.34907062745805	& 141.7869157169524	\\
-14	& 110.5802228177258	& 160.62083671385693	\\
-15	& 6.589663573066959	& 73.00097663707615	\\
-16	& 33.38369542490563	& 87.94381364572581	\\
-17	& 192.71636682180403	& 29.850811471937412	\\
-18	& 186.64160279465443	& 4.960927074057211	\\
-19	& 19.103311503198448	& 37.63818457057886	\\
-20	& 153.59829982210294	& 104.56247228410325	\\
-21	& 137.0831945195012	& 45.91688906631662	\\
-22	& 11.917939854883572	& 152.02973161502598	\\
-23	& 142.44031003121216	& 22.648902126490743	\\
-24	& 167.57507873516485	& 63.058120837358466	\\
-25	& 163.86836016322584	& 80.18689721687169	\\
-26	& 129.33679162442746	& 36.0562585246913	\\
-27	& 197.36395310621828	& 143.53930309169507	\\
-28	& 144.7119462938826	& 156.4741142403833	\\
-29	& 144.6435676420312	& 71.10641124434568	\\
-30	& 105.01074049743391	& 158.3798337695642	\\
-31	& 25.59723410509157	& 135.01628097402926	\\
-32	& 159.35684382610015	& 31.07145409951828	\\
-33	& 195.4998943585755	& 78.74753711725046	\\
-34	& 66.17656299978923	& 197.86588903103794	\\
-35	& 145.05855800949772	& 30.505805193407117	\\
-36	& 10.405251931328802	& 178.62885596208508	\\
-37	& 186.2949365520907	& 12.879258649207234	\\
-38	& 27.331688606572452	& 64.13705161884809	\\
-39	& 65.98931262074079	& 167.81945921360898	\\
-40	& 11.740319035407376	& 115.08640487974763	\\
-41	& 143.27864880590639	& 175.1440505536343	\\
-42	& 1.021168110783018	& 85.1441576545403	\\
-43	& 138.17164894151819	& 112.12873499632224	\\
-44	& 179.1612530841057	& 184.59869529107561	\\
-45	& 79.69621017689192	& 107.48873839754025	\\
-46	& 184.27435018999392	& 67.76831575856659	\\
-47	& 164.0666858114393	& 158.88321509362515	\\
-48	& 122.17595616791097	& 131.27859256586234	\\
-49	& 10.604440333326474	& 61.54801233368917	\\
-50	& 74.72911207259237	& 163.8145393737179	\\
-51	& 163.824642852362	& 19.340884972113727	\\
-52	& 60.38344661544656	& 128.72369102082766	\\
-53	& 154.91415741206794	& 13.363467080664002	\\
-54	& 173.23978252241287	& 29.96077828911183	\\
-55	& 35.49837932709627	& 107.3900801668683	\\
-56	& 5.679935610996528	& 115.94203226988064	\\
-57	& 107.64533248438022	& 59.60024137504178	\\
-58	& 123.88900849502306	& 6.636102135199909	\\
-59	& 127.15338908711131	& 71.35956883976591	\\
-60	& 66.83544395200622	& 126.97706574942518	\\
-61	& 47.98012999327529	& 83.94561033367512	\\
-62	& 176.54577387669218	& 95.1033047863116	\\
-63	& 122.74547206915622	& 150.42099582791752	\\
-64	& 188.60947212270017	& 125.56388147877313	\\
-65	& 167.31399429921188	& 129.8661815583073	\\
-66	& 192.74321424257602	& 113.00098456208536	\\
-67	& 59.66450032025723	& 95.30165349825657	\\
-68	& 102.14207496740319	& 68.63869717540874	\\
-69	& 120.16610716143093	& 70.24492600120034	\\
-70	& 137.78811563373782	& 155.19617715119978	\\
-71	& 24.470724817234647	& 5.184575998240362	\\
-72	& 43.8705621654678	& 104.66703173985512	\\
-73	& 13.253805021893925	& 82.79368905658592	\\
-74	& 14.123609457464465	& 65.46157949748054	\\
-75	& 197.96011639718708	& 164.03154695042716	\\
-76	& 199.4757688521392	& 59.09752667435134	\\
-77	& 176.49465208085067	& 96.05417914229349	\\
-78	& 176.50488885715166	& 99.04400119700234	\\
-79	& 132.64305462163384	& 20.900413261323397	\\
-80	& 176.5890688486683	& 55.407048824799176	\\
-81	& 18.350890499650514	& 83.46951690823204	\\
-82	& 105.58091748461553	& 102.02132605898467	\\
-83	& 169.59807974941262	& 45.025932649133	\\
-84	& 91.62996074036289	& 71.07506728413101	\\
-85	& 41.53882313046381	& 27.95626060211661	\\
-86	& 126.53583705160749	& 16.57548495738593	\\
-87	& 130.62855665163445	& 64.32618645648812	\\
-88	& 196.50891780437055	& 49.196425529157956	\\
-89	& 137.87255271222824	& 102.95824277715488	\\
-90	& 123.12621895552498	& 174.96796265673586	\\
-91	& 24.807861660493703	& 144.5934962380802	\\
-92	& 194.1384235524454	& 171.3560749350443	\\
-93	& 92.72040033399135	& 33.20862484294133	\\
-94	& 53.518017397133455	& 165.27777018747446	\\
-95	& 110.437934352195	& 186.28501182761832	\\
-96	& 101.09876278713969	& 32.189509769062894	\\
-97	& 98.07156701924082	& 124.6875904840318	\\
-98	& 1.9040331497067826	& 188.00024939659156	\\
-99	& 46.150885396423476	& 137.81500883535043	\\
-100	& 177.98634098294173	& 57.79724576017953	\\
-101	& 28.346175929760832	& 90.54446697252153	\\
-102	& 53.78336249998632	& 51.92871571977163	\\
-103	& 151.3835071542002	& 41.317477362666786	\\
-104	& 66.80205068557619	& 9.18111181695748	\\
-105	& 39.50534861219433	& 44.122427313386595	\\
-106	& 94.02768478329232	& 33.35707447001591	\\
-107	& 80.33262457093635	& 36.045851962231524	\\
-108	& 73.31183316777766	& 137.7715601112402	\\
-109	& 123.18502187759933	& 75.25057034738076	\\
-110	& 131.5728567058488	& 92.57808894243522	\\
-111	& 156.8688785278494	& 123.4357274952122	\\
-112	& 102.89479352232294	& 137.20546890272942	\\
-113	& 71.09296009677784	& 180.16879931073152	\\
-114	& 49.944712048786776	& 140.08737037990522	\\
-115	& 43.746093590341175	& 192.77875927001097	\\
-116	& 156.41911737223057	& 156.8820863460496	\\
-117	& 95.0790408921825	& 186.9725637190851	\\
-118	& 73.67868942887657	& 78.59410356376412	\\
-119	& 94.30629261358024	& 30.148219204604707	\\
-120	& 3.2850631350552413	& 155.0318308459969	\\
-121	& 184.28082004775192	& 97.80131098450379	\\
-122	& 38.482242153448595	& 89.52534507513428	\\
-123	& 24.148929644094125	& 69.26363721845851	\\
-124	& 96.21308909480939	& 56.92838777087266	\\
-125	& 149.59459577311887	& 67.80032045784897	\\
-126	& 192.27050010053873	& 59.04263769530825	\\
-127	& 121.85846816087307	& 193.63296526619345	\\
-128	& 86.26177182968621	& 60.630471185467684	\\
-129	& 15.387170600013992	& 111.80259677603111	\\
-130	& 82.14863453232417	& 136.61981109316076	\\
-131	& 194.39160178925673	& 162.71156399100673	\\
-132	& 147.98543420188847	& 28.470915776268228	\\
-133	& 27.762796030980713	& 89.65978227373299	\\
-134	& 185.30337564811637	& 145.5815784174491	\\
-135	& 33.73228615428452	& 69.90790135380783	\\
-136	& 140.4354411868145	& 17.241086286242332	\\
-137	& 63.81350760314003	& 125.83350552497879	\\
-138	& 85.59301169653692	& 43.243829604777574	\\
-139	& 103.4650837926725	& 56.151901362463455	\\
-140	& 27.81743063475214	& 117.50411165780702	\\
-141	& 40.87014586990372	& 16.909314045119142	\\
-142	& 55.302768403109695	& 69.09931885235329	\\
-143	& 85.67648787609042	& 134.8471182913608	\\
-144	& 35.96476647909297	& 82.07092729684129	\\
-145	& 163.05452105325094	& 93.82638959981294	\\
-146	& 56.85714314313321	& 187.7953338341786	\\
-147	& 67.46209164307635	& 62.88995698209582	\\
-148	& 37.502844231978635	& 93.17577891611545	\\
-149	& 181.8706643376419	& 160.0226423034456	\\
-150	& 95.10828057306911	& 68.52969346816535	\\
-151	& 161.19258565658868	& 9.565083989283302	\\
-152	& 48.537515571144155	& 87.38233511342835	\\
-153	& 9.629064734291505	& 116.53698640353387	\\
-154	& 170.52196054473708	& 163.1971902793061	\\
-155	& 83.23778651861842	& 148.91024991919292	\\
-156	& 140.00313072214695	& 154.75550886729854	\\
-157	& 37.147993352437595	& 188.1620606045412	\\
-158	& 8.927735348662594	& 131.77270933985886	\\
-159	& 181.64147905279125	& 125.32315535019829	\\
-160	& 12.31235124063389	& 191.3324999546166	\\
-161	& 98.54813259291232	& 152.82530490346866	\\
-162	& 101.10265288350571	& 10.066208381414626	\\
-163	& 129.35968741623685	& 185.43679021550352	\\
-164	& 10.538280379630459	& 156.13539005105923	\\
-165	& 17.329080439748225	& 156.41672906357815	\\
-166	& 78.4045885855135	& 180.8373074677437	\\
-167	& 2.742143115224063	& 137.3742617758146	\\
-168	& 139.5575339004708	& 139.28314823261775	\\
-169	& 164.3606756996568	& 6.275350032138586	\\
-170	& 144.29341379298802	& 128.885824619697	\\
-171	& 4.508531144480791	& 6.256340981494829	\\
-172	& 127.48477137799001	& 162.96149098444434	\\
-173	& 19.60585389438154	& 64.39562115571947	\\
-174	& 167.1953365853049	& 11.415006127185945	\\
-175	& 125.84457010959306	& 9.1849650086987	\\
-176	& 18.146692688474836	& 108.47665527426997	\\
-177	& 27.661756044703665	& 138.0571696600632	\\
-178	& 132.82684329463973	& 142.8921981101254	\\
-179	& 176.5410953367216	& 187.96538711106678	\\
-180	& 158.4595296735704	& 37.448735872827996	\\
-181	& 106.05638261813495	& 25.086073342347078	\\
-182	& 157.53272233091792	& 171.76822155338965	\\
-183	& 22.777398787876628	& 151.98453581828787	\\
-184	& 106.27756263081163	& 150.12442786389838	\\
-185	& 197.14349605575129	& 170.6186168464708	\\
-186	& 6.781040491692945	& 177.8787258459002	\\
-187	& 58.74610836822448	& 40.306197532384225	\\
-188	& 172.85217790739807	& 142.0893278172008	\\
-189	& 105.54334798614644	& 105.3466341523146	\\
-190	& 198.5663924947574	& 73.58824568518179	\\
-191	& 124.0349644276351	& 109.31900752872563	\\
-192	& 46.936398211275545	& 72.30324882020078	\\
-193	& 146.22393181273557	& 75.29273815758663	\\
-194	& 195.495593662256	& 53.36494610271914	\\
-195	& 197.47820095322837	& 190.37079023341855	\\
-196	& 35.96318684562386	& 166.52359672298164	\\
-197	& 120.22163681844546	& 26.10858953526762	\\
-198	& 56.72077212977173	& 97.22674324729	\\
-199	& 132.02125288048953	& 41.84481484452638	\\
-200	& 154.9545524215235	& 65.2514440252824	\\
-\bottomrule
-\end{longtable}
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=10cm]{images/scenariusz_lokalizacja.png}
+ \caption{Rozmieszczenie 200 węzłów w sieci.}
+\end{figure}
 
 \subsection{Test 1 - Wielkość wiadomości}
 
@@ -1297,29 +1095,29 @@ Tabela uzyskanych wyników:
 Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 32 	& -	& 1434.00 \\*
+DIRECT	& 32 	& -	& 1434 \\*
 \midrule
-LEACH	& 32	& 1	& 1430.85 \\*
-	&	& 5	& 1499.10 \\*
-	&	& 10	& 1518.00 \\*
-	&	& 25	& 1570.75 \\*
-	&	& 50	& 1635.00 \\*
-	&	& 75	& 1696.75 \\*
-	&	& 90	& 1764.50 \\*
-	&	& 95	& 1783.05 \\*
-	&	& 99	& 1805.26 \\*
-	&	& 100	& 1831.00 \\*
+LEACH	& 32	& 1	& 1431 \\*
+	&	& 5	& 1499 \\*
+	&	& 10	& 1518 \\*
+	&	& 25	& 1571 \\*
+	&	& 50	& 1635 \\*
+	&	& 75	& 1697 \\*
+	&	& 90	& 1765 \\*
+	&	& 95	& 1783 \\*
+	&	& 99	& 1805 \\*
+	&	& 100	& 1831 \\*
 \midrule
-PEGASIS	& 32	& 1	& 1135.76 \\*
-	&	& 5	& 1146.90 \\*
-	&	& 10	& 1152.00 \\*
-	&	& 25	& 1165.75 \\*
-	&	& 50	& 1184.50 \\*
-	&	& 75	& 1203.00 \\*
-	&	& 90	& 1224.00 \\*
-	&	& 95	& 1234.25 \\*
-	&	& 99	& 1262.12 \\*
-	&	& 100	& 1274.00 \\*
+PEGASIS	& 32	& 1	& 1136 \\*
+	&	& 5	& 1147 \\*
+	&	& 10	& 1152 \\*
+	&	& 25	& 1166 \\*
+	&	& 50	& 1185 \\*
+	&	& 75	& 1203 \\*
+	&	& 90	& 1224 \\*
+	&	& 95	& 1234 \\*
+	&	& 99	& 1262 \\*
+	&	& 100	& 1274 \\*
 \bottomrule
 \end{longtable}
 
@@ -1333,8 +1131,8 @@ PEGASIS	& 32	& 1	& 1135.76 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 1434.
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.3\% dla wartości minimalnej (1416.00), oraz wydłużenie czasu pracy na poziomie +14.0\% dla mediany (1635.00), +27.7\% dla wartości maksymalnej (1636.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.5\% dla wartości minimalnej (1112.00), -17.4\% dla mediany (1184.50), -11.2\% dla wartości maksymalnej (1274.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.3\% dla wartości minimalnej (1416), oraz wydłużenie czasu pracy na poziomie +14.0\% dla mediany (1635), +27.7\% dla wartości maksymalnej (1636).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.5\% dla wartości minimalnej (1112), -17.4\% dla mediany (1184), -11.2\% dla wartości maksymalnej (1274).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par 
@@ -1347,29 +1145,29 @@ Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energe
 Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 64 	& -	& 717.00 \\*
+DIRECT	& 64 	& -	& 717 \\*
 \midrule
-LEACH	& 64	& 1	& 774.87 \\*
-	&	& 5	& 759.65 \\*
-	&	& 10	& 769.80 \\*
-	&	& 25	& 800.75 \\*
-	&	& 50	& 830.50 \\*
-	&	& 75	& 872.25 \\*
-	&	& 90	& 893.20 \\*
-	&	& 95	& 908.40 \\*
-	&	& 99	& 935.19 \\*
-	&	& 100	& 954.00 \\*
+LEACH	& 64	& 1	& 775 \\*
+	&	& 5	& 760 \\*
+	&	& 10	& 770 \\*
+	&	& 25	& 801 \\*
+	&	& 50	& 831 \\*
+	&	& 75	& 872 \\*
+	&	& 90	& 893 \\*
+	&	& 95	& 908 \\*
+	&	& 99	& 935 \\*
+	&	& 100	& 954 \\*
 \midrule
-PEGASIS	& 64	& 1	& 575.95 \\*
-	&	& 5	& 583.95 \\*
-	&	& 10	& 587.00 \\*
-	&	& 25	& 594.00 \\*
-	&	& 50	& 607.50 \\*
-	&	& 75	& 622.25 \\*
-	&	& 90	& 629.10 \\*
-	&	& 95	& 635.10 \\*
-	&	& 99	& 669.16 \\*
-	&	& 100	& 685.00 \\*
+PEGASIS	& 64	& 1	& 576 \\*
+	&	& 5	& 584 \\*
+	&	& 10	& 587 \\*
+	&	& 25	& 594 \\*
+	&	& 50	& 608 \\*
+	&	& 75	& 622 \\*
+	&	& 90	& 629 \\*
+	&	& 95	& 635 \\*
+	&	& 99	& 669 \\*
+	&	& 100	& 685 \\*
 \bottomrule
 \end{longtable}
 
@@ -1383,8 +1181,8 @@ PEGASIS	& 64	& 1	& 575.95 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 717.
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +2.1\% dla wartości minimalnej (732.00), +15.8\% dla mediany (830.50), +31.1\% dla wartości maksymalnej (954.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.4\% dla wartości minimalnej (571.00), -15.3\% dla mediany (607.50), -4.5\% dla wartości maksymalnej (685.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +2.1\% dla wartości minimalnej (732), +15.8\% dla mediany (831), +31.1\% dla wartości maksymalnej (954).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.4\% dla wartości minimalnej (571), -15.3\% dla mediany (608), -4.5\% dla wartości maksymalnej (685).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1397,29 +1195,29 @@ Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energe
 Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 128 	& -	& 359.00 \\*
+DIRECT	& 128 	& -	& 359 \\*
 \midrule
-LEACH	& 128	& 1	& 387.85 \\*
-	&	& 5	& 391.95 \\*
-	&	& 10	& 398.70 \\*
-	&	& 25	& 408.75 \\*
-	&	& 50	& 432.00 \\*
-	&	& 75	& 453.25 \\*
-	&	& 90	& 478.60 \\*
-	&	& 95	& 492.05 \\*
-	&	& 99	& 508.29 \\*
-	&	& 100	& 537.00 \\*
+LEACH	& 128	& 1	& 388 \\*
+	&	& 5	& 392 \\*
+	&	& 10	& 399 \\*
+	&	& 25	& 409 \\*
+	&	& 50	& 432 \\*
+	&	& 75	& 453 \\*
+	&	& 90	& 479 \\*
+	&	& 95	& 492 \\*
+	&	& 99	& 508 \\*
+	&	& 100	& 537 \\*
 \midrule
-PEGASIS	& 128	& 1	& 290.99 \\*
-	&	& 5	& 295.00 \\*
-	&	& 10	& 299.90 \\*
-	&	& 25	& 305.00 \\*
-	&	& 50	& 312.00 \\*
-	&	& 75	& 318.00 \\*
-	&	& 90	& 327.00 \\*
-	&	& 95	& 330.10 \\*
-	&	& 99	& 336.05 \\*
-	&	& 100	& 341.00 \\*
+PEGASIS	& 128	& 1	& 291 \\*
+	&	& 5	& 295 \\*
+	&	& 10	& 300 \\*
+	&	& 25	& 305 \\*
+	&	& 50	& 312 \\*
+	&	& 75	& 318 \\*
+	&	& 90	& 327 \\*
+	&	& 95	& 330 \\*
+	&	& 99	& 336 \\*
+	&	& 100	& 341 \\*
 \bottomrule
 \end{longtable}
 
@@ -1433,8 +1231,8 @@ PEGASIS	& 128	& 1	& 290.99 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359.
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373.00), +20.3\% dla mediany (432.00), +49.6\% dla wartości maksymalnej (537.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -19.2\% dla wartości minimalnej (290.00), -13.1\% dla mediany (312.00), -5.0\% dla wartości maksymalnej (341.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373), +20.3\% dla mediany (432), +49.6\% dla wartości maksymalnej (537).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -19.2\% dla wartości minimalnej (290), -13.1\% dla mediany (312), -5.0\% dla wartości maksymalnej (341).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1447,29 +1245,29 @@ Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energe
 Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 256 	& -	& 180.00 \\*
+DIRECT	& 256 	& -	& 180 \\*
 \midrule
-LEACH	& 256	& 1	& 206.88 \\*
-	&	& 5	& 211.90 \\*
-	&	& 10	& 214.90 \\*
-	&	& 25	& 224.00 \\*
-	&	& 50	& 239.00 \\*
-	&	& 75	& 252.00 \\*
-	&	& 90	& 267.40 \\*
-	&	& 95	& 281.10 \\*
-	&	& 99	& 289.01 \\*
-	&	& 100	& 290.00 \\*
+LEACH	& 256	& 1	& 207 \\*
+	&	& 5	& 212 \\*
+	&	& 10	& 215 \\*
+	&	& 25	& 224 \\*
+	&	& 50	& 239 \\*
+	&	& 75	& 252 \\*
+	&	& 90	& 267 \\*
+	&	& 95	& 281 \\*
+	&	& 99	& 289 \\*
+	&	& 100	& 290 \\*
 \midrule
-PEGASIS	& 256	& 1	& 154.97 \\*
-	&	& 5	& 157.00 \\*
-	&	& 10	& 158.00 \\*
-	&	& 25	& 162.00 \\*
-	&	& 50	& 166.00 \\*
-	&	& 75	& 170.00 \\*
-	&	& 90	& 175.10 \\*
-	&	& 95	& 179.00 \\*
-	&	& 99	& 181.08 \\*
-	&	& 100	& 188.00 \\*
+PEGASIS	& 256	& 1	& 155 \\*
+	&	& 5	& 157 \\*
+	&	& 10	& 158 \\*
+	&	& 25	& 162 \\*
+	&	& 50	& 166 \\*
+	&	& 75	& 170 \\*
+	&	& 90	& 175 \\*
+	&	& 95	& 179 \\*
+	&	& 99	& 181 \\*
+	&	& 100	& 188 \\*
 \bottomrule
 \end{longtable}
 
@@ -1483,8 +1281,8 @@ PEGASIS	& 256	& 1	& 154.97 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 180.
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +8.3\% dla wartości minimalnej (195.00), +32.8\% dla mediany (239.00), +61.1\% dla wartości maksymalnej (290.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -15.6\% dla wartości minimalnej (152.00), -7.8\% dla mediany (166.00), oraz wydłużenie czasu pracy na poziomie +4.4\% dla wartości maksymalnej (188.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +8.3\% dla wartości minimalnej (195), +32.8\% dla mediany (239), +61.1\% dla wartości maksymalnej (290).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -15.6\% dla wartości minimalnej (152), -7.8\% dla mediany (166), oraz wydłużenie czasu pracy na poziomie +4.4\% dla wartości maksymalnej (188).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1546,29 +1344,29 @@ testdata/test_2/pegasis200.pbtxt
 Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 25 	& -	& 214.00 \\*
+DIRECT	& 25 	& -	& 214 \\*
 \midrule
-LEACH	& 25	& 1	& 178.99 \\*
-	&	& 5	& 185.90 \\*
-	&	& 10	& 196.90 \\*
-	&	& 25	& 211.75 \\*
-	&	& 50	& 229.50 \\*
-	&	& 75	& 246.00 \\*
-	&	& 90	& 263.20 \\*
-	&	& 95	& 272.00 \\*
-	&	& 99	& 287.09 \\*
-	&	& 100	& 296.00 \\*
+LEACH	& 25	& 1	& 178 \\*
+	&	& 5	& 186 \\*
+	&	& 10	& 197 \\*
+	&	& 25	& 212 \\*
+	&	& 50	& 230 \\*
+	&	& 75	& 246 \\*
+	&	& 90	& 263 \\*
+	&	& 95	& 272 \\*
+	&	& 99	& 287 \\*
+	&	& 100	& 296 \\*
 \midrule
-PEGASIS	& 25	& 1	& 169.95 \\*
-	&	& 5	& 171.95 \\*
-	&	& 10	& 175.90 \\*
-	&	& 25	& 181.75 \\*
-	&	& 50	& 186.50 \\*
-	&	& 75	& 195.00 \\*
-	&	& 90	& 201.10 \\*
-	&	& 95	& 206.00 \\*
-	&	& 99	& 215.01 \\*
-	&	& 100	& 216.00 \\*
+PEGASIS	& 25	& 1	& 170 \\*
+	&	& 5	& 172 \\*
+	&	& 10	& 176 \\*
+	&	& 25	& 182 \\*
+	&	& 50	& 187 \\*
+	&	& 75	& 195 \\*
+	&	& 90	& 201 \\*
+	&	& 95	& 206 \\*
+	&	& 99	& 215 \\*
+	&	& 100	& 216 \\*
 \bottomrule
 \end{longtable}
 
@@ -1582,8 +1380,8 @@ PEGASIS	& 25	& 1	& 169.95 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 214 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -16.8\% dla wartości minimalnej (178.00), oraz wydłużenie czasu pracy na poziomie +7.2\% dla mediany (229.50), +38.3\% dla wartości maksymalnej (296.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -32.9\% dla wartości minimalnej (165.00), -12.9\% dla mediany (186.50), oraz wydłużenie czasu pracy na poziomie +0.9\% dla wartości maksymalnej (216.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -16.8\% dla wartości minimalnej (178), oraz wydłużenie czasu pracy na poziomie +7.2\% dla mediany (229), +38.3\% dla wartości maksymalnej (296).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -32.9\% dla wartości minimalnej (165), -12.9\% dla mediany (186), oraz wydłużenie czasu pracy na poziomie +0.9\% dla wartości maksymalnej (216).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1596,29 +1394,29 @@ Zauważyć można, że PEGASIS cechuje się lepszą sprawnością energetyczną 
 Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 50 	& -	& 359.00 \\*
+DIRECT	& 50 	& -	& 359 \\*
 \midrule
-LEACH	& 50	& 1	& 293.85 \\*
-	&	& 5	& 307.00 \\*
-	&	& 10	& 321.40 \\*
-	&	& 25	& 356.75 \\*
-	&	& 50	& 382.00 \\*
-	&	& 75	& 410.00 \\*
-	&	& 90	& 435.40 \\*
-	&	& 95	& 443.20 \\*
-	&	& 99	& 461.06 \\*
-	&	& 100	& 467.00 \\*
+LEACH	& 50	& 1	& 294 \\*
+	&	& 5	& 307 \\*
+	&	& 10	& 321 \\*
+	&	& 25	& 357 \\*
+	&	& 50	& 382 \\*
+	&	& 75	& 410 \\*
+	&	& 90	& 435 \\*
+	&	& 95	& 443 \\*
+	&	& 99	& 461 \\*
+	&	& 100	& 467 \\*
 \midrule
-PEGASIS	& 50	& 1	& 284.87 \\*
-	&	& 5	& 291.90 \\*
-	&	& 10	& 301.90 \\*
-	&	& 25	& 310.00 \\*
-	&	& 50	& 320.00 \\*
-	&	& 75	& 331.50 \\*
-	&	& 90	& 342.30 \\*
-	&	& 95	& 348.00 \\*
-	&	& 99	& 354.03 \\*
-	&	& 100	& 357.00 \\*
+PEGASIS	& 50	& 1	& 285 \\*
+	&	& 5	& 292 \\*
+	&	& 10	& 302 \\*
+	&	& 25	& 310 \\*
+	&	& 50	& 320 \\*
+	&	& 75	& 332 \\*
+	&	& 90	& 342 \\*
+	&	& 95	& 348 \\*
+	&	& 99	& 354 \\*
+	&	& 100	& 357 \\*
 \bottomrule
 \end{longtable}
 
@@ -1632,8 +1430,8 @@ PEGASIS	& 50	& 1	& 284.87 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -22.3\% dla wartości minimalnej (279.00), oraz wydłużenie czasu pracy na poziomie +6.4\% dla mediany (382.00), +30.1\% dla wartości maksymalnej (467.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -34.2\% dla wartości minimalnej (272.00), -10.9\% dla mediany (320.00), -0.6\% dla wartości maksymalnej (357.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -22.3\% dla wartości minimalnej (279), oraz wydłużenie czasu pracy na poziomie +6.4\% dla mediany (382), +30.1\% dla wartości maksymalnej (467).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -34.2\% dla wartości minimalnej (272), -10.9\% dla mediany (320), -0.6\% dla wartości maksymalnej (357).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1646,29 +1444,29 @@ Zauważyć można, że PEGASIS cechuje się lepszą sprawnością energetyczną 
 Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 100 	& -	& 359.00 \\*
+DIRECT	& 100 	& -	& 359 \\*
 \midrule
-LEACH	& 100	& 1	& 325.98 \\*
-	&	& 5	& 346.75 \\*
-	&	& 10	& 355.90 \\*
-	&	& 25	& 384.75 \\*
-	&	& 50	& 412.50 \\*
-	&	& 75	& 439.25 \\*
-	&	& 90	& 464.30 \\*
-	&	& 95	& 476.60 \\*
-	&	& 99	& 493.06 \\*
-	&	& 100	& 499.00 \\*
+LEACH	& 100	& 1	& 326 \\*
+	&	& 5	& 347 \\*
+	&	& 10	& 356 \\*
+	&	& 25	& 385 \\*
+	&	& 50	& 413 \\*
+	&	& 75	& 439 \\*
+	&	& 90	& 464 \\*
+	&	& 95	& 477 \\*
+	&	& 99	& 493 \\*
+	&	& 100	& 499 \\*
 \midrule
-PEGASIS	& 100	& 1	& 268.98 \\*
-	&	& 5	& 274.00 \\*
-	&	& 10	& 278.00 \\*
-	&	& 25	& 284.50 \\*
-	&	& 50	& 291.00 \\*
-	&	& 75	& 301.00 \\*
-	&	& 90	& 311.10 \\*
-	&	& 95	& 314.15 \\*
-	&	& 99	& 319.14 \\*
-	&	& 100	& 333.00 \\*
+PEGASIS	& 100	& 1	& 267 \\*
+	&	& 5	& 274 \\*
+	&	& 10	& 278 \\*
+	&	& 25	& 285 \\*
+	&	& 50	& 291 \\*
+	&	& 75	& 301 \\*
+	&	& 90	& 311 \\*
+	&	& 95	& 314 \\*
+	&	& 99	& 319 \\*
+	&	& 100	& 333 \\*
 \bottomrule
 \end{longtable}
 
@@ -1682,8 +1480,8 @@ PEGASIS	& 100	& 1	& 268.98 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -9.7\% dla wartości minimalnej (324.00), oraz wydłużenie czasu pracy na poziomie +14.9\% dla mediany (412.50), +39.0\% dla wartości maksymalnej (499.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -25.6\% dla wartości minimalnej (267.00), -18.9\% dla mediany (291.00), -7.2\% dla wartości maksymalnej (333.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -9.7\% dla wartości minimalnej (324), oraz wydłużenie czasu pracy na poziomie +14.9\% dla mediany (413), +39.0\% dla wartości maksymalnej (499).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -25.6\% dla wartości minimalnej (267), -18.9\% dla mediany (291), -7.2\% dla wartości maksymalnej (333).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1695,29 +1493,29 @@ Rozkład ilości energii całkowitej wszystkich węzłów w rundzie dla LEACH i 
 Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 150 	& -	& 359.00 \\*
+DIRECT	& 150 	& -	& 359 \\*
 \midrule
-LEACH	& 150	& 1	& 367.92 \\*
-	&	& 5	& 377.85 \\*
-	&	& 10	& 383.80 \\*
-	&	& 25	& 398.75 \\*
-	&	& 50	& 424.50 \\*
-	&	& 75	& 446.50 \\*
-	&	& 90	& 468.20 \\*
-	&	& 95	& 484.15 \\*
-	&	& 99	& 499.48 \\*
-	&	& 100	& 547.00 \\*
+LEACH	& 150	& 1	& 369 \\*
+	&	& 5	& 378 \\*
+	&	& 10	& 384 \\*
+	&	& 25	& 399 \\*
+	&	& 50	& 425 \\*
+	&	& 75	& 447 \\*
+	&	& 90	& 468 \\*
+	&	& 95	& 484 \\*
+	&	& 99	& 499 \\*
+	&	& 100	& 547 \\*
 \midrule
-PEGASIS	& 150	& 1	& 286.99 \\*
-	&	& 5	& 292.90 \\*
-	&	& 10	& 296.80 \\*
-	&	& 25	& 303.50 \\*
-	&	& 50	& 312.00 \\*
-	&	& 75	& 322.25 \\*
-	&	& 90	& 330.00 \\*
-	&	& 95	& 333.00 \\*
-	&	& 99	& 339.04 \\*
-	&	& 100	& 343.00 \\*
+PEGASIS	& 150	& 1	& 287 \\*
+	&	& 5	& 293 \\*
+	&	& 10	& 297 \\*
+	&	& 25	& 304 \\*
+	&	& 50	& 312 \\*
+	&	& 75	& 322 \\*
+	&	& 90	& 330 \\*
+	&	& 95	& 333 \\*
+	&	& 99	& 339 \\*
+	&	& 100	& 343 \\*
 \bottomrule
 \end{longtable}
 
@@ -1731,8 +1529,8 @@ PEGASIS	& 150	& 1	& 286.99 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.3\% dla wartości minimalnej (360.00), +18.2\% dla mediany (424.50), +52.4\% dla wartości maksymalnej (547.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.3\% dla wartości minimalnej (286.00), -13.1\% dla mediany (312.00), -4.5\% dla wartości maksymalnej (343.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.3\% dla wartości minimalnej (360), +18.2\% dla mediany (425), +52.4\% dla wartości maksymalnej (547).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.3\% dla wartości minimalnej (286), -13.1\% dla mediany (312), -4.5\% dla wartości maksymalnej (343).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1744,29 +1542,29 @@ Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal 
 Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 200 	& -	& 359.00 \\*
+DIRECT	& 200 	& -	& 359 \\*
 \midrule
-LEACH	& 200	& 1	& 381.91 \\*
-	&	& 5	& 398.00 \\*
-	&	& 10	& 405.00 \\*
-	&	& 25	& 415.00 \\*
-	&	& 50	& 429.50 \\*
-	&	& 75	& 449.25 \\*
-	&	& 90	& 467.10 \\*
-	&	& 95	& 475.05 \\*
-	&	& 99	& 499.32 \\*
-	&	& 100	& 531.00 \\*
+LEACH	& 200	& 1	& 382 \\*
+	&	& 5	& 398 \\*
+	&	& 10	& 405 \\*
+	&	& 25	& 415 \\*
+	&	& 50	& 430 \\*
+	&	& 75	& 449 \\*
+	&	& 90	& 467 \\*
+	&	& 95	& 475 \\*
+	&	& 99	& 499 \\*
+	&	& 100	& 531 \\*
 \midrule
-PEGASIS	& 200	& 1	& 296.96 \\*
-	&	& 5	& 298.95 \\*
-	&	& 10	& 302.00 \\*
-	&	& 25	& 307.00 \\*
-	&	& 50	& 313.00 \\*
-	&	& 75	& 321.25 \\*
-	&	& 90	& 329.00 \\*
-	&	& 95	& 335.20 \\*
-	&	& 99	& 349.03 \\*
-	&	& 100	& 352.00 \\*
+PEGASIS	& 200	& 1	& 297 \\*
+	&	& 5	& 299 \\*
+	&	& 10	& 302 \\*
+	&	& 25	& 307 \\*
+	&	& 50	& 313 \\*
+	&	& 75	& 321 \\*
+	&	& 90	& 329 \\*
+	&	& 95	& 335 \\*
+	&	& 99	& 349 \\*
+	&	& 100	& 352 \\*
 \bottomrule
 \end{longtable}
 
@@ -1780,8 +1578,8 @@ PEGASIS	& 200	& 1	& 296.96 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373.00), +19.6\% dla mediany (429.50), +47.9\% dla wartości maksymalnej (531.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -18.4\% dla wartości minimalnej (293.00), -12.8\% dla mediany (313.00), -1.9\% dla wartości maksymalnej (352.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373), +19.6\% dla mediany (430), +47.9\% dla wartości maksymalnej (531).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -18.4\% dla wartości minimalnej (293), -12.8\% dla mediany (313), -1.9\% dla wartości maksymalnej (352).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
@@ -1847,29 +1645,29 @@ Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 10
 Protokół	& Skala sieci	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 0.25 	& -	& 42976.00 \\*
+DIRECT	& 0.25 	& -	& 42976 \\*
 \midrule
-LEACH	& 0.25	& 1	& 43417.42 \\*
-	&	& 5	& 44197.10 \\*
-	&	& 10	& 45130.10 \\*
-	&	& 25	& 45789.50 \\*
-	&	& 50	& 46909.50 \\*
-	&	& 75	& 48151.00 \\*
-	&	& 90	& 49309.70 \\*
-	&	& 95	& 50096.95 \\*
-	&	& 99	& 51908.73 \\*
-	&	& 100	& 52278.00 \\*
+LEACH	& 0.25	& 1	& 43417 \\*
+	&	& 5	& 44197 \\*
+	&	& 10	& 45130 \\*
+	&	& 25	& 45790 \\*
+	&	& 50	& 46910 \\*
+	&	& 75	& 48151 \\*
+	&	& 90	& 49310 \\*
+	&	& 95	& 50097 \\*
+	&	& 99	& 51909 \\*
+	&	& 100	& 52278 \\*
 \midrule
-PEGASIS	& 0.25	& 1	& 38521.39 \\*
-	&	& 5	& 38723.70 \\*
-	&	& 10	& 38847.20 \\*
-	&	& 25	& 39050.25 \\*
-	&	& 50	& 39278.50 \\*
-	&	& 75	& 39543.75 \\*
-	&	& 90	& 39756.10 \\*
-	&	& 95	& 39827.65 \\*
-	&	& 99	& 40037.81 \\*
-	&	& 100	& 40316.00 \\*
+PEGASIS	& 0.25	& 1	& 38521 \\*
+	&	& 5	& 38724 \\*
+	&	& 10	& 38847 \\*
+	&	& 25	& 39050 \\*
+	&	& 50	& 39279 \\*
+	&	& 75	& 39544 \\*
+	&	& 90	& 39756 \\*
+	&	& 95	& 39828 \\*
+	&	& 99	& 40038 \\*
+	&	& 100	& 40316 \\*
 \bottomrule
 \end{longtable}
 
@@ -1883,8 +1681,8 @@ PEGASIS	& 0.25	& 1	& 38521.39 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 42976 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.9\% dla wartości minimalnej (43360.00), +9.2\% dla mediany (46909.50), +21.6\% dla wartości maksymalnej (52278.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -10.7\% dla wartości minimalnej (38362.00), -8.6\% dla mediany (39278.50), -6.2\% dla wartości maksymalnej (40316.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.9\% dla wartości minimalnej (43360), +9.2\% dla mediany (46910), +21.6\% dla wartości maksymalnej (52278).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -10.7\% dla wartości minimalnej (38362), -8.6\% dla mediany (39279), -6.2\% dla wartości maksymalnej (40316).
 Odległości węzłów do 'sink' są czterokrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
 \begin{longtable}{*{4}{c}}
@@ -1893,29 +1691,29 @@ Odległości węzłów do 'sink' są czterokrotnie mniejsze niż w konfiguracji 
 Protokół	& Skala sieci	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 0.50 	& -	& 5657.00 \\*
+DIRECT	& 0.50 	& -	& 5657 \\*
 \midrule
-LEACH	& 0.50	& 1	& 5598.30 \\*
-	&	& 5	& 5744.20 \\*
-	&	& 10	& 5872.20 \\*
-	&	& 25	& 6035.00 \\*
-	&	& 50	& 6292.50 \\*
-	&	& 75	& 6563.50 \\*
-	&	& 90	& 6779.70 \\*
-	&	& 95	& 6919.75 \\*
-	&	& 99	& 7213.70 \\*
-	&	& 100	& 7580.00 \\*
+LEACH	& 0.50	& 1	& 5598 \\*
+	&	& 5	& 5744 \\*
+	&	& 10	& 5872 \\*
+	&	& 25	& 6035 \\*
+	&	& 50	& 6293 \\*
+	&	& 75	& 6564 \\*
+	&	& 90	& 6780 \\*
+	&	& 95	& 6920 \\*
+	&	& 99	& 7214 \\*
+	&	& 100	& 7580 \\*
 \midrule
-PEGASIS	& 0.50	& 1	& 4406.99 \\*
-	&	& 5	& 4454.90 \\*
-	&	& 10	& 4472.70 \\*
-	&	& 25	& 4516.00 \\*
-	&	& 50	& 4576.50 \\*
-	&	& 75	& 4627.00 \\*
-	&	& 90	& 4691.20 \\*
-	&	& 95	& 4708.45 \\*
-	&	& 99	& 4776.45 \\*
-	&	& 100	& 4920.00 \\*
+PEGASIS	& 0.50	& 1	& 4407 \\*
+	&	& 5	& 4455 \\*
+	&	& 10	& 4473 \\*
+	&	& 25	& 4516 \\*
+	&	& 50	& 4577 \\*
+	&	& 75	& 4627 \\*
+	&	& 90	& 4691 \\*
+	&	& 95	& 4708 \\*
+	&	& 99	& 4776 \\*
+	&	& 100	& 4920 \\*
 \bottomrule
 \end{longtable}
 
@@ -1929,8 +1727,8 @@ PEGASIS	& 0.50	& 1	& 4406.99 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 5657 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.3\% dla wartości minimalnej (5529.00), oraz wydłużenie czasu pracy na poziomie +11.2\% dla mediany (6292.50), +34.0\% dla wartości maksymalnej (7580.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.1\% dla wartości minimalnej (4406.00), -19.1\% dla mediany (4576.50), -13.0\% dla wartości maksymalnej (4920.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.3\% dla wartości minimalnej (5529), oraz wydłużenie czasu pracy na poziomie +11.2\% dla mediany (6293), +34.0\% dla wartości maksymalnej (7580).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.1\% dla wartości minimalnej (4406), -19.1\% dla mediany (4577), -13.0\% dla wartości maksymalnej (4920).
 Odległości węzłów do 'sink' są dwukrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
 \begin{longtable}{*{4}{c}}
@@ -1939,29 +1737,29 @@ Odległości węzłów do 'sink' są dwukrotnie mniejsze niż w konfiguracji pod
 Protokół	& Skala sieci	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 2.00 	& -	& 23.00 \\*
+DIRECT	& 2.00 	& -	& 23 \\*
 \midrule
-LEACH	& 2.00	& 1	& 49.00 \\*	
-	&	& 5	& 50.95 \\*
-	&	& 10	& 51.00 \\*
-	&	& 25	& 53.00 \\*
-	&	& 50	& 55.00 \\*
-	&	& 75	& 58.00 \\*
-	&	& 90	& 60.00 \\*
-	&	& 95	& 61.05 \\*
-	&	& 99	& 63.02 \\*
-	&	& 100	& 65.00 \\*
+LEACH	& 2.00	& 1	& 49 \\*	
+	&	& 5	& 51 \\*
+	&	& 10	& 51 \\*
+	&	& 25	& 53 \\*
+	&	& 50	& 55 \\*
+	&	& 75	& 58 \\*
+	&	& 90	& 60 \\*
+	&	& 95	& 61 \\*
+	&	& 99	& 63 \\*
+	&	& 100	& 65 \\*
 \midrule
-PEGASIS	& 2.00	& 1	& 27.00 \\*
-	&	& 5	& 28.95 \\*
-	&	& 10	& 29.00 \\*
-	&	& 25	& 30.00 \\*
-	&	& 50	& 32.00 \\*
-	&	& 75	& 33.00 \\*
-	&	& 90	& 34.10 \\*
-	&	& 95	& 36.05 \\*
-	&	& 99	& 37.01 \\*
-	&	& 100	& 38.00 \\*
+PEGASIS	& 2.00	& 1	& 27 \\*
+	&	& 5	& 29 \\*
+	&	& 10	& 29 \\*
+	&	& 25	& 30 \\*
+	&	& 50	& 32 \\*
+	&	& 75	& 33 \\*
+	&	& 90	& 34 \\*
+	&	& 95	& 36 \\*
+	&	& 99	& 37 \\*
+	&	& 100	& 38 \\*
 \bottomrule
 \end{longtable}
 
@@ -1975,8 +1773,8 @@ PEGASIS	& 2.00	& 1	& 27.00 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 23 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +213.0\% dla wartości minimalnej (49.00), +239.1\% dla mediany (55.00), +282.6\% dla wartości maksymalnej (65.00).
-Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +117.4\% dla wartości minimalnej (27.00), +139.1\% dla mediany (32.00), +165.2\% dla wartości maksymalnej (38.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +213.0\% dla wartości minimalnej (49), +239.1\% dla mediany (55), +282.6\% dla wartości maksymalnej (65).
+Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +117.4\% dla wartości minimalnej (27), +139.1\% dla mediany (32), +165.2\% dla wartości maksymalnej (38).
 Odległości węzłów do 'sink' są dwukrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
 \begin{longtable}{*{4}{c}}
@@ -1985,29 +1783,29 @@ Odległości węzłów do 'sink' są dwukrotnie większa niż w konfiguracji pod
 Protokół	& Skala sieci	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& 4.00 	& -	& 2.00 \\*
+DIRECT	& 4.00 	& -	& 2 \\*
 \midrule
-LEACH	& 4.00	& 1	& 27.00 \\*
-	&	& 5	& 28.00 \\*
-	&	& 10	& 29.00 \\*
-	&	& 25	& 29.00 \\*
-	&	& 50	& 30.00 \\*
-	&	& 75	& 31.00 \\*
-	&	& 90	& 32.00 \\*
-	&	& 95	& 32.00 \\*
-	&	& 99	& 33.00 \\*
-	&	& 100	& 33.00 \\*
+LEACH	& 4.00	& 1	& 27 \\*
+	&	& 5	& 28 \\*
+	&	& 10	& 29 \\*
+	&	& 25	& 29 \\*
+	&	& 50	& 30 \\*
+	&	& 75	& 31 \\*
+	&	& 90	& 32 \\*
+	&	& 95	& 32 \\*
+	&	& 99	& 33 \\*
+	&	& 100	& 33 \\*
 \midrule
-PEGASIS	& 4.00	& 1	& 7.00 \\*
-	&	& 5	& 8.00 \\*
-	&	& 10	& 8.90 \\*
-	&	& 25	& 9.00 \\*
-	&	& 50	& 10.00 \\*
-	&	& 75	& 11.00 \\*
-	&	& 90	& 11.00 \\*
-	&	& 95	& 12.00 \\*
-	&	& 99	& 13.00 \\*
-	&	& 100	& 13.00 \\*
+PEGASIS	& 4.00	& 1	& 7 \\*
+	&	& 5	& 8 \\*
+	&	& 10	& 9 \\*
+	&	& 25	& 9 \\*
+	&	& 50	& 10 \\*
+	&	& 75	& 11 \\*
+	&	& 90	& 11 \\*
+	&	& 95	& 12 \\*
+	&	& 99	& 13 \\*
+	&	& 100	& 13 \\*
 \bottomrule
 \end{longtable}
 
@@ -2021,8 +1819,8 @@ PEGASIS	& 4.00	& 1	& 7.00 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 2 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1350.0\% dla wartości minimalnej (27.00), +1500.0\% dla mediany (30.00), +1650.0\% dla wartości maksymalnej (33.00).
-Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +350.0\% dla wartości minimalnej (7.00), +500.0\% dla mediany (10.00), +650.0\% dla wartości maksymalnej (13.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1350.0\% dla wartości minimalnej (27), +1500.0\% dla mediany (30), +1650.0\% dla wartości maksymalnej (33).
+Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +350.0\% dla wartości minimalnej (7), +500.0\% dla mediany (10), +650.0\% dla wartości maksymalnej (13).
 Odległości węzłów do 'sink' są czterokrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
 \subsection{Test 4 - Parametr `p`}
@@ -2083,29 +1881,29 @@ Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 10
 Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& - 	& -	& 359.00 \\*
+DIRECT	& - 	& -	& 359 \\*
 \midrule
-LEACH	& 0.05	& 1	& 355.98 \\*
-	&	& 5	& 362.90 \\*
-	&	& 10	& 364.90 \\*
-	&	& 25	& 383.00 \\*
-	&	& 50	& 396.00 \\*
-	&	& 75	& 417.00 \\*
-	&	& 90	& 435.20 \\*
-	&	& 95	& 455.05 \\*
-	&	& 99	& 476.08 \\*
-	&	& 100	& 484.00 \\*
+LEACH	& 0.05	& 1	& 356 \\*
+	&	& 5	& 363 \\*
+	&	& 10	& 365 \\*
+	&	& 25	& 383 \\*
+	&	& 50	& 396 \\*
+	&	& 75	& 417 \\*
+	&	& 90	& 435 \\*
+	&	& 95	& 455 \\*
+	&	& 99	& 476 \\*
+	&	& 100	& 484 \\*
 \midrule
-PEGASIS	& 0.05	& 1	& 345.00 \\*
-	&	& 5	& 351.00 \\*
-	&	& 10	& 351.90 \\*
-	&	& 25	& 356.00 \\*
-	&	& 50	& 365.00 \\*
-	&	& 75	& 372.00 \\*
-	&	& 90	& 377.00 \\*
-	&	& 95	& 380.05 \\*
-	&	& 99	& 387.02 \\*
-	&	& 100	& 389.00 \\*
+PEGASIS	& 0.05	& 1	& 345 \\*
+	&	& 5	& 351 \\*
+	&	& 10	& 352 \\*
+	&	& 25	& 356 \\*
+	&	& 50	& 365 \\*
+	&	& 75	& 372 \\*
+	&	& 90	& 377 \\*
+	&	& 95	& 380 \\*
+	&	& 99	& 387 \\*
+	&	& 100	& 389 \\*
 \bottomrule
 \end{longtable}
 
@@ -2119,8 +1917,8 @@ PEGASIS	& 0.05	& 1	& 345.00 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.4\% dla wartości minimalnej (354.00), oraz wydłużenie czasu pracy na poziomie +10.3\% dla mediany (396.00), +34.8\% dla wartości maksymalnej (484.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -3.9\% dla wartości minimalnej (345.00), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365.00), +8.4\% dla wartości maksymalnej (389.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.4\% dla wartości minimalnej (354), oraz wydłużenie czasu pracy na poziomie +10.3\% dla mediany (396), +34.8\% dla wartości maksymalnej (484).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -3.9\% dla wartości minimalnej (345), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365), +8.4\% dla wartości maksymalnej (389).
 Ilość węzłów typu cluster head jest dwukrotnie mniejsza niż w konfiguracji podstawowej.
 
 \begin{longtable}{*{4}{c}}
@@ -2129,29 +1927,29 @@ Ilość węzłów typu cluster head jest dwukrotnie mniejsza niż w konfiguracji
 Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& - 	& -	& 359.00 \\*
+DIRECT	& - 	& -	& 359 \\*
 \midrule
-LEACH	& 0.10	& 1	& 364.00 \\*
-	&	& 5	& 366.00 \\*
-	&	& 10	& 372.90 \\*
-	&	& 25	& 385.75 \\*
-	&	& 50	& 400.00 \\*
-	&	& 75	& 413.00 \\*
-	&	& 90	& 430.00 \\*
-	&	& 95	& 436.00 \\*
-	&	& 99	& 455.19 \\*
-	&	& 100	& 474.00 \\*
+LEACH	& 0.10	& 1	& 364 \\*
+	&	& 5	& 366 \\*
+	&	& 10	& 373 \\*
+	&	& 25	& 386 \\*
+	&	& 50	& 400 \\*
+	&	& 75	& 413 \\*
+	&	& 90	& 430 \\*
+	&	& 95	& 436 \\*
+	&	& 99	& 455 \\*
+	&	& 100	& 474 \\*
 \midrule
-PEGASIS	& 0.10	& 1	& 340.99 \\*
-	&	& 5	& 346.95 \\*
-	&	& 10	& 351.00 \\*
-	&	& 25	& 358.75 \\*
-	&	& 50	& 363.50 \\*
-	&	& 75	& 371.50 \\*
-	&	& 90	& 377.00 \\*
-	&	& 95	& 380.05 \\*
-	&	& 99	& 388.07 \\*
-	&	& 100	& 395.00 \\*
+PEGASIS	& 0.10	& 1	& 341 \\*
+	&	& 5	& 347 \\*
+	&	& 10	& 351 \\*
+	&	& 25	& 359 \\*
+	&	& 50	& 364 \\*
+	&	& 75	& 372 \\*
+	&	& 90	& 377 \\*
+	&	& 95	& 380 \\*
+	&	& 99	& 388 \\*
+	&	& 100	& 395 \\*
 \bottomrule
 \end{longtable}
 
@@ -2165,8 +1963,8 @@ PEGASIS	& 0.10	& 1	& 340.99 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1.4\% dla wartości minimalnej (365.00), +11.4\% dla mediany (400.00), +32.0\% dla wartości maksymalnej (474.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -5.3\% dla wartości minimalnej (345.00), oraz wydłużenie czasu pracy na poziomie +1.3\% dla mediany (363.50), +10.0\% dla wartości maksymalnej (395.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1.4\% dla wartości minimalnej (365), +11.4\% dla mediany (400), +32.0\% dla wartości maksymalnej (474).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -5.3\% dla wartości minimalnej (345), oraz wydłużenie czasu pracy na poziomie +1.3\% dla mediany (364), +10.0\% dla wartości maksymalnej (395).
 
 \begin{longtable}{*{4}{c}}
 \toprule
@@ -2174,29 +1972,29 @@ Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -5.3\% dla wartości min
 Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& - 	& -	& 359.00 \\*
+DIRECT	& - 	& -	& 359 \\*
 \midrule
-LEACH	& 0.15	& 1	& 356.93 \\*
-	&	& 5	& 366.95 \\*
-	&	& 10	& 371.00 \\*
-	&	& 25	& 386.00 \\*
-	&	& 50	& 398.50 \\*
-	&	& 75	& 418.75 \\*
-	&	& 90	& 434.30 \\*
-	&	& 95	& 442.25 \\*
-	&	& 99	& 455.19 \\*
-	&	& 100	& 470.00 \\*
+LEACH	& 0.15	& 1	& 357 \\*
+	&	& 5	& 367 \\*
+	&	& 10	& 371 \\*
+	&	& 25	& 386 \\*
+	&	& 50	& 399 \\*
+	&	& 75	& 419 \\*
+	&	& 90	& 434 \\*
+	&	& 95	& 442 \\*
+	&	& 99	& 455 \\*
+	&	& 100	& 470 \\*
 \midrule
-PEGASIS	& 0.15	& 1	& 339.95 \\*
-	&	& 5	& 346.00 \\*
-	&	& 10	& 350.00 \\*
-	&	& 25	& 355.00 \\*
-	&	& 50	& 364.50 \\*
-	&	& 75	& 371.25 \\*
-	&	& 90	& 382.10 \\*
-	&	& 95	& 386.25 \\*
-	&	& 99	& 402.09 \\*
-	&	& 100	& 411.00 \\*
+PEGASIS	& 0.15	& 1	& 340 \\*
+	&	& 5	& 346 \\*
+	&	& 10	& 350 \\*
+	&	& 25	& 355 \\*
+	&	& 50	& 365 \\*
+	&	& 75	& 371 \\*
+	&	& 90	& 382 \\*
+	&	& 95	& 386 \\*
+	&	& 99	& 402 \\*
+	&	& 100	& 411 \\*
 \bottomrule
 \end{longtable}
 
@@ -2210,8 +2008,8 @@ PEGASIS	& 0.15	& 1	& 339.95 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.5\% dla wartości minimalnej (350.00), oraz wydłużenie czasu pracy na poziomie +10.0\% dla mediany (398.50), +30.9\% dla wartości maksymalnej (470.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -6.7\% dla wartości minimalnej (335.00), oraz wydłużenie czasu pracy na poziomie +1.5\% dla mediany (364.50), +14.5\% dla wartości maksymalnej (411.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.5\% dla wartości minimalnej (350), oraz wydłużenie czasu pracy na poziomie +10.0\% dla mediany (399), +30.9\% dla wartości maksymalnej (470).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -6.7\% dla wartości minimalnej (335), oraz wydłużenie czasu pracy na poziomie +1.5\% dla mediany (365), +14.5\% dla wartości maksymalnej (411).
 Ilość węzłów typu cluster head jest o 50\% większa niż w konfiguracji podstawowej.
 
 \begin{longtable}{*{4}{c}}
@@ -2220,29 +2018,29 @@ Ilość węzłów typu cluster head jest o 50\% większa niż w konfiguracji pod
 Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& - 	& -	& 359.00 \\*
+DIRECT	& - 	& -	& 359 \\*
 \midrule
-LEACH	& 0.20	& 1	& 362.00 \\*
-	&	& 5	& 365.95 \\*
-	&	& 10	& 371.80 \\*
-	&	& 25	& 385.75 \\*
-	&	& 50	& 402.50 \\*
-	&	& 75	& 423.00 \\*
-	&	& 90	& 442.20 \\*
-	&	& 95	& 451.00 \\*
-	&	& 99	& 471.10 \\*
-	&	& 100	& 481.00 \\*
+LEACH	& 0.20	& 1	& 362 \\*
+	&	& 5	& 366 \\*
+	&	& 10	& 372 \\*
+	&	& 25	& 386 \\*
+	&	& 50	& 403 \\*
+	&	& 75	& 423 \\*
+	&	& 90	& 442 \\*
+	&	& 95	& 451 \\*
+	&	& 99	& 471 \\*
+	&	& 100	& 481 \\*
 \midrule
-PEGASIS	& 0.20	& 1	& 346.97 \\*
-	&	& 5	& 349.00 \\*
-	&	& 10	& 352.00 \\*
-	&	& 25	& 358.00 \\*
-	&	& 50	& 367.00 \\*
-	&	& 75	& 373.25 \\*
-	&	& 90	& 378.00 \\*
-	&	& 95	& 382.05 \\*
-	&	& 99	& 388.09 \\*
-	&	& 100	& 397.00 \\*
+PEGASIS	& 0.20	& 1	& 347 \\*
+	&	& 5	& 349 \\*
+	&	& 10	& 352 \\*
+	&	& 25	& 358 \\*
+	&	& 50	& 367 \\*
+	&	& 75	& 373 \\*
+	&	& 90	& 378 \\*
+	&	& 95	& 382 \\*
+	&	& 99	& 388 \\*
+	&	& 100	& 397 \\*
 \bottomrule
 \end{longtable}
 
@@ -2256,8 +2054,8 @@ PEGASIS	& 0.20	& 1	& 346.97 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.8\% dla wartości minimalnej (362.00), +12.1\% dla mediany (402.50), +34.0\% dla wartości maksymalnej (481.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344.00), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367.00), +10.6\% dla wartości maksymalnej (397.00).
+Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.8\% dla wartości minimalnej (362), +12.1\% dla mediany (403), +34.0\% dla wartości maksymalnej (481).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367), +10.6\% dla wartości maksymalnej (397).
 Ilość węzłów typu cluster head jest dwukrotnie większa niż w konfiguracji podstawowej.
 
 \begin{longtable}{*{4}{c}}
@@ -2266,29 +2064,29 @@ Ilość węzłów typu cluster head jest dwukrotnie większa niż w konfiguracji
 Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& - 	& -	& 359.00 \\*
+DIRECT	& - 	& -	& 359 \\*
 \midrule
-LEACH	& 0.25	& 1	& 358.99 \\*
-	&	& 5	& 363.00 \\*
-	&	& 10	& 370.70 \\*
-	&	& 25	& 384.00 \\*
-	&	& 50	& 403.50 \\*
-	&	& 75	& 429.00 \\*
-	&	& 90	& 439.20 \\*
-	&	& 95	& 450.00 \\*
-	&	& 99	& 454.11 \\*
-	&	& 100	& 465.00 \\*
+LEACH	& 0.25	& 1	& 359 \\*
+	&	& 5	& 363 \\*
+	&	& 10	& 371 \\*
+	&	& 25	& 384 \\*
+	&	& 50	& 404 \\*
+	&	& 75	& 429 \\*
+	&	& 90	& 439 \\*
+	&	& 95	& 450 \\*
+	&	& 99	& 454 \\*
+	&	& 100	& 465 \\*
 \midrule
-PEGASIS	& 0.25	& 1	& 338.99 \\*
-	&	& 5	& 346.90 \\*
-	&	& 10	& 349.90 \\*
-	&	& 25	& 355.75 \\*
-	&	& 50	& 362.00 \\*
-	&	& 75	& 370.00 \\*
-	&	& 90	& 381.00 \\*
-	&	& 95	& 385.05 \\*
-	&	& 99	& 397.09 \\*
-	&	& 100	& 406.00 \\*
+PEGASIS	& 0.25	& 1	& 339 \\*
+	&	& 5	& 347 \\*
+	&	& 10	& 345 \\*
+	&	& 25	& 356 \\*
+	&	& 50	& 362 \\*
+	&	& 75	& 370 \\*
+	&	& 90	& 381 \\*
+	&	& 95	& 385 \\*
+	&	& 99	& 397 \\*
+	&	& 100	& 406 \\*
 \bottomrule
 \end{longtable}
 
@@ -2302,8 +2100,8 @@ PEGASIS	& 0.25	& 1	& 338.99 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -0.3\% dla wartości minimalnej (358.00), oraz wydłużenie czasu pracy na poziomie +12.4\% dla mediany (403.50), +29.5\% dla wartości maksymalnej (465.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344.00), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367.00), +10.6\% dla wartości maksymalnej (397.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -0.3\% dla wartości minimalnej (358), oraz wydłużenie czasu pracy na poziomie +12.4\% dla mediany (404), +29.5\% dla wartości maksymalnej (465).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367), +10.6\% dla wartości maksymalnej (397).
 Ilość węzłów typu cluster head jest 150\% większa niż w konfiguracji podstawowej.
 
 \begin{longtable}{*{4}{c}}
@@ -2312,29 +2110,29 @@ Ilość węzłów typu cluster head jest 150\% większa niż w konfiguracji pods
 Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
 \midrule
 \endhead
-DIRECT	& - 	& -	& 359.00 \\*
+DIRECT	& - 	& -	& 359 \\*
 \midrule
-LEACH	& 0.30	& 1	& 351.99 \\*
-	&	& 5	& 368.90 \\*
-	&	& 10	& 372.90 \\*
-	&	& 25	& 385.00 \\*
-	&	& 50	& 399.00 \\*
-	&	& 75	& 418.00 \\*
-	&	& 90	& 431.20 \\*
-	&	& 95	& 444.10 \\*
-	&	& 99	& 456.14 \\*
-	&	& 100	& 470.00 \\*
+LEACH	& 0.30	& 1	& 352 \\*
+	&	& 5	& 369 \\*
+	&	& 10	& 373 \\*
+	&	& 25	& 385 \\*
+	&	& 50	& 399 \\*
+	&	& 75	& 418 \\*
+	&	& 90	& 431 \\*
+	&	& 95	& 444 \\*
+	&	& 99	& 456 \\*
+	&	& 100	& 470 \\*
 \midrule
-PEGASIS	& 0.30	& 1	& 347.94 \\*
-	&	& 5	& 349.95 \\*
-	&	& 10	& 354.00 \\*
-	&	& 25	& 359.00 \\*
-	&	& 50	& 365.50 \\*
-	&	& 75	& 372.25 \\*
-	&	& 90	& 377.10 \\*
-	&	& 95	& 385.05 \\*
-	&	& 99	& 389.01 \\*
-	&	& 100	& 390.00 \\*
+PEGASIS	& 0.30	& 1	& 348 \\*
+	&	& 5	& 350 \\*
+	&	& 10	& 354 \\*
+	&	& 25	& 359 \\*
+	&	& 50	& 366 \\*
+	&	& 75	& 372 \\*
+	&	& 90	& 377 \\*
+	&	& 95	& 385 \\*
+	&	& 99	& 389 \\*
+	&	& 100	& 390 \\*
 \bottomrule
 \end{longtable}
 
@@ -2348,8 +2146,8 @@ PEGASIS	& 0.30	& 1	& 347.94 \\*
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
-Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.2\% dla wartości minimalnej (351.00), oraz wydłużenie czasu pracy na poziomie +11.1\% dla mediany (399.00), +30.9\% dla wartości maksymalnej (470.00).
-Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.7\% dla wartości minimalnej (342.00), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (364.50), +8.6\% dla wartości maksymalnej (390.00).
+Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.2\% dla wartości minimalnej (351), oraz wydłużenie czasu pracy na poziomie +11.1\% dla mediany (399), +30.9\% dla wartości maksymalnej (470).
+Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.7\% dla wartości minimalnej (342), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365), +8.6\% dla wartości maksymalnej (390).
 Ilość węzłów typu cluster head jest trzykrotnie większa niż w konfiguracji podstawowej.
 
 \begin{figure}[H]
