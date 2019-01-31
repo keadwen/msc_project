@@ -1,46 +1,47 @@
 \babel@toc {polish}{}
 \contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Cel pracy}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}Wykorzystane technologie}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}J\IeC {\k e}zyk programowania Go}{2}{section.2.1}
-\contentsline {paragraph}{Por\IeC {\'o}wnanie Go z Python}{3}{section*.4}
-\contentsline {paragraph}{Por\IeC {\'o}wnanie Go z C++}{4}{section*.5}
-\contentsline {paragraph}{Unikatowe cechy Go}{4}{section*.6}
-\contentsline {section}{\numberline {2.2}Serializacja danych Protocol Buffers}{5}{section.2.2}
-\contentsline {section}{\numberline {2.3}Narz\IeC {\k e}dzia dodatkowe}{6}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}System kontroli wersji git}{6}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}GNUPlot}{6}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Docker}{6}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {3}Bezprzewodowe sieci czujnikowe}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Wst\IeC {\k e}p do bezprzewodowych sieci sensorowych}{8}{section.3.1}
-\contentsline {section}{\numberline {3.2}Model transmisji}{9}{section.3.2}
-\contentsline {section}{\numberline {3.3}Protoko\IeC {\l }y}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Komunikacja bezpo\IeC {\'s}rednia}{10}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}LEACH}{11}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}PEGASIS}{13}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Architektura systemu}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Komponenty systemu}{15}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Plik konfiguracyjny}{16}{subsection.4.1.1}
-\contentsline {subsubsection}{Konfiguracja symulatora i sieci}{16}{section*.7}
-\contentsline {subsubsection}{Konfiguracja w\IeC {\k e}z\IeC {\l }a}{18}{section*.8}
-\contentsline {subsection}{\numberline {4.1.2}Modu\IeC {\l } g\IeC {\l }\IeC {\'o}wny (Core)}{20}{subsection.4.1.2}
-\contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{20}{section*.9}
-\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{22}{section*.10}
-\contentsline {subsubsection}{Koszty transmisji}{23}{section*.11}
-\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{24}{section*.12}
-\contentsline {subsection}{\numberline {4.1.3}Modu\IeC {\l } symulatora (Simulator)}{25}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Obs\IeC {\l }uga systemu}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Generowanie konfiguracji}{27}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Uruchamianie scenariuszy}{29}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Generowanie wykres\IeC {\'o}w}{29}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{30}{subsection.4.2.5}
-\contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Dane wej\IeC {\'s}ciowe}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Scenariusze}{32}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Test 1 - Wielko\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }wiadomo\IeC {\'s}ci}{37}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{46}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{57}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{67}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{83}{chapter.6}
-\contentsline {chapter}{Bibliografia}{85}{chapter*.13}
+\contentsline {section}{\numberline {1.2}Tworzenie projektu}{1}{section.1.2}
+\contentsline {chapter}{\numberline {2}Wykorzystane technologie}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}J\IeC {\k e}zyk programowania Go}{3}{section.2.1}
+\contentsline {paragraph}{Por\IeC {\'o}wnanie Go z Python}{4}{section*.4}
+\contentsline {paragraph}{Por\IeC {\'o}wnanie Go z C++}{5}{section*.5}
+\contentsline {paragraph}{Unikatowe cechy Go}{5}{section*.6}
+\contentsline {section}{\numberline {2.2}Serializacja danych Protocol Buffers}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Narz\IeC {\k e}dzia dodatkowe}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}System kontroli wersji git}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}GNUPlot}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Docker}{7}{subsection.2.3.3}
+\contentsline {chapter}{\numberline {3}Bezprzewodowe sieci czujnikowe}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Wst\IeC {\k e}p do bezprzewodowych sieci sensorowych}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Model transmisji}{10}{section.3.2}
+\contentsline {section}{\numberline {3.3}Protoko\IeC {\l }y}{10}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Komunikacja bezpo\IeC {\'s}rednia}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}LEACH}{12}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}PEGASIS}{14}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Architektura systemu}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Komponenty systemu}{16}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Plik konfiguracyjny}{17}{subsection.4.1.1}
+\contentsline {subsubsection}{Konfiguracja symulatora i sieci}{17}{section*.7}
+\contentsline {subsubsection}{Konfiguracja w\IeC {\k e}z\IeC {\l }a}{19}{section*.8}
+\contentsline {subsection}{\numberline {4.1.2}Modu\IeC {\l } g\IeC {\l }\IeC {\'o}wny (Core)}{21}{subsection.4.1.2}
+\contentsline {subsubsection}{W\IeC {\k e}ze\IeC {\l } (Node)}{21}{section*.9}
+\contentsline {subsubsection}{Sie\IeC {\'c} (Network)}{23}{section*.10}
+\contentsline {subsubsection}{Koszty transmisji}{24}{section*.11}
+\contentsline {subsubsection}{Protok\IeC {\'o}\IeC {\l } (Protocol)}{25}{section*.12}
+\contentsline {subsection}{\numberline {4.1.3}Modu\IeC {\l } symulatora (Simulator)}{26}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Obs\IeC {\l }uga systemu}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Generowanie konfiguracji}{28}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Uruchamianie scenariuszy}{30}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Generowanie wykres\IeC {\'o}w}{30}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{31}{subsection.4.2.5}
+\contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}Dane wej\IeC {\'s}ciowe}{32}{section.5.1}
+\contentsline {section}{\numberline {5.2}Scenariusze}{33}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Test 1 - Wielko\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }wiadomo\IeC {\'s}ci}{38}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{47}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{58}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{68}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{84}{chapter.6}
+\contentsline {chapter}{Bibliografia}{86}{chapter*.13}
