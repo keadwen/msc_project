@@ -128,7 +128,7 @@
 
 W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinformatycznych w zakresie bezprzewodowych sieci czujnikowych.
 Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych. Aktualnie, możliwości oferowane przez bezprzewodowe 
-czujniki znajdują zastosowanie w nieskończonej liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. inteligentny dom).
+czujniki znajdują zastosowanie w nieskończonej liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. inteligentny dom) \cite{Shen}.
 
 %TODO Rozbudować wstęp.
 
@@ -159,7 +159,7 @@ Protocol Buffers, GNUPlot, itd.
 
 \section{Język programowania Go}
 Go (Golang) to język programistyczny stworzony jako wolne oprogramowanie (open-source) na potrzeby firmy Google, Inc. 
-Głównymi architektami języka są Robert Griesemer, Rob Pike i Ken Thompson.
+Głównymi architektami języka są Robert Griesemer, Rob Pike i Ken Thompson \cite{GolangBook}.
 Golang umożliwia tworzenie komercyjnego oprogramowania i jest wspierany na wielu systemach operacyjnych (Linux, Windows, Mac OS X).
 
 Język Go należy do kategorii języków kompilowanych, z statycznym definiowaniem typu zmiennych. 
@@ -296,7 +296,7 @@ Przy pomocy GNUPlot generować można dwu- oraz trójwymiarowe wykresy, które z
 
 \subsection{Docker}
 
-Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc.
+Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc \cite{DockerBook}.
 Narzędzie to pozwala na tworzenie kontenerów, które izolują aplikację na poziomie systemu operacyjnego. W przeciwieństwie do maszyn wirtualnych, kontener nie wymaga
 wirtualizowania systemu operacyjnego dla każdego z kontenerów. Wszystkie równolegle działające kontenery aplikacji działające na pojedynczym urządzeniu współdzielą
 parametry fizyczne maszyny oraz jądro systemu operacyjnego (np. Linux). Izolacja kontenerów widoczna jest na poziomie zależności (dependency) do określonych wersji
@@ -346,7 +346,7 @@ gdzie $E_{elec}$ jest energią wykorzystywaną przez nadajnik (np. praca mikropr
 W zależności od odległości na której odbywa się komunikacja, $\varepsilon_{fs}$ reprezentuje transmisję w wolnej przestrzeni, natomiast $\varepsilon_{mp}$
 wielotorowość transmisji.
 
-Poniższy wzór pozwala na wyznaczenie całkowitego kosztu odbioru k-bitów przez węzeł:
+Poniższy wzór pozwala na wyznaczenie całkowitego kosztu odbioru k-bitów przez węzeł \cite{Heinzelman}:
 
 \[E_{RX}(k,d) = E_{RX}(k) = k \times E_{elec}\]
 
@@ -354,7 +354,7 @@ Poniższy wzór pozwala na wyznaczenie całkowitego kosztu odbioru k-bitów prze
 
 Warstwa sieciowa w bezprzewodowych sieciach czujników jest elementem krytycznym działania całości systemu.
 Warstwa ta w przeciwieństwie do warstwy fizycznej, odpowiedzialna jest za logiczne skonfigurowanie węzłów i
-zaimplementowanie algorytmu trasowania danych pomiędzy węzłami.
+zaimplementowanie algorytmu trasowania danych pomiędzy węzłami \cite{Akyildiz} \cite{WSN-routing}.
 
 Istnieje wiele protokołów WSN, których dobór zależy od przede wszystkim od naszej aplikacji oraz
 parametrów sieci które wymagają optymalizacji. Poniższej przedstawione zostały cztery aspekty, których dokładne określenie pozwoli
@@ -392,23 +392,23 @@ Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się b
 
 \subsection{LEACH}
 
-LEACH (Low-Energy Adaptive Clustering Hierarchy) jest algorytmem wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej.
+LEACH (Low-Energy Adaptive Clustering Hierarchy) jest algorytmem wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej \cite{Akyildiz}.
 W przeciwieństwie do komunikacji bezpośredniej, LEACH jest protokołem w którym występuje hierarchia. 
 
 Zestaw operacji w protokole LEACH nazywa się rundami (round). Każda z rund podzielona jest na dwie fazy.
-W pierwszej fazie, fazie konfiguracyjnej (setup), węzły dokonują podziału sieci na niezależne klastry (cluster).
+W pierwszej fazie, fazie konfiguracyjnej (setup), węzły dokonują podziału sieci na niezależne klastry (cluster) \cite{DynamicCH-Jia}.
 W drugiej fazie, fazie komunikacyjnej (steady state), węzły uczestniczące w sieci dokonują wymiany informacji za pomocą agregacji danych w klastrze, które następnie
 przesłane są do stacji bazowej.
 
 Faza konfiguracji (setup) zbudowana jest z trzech etapów.
-W pierwszym etapie węzły dokonują wyboru roli w rundzie. W LEACH występują dwa rodzaje węzłów:
+W pierwszym etapie węzły dokonują wyboru roli w rundzie. W LEACH występują dwa rodzaje węzłów 
 
 \begin{itemize}
  \item węzły typu cluster head (CH)
  \item węzły standardowe (non-CH)
 \end{itemize}
 
-Każdy z węzłów generuje losową wartość `n` z zakresu [0, 1]. Wartość ta podstawiona w poniższe równanie:
+Każdy z węzłów generuje losową wartość `n` z zakresu [0, 1]. Wartość ta podstawiona w poniższe równanie :
 
 \[
 T(n) = \begin{cases}
@@ -418,7 +418,7 @@ T(n) = \begin{cases}
 \]
 
 gdzie P oznacza wartość z zakresu (0, 1] definiująca prawdopodobieństwa wyznaczenia węzła typu cluster head.
-G jest zbiorem węzłów które nie pełniły roli cluster head w ostatnich 1/P rundach.
+G jest zbiorem węzłów które nie pełniły roli cluster head w ostatnich 1/P rundach \cite{Bajelan}.
 
 W momencie ustalenia roli przez węzły, każdy z węzłów informuje pozostałe węzły uczestniczące w sieci o swojej roli w rundzie.
 
@@ -456,7 +456,7 @@ Pierwsza faza, faza komunikacji, w której ustalane są role węzłów jest iden
 Węzły typu cluster head formują łańcuch, w którym najdalej oddalony węzeł typu cluster head, przekazuje zebrane i dane agregowane do innego węzła typu cluster head znajdującego się w najbliższym 
 sąsiedztwie. Algorytm trasowania najmniejszym kosztem nazywana się typu `greedy`. 
 
-Efektem niekorzystnym w protokole PEGASIS jest wydłużenie czasu każdej z rund, wynikające z sekwencyjnej wymiany danych w łańcuchu.
+Efektem niekorzystnym w protokole PEGASIS jest wydłużenie czasu każdej z rund, wynikające z sekwencyjnej wymiany danych w łańcuchu \cite{Lindsey-Pegasis}.
 Generowane w ten sposób są dodatkowe koszty energetyczne związane z utrzymaniem węzłów w stanie pracy, kosztem odbioru i przetworzenia informacji.
 Należy jednak podkreślić, że zysk energetyczny wynikający z transmisji danych na krótsze dystanse kompensuje poniesione straty, tym samym pozwalając na wydłużenie czasu pracy każdego z węzłów.
 
@@ -471,7 +471,7 @@ Należy jednak podkreślić, że zysk energetyczny wynikający z transmisji dany
 \chapter{Architektura systemu}
 
 System informatyczny stworzony na potrzeby pracy dyplomowej ma za zadanie dostarczenie wyników oraz wykresów niezbędnych do zbadania poniższych zależności sprawności energetycznej 
-węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS).
+węzłów dla wybranych algorytmów w sieci WSN (komunikacji bezpośredniej, LEACH, PEGASIS). 
 
 \section{Komponenty systemu}
 
@@ -2167,7 +2167,7 @@ Zauważyć można zależność, że efektywność energetyczna LEACH oraz PEGASI
 Koncepcja i projekt systemu symulującego model bezprzewodowej sieci czujnikowej został opracowany przez autora pracy.
 Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
 Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się tworzeniem prototypu systemu symulującego.
-Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu.
+Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu \cite{SoftwareDesingBook}.
 Projekt zrealizowano w języku Go, przy wykorzystaniu rozszerzonego systemu kontroli wersji git.
 \par
 Proces zbieranie wyników generowanych przez system symulacyjny został podzielony na cztery główne testy.
@@ -2193,36 +2193,53 @@ w protokole PEGASIS jest wyższa w początkowej fazie symulacji scenariusza (zw�
 danych z większej puli węzłów.
 W scenariuszach w których odległości pomiędzy węzłami zwiększają się, koszt przekazywania informacji PEGASIS przy pomocy algorytmu `greedy` staje się bardzo kosztowny. Każdy kolejny węzeł
 odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energetyczny transmisji, który w końcowych rundach bardzo szybko eliminuje węzły niezdolne do przekazywania danych
-(ze względu na niewystarczające zasoby energetyczne).
+(ze względu na niewystarczające zasoby energetyczne). Korzystnym byłoby zaimplementowanie metody aggregacji i kompresji zebranych danych przed ich przesłaniem do węzła docelowego.
+
 
 \begin{thebibliography}{99}
 % Bibliografia w pracy mgr jest kluczowa - powinno pojawić się kilka artykułów naukowych (IEEE, ACM, Elsevier - ma Pan dostęp jako student PW)
 \addcontentsline{toc}{chapter}{Bibliografia}
 % Bibliografia o ogólnym WSN.
-\bibitem{Akyildiz}{I.F. Akyildiz, W. Su, Y. Sankarasubramaniam, E. Cayirci, ,,Wireless sensor networks: a survey'', Georgia Institute of Technology, 2001.}prez
+\bibitem{Akyildiz}{I.F. Akyildiz, W. Su, Y. Sankarasubramaniam, E. Cayirci, ,,Wireless sensor networks: a survey'', Georgia Institute of Technology, 2001.}
 \bibitem{Heinzelman}{W. R. Heinzelman, A. Chandrakasan, H. Balakrishnan, ,,Energy\-Efficient Communication Protocol for Wireless Microsensor Networks'', MIT, 2000.}
+\bibitem{wsn-future}{G. Amato, A. Caruso, S. Chessa, V. Masi, A. Urpi, ,,State of the art and future directions in wireless sensor network’s data management.'', ISTI, 2004.}
+% https://dl.acm.org/citation.cfm?id=1389832
 \bibitem{Yick}{J. Yick, B. Mukherejee, D. Ghosal, ,,Wireless sensor network survey'', Elsevier Computer Networks, Vol. 52, 2008.}
 \bibitem{Wiley-WSN}{I. F. Akyildiz, M. Can Vuran, ,,Wireless Sensor Networks'', Georgia Institute of Technology, Wiley, ISBN 9780470036013, 2010.}
-\bibitem{ACM-WSN`}{G. J. Pottie, W. J. Kaiser, Wireless integrated network sensors. Communications of the ACM, 43:51–58, May 2000.}
+\bibitem{ACM-WSN`}{G. J. Pottie, W. J. Kaiser, ,,Wireless integrated network sensors'', Communications of the ACM, 43:51–58, May 2000.}
+\bibitem{WSN-routing}{J. Al-karaki , A. Kamal, ,,Routing Techniques in Wireless Sensor Networks: A Survey'', IEEE Wireless Communications, 2004.}
+\bibitem{EnergyAwareRouting}{M. Younis, M. Youssef, K. Arisha, ,,Energy-Aware Routing in Cluster-Based Sensor Networks'', In Proceedings of the 10th IEEE/ACM, 2002.}
+\bibitem{Petriu}{E. Petriu, N. Georganas, D. Petriu, D. Makrakis, V. Groza, ,,Sensor-based information appliances.'', Instrumentation \& Measurement Magazine, Vol. 3(4), s. 31–35, 2000.}
+\bibitem{Shen}{C. Shen, C. Srisathapornphat, C. Jaikaeo, ,,Sensor information networking architecture and applications.'', IEEE Personal Communications, Vol. 8(4), s. 52–59, 2001.}
+% https://bit.ly/2RvgCyc
+\bibitem{Sohrab}{K. Sohrabi, J. Gao, V. Ailawadhi, G.J. Pottie, ,,Protocols for self-organization of a wireless sensor network'', IEEE Personal Communications, s. 16–27, 2000.}
+% https://bit.ly/2WA9Ivl
+\bibitem{Slijepcevic}{S. Slijepcevic, M. Potkonjak, ,,Power efficient organization of wireless sensor networks'', IEEE International Conference on Communications ICC'01, 2001.}
+% https://ieeexplore.ieee.org/abstract/document/779917/
+\bibitem{Rodoplu}{V. Rodoplu, T. Meng, ,,Minimum energy mobile wireless networks'', IEEE Journal of Selected Areas in Communications, Vol. 17(8), s. 1333-1344, 1999.}
 % Chong: https://ieeexplore.ieee.org/document/1219475
 \bibitem{WsnOpis-Chong}{C.Y. Chong and S.P. Kumar, ,,Sensor networks: evolution, opportunities, and challenges'', In Proceedings of IEEE, Vol. 91, s. 1247-1256, 2003.}
-\bibitem{Protocols-Sohrabi}{K. Sohrabi, J. Gao, V. Ailawadhi, G.J. Pottie, ,,Protocols for self-organization of a wireless sensor network'' IEEE Personal Communications, Vol. 7, s. 16-27, 2000.}
+\bibitem{Gao}{J. L. Gao, ,,Energy Efficient Routing for Wireless Sensor Networks'', Department of Electrical Engineering, UCLA, 2000.}
+\bibitem{Protocols-Sohrabi}{K. Sohrabi, J. Gao, V. Ailawadhi, G.J. Pottie, ,,Protocols for self-organization of a wireless sensor network'', IEEE Personal Communications, Vol. 7, s. 16-27, 2000.}
 % Bibliografia o LEACH
-\bibitem{Bajelan}{M. Bajelan, H. Bakhshi, ,,An adaptive LEACH-based clustering algorithm for wireless sensor networks.'', J. Commun. Eng. Vol. 2(4), s. 351–365 2013.}
+\bibitem{Bajelan}{M. Bajelan, H. Bakhshi, ,,An adaptive LEACH-based clustering algorithm for wireless sensor networks.'', J. Commun. Eng. Vol. 2(4), s. 351–365, 2013.}
 % Bilbiografia o PEGASIS
-%TODO znaleźć dokument z którego korzystałem a nie zapisałem.
+\bibitem{Lindsey-Pegasis}{S. Lindsey, C. Raghavendra, ,,PEGASIS:Power\-efficient gathering in sensor information systems'', IEEE Aerospace Conference Proceedings, s. 1125-1130, 2002.}
+\bibitem{pega-aggregacja}{R. Rajagopalan, P. Varshney, ,,Data aggregation techniques in sensor networks: a survey.'', IEEE Communication Surveys \& Tutorials, Vol. 8, s. 48–63, 2006.}
+\bibitem{pega-compression}{C. M. Sadler, M. Martonosi, ,,Data compression algorithms for energy-constrained devices in delay tolerant networks.'', In Proceedings of ACM SenSys’06, 2006.}
 % Bibliografia o APTEEN.
+\bibitem{teen-Manjeshwar}{A. Manjeshwar and D. Agrawal ,,TEEN: a protocol for enhanced efficiency in wireless sensor networks.'', In Proceedings of the 1st International Workshop on Parallel and Distributed Computing Issues in Wireless Networks and Mobile Computing, 2001.}
 % Ma: https://link.springer.com/article/10.1186/s13638-018-1106-5
-\bibitem{apteen-wang}{J. Ma, S. Wang, C. Meng, i in., Journal on Wireless Communications and Networking, s. 102, 2018} 
+\bibitem{apteen-wang}{J. Ma, S. Wang, C. Meng, i in., ,,Journal on Wireless Communications and Networking'', s. 102, 2018}
 % Bilbiografia dodatkowa.
 % Kavitha: http://www.airitilibrary.com/Publication/alDetailedMesh?docid=20407467-201406-201503110020-201503110020-5135-5142
-\bibitem{Aggergation-Kavitha}{G. Kavitha, R.S.D. Wahidabanu, ,,Improved cluster head selection for efficient data aggregation in sensor networks`` Research Journal of Applied Sciences, Engineering and Technology, Vol. 7(24), s. 5135–5142, 2014.}
+\bibitem{Aggergation-Kavitha}{G. Kavitha, R.S.D. Wahidabanu, ,,Improved cluster head selection for efficient data aggregation in sensor networks'', Research Journal of Applied Sciences, Engineering and Technology, Vol. 7(24), s. 5135–5142, 2014.}
 % Jia: https://ieeexplore.ieee.org/abstract/document/7365420/
-\bibitem{DynamicCH-Jia}{D. Jia, H. Zhu, S. Zou, P. Hu, ,,Dynamic cluster head selection method for wireless sensor network.``, IEEE Sens. J. Vol. 16(8), s. 2746–2754, 2016.}
+\bibitem{DynamicCH-Jia}{D. Jia, H. Zhu, S. Zou, P. Hu, ,,Dynamic cluster head selection method for wireless sensor network.'', IEEE Sens. J. Vol. 16(8), s. 2746–2754, 2016.}
 % Golang książka
-% TODO Docker, Protocol Buffer, Gnuplot, git
-\bibitem{Golangbook}{A. Donowan, B. Kerninghan, ,,The Go Programming Language``, Addison-Wesley, ISBN 9780134190440, 2015.}
-
+\bibitem{GolangBook}{A. Donowan, B. Kerninghan, ,,The Go Programming Language'', Addison-Wesley, ISBN 9780134190440, 2015.}
+\bibitem{SoftwareDesingBook}{J. Ousterhout, ,,A Philosophy of Software Design'', ISBN 9781732102200, 2018.}
+\bibitem{DockerBook}{K. Matthias, S. Kane, ,,Docker: Up \& Running: Shipping Reliable Containers in Production, O'Reilly Media, ISBN 9781492036722, 2015.}
 \end{thebibliography}
 
 \zakonczenie  % wklejenie recenzji i opinii
