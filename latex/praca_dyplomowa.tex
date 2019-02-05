@@ -131,6 +131,8 @@ Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeni
 czujniki znajdują zastosowanie w nieskończonej liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. inteligentny dom) \cite{Shen}.
 
 %TODO Rozbudować wstęp.
+% Rozbudować wstęp i/lub zamiast section zrobić tu paragraph - dwa poniższe
+% podrozdziały są zbyt krótkie
 
 \section{Cel pracy}
 Celem pracy są badania problemów współbieżności w algorytmach sieci czujnikowej. Praca wykorzystuje 
@@ -146,6 +148,16 @@ W momencie zatwierdzenia założeń projektu przez promotora pracy, autor przyst
 oraz oszacowanie czasu niezbędnego do ukończenia całości projektu. Pierwszy prototyp uwidocznył istotne braki w funkcjonalności (np. brak wielokrotnego odpalania scenariuszy), które zostały
 zaimplementowane w finalnej wersji. Projekt zrealizowano w języku programowania Go, wraz z systemem kontroli wersji git, którego zdalna kopia dostępna jest na serwisie GitHub
 na profilu autora pracy (github.com/keadwen).
+
+% napisałbym o githubie wprost: publiczna i ogólnodostępna dlatego każdy może w
+% dowolnym momencie zweryfikować opisane w pracy wyniki. Ponadto można też kod
+% pobrać, przeanalizować, porównać z innymi rozwiązaniami. Nie wiem, na jakiej
+% licencji to Pan wrzucił ale może też "zmodyfikować i udostępniać dalej".
+
+% W części wstępnej i rozdziałach początkowych powinno być dużo (dużo więcej)
+% odniesień do literatury. Tutaj to uzyskać najłatwiej. W zasadzie każdy akapit
+% może być obarczony odniesieniem do jakiejś książki lub przeglądowego artykułu
+% o WSN.
 
 %-----------------
 % Wykorzystane technologie
@@ -202,8 +214,13 @@ func main() {
 
 \end{lstlisting}
 
+% fajnie by było mieć numerowanie linii kodu
+
 W powyższym przykładzie przedstawione zostało kilka innowacyjnych funkcjonalności języka Go.
+% innowacyjnych cech a nie funkcjonalności
+% funkcjonalność jest własnością, jest niepoliczalna 
 Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jednakże występuje kilka cech unikatowych dla Go.
+% j.w.
 
 \paragraph{Porównanie Go z Python}
 \begin{itemize}
@@ -215,6 +232,8 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item Python umożliwia runtime reflection.
  \item Python posiada większy bazę publicznych bibliotek.
 \end{itemize}
+% To nie jest porównanie. To jest wyliczenie własności.
+% Egzekucja oprogramowania? https://pl.wikipedia.org/wiki/Egzekucja
 
 \paragraph{Porównanie Go z C++}
 \begin{itemize}
@@ -227,6 +246,7 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (generics).
  \item C++ nie posiada systemu zarządzania pamięcią (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikro kontrolerach).
 \end{itemize}
+% To nie jest porównanie. To jest wyliczenie własności.
 
 \paragraph{Unikatowe cechy Go}
 \begin{itemize}
@@ -238,6 +258,8 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item Pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (benchmarking), formatowania składni kodu zgodnie ze standardem (gofmt),
        oraz wiele innych funkcjonalności.
 \end{itemize}
+% Egzekucyjny?... - może być pluton ;) Wykonywalny raczej.
+% Wyliczenie przydałoby się zamienić w zwykły tekst.
 
 \section{Serializacja danych Protocol Buffers}
 % FIXME: ściana tekstu - brak obrazków
@@ -271,7 +293,9 @@ message PESEL {
 
 Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
 (w przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP).
+% Ten nawias bez problemu może stać się pełnoprawnym zdaniem.
 Następnie, dane zserializowane zostają zapisane w formacie binarnym (wire format), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
+% Teksty angielskie proponuję pisać pismem pochyłym.
 bez potrzeby wykonania dalszego kodowania. 
 Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
 operowania danymi w sposób natywny dla wybranego języka programowania.
@@ -280,6 +304,9 @@ operowania danymi w sposób natywny dla wybranego języka programowania.
 
 Sekcja ta przedstawia zestaw narzędzi których funkcjonalności umożliwiły stworzenie oraz ułatwiły zarządzanie oprogramowaniem stworzonym w celach
 pracy dyplomowej. 
+% Słowo na "f".
+% "stworzonym w celach pracy dyplomowej" - słabo. Praca dyplomowa jest opisem.
+% Celem było coś innego.
 
 \subsection{System kontroli wersji git}
 Git to rozproszony system kontroli wersji stworzony jako wolne oprogramowanie (open source). 
@@ -288,11 +315,13 @@ Narzędzie to umożliwia tworzenie pobocznych gałęzi (branch) niezależnych od
 w kodzie na określonej wersji kontrolnej, które mogą następnie zostać wprowadzone ponownie do gałęzi głównej (merge).
 Architektura rozproszona git (w przeciwieństwie do scentralizowanych systemów kontroli wersji) umożliwia programistom na posiadanie lokalnej kopii repozytorium,
 której zmiany mogą zostać następnie wprowadzone do gałęzi głównej.
+% Tutaj na przykład można dać odnośnik do jakiejś książki a jest ich mnóstwo.
 
 \subsection{GNUPlot}
 
 GNUPlot to narzędzie do generowania wykresów funkcji w oparciu o dane wejściowe. Program dostępny jest niemal na każdym systemie operacyjnym.
 Przy pomocy GNUPlot generować można dwu- oraz trójwymiarowe wykresy, które zapisane mogą zostać w różnych formatach t.j. PNG, SVG czy JPEG.
+% GNUPlot też ma swoje książki.
 
 \subsection{Docker}
 
@@ -309,12 +338,17 @@ bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parame
 
 W tym rozdziale przedstawiona zostanie najważniejsza część teoretyczna bezprzewodowych sieci sensorowych, która jest niezbędna w celu zrozumienia problemu
 rozwiązywanego w pracy dyplomowej.
+% "która jest niezbędna w celu zrozumienia" - słabo. Za ostro, zbyt
+% protekcjonistycznie. Trzeba to złagodzić bo w tej formie to może obrazić 
+% czytelnika.
 
 \section{Wstęp do bezprzewodowych sieci sensorowych}
 Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również bezprzewodowymi sieciami czujników.
 Sieć czujnikowa składa się z urządzeń, których funkcją jest realizowanie określonego zadania.
 Pierwsze aplikacje i zastosowania bezprzewodowych sieci czujników zostały wdrożone na potrzeby wojskowe, jednakże przeciągu ostatnich lat, technologie te znalazły
 wiele nowych zastosowań w przemyśle (np. pomiary meteorologiczne) i aplikacjach codziennych (np. systemy domów inteligentnych).
+% Odniesienia do literatury - aż się prosi, żeby tutaj, w tym podrozdziale je
+% masowo umieścić.
 
 Rozwój technologii, malejący koszt elektroniki oraz dostępność produktów bezprzewodowej sieci czujnikowej, umożliwia tworzenie dedykowanych aplikacji.
 Na rynku dostępnych jest wiele urządzeń oraz rozwiązań, a proces wyboru uzależniony jest przede wszystkim od wymogów projektu oraz budżetu.
@@ -327,6 +361,10 @@ do węzła głównego. Węzeł główny, zwany również `sink` jest odpowiedzia
 W dalszej części pracy, przedstawione zostaną dwa protokoły trasowania (routingu), których zadaniem jest zoptymalizowanie energetyczne procesu komunikacji, podwyższenie niezawodności systemu 
 oraz umożliwienie zautomatyzowanej organizacji topologii sieci.
 By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, niezbędnym jest przedstawienie najprostszego schematu komunikacji, komunikacji bezpośredniej.
+% By móc zrozumiec - do zmiany. Praca dyplomowa to nie podrecznik. Pełni rolę
+% sprawozdawczą w pierwszej kolejności. Wyjaśnienie teorii i obserwacji ma być
+% dowodem na to, że autor pracy zrozumiał je - jeśli umiemy coś wyjaśnić to
+% zazwyczaj to sami rozumiemy.
 
 \section{Model transmisji}
 
@@ -359,6 +397,7 @@ zaimplementowanie algorytmu trasowania danych pomiędzy węzłami \cite{Akyildiz
 Istnieje wiele protokołów WSN, których dobór zależy od przede wszystkim od naszej aplikacji oraz
 parametrów sieci które wymagają optymalizacji. Poniższej przedstawione zostały cztery aspekty, których dokładne określenie pozwoli
 na dopasowanie najbardziej optymalnego algorytmu:
+% Poniższej -> Poniżej
 
 \begin{itemize}
  \item koszty energetyczne - w sieci w której ilość energii węzła jest ograniczona, zalecanym jest stosowanie algorytmów pozwalających
@@ -371,7 +410,9 @@ na dopasowanie najbardziej optymalnego algorytmu:
        algorytmu umożliwiającego detekcję brakujących fragmentów danych i retransmisję.
 \end{itemize}
 
+
 W następnej części pracy przedstawione zostaną 3 protokoły trasowania danych, które zostały zaimplementowane w symulatorze.
+% Przydałoby się napisać, w jakim symulatorze.
 Wybór ukierunkowany był na ograniczenie kosztów energetycznych w sieci, które umożliwia na wydłużenie czasu życia każdego z węzłów.
 
 \subsection{Komunikacja bezpośrednia}
@@ -381,6 +422,7 @@ Węzły znajdujące się sieci nie są zaangażowane w podejmowanie decyzji doty
 Adres węzła głównego (`sink`) może być zaprogramowany na poziomie pliku konfiguracyjnego.
 Dane wysyłane przez węzeł nadawane są bezpośrednio do węzła głównego.
 Model środowiska symulacyjnego definiuje koszt transmisji komunikacji. Wartość ta zależna jest od odległości między dwoma węzłami.
+% W zdecydowanej mierze zależy od odległości, ale nie tylko.
 Czas życia węzłów (posiadających identyczną ilość energii początkowej oraz wielkość przesyłanych informacji) wydłuża się, wraz z malejącym dystansem do węzła głównego.
 
 Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się bezpośrednio z węzłem głównym:
@@ -401,6 +443,7 @@ W drugiej fazie, fazie komunikacyjnej (steady state), węzły uczestniczące w s
 przesłane są do stacji bazowej.
 
 Faza konfiguracji (setup) zbudowana jest z trzech etapów.
+% Słowa po angielsku pismem pochyłym proponuję pisać.
 W pierwszym etapie węzły dokonują wyboru roli w rundzie. W LEACH występują dwa rodzaje węzłów 
 
 \begin{itemize}
@@ -429,6 +472,7 @@ węzeł standardowy wybiera węzeł CH znajdujący się najbliższej (węzeł kt
 Ostatnim etapem jest ukończenie formowania klasterów w którym znajduje się dokładnie jeden węzeł typu cluster head.
 Wystąpić może sytuacja w której węzeł typu cluster head nie posiada przynależących węzłów standardowych.
 Pozytywnie zakończona faza formowania klastrów tworzy stabilną sieci wymiany informacji.
+% sieci -> sieć
 
 W tym momencie rozpoczyna się faza komunikacji (`steady state`) w której węzły standardowe dokonują transmisji danych do  węzła typu cluster head.
 Węzły CH dokonują agregacji zebranych informacji oraz bezpośrednie przekazanie ich do węzła głównego (`sink`).
@@ -446,7 +490,7 @@ Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują 
 
 \subsection{PEGASIS}
 
-PEGASIS (Power-Efficient GAathering in Sensor Information Systems) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej.
+PEGASIS (Power-Efficient GAthering in Sensor Information Systems) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej.
 W przeciwieństwie do komunikacji bezpośredniej, PEGASIS podobnie jak LEACH jest protokołem w którym występuje hierarchia.
 
 PEGASIS jest protokołem dokonującym usprawnień w protokole LEACH. W przypadku sieci czujnikowej, urządzenia pełniące rolę węzłów posiadają ograniczone ilości energii, wynikające np. z zasilania bateryjnego.
@@ -491,6 +535,8 @@ Użytkownik (znajdujący się po lewej stronie) posiada możliwość uruchomien
 
 Opcja symulacji bez pliku konfiguracyjnego powoduje wygenerowanie pliku konfiguracyjnego w którym znajduje się 200 węzłów, rozproszonych w sposób
 pseudolosowy na przestrzeni 200 x 200.
+% 200 x 200 ale czego? Bez miary lub informacji o normalizacji taka
+% powierzchnia jest abstrakcją.
 
 Symulator tworzy wewnętrzną strukturę sieci i węzłów, które poddawane są symulacji. Wynik końcowy poszczególnych sieci zwracany jest do symulatora, który
 generuje pliki w formacie kompatybilnym z narzędziem GNU Plot. 
@@ -498,6 +544,8 @@ generuje pliki w formacie kompatybilnym z narzędziem GNU Plot.
 \subsection{Plik konfiguracyjny}
 
 Plik konfiguracyjny (`config file`) posiada dane wejściowe pozwalające na zbudowanie środowiska testowego. 
+% czy nazwa pliku to 'config file'? Bo jeśli nie to nie widzę powodu podawania
+% angielskiego tłumaczenia.
 Informacje zawarte w pliku konfiguracyjnym można podzielić na dwie sekcje:
 
 \begin{itemize}
@@ -574,6 +622,8 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
 \end{itemize}
 
 Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji węzła:
+% Wyżej jest opis a poniżej przykłady. Lepiej byłoby to zmieszać: opis i
+% przykład, opis i przykład...
 
 \begin{lstlisting}
 // Node defines a configuration for a single node.
@@ -635,6 +685,8 @@ message TimeDelay {
 \subsection{Moduł główny (Core)}
 
 Moduł główny posiada najważniejsze cechy i funkcjonalności umożliwiające modelowanie systemu symulatora WSN.
+% Już nie będę wskazywał użycia 'funkcjonalności' - trzeba całą pracę
+% przeszukać i poprawić tekst.
 Wszystkie zaimplementowane struktury (`structs`) znajdują się w jednej bibliotece (`package`) o nazwie `core`.
 
 \subsubsection{Węzeł (Node)}
@@ -667,6 +719,8 @@ func (n *Node) consume(e float64) error
 \end{lstlisting}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury węzła (Node):
+% Lista, lista, lista... Dobre w dokumentacji technicznej ale nie w pracy
+% dyplomowej. Uważam, że należy poniższą listę (a może listy?) przerobić na tekst.
 
 \begin{itemize}
  \item konfiguracja (`Conf`) - zmienna publiczna przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w `Konfiguracja węzła`).
@@ -724,6 +778,7 @@ func (net *Network) PopulateNodesAlivePoints()
 \end{lstlisting}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury sieci (Network):
+% Lista...
 
 \begin{itemize}
  \item protokół (`Protocol`) - zmienna publiczna przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
@@ -741,6 +796,7 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych str
 \end{itemize}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
+% Lista...
 
 \begin{itemize}
  \item AddNode - funkcja pozwala na dodanie węzła do sieci.
@@ -780,6 +836,7 @@ type Protocol interface {
 \end{lstlisting}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
+% Lista...
 
 \begin{itemize}
  \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
@@ -788,6 +845,7 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
 \end{itemize}
 
 Poniższa lista przedstawia zaimplementowane protokoły:
+% Lista...
 
 \begin{itemize}
  \item Komunikacja bezpośrednia	(Direct Communication) - wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (`sink`).
@@ -800,6 +858,9 @@ Poniższa lista przedstawia zaimplementowane protokoły:
 Symulator (`Simulator`) odpowiada za tworzenie środowisk symulacyjnych.
 Pojedynczy obiekt symulatora pozwala na zbudowanie wielu scenariuszy symulacji, a następnie ich uruchomienie oraz
 wygenerowanie metryk. Dane wyjściowe mogą zostać podane dalszej analizie przy wykorzystaniu zewnętrznych narzędzi (np. GNUPlot).
+% Tłumaczenie 'metrics' jako 'metryki' to nowomowa i kalka z angielskiego.
+% False friend. 'Metrics' to po polsku 'miary', w tym ujęciu. Lepiej jednak to
+% po prostu nazwać 'wynikami symulacji', nie kombinować.
 
 \begin{lstlisting}
 type Simulator struct {
@@ -825,6 +886,7 @@ func (s *Simulator) plotter() error
 \end{lstlisting}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury symulatora (`Simulator`):
+% Lista...
 
 \begin{itemize}
  \item przestrzeń nazw (`namespace`) - zmienna prywatna przechowuje nazwy symulacji, które w jednoznaczny sposób identyfikują sieć i konfigurację.
@@ -833,12 +895,23 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych str
 \end{itemize}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symulatora (`Simulator`):
+% Lista...
 
 \begin{itemize}
  \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
  \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
  \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
 \end{itemize}
+
+% Powtórzenia
+
+
+% Przykład naprawy a może refaktoryzacji :) pracy dyplomowej:
+% Węzły sieci są konfigurowane zgodnie z zaimplementowanym protokołem z użyciem
+% funkcji Setup. Określenie liczby węzłów sieci jest niezbedne w protokołach
+% takich jak LEACH i PEGASIS. W celu zdefiniowania tej wartości wywoływana jest
+% funkcja SetNodes. W niektórych protokołach konieczne jest także zdefiniowanie
+% liczby klastrów, co jest realizowane funkcją SetClusters.
 
 \section{Obsługa systemu}
  
@@ -930,6 +1003,9 @@ W tym przypadku podczas uruchamiania oprogramowania (proces opisany w sekcji `Ur
 użytkownik nie podaje pliku konfiguracyjnego. Oprogramowanie stworzy identyczny zestaw konfiguracyjny
 dla każdego zaimplementowanego protokołu. Parametry wygenerowanej konfiguracji dostępne poniżej:
 
+% Poniższa lista jest OK bo rzeczywiście jest prostym wymienieniem parametrów,
+% bez ich opisywania - to powinno/zostało zrobione wcześniej.
+% Jednak proponuję użyć 'noitemsep'.
 \begin{itemize}
  \item Protokół: Bezpośrednia komunikacja, LEACH, PEGASIS
  \item Maksymalna ilość rund: 25000
@@ -945,6 +1021,8 @@ dla każdego zaimplementowanego protokołu. Parametry wygenerowanej konfiguracji
 \end{itemize}
 
 Poniższa ilustracja przedstawia rozstawienie węzłów w sieci wygenerowanych dynamicznie:
+% Przykładowe ustawienie, czy jedyne jakie zostało użyte w symulacjach? Trzeba
+% to sprecyzować.
 
 \begin{figure}[H]
  \centering
@@ -953,6 +1031,8 @@ Poniższa ilustracja przedstawia rozstawienie węzłów w sieci wygenerowanych d
 
 \subsection{Uruchamianie scenariuszy}
 
+% Poniższe przykłady wymagają szerszego opisu. Czy można 1, 2, czy więcej
+% plików? Po co to? Jakie ma konsekwencje? Itd.
 Przykład uruchamiania projektu z dwoma plikami konfiguracyjnymi:
 \begin{lstlisting}
  $ /go/src/github.com/keadwen/msc_project/msc_project \
@@ -972,12 +1052,13 @@ W początkowym etapie tworzenia oprogramowania, zastosowane zostało rozwiązani
 generowała dwa wykresy:
 
 \begin{itemize}
- \item Wykres ilości aktywnych węzłów w każdej rundzie.
+ \item Wykres ilości aktywnych węzłów w każdej rundzie. % ilości -> liczby
  \item Wykres energii całkowitej posiadanej przez wszystkie węzły w każdej rundzie.
 \end{itemize}
 
 Rozwiązanie to pomimo zalet związanych z automatycznym tworzeniem wykresów, nie pozwalało na generowanie ich w jakości spełniającej
 wymagania pracy dyplomowej.
+% Powyższe zdanie aż prosi się o kontynuację w następnym zdaniu zaczynającym się od "Dlatego...".
 
 W momencie poprawnego zakończenia symulacji, folder plotdata powinien posiadać zestaw plików w formacie GNU plot.
 Pliki te należy następnie przekierować do GNUPlot. Poniżej przedstawiona została lista operacji umożliwiająca wygenerowanie wykresów:
@@ -1001,9 +1082,13 @@ Poprawna implementacja wymaga modyfikacji oprogramowania w kilku miejscach:
  \item Rozszerzenie mapProtocol w simulator/simulator.go
  \item Stworzenie nowego pliku .go w folderze core. Struktura reprezentująca nowy protokołu musi posiadać zestaw funkcji zgodny z interfejsem Protocol.
 \end{enumerate}
+% Powyższa lista może zostać, chociaż nie wiem na ile te wskazówki są
+% wystarczające.
+% 'nowy protokołu'
 
-Po wykonaniu wszystkich z powyższych kroków, protokół może zostać wykorzystany w symulacji.
+Po wykonaniu wszystkich powyższych kroków, protokół może zostać wykorzystany w symulacji.
 Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały ponownej kompilacji. W przeciwnym wypadku zmiany nie będą widoczne.
+% słowa angielskie pochyłym
 
 %-----------------
 % Przedstawienie i opracowanie wyników
@@ -1011,12 +1096,14 @@ Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały ponow
 \chapter{Opracowanie wyników eksperymentów}
 
 W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy wykorzystaniu autorskiego oprogramowania.
+% oprogramowania omówionego wcześniej.
 
 \section{Dane wejściowe}
 
 Oprogramowanie posiada implementacje trzech algorytmów: komunikację bezpośrednią, LEACH oraz PEGASIS (dokładniejszy opis działania protokołów został przedstawiony w poprzednich rozdziałach).
 W celu porównania efektywności energetycznej pomiędzy trzema rozwiązaniami, niezbędne jest precyzyjne zdefiniowanie testów.
 W systemie posiadamy cztery parametry, których wartości będą modyfikowane i efekty zmian będą porównywane:
+% Nagła zmiana stylu tekstu - 'posiadamy'.
 
 \begin{itemize}
  \item Wielkość wiadomości - parametr ten definiuje wielkość wiadomości wysyłanej pomiędzy węzłami (mierzone w Bajtach).
@@ -1032,6 +1119,7 @@ W ten sposób zapewnione jest stworzenie identycznego środowiska testowego, nie
 
 Każdy z testów oraz wartości przedstawione na grafie są wynikami uzyskanymi w procesie wielokrotnego uruchomienia identycznego scenariusza. 
 Ilość uruchomień zdefiniowana dla każdego z testów (domyślenie wynosi 100).
+% domyślenie
 W celach testów wygenerowana została `konfiguracja domyślna`, w której zdefiniowana jest lokalizacja 200 unikatowych węzłów o energii początkowej wynoszącej 2 [J], 
 rozdystrybuowanych w sposób pseudolosowy na przestrzeni X: [0, 200], Y: [0, 200]. Lokalizacja węzła typu `sink` to X:100, Y: 450.
 Scenariusze wykorzystujące np. 50 węzłów, korzystają z podzbioru węzłów domyślnych, czyli z pierwszych 50 węzłów konfiguracji domyślnej.
@@ -1048,6 +1136,8 @@ Poniższy rysunek przedstawia rozmieszczenie 200 węzłów standardowych oraz 1 
 Test `Wielkość wiadomości` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów dla różnych wielkości wiadomości wysyłanej pomiędzy węzłami.
 
 Lista plików konfiguracyjnych:
+% Ta lista niczego nie mówi, żadnej treści nie ma. Zamiast tego powinien być
+% opis tej listy, co zawiera, dlaczego tak a nie inaczej...
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_projec$ tree testdata/test_1/
@@ -1070,6 +1160,8 @@ testdata/test_1/
 
 
 Uruchomienie oprogramowania:
+% Poniższy listing jest OK, ale można to opisać lepiej. W połączeniu z opisem
+% listy konfigów będzie OK.
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
@@ -1088,6 +1180,9 @@ testdata/test_1/pegasis200_m256.pbtxt
 \end{lstlisting}
 
 Tabela uzyskanych wyników:
+% Tabela ma za dużo białej przestrzeni. Trzeba ją przeorganizować. Pierwsze
+% dwie kolumny de facto są nagłówkiem. Całość pewnie da się zrobić w poziomie -
+% chyba o tym Panu pisałem.
 
 \begin{longtable}{*{4}{c}}
 \toprule
@@ -1125,12 +1220,14 @@ PEGASIS	& 32	& 1	& 1136 \\*
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m32.png}
  \caption{Funkcja ilości węzłów aktywnych w rundzie (m=32B).}
+ % liczby węzłów
  \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m32.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=32B).}
 \end{figure}
 
 \par
 Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 1434.
+% ilość -> liczba
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.3\% dla wartości minimalnej (1416), oraz wydłużenie czasu pracy na poziomie +14.0\% dla mediany (1635), +27.7\% dla wartości maksymalnej (1636).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.5\% dla wartości minimalnej (1112), -17.4\% dla mediany (1184), -11.2\% dla wartości maksymalnej (1274).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1139,6 +1236,7 @@ Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 1000 rund.
 
+% Nad tą tabelą tak samo jak nad poprzednią trzeba trochę popracować.
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
@@ -1189,6 +1287,7 @@ Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 500 rund. 
 
+% Nad tą tabelą tak samo jak nad poprzednią trzeba trochę popracować.
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
@@ -1239,6 +1338,7 @@ Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 250 rund.
 
+% Nad tą tabelą tak samo jak nad poprzednią trzeba trochę popracować.
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
@@ -1290,11 +1390,13 @@ Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżo
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 120 rund.
 
 \subsection{Test 2 - Ilość węzłów w sieci}
+% liczba, liczba, liczba...
 
 Test `Ilość węzłów w sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem ilości węzłów znajdujących się w sieci.
 
 List plików konfiguracyjnych:
-
+% Jak wcześniej - lista jest bez sensu, jeśli nie wiadomo co w plikach jest.
+% Lepiej je opisać, napisać w jakim są katalogu itd...
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ tree testdata/test_2/
 testdata/test_2/
@@ -1318,6 +1420,8 @@ testdata/test_2/
 \end{lstlisting}
 
 Uruchomienie oprogramowania:
+% Szablon - więc i uwagi takie jak wyżej. I tak aż do końca rozdziału. 
+% Rinse and repeat.
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
@@ -2165,18 +2269,31 @@ Zauważyć można zależność, że efektywność energetyczna LEACH oraz PEGASI
 \chapter{Podsumowanie}
 \par
 Koncepcja i projekt systemu symulującego model bezprzewodowej sieci czujnikowej został opracowany przez autora pracy.
+% W niniejszej pracy przedstawiony został autorski projekt oprogramowania do
+% symulacji bezprzewodowych sieci czujnikowych. 
 Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
+% Denerwujące słowo na "f"? ;P
+% O konsultowaniu nie piszemy. Ja to napiszę w opinii.
 Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się tworzeniem prototypu systemu symulującego.
 Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu \cite{SoftwareDesingBook}.
 Projekt zrealizowano w języku Go, przy wykorzystaniu rozszerzonego systemu kontroli wersji git.
+% Tu bym się pochwalił, że to na githubie i że każdy może obejrzeć i uruchomić
+% sam. Otwarty kod krytyki się nie boi ;)
 \par
+% \par? Dlaczego nie pusta linia?
 Proces zbieranie wyników generowanych przez system symulacyjny został podzielony na cztery główne testy.
+% zbieranie
 W każdym z testów wybrany został jeden parametr konfiguracji, który podlegał wielokrotnym zmianom mającym na celu zaobserwowanie zależności czasu i efektywności pracy sieci.
 \par
 Najistotniejszym wnioskiem zaobserwowanym zarówno w momencie tworzenia pracy, jak i procesie tworzenia wyników jest zależność między uzyskanymi wynikami maksymalnego czasu pracy, a konfiguracją sieci.
+% Wyników nie 'tworzymy'. Można je na przykład 'zebrać', 'uzyskać'. 'Tworzenie'
+% pasuje do plików z wynikami symulacji - te pliki rzeczywiście są 'tworzone'
+% przez oprogramowanie. Subtelna ale istotna różnica.
 Oznacza to, że niemalże niemożliwym jest określenie stałej (przewidywalnej) efektywności energetycznej sieci w momencie wdrożenia LEACH, PEGASIS czy innego algorytmu usprawniającego
 wymianę danych w bezprzewodowej sieci czujników. W przypadku scenariusza wygenerowanego w ramach pracy dyplomowej zauważyć można, że węzeł 171 (X: 4.508531144480791, Y: 6.256340981494829) 
 znajduje się bardzo blisko `sink`. Czas życia tego węzła będzie kilkukrotnie dłuższy niż w przypadku węzła najbardziej oddalonego, węzła 195 (X: 197.47820095322837, Y: 190.37079023341855).
+% Przypadek szczególny. Podsumowanie powinno uogólniać, wyciągać spójne
+% wnioski.
 \par
 Każdy z testów definiuje kilka wartości parametru modyfikowanego, np. domyślna wielkość wiadomości wynosi 128 [B], dlatego też test składa się z mniejszych testów w których
 praca węzłów podlega symulacji przy wykorzystaniu identycznej lokalizacji węzłów zdefiniowanych w konfiguracji domyślnej. Jedyną wartością ulegającą modyfikacji była
@@ -2194,6 +2311,19 @@ danych z większej puli węzłów.
 W scenariuszach w których odległości pomiędzy węzłami zwiększają się, koszt przekazywania informacji PEGASIS przy pomocy algorytmu `greedy` staje się bardzo kosztowny. Każdy kolejny węzeł
 odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energetyczny transmisji, który w końcowych rundach bardzo szybko eliminuje węzły niezdolne do przekazywania danych
 (ze względu na niewystarczające zasoby energetyczne). Korzystnym byłoby zaimplementowanie metody aggregacji i kompresji zebranych danych przed ich przesłaniem do węzła docelowego.
+% To powyżej jest bardzo fajne. Trzeba to uwypuklić. W podsumowaniu można sobie
+% pozwolić na większą swobodę języka. Tak jak wcześniej należy przedstawiać
+% podstawy wiedzy, fakty, obiektywne prawdy tak tutaj można skomentować
+% uzyskane rezultaty. Dlatego sformułowania typu 'zaskakujący', 'nietypowy',
+% 'niespodziewany' są w porządku.
+
+% W podsumowaniu można też napisać w pierwszej osobie, czego nowego udało się
+% nauczyć, jakie doświadczenie zdobyć, jaką dotychczasową wiedzę i zdolności
+% potwierdzić lub ugruntować.
+
+% Można też napisać, co dałoby się jeszcze dodać do powstałego rozwiązania,
+% jakie ma ono braki (ale nie błędy), jakie zagadnienia byłyby zdaniem autora
+% warte przeprowadzenia dalszych badań.
 
 
 \begin{thebibliography}{99}
@@ -2242,6 +2372,8 @@ odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energ
 \bibitem{DockerBook}{K. Matthias, S. Kane, ,,Docker: Up \& Running: Shipping Reliable Containers in Production, O'Reilly Media, ISBN 9781492036722, 2015.}
 \end{thebibliography}
 
+% Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF
+% dostarczanym przez dyplomanta i nie są oprawiane.
 \zakonczenie  % wklejenie recenzji i opinii
 
 \end{document}
