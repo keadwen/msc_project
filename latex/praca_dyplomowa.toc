@@ -4,8 +4,8 @@
 \contentsline {section}{\numberline {1.2}Tworzenie projektu}{1}{section.1.2}
 \contentsline {chapter}{\numberline {2}Wykorzystane technologie}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}J\IeC {\k e}zyk programowania Go}{3}{section.2.1}
-\contentsline {paragraph}{Por\IeC {\'o}wnanie Go z Python}{4}{section*.4}
-\contentsline {paragraph}{Por\IeC {\'o}wnanie Go z C++}{5}{section*.5}
+\contentsline {paragraph}{Cechy j\IeC {\k e}zyka Go i Python}{4}{section*.4}
+\contentsline {paragraph}{Cechy j\IeC {\k e}zyka Go i C++}{5}{section*.5}
 \contentsline {paragraph}{Unikatowe cechy Go}{5}{section*.6}
 \contentsline {section}{\numberline {2.2}Serializacja danych Protocol Buffers}{6}{section.2.2}
 \contentsline {section}{\numberline {2.3}Narz\IeC {\k e}dzia dodatkowe}{7}{section.2.3}

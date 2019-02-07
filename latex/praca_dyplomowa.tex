@@ -45,6 +45,7 @@
   breakatwhitespace=true,
   tabsize=2
 }
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt}
 
 
 % rozmaite polecenia pomocnicze
@@ -149,6 +150,7 @@ oraz oszacowanie czasu niezbędnego do ukończenia całości projektu. Pierwszy 
 zaimplementowane w finalnej wersji. Projekt zrealizowano w języku programowania Go, wraz z systemem kontroli wersji git, którego zdalna kopia dostępna jest na serwisie GitHub
 na profilu autora pracy (github.com/keadwen).
 
+%TODO
 % napisałbym o githubie wprost: publiczna i ogólnodostępna dlatego każdy może w
 % dowolnym momencie zweryfikować opisane w pracy wyniki. Ponadto można też kod
 % pobrać, przeanalizować, porównać z innymi rozwiązaniami. Nie wiem, na jakiej
@@ -214,39 +216,31 @@ func main() {
 
 \end{lstlisting}
 
-% fajnie by było mieć numerowanie linii kodu
+W powyższym przykładzie przedstawione zostało kilka innowacyjnych cech języka Go.
+Składnia języka oraz cechy zbliżone są do C/C++ czy Python, jednakże występuje kilka cech unikatowych dla Go.
 
-W powyższym przykładzie przedstawione zostało kilka innowacyjnych funkcjonalności języka Go.
-% innowacyjnych cech a nie funkcjonalności
-% funkcjonalność jest własnością, jest niepoliczalna 
-Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jednakże występuje kilka cech unikatowych dla Go.
-% j.w.
-
-\paragraph{Porównanie Go z Python}
+\paragraph{Cechy języka Go i Python}
 \begin{itemize}
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem statycznym, co pozwala wyeliminować błędy typu runtime wynikające z typu zmiennej.
  \item Go jest językiem samodokumentującym. Określony odgórnie format komentarzy umożliwia automatyczne tworzenie przejrzystej dokumentacji.
- \item Go jest językiem kompilowanym, co pozwala na szybsze uruchamianie i egzekucję oprogramowania.
+ \item Go jest językiem kompilowanym, co pozwala na szybsze uruchamianie i wykonanie poleceń oprogramowania.
  \item Go wykorzystuje mniej pamięci. Przykład: W Go zmienna typu int32 wymaga 4 bajty pamięci, w Python 24 bajty.
  \item Python umożliwia runtime reflection.
  \item Python posiada większy bazę publicznych bibliotek.
 \end{itemize}
-% To nie jest porównanie. To jest wyliczenie własności.
-% Egzekucja oprogramowania? https://pl.wikipedia.org/wiki/Egzekucja
 
-\paragraph{Porównanie Go z C++}
+\paragraph{Cechy języka Go i C++}
 \begin{itemize}
- \item Go posiada system zarządzania pamięcią (garbage collector).
+ \item Go posiada system zarządzania pamięcią (\textit{garbage collector}).
  \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
  \item Go jest językiem samodokumentującym. Nie wymaga tworzenia plików typu header.
- \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (inheritance) została zastąpiona osadzaniem (embedding).
+ \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (\textit{inheritance}) została zastąpiona osadzaniem (\textit{embedding}).
  \item Go posiada możliwość użycia (zaimportowania) dowolnej biblioteki C, C++.
- \item C++ posiada osiągnąć szybszą egzekucję oprogramowania.
- \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (generics).
- \item C++ nie posiada systemu zarządzania pamięcią (garbage collector), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikro kontrolerach).
+ \item C++ pozwala osiągnąć krótszy czas wykonania poleceń oprogramowania.
+ \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (\textit{generics}).
+ \item C++ nie posiada systemu zarządzania pamięcią (\textit{garbage collector}), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikro kontrolerach).
 \end{itemize}
-% To nie jest porównanie. To jest wyliczenie własności.
 
 \paragraph{Unikatowe cechy Go}
 \begin{itemize}
@@ -255,18 +249,17 @@ Składnia języka oraz funkcjonalności zbliżone są do C/C++ czy Python, jedna
  \item Dynamiczna alokacja typu zmiennej statycznej.
  \item Natywne wspieranie tworzenie oprogramowania wykorzystującego wielowątkowość i współbieżność procesów.
  \item Natywna metoda testowania funkcjonalności i bibliotek.
- \item Pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (benchmarking), formatowania składni kodu zgodnie ze standardem (gofmt),
+ \item Pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (\textit{benchmarking}), formatowania składni kodu zgodnie ze standardem (gofmt),
        oraz wiele innych funkcjonalności.
 \end{itemize}
-% Egzekucyjny?... - może być pluton ;) Wykonywalny raczej.
-% Wyliczenie przydałoby się zamienić w zwykły tekst.
+% TODO: Wyliczenie przydałoby się zamienić w zwykły tekst.
 
 \section{Serializacja danych Protocol Buffers}
-% FIXME: ściana tekstu - brak obrazków
+
 Protocol Buffers (proto, protobuf) to mechanizm serializacji danych stworzony na potrzeby firmy Google, Inc.
 Protocol Buffers to mechanizm współpracującym niezależnie od języka oprogramowania aplikacji czy platformy na którym uruchamiana jest aplikacja.
-Technologia ta definiuje strukturę danych (proto schema) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
-oraz złożonych komunikatów (message). Poniżej przedstawiona została przykładowa struktura.
+Technologia ta definiuje strukturę danych (\textit{proto schema}) za pomocą dedykowanego języka, składającego się z prostych zmiennych (np.: int64, string) 
+oraz złożonych komunikatów (\textit{message}). Poniżej przedstawiona została przykładowa struktura.
 
 \begin{lstlisting}
 // example.proto
@@ -292,40 +285,33 @@ message PESEL {
 \end{lstlisting}
 
 Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
-(w przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP).
-% Ten nawias bez problemu może stać się pełnoprawnym zdaniem.
-Następnie, dane zserializowane zostają zapisane w formacie binarnym (wire format), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
-% Teksty angielskie proponuję pisać pismem pochyłym.
+W przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP.
+Następnie, dane zserializowane zostają zapisane w formacie binarnym (\textit{wire format}), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
 bez potrzeby wykonania dalszego kodowania. 
 Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
 operowania danymi w sposób natywny dla wybranego języka programowania.
 
 \section{Narzędzia dodatkowe}
 
-Sekcja ta przedstawia zestaw narzędzi których funkcjonalności umożliwiły stworzenie oraz ułatwiły zarządzanie oprogramowaniem stworzonym w celach
-pracy dyplomowej. 
-% Słowo na "f".
-% "stworzonym w celach pracy dyplomowej" - słabo. Praca dyplomowa jest opisem.
-% Celem było coś innego.
+Sekcja ta przedstawia zestaw narzędzi których cechy ułatwiły proces projektowania, implementacji i zarządzania oprogramowaniem stworzonym na potrzeby
+pracy dyplomowej.
 
 \subsection{System kontroli wersji git}
-Git to rozproszony system kontroli wersji stworzony jako wolne oprogramowanie (open source). 
+Git to rozproszony system kontroli wersji stworzony jako wolne oprogramowanie (open source) \cite{gitBook}. 
 Głównymi architektem narzędzia jest Linus Torvalds. Git to oprogramowanie powszechnie stosowanym w przypadku zarządzania oprogramowaniem.
-Narzędzie to umożliwia tworzenie pobocznych gałęzi (branch) niezależnych od głównej gałęzi. Funkcjonalność ta pozwala na niezależne wprowadzanie zmian
-w kodzie na określonej wersji kontrolnej, które mogą następnie zostać wprowadzone ponownie do gałęzi głównej (merge).
+Narzędzie to umożliwia tworzenie pobocznych gałęzi (\textit{branch}) niezależnych od głównej gałęzi. Funkcjonalność ta pozwala na niezależne wprowadzanie zmian
+w kodzie na określonej wersji kontrolnej, które mogą następnie zostać wprowadzone ponownie do gałęzi głównej (\textit{merge}).
 Architektura rozproszona git (w przeciwieństwie do scentralizowanych systemów kontroli wersji) umożliwia programistom na posiadanie lokalnej kopii repozytorium,
 której zmiany mogą zostać następnie wprowadzone do gałęzi głównej.
-% Tutaj na przykład można dać odnośnik do jakiejś książki a jest ich mnóstwo.
 
 \subsection{GNUPlot}
 
-GNUPlot to narzędzie do generowania wykresów funkcji w oparciu o dane wejściowe. Program dostępny jest niemal na każdym systemie operacyjnym.
+GNUPlot to narzędzie do generowania wykresów funkcji w oparciu o dane wejściowe \cite{gnuplotBook}. Program dostępny jest niemal na każdym systemie operacyjnym.
 Przy pomocy GNUPlot generować można dwu- oraz trójwymiarowe wykresy, które zapisane mogą zostać w różnych formatach t.j. PNG, SVG czy JPEG.
-% GNUPlot też ma swoje książki.
 
 \subsection{Docker}
 
-Docker to narzędzie stworzone jako wolne oprogramowanie (open source) napisane w języku Go przez firmę Docker, Inc \cite{DockerBook}.
+Docker to narzędzie stworzone jako wolne oprogramowanie (\textit{open source}) napisane w języku Go przez firmę Docker, Inc \cite{DockerBook}.
 Narzędzie to pozwala na tworzenie kontenerów, które izolują aplikację na poziomie systemu operacyjnego. W przeciwieństwie do maszyn wirtualnych, kontener nie wymaga
 wirtualizowania systemu operacyjnego dla każdego z kontenerów. Wszystkie równolegle działające kontenery aplikacji działające na pojedynczym urządzeniu współdzielą
 parametry fizyczne maszyny oraz jądro systemu operacyjnego (np. Linux). Izolacja kontenerów widoczna jest na poziomie zależności (dependency) do określonych wersji
@@ -336,35 +322,26 @@ bibliotek (libraries), narzędzi (binaries), plików konfiguracyjnych czy parame
 %-----------------
 \chapter{Bezprzewodowe sieci czujnikowe}
 
-W tym rozdziale przedstawiona zostanie najważniejsza część teoretyczna bezprzewodowych sieci sensorowych, która jest niezbędna w celu zrozumienia problemu
-rozwiązywanego w pracy dyplomowej.
-% "która jest niezbędna w celu zrozumienia" - słabo. Za ostro, zbyt
-% protekcjonistycznie. Trzeba to złagodzić bo w tej formie to może obrazić 
-% czytelnika.
+W tym rozdziale przedstawiona zostanie najważniejsza część teoretyczna bezprzewodowych sieci sensorowych. Materiał przedstawiony w tym rozdziale
+pozwala na lepsze zrozumienie istniejących zjawisk fizycznych oraz problemu rozwiązywanego w pracy dyplomowej.
 
 \section{Wstęp do bezprzewodowych sieci sensorowych}
-Bezprzewodowe sieci sensorowe (wireless sensor network) nazywa się również bezprzewodowymi sieciami czujników.
-Sieć czujnikowa składa się z urządzeń, których funkcją jest realizowanie określonego zadania.
+Bezprzewodowe sieci sensorowe (\textit{wireless sensor network}) nazywa się również bezprzewodowymi sieciami czujników.
+Sieć czujnikowa składa się z urządzeń, których funkcją jest realizowanie określonego zadania \cite{Wiley-WSN}.
 Pierwsze aplikacje i zastosowania bezprzewodowych sieci czujników zostały wdrożone na potrzeby wojskowe, jednakże przeciągu ostatnich lat, technologie te znalazły
-wiele nowych zastosowań w przemyśle (np. pomiary meteorologiczne) i aplikacjach codziennych (np. systemy domów inteligentnych).
-% Odniesienia do literatury - aż się prosi, żeby tutaj, w tym podrozdziale je
-% masowo umieścić.
+wiele nowych zastosowań w przemyśle (np. pomiary meteorologiczne) i aplikacjach codziennych (np. systemy domów inteligentnych) \cite{wsn-future}.
 
-Rozwój technologii, malejący koszt elektroniki oraz dostępność produktów bezprzewodowej sieci czujnikowej, umożliwia tworzenie dedykowanych aplikacji.
-Na rynku dostępnych jest wiele urządzeń oraz rozwiązań, a proces wyboru uzależniony jest przede wszystkim od wymogów projektu oraz budżetu.
+Rozwój technologii, malejący koszt elektroniki oraz dostępność produktów bezprzewodowej sieci czujnikowej, umożliwia tworzenie dedykowanych aplikacji \cite{Petriu}.
+Na rynku dostępnych jest wiele urządzeń oraz rozwiązań, a proces wyboru uzależniony jest przede wszystkim od wymogów projektu oraz budżetu \cite{wsn-future} \cite{Yick}.
 Dla uproszczenia przyjąć można, że pojedynczy czujnik powinien składać się z procesora zdolnego wykonywać określone zadanie, pamięci zdolnej do przechowywania informacji
 oraz anteny, która umożliwia nadawanie i odbieranie informacji.
 
-Proces wymiany informacji między urządzeniami zależy od protokołów i implementacji.
+Proces wymiany informacji między urządzeniami zależy od protokołów i implementacji \cite{Shen}.
 Niezależnie jednak od protokołu i implementacji, cel pozostaje niezmienny. Informacje posiadane przez węzeł w sieci (np. pomiar temperatury otoczenia) muszą zostać przekazane z węzła pomiarowego 
-do węzła głównego. Węzeł główny, zwany również `sink` jest odpowiedzialnym za agregację wszystkich informacji oraz ich dalsze przetwarzanie.  
-W dalszej części pracy, przedstawione zostaną dwa protokoły trasowania (routingu), których zadaniem jest zoptymalizowanie energetyczne procesu komunikacji, podwyższenie niezawodności systemu 
-oraz umożliwienie zautomatyzowanej organizacji topologii sieci.
-By móc zrozumieć istotę i korzyści wykorzystania protokołów trasowania, niezbędnym jest przedstawienie najprostszego schematu komunikacji, komunikacji bezpośredniej.
-% By móc zrozumiec - do zmiany. Praca dyplomowa to nie podrecznik. Pełni rolę
-% sprawozdawczą w pierwszej kolejności. Wyjaśnienie teorii i obserwacji ma być
-% dowodem na to, że autor pracy zrozumiał je - jeśli umiemy coś wyjaśnić to
-% zazwyczaj to sami rozumiemy.
+do węzła głównego. Węzeł główny, zwany również \textit{sink} jest odpowiedzialnym za agregację wszystkich informacji oraz ich dalsze przetwarzanie.  
+W dalszej części pracy, przedstawione zostaną dwa protokoły trasowania (\textit{routing}) \cite{WSN-routing}, których zadaniem jest zoptymalizowanie energetyczne procesu komunikacji \cite{Heinzelman} \cite{EnergyAwareRouting}, podwyższenie niezawodności systemu 
+oraz umożliwienie zautomatyzowanej organizacji topologii sieci \cite{Rodoplu}.
+Korzyści płynące z wykorzystania protokołów trasowania są niemieżalne bez uprzedniego przedstawienia najprostszego schematu komunikacji, komunikacji bezpośredniej.
 
 \section{Model transmisji}
 
@@ -395,9 +372,8 @@ Warstwa ta w przeciwieństwie do warstwy fizycznej, odpowiedzialna jest za logic
 zaimplementowanie algorytmu trasowania danych pomiędzy węzłami \cite{Akyildiz} \cite{WSN-routing}.
 
 Istnieje wiele protokołów WSN, których dobór zależy od przede wszystkim od naszej aplikacji oraz
-parametrów sieci które wymagają optymalizacji. Poniższej przedstawione zostały cztery aspekty, których dokładne określenie pozwoli
+parametrów sieci które wymagają optymalizacji. Poniżej przedstawione zostały cztery aspekty, których dokładne określenie pozwoli
 na dopasowanie najbardziej optymalnego algorytmu:
-% Poniższej -> Poniżej
 
 \begin{itemize}
  \item koszty energetyczne - w sieci w której ilość energii węzła jest ograniczona, zalecanym jest stosowanie algorytmów pozwalających
@@ -410,19 +386,17 @@ na dopasowanie najbardziej optymalnego algorytmu:
        algorytmu umożliwiającego detekcję brakujących fragmentów danych i retransmisję.
 \end{itemize}
 
-
-W następnej części pracy przedstawione zostaną 3 protokoły trasowania danych, które zostały zaimplementowane w symulatorze.
-% Przydałoby się napisać, w jakim symulatorze.
+W następnej części pracy przedstawione zostaną 3 protokoły trasowania danych, które zostały zaimplementowane w symulatorze, będącym elementem pracy dyplomowej.
 Wybór ukierunkowany był na ograniczenie kosztów energetycznych w sieci, które umożliwia na wydłużenie czasu życia każdego z węzłów.
 
 \subsection{Komunikacja bezpośrednia}
 
-Komunikacja bezpośrednia jest rozwiązaniem najprostszym z perspektywy implementacji, jednakże nieefektywnym z poziomu energetycznego. 
+Komunikacja bezpośrednia jest rozwiązaniem najprostszym z perspektywy implementacji, jednakże nieefektywnym z poziomu energetycznego \cite{WSN-routing} \cite{Wiley-WSN}. 
 Węzły znajdujące się sieci nie są zaangażowane w podejmowanie decyzji dotyczących optymalizacji kosztów transmisji. 
-Adres węzła głównego (`sink`) może być zaprogramowany na poziomie pliku konfiguracyjnego.
+Adres węzła głównego (\textit{sink}) może być zaprogramowany na poziomie pliku konfiguracyjnego.
 Dane wysyłane przez węzeł nadawane są bezpośrednio do węzła głównego.
-Model środowiska symulacyjnego definiuje koszt transmisji komunikacji. Wartość ta zależna jest od odległości między dwoma węzłami.
-% W zdecydowanej mierze zależy od odległości, ale nie tylko.
+Model środowiska symulacyjnego definiuje koszt transmisji komunikacji. Wartość ta zależna jest przede wszystkim od odległości między dwoma węzłami.
+Występują również koszty np. koszt energetyczny czasem pracy procesora odpowiedzialnego za przetwarzanie danych.
 Czas życia węzłów (posiadających identyczną ilość energii początkowej oraz wielkość przesyłanych informacji) wydłuża się, wraz z malejącym dystansem do węzła głównego.
 
 Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się bezpośrednio z węzłem głównym:
@@ -434,20 +408,19 @@ Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się b
 
 \subsection{LEACH}
 
-LEACH (Low-Energy Adaptive Clustering Hierarchy) jest algorytmem wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej \cite{Akyildiz}.
+LEACH (\textit{Low-Energy Adaptive Clustering Hierarchy}) jest algorytmem wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej \cite{Akyildiz}.
 W przeciwieństwie do komunikacji bezpośredniej, LEACH jest protokołem w którym występuje hierarchia. 
 
-Zestaw operacji w protokole LEACH nazywa się rundami (round). Każda z rund podzielona jest na dwie fazy.
-W pierwszej fazie, fazie konfiguracyjnej (setup), węzły dokonują podziału sieci na niezależne klastry (cluster) \cite{DynamicCH-Jia}.
-W drugiej fazie, fazie komunikacyjnej (steady state), węzły uczestniczące w sieci dokonują wymiany informacji za pomocą agregacji danych w klastrze, które następnie
+Zestaw operacji w protokole LEACH nazywa się rundami (\textit{round}). Każda z rund podzielona jest na dwie fazy.
+W pierwszej fazie, fazie konfiguracyjnej (\textit{setup}), węzły dokonują podziału sieci na niezależne klastry (\textit{cluster}) \cite{DynamicCH-Jia}.
+W drugiej fazie, fazie komunikacyjnej (\textit{steady state}), węzły uczestniczące w sieci dokonują wymiany informacji za pomocą agregacji danych w klastrze, które następnie
 przesłane są do stacji bazowej.
 
-Faza konfiguracji (setup) zbudowana jest z trzech etapów.
-% Słowa po angielsku pismem pochyłym proponuję pisać.
-W pierwszym etapie węzły dokonują wyboru roli w rundzie. W LEACH występują dwa rodzaje węzłów 
+Faza konfiguracji (\textit{setup}) zbudowana jest z trzech etapów.
+W pierwszym etapie węzły dokonują wyboru roli w rundzie. W LEACH występują dwa rodzaje węzłów:
 
 \begin{itemize}
- \item węzły typu cluster head (CH)
+ \item węzły typu \textit{cluster head} (CH)
  \item węzły standardowe (non-CH)
 \end{itemize}
 
@@ -460,26 +433,25 @@ T(n) = \begin{cases}
 \end{cases}
 \]
 
-gdzie P oznacza wartość z zakresu (0, 1] definiująca prawdopodobieństwa wyznaczenia węzła typu cluster head.
-G jest zbiorem węzłów które nie pełniły roli cluster head w ostatnich 1/P rundach \cite{Bajelan}.
+gdzie P oznacza wartość z zakresu (0, 1] definiująca prawdopodobieństwa wyznaczenia węzła typu \textit{cluster head}.
+G jest zbiorem węzłów które nie pełniły roli \textit{cluster head} w ostatnich 1/P rundach \cite{Bajelan} \cite{ACM-WSN}.
 
 W momencie ustalenia roli przez węzły, każdy z węzłów informuje pozostałe węzły uczestniczące w sieci o swojej roli w rundzie.
 
 Kolejnym etapem fazy konfiguracji jest wyznaczenie klastra do którego zostaną przyłączone węzły standardowe.
-Każdy z węzłów standardowych wybiera jeden węzeł typu cluster head. W przypadku otrzymania informacji od kilku węzłów typu cluster head,
+Każdy z węzłów standardowych wybiera jeden węzeł typu \textit{cluster head} (CH). W przypadku otrzymania informacji od kilku węzłów typu \textit{cluster head},
 węzeł standardowy wybiera węzeł CH znajdujący się najbliższej (węzeł którego sygnał jest najmocniejszy).
 
-Ostatnim etapem jest ukończenie formowania klasterów w którym znajduje się dokładnie jeden węzeł typu cluster head.
-Wystąpić może sytuacja w której węzeł typu cluster head nie posiada przynależących węzłów standardowych.
-Pozytywnie zakończona faza formowania klastrów tworzy stabilną sieci wymiany informacji.
-% sieci -> sieć
+Ostatnim etapem jest ukończenie formowania klasterów w którym znajduje się dokładnie jeden węzeł typu \textit{cluster head}.
+Wystąpić może sytuacja w której węzeł typu \textit{cluster head} nie posiada przynależących węzłów standardowych.
+Pozytywnie zakończona faza formowania klastrów tworzy stabilną sieć wymiany informacji.
 
-W tym momencie rozpoczyna się faza komunikacji (`steady state`) w której węzły standardowe dokonują transmisji danych do  węzła typu cluster head.
-Węzły CH dokonują agregacji zebranych informacji oraz bezpośrednie przekazanie ich do węzła głównego (`sink`).
+W tym momencie rozpoczyna się faza komunikacji (\textit{steady state}) w której węzły standardowe dokonują transmisji danych do  węzła typu \textit{cluster head}.
+Węzły CH dokonują agregacji zebranych informacji oraz bezpośrednie przekazanie ich do węzła głównego (\textit{sink}).
 Stworzenie środowiska w którym węzły dokonują pośredniczenia informacji, pozwala na ograniczenie kosztów energetycznych transmisji danych przez
-standardowe węzły (dystans do węzła typu cluster head jest mniejszy niż do `sink`). Należy jednak pamiętać, że koszt energetyczny transmisji węzłów typu cluster head rośnie, gdyż
-stają się one odpowiedzialne za odbieranie informacji, przetworzenie ich, a następnie wysłanie do całości do `sink`. Wielkość informacji (mierzona w bajtach), przetransmitowana 
-z węzłów typu cluster head jest zależna od ilości standardowych węzłów przynależących do CH oraz metody agregacji informacji.
+standardowe węzły (dystans do węzła typu \textit{cluster head} jest mniejszy niż do \textit{sink}). Należy jednak pamiętać, że koszt energetyczny transmisji węzłów typu \textit{cluster head}
+rośnie, gdyż stają się one odpowiedzialne za odbieranie informacji, przetworzenie ich, a następnie wysłanie do całości do \textit{sink}. Wielkość informacji (mierzona w bajtach), przetransmitowana 
+z węzłów typu \textit{cluster head} jest zależna od ilości standardowych węzłów przynależących do CH oraz metody agregacji informacji \cite{pega-aggregacja} \cite{pega-compression}.
 
 Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują protokół LEACH:
 
@@ -490,15 +462,15 @@ Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują 
 
 \subsection{PEGASIS}
 
-PEGASIS (Power-Efficient GAthering in Sensor Information Systems) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej.
+PEGASIS (\textit{Power-Efficient GAthering in Sensor Information Systems}) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej \cite{Lindsey-Pegasis}.
 W przeciwieństwie do komunikacji bezpośredniej, PEGASIS podobnie jak LEACH jest protokołem w którym występuje hierarchia.
 
 PEGASIS jest protokołem dokonującym usprawnień w protokole LEACH. W przypadku sieci czujnikowej, urządzenia pełniące rolę węzłów posiadają ograniczone ilości energii, wynikające np. z zasilania bateryjnego.
-Przebudowana metoda przekazywania danych zebranych przez węzły typu cluster head, pozwala na ukończenie rundy przy wykorzystaniu mniejszej ilości energii niż LEACH.
+Przebudowana metoda przekazywania danych zebranych przez węzły typu \textit{cluster head}, pozwala na ukończenie rundy przy wykorzystaniu mniejszej ilości energii niż LEACH.
 
-Pierwsza faza, faza komunikacji, w której ustalane są role węzłów jest identyczna. Przebudowana została metoda transmisji agregacji informacji od węzłów typu cluster head to węzła głównego (`sink`).
-Węzły typu cluster head formują łańcuch, w którym najdalej oddalony węzeł typu cluster head, przekazuje zebrane i dane agregowane do innego węzła typu cluster head znajdującego się w najbliższym 
-sąsiedztwie. Algorytm trasowania najmniejszym kosztem nazywana się typu `greedy`. 
+Pierwsza faza, faza komunikacji, w której ustalane są role węzłów jest identyczna. Przebudowana została metoda transmisji agregacji informacji od węzłów typu \textit{cluster head} to węzła głównego (\textit{sink}).
+Węzły typu \textit{cluster head} formują łańcuch, w którym najdalej oddalony węzeł typu \textit{cluster head}, przekazuje zebrane i dane agregowane do innego węzła typu \textit{cluster head} znajdującego się w najbliższym 
+sąsiedztwie. Algorytm trasowania najmniejszym kosztem nazywana się typu \textit{greedy} \cite{algoBook}.
 
 Efektem niekorzystnym w protokole PEGASIS jest wydłużenie czasu każdej z rund, wynikające z sekwencyjnej wymiany danych w łańcuchu \cite{Lindsey-Pegasis}.
 Generowane w ten sposób są dodatkowe koszty energetyczne związane z utrzymaniem węzłów w stanie pracy, kosztem odbioru i przetworzenia informacji.
@@ -2336,7 +2308,7 @@ odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energ
 % https://dl.acm.org/citation.cfm?id=1389832
 \bibitem{Yick}{J. Yick, B. Mukherejee, D. Ghosal, ,,Wireless sensor network survey'', Elsevier Computer Networks, Vol. 52, 2008.}
 \bibitem{Wiley-WSN}{I. F. Akyildiz, M. Can Vuran, ,,Wireless Sensor Networks'', Georgia Institute of Technology, Wiley, ISBN 9780470036013, 2010.}
-\bibitem{ACM-WSN`}{G. J. Pottie, W. J. Kaiser, ,,Wireless integrated network sensors'', Communications of the ACM, 43:51–58, May 2000.}
+\bibitem{ACM-WSN}{G. J. Pottie, W. J. Kaiser, ,,Wireless integrated network sensors'', Communications of the ACM, 43:51–58, May 2000.}
 \bibitem{WSN-routing}{J. Al-karaki , A. Kamal, ,,Routing Techniques in Wireless Sensor Networks: A Survey'', IEEE Wireless Communications, 2004.}
 \bibitem{EnergyAwareRouting}{M. Younis, M. Youssef, K. Arisha, ,,Energy-Aware Routing in Cluster-Based Sensor Networks'', In Proceedings of the 10th IEEE/ACM, 2002.}
 \bibitem{Petriu}{E. Petriu, N. Georganas, D. Petriu, D. Makrakis, V. Groza, ,,Sensor-based information appliances.'', Instrumentation \& Measurement Magazine, Vol. 3(4), s. 31–35, 2000.}
@@ -2370,6 +2342,9 @@ odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energ
 \bibitem{GolangBook}{A. Donowan, B. Kerninghan, ,,The Go Programming Language'', Addison-Wesley, ISBN 9780134190440, 2015.}
 \bibitem{SoftwareDesingBook}{J. Ousterhout, ,,A Philosophy of Software Design'', ISBN 9781732102200, 2018.}
 \bibitem{DockerBook}{K. Matthias, S. Kane, ,,Docker: Up \& Running: Shipping Reliable Containers in Production, O'Reilly Media, ISBN 9781492036722, 2015.}
+\bibitem{gitBook}{J. Loeliger, M. McCullough, ,,Version control with Git'', O'Reilly Media, ISBN 9781449316389, 2012.}
+\bibitem{gnuplotBook}{L. Phillips, ,,gnuplot Cookbook'', Packt Publishing, ISBN 9781849517249, 2012.}
+\bibitem{algoBook}{C. Leiserson, C. Stein, R. Riverst, T. Cormen, ,,Introduction to Algorithms, 3rd Edition'', The MIT Press, ISBN 9780262033848, 2009.}
 \end{thebibliography}
 
 % Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF
