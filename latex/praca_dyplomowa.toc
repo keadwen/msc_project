@@ -34,14 +34,14 @@
 \contentsline {subsection}{\numberline {4.2.1}Konfiguracja \IeC {\'s}rodowiska i kompilacja}{27}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Generowanie konfiguracji}{28}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Uruchamianie scenariuszy}{30}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Generowanie wykres\IeC {\'o}w}{30}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Generowanie wykres\IeC {\'o}w}{31}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Dodawanie nowych protoko\IeC {\l }\IeC {\'o}w}{31}{subsection.4.2.5}
-\contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{32}{chapter.5}
-\contentsline {section}{\numberline {5.1}Dane wej\IeC {\'s}ciowe}{32}{section.5.1}
-\contentsline {section}{\numberline {5.2}Scenariusze}{33}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Test 1 - Wielko\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }wiadomo\IeC {\'s}ci}{33}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Test 2 - Ilo\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{43}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{54}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{64}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Podsumowanie}{80}{chapter.6}
-\contentsline {chapter}{Bibliografia}{82}{chapter*.13}
+\contentsline {chapter}{\numberline {5}Opracowanie wynik\IeC {\'o}w eksperyment\IeC {\'o}w}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Dane wej\IeC {\'s}ciowe}{33}{section.5.1}
+\contentsline {section}{\numberline {5.2}Scenariusze}{34}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Test 1 - Wielko\IeC {\'s}\IeC {\'c}\IeC {\nobreakspace }wiadomo\IeC {\'s}ci}{34}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Test 2 - Liczba\IeC {\nobreakspace }w\IeC {\k e}z\IeC {\l }\IeC {\'o}w w sieci}{44}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Test 3 - Wielko\IeC {\'s}\IeC {\'c} obszaru sieci}{55}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Test 4 - Parametr `p`}{65}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{82}{chapter.6}
+\contentsline {chapter}{Bibliografia}{84}{chapter*.13}

@@ -506,18 +506,13 @@ Użytkownik (znajdujący się po lewej stronie) posiada możliwość uruchomien
 \end{itemize}
 
 Opcja symulacji bez pliku konfiguracyjnego powoduje wygenerowanie pliku konfiguracyjnego w którym znajduje się 200 węzłów, rozproszonych w sposób
-pseudolosowy na przestrzeni 200 x 200.
-% 200 x 200 ale czego? Bez miary lub informacji o normalizacji taka
-% powierzchnia jest abstrakcją.
-
+pseudolosowy na przestrzeni 200 [m] x 200 [m].
 Symulator tworzy wewnętrzną strukturę sieci i węzłów, które poddawane są symulacji. Wynik końcowy poszczególnych sieci zwracany jest do symulatora, który
 generuje pliki w formacie kompatybilnym z narzędziem GNU Plot. 
 
 \subsection{Plik konfiguracyjny}
 
-Plik konfiguracyjny (`config file`) posiada dane wejściowe pozwalające na zbudowanie środowiska testowego. 
-% czy nazwa pliku to 'config file'? Bo jeśli nie to nie widzę powodu podawania
-% angielskiego tłumaczenia.
+Plik konfiguracyjny posiada dane wejściowe pozwalające na zbudowanie środowiska testowego. 
 Informacje zawarte w pliku konfiguracyjnym można podzielić na dwie sekcje:
 
 \begin{itemize}
@@ -527,28 +522,28 @@ Informacje zawarte w pliku konfiguracyjnym można podzielić na dwie sekcje:
 
 \subsubsection{Konfiguracja symulatora i sieci}
 
-Konfiguracja symulatora i sieci składa się z pięciu zmiennych w komunikacie `Config`. Każda z tych wartości może być modyfikowana bez potrzeby
+Konfiguracja symulatora i sieci składa się z pięciu zmiennych w komunikacie \textit{Config}. Każda z tych wartości może być modyfikowana bez potrzeby
 ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych parametrów konfiguracyjnych:
 
 \begin{itemize}
- \item protokoł (`protocol`) - zmienna ta zdefiniowana za pomocą komunikatu typu `enum E\_Protocol` pozwala symulatorowi wybrać odpowiedni 
+ \item protokoł (\textit{protocol}) - zmienna ta zdefiniowana za pomocą komunikatu typu \textit{enum E\_Protocol} pozwala symulatorowi wybrać odpowiedni 
        protokół sterujący symulacją. Dokładny opis działania protokołów zostanie przedstawiony w dalszej części pracy.
- \item wartości maksymalnej rund pomiarowych (`max\_rounds`) - zmienna ta pozwala określić wartość rund pomiarowych aktywnych węzłów w pojedynczej symulacji, 
+ \item wartości maksymalnej rund pomiarowych (\textit{max\_rounds}) - zmienna ta pozwala określić wartość rund pomiarowych aktywnych węzłów w pojedynczej symulacji, 
        po której całkowity przebieg symulacji zostanie zatrzymany.
        Wyznaczenie tej wartości umożliwia użytkownikowi określenie dowolnej granicy, bez potrzeby oczekiwania na zakończenie symulacji (wykorzystanie 
        całkowitej energii dostępnej przez węzły pomiarowe).
- \item proporcji węzłów typu klaster do wszystkich węzłów (`p\_cluster\_heads`) - zmienna ta pozwala określić stosunek ilości węzłów pomiarowych 
+ \item proporcji węzłów typu klaster do wszystkich węzłów (\textit{p\_cluster\_heads}) - zmienna ta pozwala określić stosunek ilości węzłów pomiarowych 
        odpowiedzialnych za pośredniczenie w przesyłaniu danych pomiarowych (klastrów) do ilości wszystkich węzłów w sieci. Parametr ten wykorzystywany jest
        zależnie od protokołu.
- \item długość wiadomości (`msg\_length`) - zmienna ta określa całkowity rozmiar wiadomości generowanych przez pojedynczy węzeł pomiary.
+ \item długość wiadomości (\textit{msg\_length}) - zmienna ta określa całkowity rozmiar wiadomości generowanych przez pojedynczy węzeł pomiary.
        Długość wyrażona jest w bajtach i jest sumą dwóch elementów, danych pomiarowych oraz dodatkowych danych generowanych w procesie enkapsulacji
        (np. adresowanie, preambuły, itd.)
- \item konfiguracja węzłów (`nodes`) - zmienna ta zdefiniowana za pomocą listy komunikatów typu Node. Symulacja musi składać się przynajmniej z dwóch węzłów.
-       Kolejność listy ma znaczenie, gdyż pierwszy węzeł pełni rolę głównego odbiornika danych (`sink`).
-       Dokładniejszy opis parametrów poszczególnych węzłów przedstawiony został w kolejnym podrozdziale `Konfiguracja węzła`. 
+ \item konfiguracja węzłów (\textit{nodes}) - zmienna ta zdefiniowana za pomocą listy komunikatów typu Node. Symulacja musi składać się przynajmniej z dwóch węzłów.
+       Kolejność listy ma znaczenie, gdyż pierwszy węzeł pełni rolę głównego odbiornika danych (\textit{sink}).
+       Dokładniejszy opis parametrów poszczególnych węzłów przedstawiony został w kolejnym podrozdziale \textit{Konfiguracja węzła}. 
 \end{itemize}
 
-Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji symulatora i sieci:
+Fragment pliku konfiguracyjnego dla konfiguracji symulatora i sieci:
 
 \begin{lstlisting}
 enum E_Protocol {
@@ -575,27 +570,25 @@ message Config {
 
 \subsubsection{Konfiguracja węzła}
 
-Konfiguracja węzła składa się z pięciu zmiennych w komunikacje `Node`. Każda z tych wartości może być modyfikowana bez potrzeby
+Konfiguracja węzła składa się z pięciu zmiennych w komunikacje \textit{Node}. Każda z tych wartości może być modyfikowana bez potrzeby
 ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych parametrów konfiguracyjnych:
 
 \begin{itemize}
- \item indeks (`id`) - zmienna ta określa unikatowy identyfikator węzła. Parametr ten umożliwia identyfikację węzła podczas symulacji.
- \item energia początkowa (`initial\_energy`) - zmienna ta określa ilość energii (mierzonej w [J]), którą posiada węzeł w momencie rozpoczęcia symulacji.
+ \item indeks (\textit{id}) - zmienna ta określa unikatowy identyfikator węzła. Parametr ten umożliwia identyfikację węzła podczas symulacji.
+ \item energia początkowa (\textit{initial\_energy}) - zmienna ta określa ilość energii (mierzonej w [J]), którą posiada węzeł w momencie rozpoczęcia symulacji.
        W przypadku zdefiniowania zerowej energii początkowej, węzeł nie będzie brał udziału w komunikacji ze względu na brak zasobów energetycznych na
        przeprowadzenia jakiejkolwiek operacji.
- \item pozycja (`location`) - zmienna ta zdefiniowana za pomocą komunikatu typu `Location` pozwala symulatorowi na umieszczenie węzła w dwuwymiarowej przestrzeni.
+ \item pozycja (\textit{location}) - zmienna ta zdefiniowana za pomocą komunikatu typu \textit{Location} pozwala symulatorowi na umieszczenie węzła w dwuwymiarowej przestrzeni.
        Pozycja węzła wykorzystywana jest do określania odległości między węzłami i aplikowania kosztów energetycznych operacji (np. transmisji danych).
- \item koszt energetyczny (`energy\_cost`) - zmienna ta zdefiniowana za pomocą komunikatu typu `EnergyCost` pozwala na wprowadzenie dodatkowych kosztów energetycznych
+ \item koszt energetyczny (\textit{energy\_cost}) - zmienna ta zdefiniowana za pomocą komunikatu typu \textit{EnergyCost} pozwala na wprowadzenie dodatkowych kosztów energetycznych
        operacji dla poszczególnych węzłów. Podstawowy model transmisji posiada zdefiniowane koszty energetyczne operacji.
-       W przypadku zdefiniowana zmiennej `EnergyCost` dla węzła, koszt operacji (np. transmisji, odbioru, pomiaru i przetwarzania danych) ulega zmianie.
- \item opóźnienia czasowe (`time\_delay`) - zmienna ta zdefiniowana za pomocą komunikatu typu `TimeDelay` pozwala symulatorowi na wprowadzenie dodatkowych parametrów czasowych
+       W przypadku zdefiniowana zmiennej \textit{EnergyCost} dla węzła, koszt operacji (np. transmisji, odbioru, pomiaru i przetwarzania danych) ulega zmianie.
+ \item opóźnienia czasowe (\textit{time\_delay}) - zmienna ta zdefiniowana za pomocą komunikatu typu \textit{TimeDelay} pozwala symulatorowi na wprowadzenie dodatkowych parametrów czasowych
        dla operacji wykonywanych przez węzeł. Iloczyn zmiennej (np. czasu przetwarzania danych węzła [ns]) i kosztu energetycznego działania węzła [J/s] 
        reprezentuje dodatkowe parametry symulacji, które umożliwiają tworzenie zaawansowanych i precyzyjnych scenariuszy.
 \end{itemize}
 
-Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji węzła:
-% Wyżej jest opis a poniżej przykłady. Lepiej byłoby to zmieszać: opis i
-% przykład, opis i przykład...
+Fragment pliku konfiguracyjnego dla konfiguracji węzła:
 
 \begin{lstlisting}
 // Node defines a configuration for a single node.
@@ -614,17 +607,17 @@ message Node {
 }
 \end{lstlisting}
 
-Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji lokalizacji węzła:
+Fragment pliku konfiguracyjnego dla konfiguracji lokalizacji węzła:
 
 \begin{lstlisting}
-// Location defines a X, Y coordinates of a node.
+// Location defines a X, Y coordinates of a node in a network space.
 message Location {
   double X = 1;
   double Y = 2;
 }
 \end{lstlisting}
 
-Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji kosztów energetycznych pracy węzła:
+Fragment pliku konfiguracyjnego dla konfiguracji kosztów energetycznych pracy węzła:
 
 \begin{lstlisting}
 // EnergyCost defines energy consumption for common node operations.
@@ -642,7 +635,7 @@ message EnergyCost {
 }
 \end{lstlisting}
 
-Poniżej przedstawiony został fragment pliku konfiguracyjnego dla konfiguracji opóźnień czasowych pracy węzła:
+Fragment pliku konfiguracyjnego dla konfiguracji opóźnień czasowych pracy węzła:
 
 \begin{lstlisting}
 // TimeDelay defines time delays for common node operations.
@@ -656,17 +649,15 @@ message TimeDelay {
 
 \subsection{Moduł główny (Core)}
 
-Moduł główny posiada najważniejsze cechy i funkcjonalności umożliwiające modelowanie systemu symulatora WSN.
-% Już nie będę wskazywał użycia 'funkcjonalności' - trzeba całą pracę
-% przeszukać i poprawić tekst.
-Wszystkie zaimplementowane struktury (`structs`) znajdują się w jednej bibliotece (`package`) o nazwie `core`.
+Moduł główny posiada najważniejsze cechy umożliwiające modelowanie systemu symulatora WSN.
+Wszystkie zaimplementowane struktury (\textit{structs}) znajdują się w jednej bibliotece (\textit{package}) o nazwie \textit{core}.
 
 \subsubsection{Węzeł (Node)}
 
-Węzeł (`Node`) reprezentuje model węzła, będącego elementem podstawowym w sieci. Struktura ta przechowuje dane konfiguracyjne węzła,
+Węzeł (\textit{Node}) reprezentuje model węzła, będącego elementem podstawowym w sieci. Struktura ta przechowuje dane konfiguracyjne węzła,
 poziom energii czy dane historyczne, pozwalające na monitorowanie pracy oraz tworzenie grafów.
 
-Poniżej przedstawiona została struktura węzła oraz definicje funkcji przynależące do struktury.
+Struktura węzła oraz definicje funkcji przynależące do struktury:
 
 \begin{lstlisting}
 type Node struct {
@@ -691,22 +682,23 @@ func (n *Node) consume(e float64) error
 \end{lstlisting}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury węzła (Node):
+% TODO: Przerobić listy na tekst.
 % Lista, lista, lista... Dobre w dokumentacji technicznej ale nie w pracy
 % dyplomowej. Uważam, że należy poniższą listę (a może listy?) przerobić na tekst.
 
 \begin{itemize}
- \item konfiguracja (`Conf`) - zmienna publiczna przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w `Konfiguracja węzła`).
- \item gotowość (`Ready`) - zmienna publiczna przechowuje stan gotowości węzła. Wartość `true` oznacza, że węzeł jest gotowy do nadawania i odbierania informacji.
- \item następny skok (`nextHop`) - zmienna prywatna przechowuje adres do zmiennej węzła, będącego odbiorcą informacji nadawanych przez węzeł. Wartością domyślna w momencie
-       rozpoczęcia symulacji jest adres głównego odbiornika danych (`sink`).
- \item energia (`Energy`) - zmienna publiczna przechowuje aktualny stan energetyczny węzła. W przypadku wyczerpania energii, zmienna Ready zostaje ustawiona na `false`.
- \item kolejka nadawania (`transmitQueue`) - zmienna prywatna przechowuje informację o ilości bajtów gotowych do przekazania do następnego węzła na końcu rundy.
- \item kolejka odbioru (`receiveQueue`) - zmienna prywatna przechowuje informację o ilości bajtów odebranych przez węzeł na początku rundy.
- \item dane nadane (`dataSent`) - zmienna prywatna przechowuje sumę bajtów nadanych przez węzeł.
- \item dane odebrane (`dataReceived`) - zmienna prywatna przechowuje sumę bajtów odebranych przez węzeł.
+ \item konfiguracja (\textit{Conf}) - zmienna publiczna przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w podrozdziale \textit{Konfiguracja węzła}).
+ \item gotowość (\textit{Ready}) - zmienna publiczna przechowuje stan gotowości węzła. Wartość \textit{true} oznacza, że węzeł jest gotowy do nadawania i odbierania informacji.
+ \item następny skok (\textit{nextHop}) - zmienna prywatna przechowuje adres do zmiennej węzła, będącego odbiorcą informacji nadawanych przez węzeł. Wartością domyślna w momencie
+       rozpoczęcia symulacji jest adres głównego odbiornika danych (\textit{sink}).
+ \item energia (\textit{Energy}) - zmienna publiczna przechowuje aktualny stan energetyczny węzła. W przypadku wyczerpania energii, zmienna Ready zostaje ustawiona na \textit{false}.
+ \item kolejka nadawania (\textit{transmitQueue}) - zmienna prywatna przechowuje informację o ilości bajtów gotowych do przekazania do następnego węzła na końcu rundy.
+ \item kolejka odbioru (\textit{receiveQueue}) - zmienna prywatna przechowuje informację o ilości bajtów odebranych przez węzeł na początku rundy.
+ \item dane nadane (\textit{dataSent}) - zmienna prywatna przechowuje sumę bajtów nadanych przez węzeł.
+ \item dane odebrane (\textit{dataReceived}) - zmienna prywatna przechowuje sumę bajtów odebranych przez węzeł.
 \end{itemize}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (\textit{Node}):
 
 \begin{itemize}
  \item Transmit - funkcja pozwala na transmisję danych do węzła.
@@ -718,10 +710,10 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
 
 \subsubsection{Sieć (Network)}
 
-Sieć (`Network`) reprezentuje model środowiska w którym odbywa się symulacja. Struktura ta przechowuje kontroluje przepływ informacji pomiędzy węzłami,
+Sieć (\textit{Network}) reprezentuje model środowiska w którym odbywa się symulacja. Struktura ta przechowuje kontroluje przepływ informacji pomiędzy węzłami,
 zbiera i eksportuje informacje z poszczególnych rund.
 
-Poniżej przedstawiona została struktura sieci oraz definicje funkcji przynależące do struktury.
+Struktura sieci oraz definicje funkcji przynależące do struktury:
 
 \begin{lstlisting}
 type Network struct {
@@ -749,26 +741,26 @@ func (net *Network) PopulateEnergyPoints()
 func (net *Network) PopulateNodesAlivePoints()
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury sieci (Network):
-% Lista...
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury sieci (\textit{Network}):
+% TODO: Przerobić listy na tekst.
 
 \begin{itemize}
- \item protokół (`Protocol`) - zmienna publiczna przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
- \item stacja bazowa (`BaseStation`) - zmienna publiczna przechowuje obiekt węzła głównego (`sink`).
- \item węzły (`Nodes`) - zmienna publiczna przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (hashmap), 
+ \item protokół (\textit{Protocol}) - zmienna publiczna przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
+ \item stacja bazowa (\textit{BaseStation}) - zmienna publiczna przechowuje obiekt węzła głównego (\textit{sink}).
+ \item węzły (\textit{Nodes}) - zmienna publiczna przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (\textit{hashmap}), 
        który umożliwia operacje zapisu i odczytu w procesach równoległych. Kluczem dziennika jest unikatowy identyfikator węzła.
- \item runda (`Round`) - zmienna publiczna przechowuje numer aktualnej rundy symulacji.
- \item maksymalna ilość rund (`MaxRounds`) - zmienna publiczna przechowuje maksymalną ilość rund symulacji. 
-       W przypadku osiągnięcia wartości `Round` równej `MaxRounds`, symulacja zostanie przerwana.
- \item długość wiadomości (`MsgLength`) - zmienna publiczna przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana
+ \item runda (\textit{Round}) - zmienna publiczna przechowuje numer aktualnej rundy symulacji.
+ \item maksymalna ilość rund (\textit{MaxRounds}) - zmienna publiczna przechowuje maksymalną ilość rund symulacji. 
+       W przypadku osiągnięcia wartości \textit{Round} równej \textit{MaxRounds}, symulacja zostanie przerwana.
+ \item długość wiadomości (\textit{MsgLength}) - zmienna publiczna przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana
        jest podczas rundy przez każdy z węzłów. W skład tej wartości wchodzą dane pomiarowe i dodatkowy nakład informacji powstały w wyniku enkapsulacji.
- \item GNUPlotNodes, GNUPlotTotalEnergy - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów przy użyciu narzędzia GNUPlot.
- \item PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów
+ \item \textit{GNUPlotNodes, GNUPlotTotalEnergy} - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów przy użyciu narzędzia GNUPlot.
+ \item \textit{PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints} - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów
        przy użyciu biblioteki plotter.
 \end{itemize}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
-% Lista...
+% TODO: Przerobić listy na tekst.
 
 \begin{itemize}
  \item AddNode - funkcja pozwala na dodanie węzła do sieci.
@@ -781,7 +773,7 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
 \subsubsection{Koszty transmisji}
 
 Transmisja i odbiór danych w sieci obarczony jest kosztem energetycznym.
-Model transmisji przedstawiony w rozdziale `Model transmisji` wymaga zdefiniowania wartości liczbowych dla czterech parametrów:
+Model transmisji przedstawiony w rozdziale \textit{Model transmisji} wymaga zdefiniowania wartości liczbowych dla czterech parametrów:
 
 \begin{lstlisting}
 const (
@@ -795,9 +787,9 @@ const (
 
 \subsubsection{Protokół (Protocol)}
 
-Protokół (`Protocol`) reprezentuje model protokołu komunikacji między węzłami.
+Protokół (\textit{Protocol}) reprezentuje model protokołu komunikacji między węzłami.
 
-Poniżej przedstawiona został interfejs protokołu oraz definicje funkcji przynależące do interfejsu.
+Fragment interfejsu protokołu oraz definicje funkcji przynależące do interfejsu:
 
 \begin{lstlisting}
 type Protocol interface {
@@ -807,8 +799,8 @@ type Protocol interface {
 }
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
-% Lista...
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (\textit{Node}):
+% TODO: Przerobić listy na tekst.
 
 \begin{itemize}
  \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
@@ -817,23 +809,22 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węz�
 \end{itemize}
 
 Poniższa lista przedstawia zaimplementowane protokoły:
-% Lista...
+% TODO: Przerobić listy na tekst.
 
 \begin{itemize}
- \item Komunikacja bezpośrednia	(Direct Communication) - wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (`sink`).
+ \item Komunikacja bezpośrednia	(\textit{Direct Communication}) - wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (\textit{sink}).
  \item LEACH (LEACH) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji LEACH.
  \item PEGASIS (PEGASIS) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji PEGASIS.
 \end{itemize}
 
 \subsection{Moduł symulatora (Simulator)}
 
-Symulator (`Simulator`) odpowiada za tworzenie środowisk symulacyjnych.
+Symulator (\textit{Simulator}) odpowiada za tworzenie środowisk symulacyjnych.
 Pojedynczy obiekt symulatora pozwala na zbudowanie wielu scenariuszy symulacji, a następnie ich uruchomienie oraz
-wygenerowanie metryk. Dane wyjściowe mogą zostać podane dalszej analizie przy wykorzystaniu zewnętrznych narzędzi (np. GNUPlot).
-% Tłumaczenie 'metrics' jako 'metryki' to nowomowa i kalka z angielskiego.
-% False friend. 'Metrics' to po polsku 'miary', w tym ujęciu. Lepiej jednak to
-% po prostu nazwać 'wynikami symulacji', nie kombinować.
+wygenerowanie wyników symulacji. Dane wyjściowe mogą zostać podane dalszej analizie przy wykorzystaniu zewnętrznych narzędzi (np. gnuplot).
 
+Struktura symulatora oraz definicje funkcji przynależące do struktury:
+ 
 \begin{lstlisting}
 type Simulator struct {
   namespace map[string]bool
@@ -858,16 +849,16 @@ func (s *Simulator) plotter() error
 \end{lstlisting}
 
 Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury symulatora (`Simulator`):
-% Lista...
+% TODO: Przerobić listy na tekst.
 
 \begin{itemize}
- \item przestrzeń nazw (`namespace`) - zmienna prywatna przechowuje nazwy symulacji, które w jednoznaczny sposób identyfikują sieć i konfigurację.
- \item przestrzeń konfiguracji (`config`) - zmienna prywatna przechowuje obiekt konfiguracji (Config) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
- \item przestrzeń sieci (`network`) - zmienna prywatna przechowuje obiekt sieci (Network) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
+ \item przestrzeń nazw (\textit{namespace}) - zmienna prywatna przechowuje nazwy symulacji, które w jednoznaczny sposób identyfikują sieć i konfigurację.
+ \item przestrzeń konfiguracji (\textit{config}) - zmienna prywatna przechowuje obiekt konfiguracji (\textit{Config}) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
+ \item przestrzeń sieci (\textit{network}) - zmienna prywatna przechowuje obiekt sieci (\textit{Network}) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
 \end{itemize}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symulatora (`Simulator`):
-% Lista...
+Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symulatora (\textit{Simulator}):
+% TODO: Przerobić listy na tekst.
 
 \begin{itemize}
  \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
@@ -877,7 +868,7 @@ Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symul
 
 % Powtórzenia
 
-
+% TODO: Poprawić tekst
 % Przykład naprawy a może refaktoryzacji :) pracy dyplomowej:
 % Węzły sieci są konfigurowane zgodnie z zaimplementowanym protokołem z użyciem
 % funkcji Setup. Określenie liczby węzłów sieci jest niezbedne w protokołach
@@ -928,7 +919,7 @@ Proces kompilacji (z poziomu folderu z kodem projektu):
 
 Wcześniej opisany plik konfiguracyjny jest elementem niezbędnym do uruchomienia symulacji.
 
-Przykładowy plik konfiguracyjny (example.pbtxt) znajdują się w folderze proto:
+Przykładowy plik konfiguracyjny (\textit{example.pbtxt}) znajdują się w folderze proto:
 
 \begin{lstlisting}
 protocol: 1
@@ -971,30 +962,26 @@ nodes <
 \end{lstlisting}
 
 Oprogramowanie umożliwia również generowanie scenariuszy w dynamiczny sposób.
-W tym przypadku podczas uruchamiania oprogramowania (proces opisany w sekcji `Uruchamianie scenariuszy`)
+W tym przypadku podczas uruchamiania oprogramowania (proces opisany w sekcji \textit{Uruchamianie scenariuszy})
 użytkownik nie podaje pliku konfiguracyjnego. Oprogramowanie stworzy identyczny zestaw konfiguracyjny
 dla każdego zaimplementowanego protokołu. Parametry wygenerowanej konfiguracji dostępne poniżej:
 
-% Poniższa lista jest OK bo rzeczywiście jest prostym wymienieniem parametrów,
-% bez ich opisywania - to powinno/zostało zrobione wcześniej.
-% Jednak proponuję użyć 'noitemsep'.
-\begin{itemize}
+% TODO: Powinno być przedstawione wcześniej
+\begin{itemize}[noitemsep]
  \item Protokół: Bezpośrednia komunikacja, LEACH, PEGASIS
  \item Maksymalna ilość rund: 25000
  \item Proporcja węzłów typu klaster do wszystkich węzłów: 0.15
  \item Liczba węzłów głównych (`sink`): 1
  \item Energia węzła głównego: 100 [J]
- \item Lokalizacja węzła głównego na osi X: 100
- \item Lokalizacja węzła głównego na osi Y: 300
+ \item Lokalizacja węzła głównego na osi X: 100 [m]
+ \item Lokalizacja węzła głównego na osi Y: 300 [m]
  \item Liczba węzłów: 200
  \item Energia węzłów: 1 [J]
- \item Lokalizacja węzłów na osi X: [0, 200]
- \item Lokalizacja węzłów na osi Y: [0, 200]
+ \item Lokalizacja węzłów na osi X: [0, 200] [m]
+ \item Lokalizacja węzłów na osi Y: [0, 200] [m]
 \end{itemize}
 
-Poniższa ilustracja przedstawia rozstawienie węzłów w sieci wygenerowanych dynamicznie:
-% Przykładowe ustawienie, czy jedyne jakie zostało użyte w symulacjach? Trzeba
-% to sprecyzować.
+Poniższa ilustracja przedstawia przykładowe rozstawienie węzłów w sieci wygenerowanych dynamicznie:
 
 \begin{figure}[H]
  \centering
@@ -1003,15 +990,20 @@ Poniższa ilustracja przedstawia rozstawienie węzłów w sieci wygenerowanych d
 
 \subsection{Uruchamianie scenariuszy}
 
-% Poniższe przykłady wymagają szerszego opisu. Czy można 1, 2, czy więcej
-% plików? Po co to? Jakie ma konsekwencje? Itd.
-Przykład uruchamiania projektu z dwoma plikami konfiguracyjnymi:
+Oprogramowanie symulatora posiada możliwość wprowadzenia więcej niż jednego plik konfiguracyjnego równocześnie.
+Należy pamiętać, że chociaż górna granica ilości plików nie istnieje, czas symulacji ulegnie wydłużeniu i w przypadku 
+zaawansowanych scenariuszy czas może wynosić nawet i kilkanaście sekund.
+
+Przykład uruchamiania projektu z dwoma plikami konfiguracyjnymi, które uruchomione zostanę pięc razy:
+
 \begin{lstlisting}
  $ /go/src/github.com/keadwen/msc_project/msc_project \
+     --repeat_config=5
      --config_file=example1.proto,example2.proto
 \end{lstlisting}
 
-Przykład uruchamiania projektu bez pliku konfiguracyjnego:
+Przykład uruchamiania projektu bez flagi pliku konfiguracyjnego i flagi powtórzenia (która domyślnie wynosi 1):
+
 \begin{lstlisting}
  $ /go/src/github.com/keadwen/msc_project/msc_project
 \end{lstlisting}
@@ -1024,15 +1016,12 @@ W początkowym etapie tworzenia oprogramowania, zastosowane zostało rozwiązani
 generowała dwa wykresy:
 
 \begin{itemize}
- \item Wykres ilości aktywnych węzłów w każdej rundzie. % ilości -> liczby
+ \item Wykres liczby aktywnych węzłów w każdej rundzie.
  \item Wykres energii całkowitej posiadanej przez wszystkie węzły w każdej rundzie.
 \end{itemize}
 
 Rozwiązanie to pomimo zalet związanych z automatycznym tworzeniem wykresów, nie pozwalało na generowanie ich w jakości spełniającej
-wymagania pracy dyplomowej.
-% Powyższe zdanie aż prosi się o kontynuację w następnym zdaniu zaczynającym się od "Dlatego...".
-
-W momencie poprawnego zakończenia symulacji, folder plotdata powinien posiadać zestaw plików w formacie GNU plot.
+wymagania pracy dyplomowej. Dlatego w momencie poprawnego zakończenia symulacji, folder plotdata powinien posiadać zestaw plików w formacie GNUPlot.
 Pliki te należy następnie przekierować do GNUPlot. Poniżej przedstawiona została lista operacji umożliwiająca wygenerowanie wykresów:
 
 \begin{lstlisting}
@@ -1050,38 +1039,33 @@ Architektura systemu umożliwia tworzenie nowych protokołów wymiany informacji
 Poprawna implementacja wymaga modyfikacji oprogramowania w kilku miejscach:
 
 \begin{enumerate}
- \item Rozszerzenie definicji enum E\_Protocol w proto/config.proto.
+ \item Rozszerzenie definicji enum \textit{E\_Protocol} w proto/config.proto.
  \item Rozszerzenie mapProtocol w simulator/simulator.go
- \item Stworzenie nowego pliku .go w folderze core. Struktura reprezentująca nowy protokołu musi posiadać zestaw funkcji zgodny z interfejsem Protocol.
+ \item Stworzenie nowego pliku .go w folderze \textit{core}. Struktura reprezentująca nowy protokołu musi posiadać zestaw funkcji zgodny z interfejsem \textit{Protocol}.
+       Przed przystąpieniem do implementacji nowego protokołu, zalecane jest wykorzystanie szablonu pliku komunikacji bezpośredniej, gdyż posiada on podstawowe zasady tworzenia nowego protokołu.
 \end{enumerate}
-% Powyższa lista może zostać, chociaż nie wiem na ile te wskazówki są
-% wystarczające.
-% 'nowy protokołu'
 
 Po wykonaniu wszystkich powyższych kroków, protokół może zostać wykorzystany w symulacji.
-Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały ponownej kompilacji. W przeciwnym wypadku zmiany nie będą widoczne.
-% słowa angielskie pochyłym
+Należy pamiętać, że oprogramowanie i protocol buffers będą wymagały ponownej kompilacji. W przeciwnym wypadku zmiany nie będą widoczne w nowej wersji oprogramowania.
 
 %-----------------
 % Przedstawienie i opracowanie wyników
 %-----------------
 \chapter{Opracowanie wyników eksperymentów}
 
-W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy wykorzystaniu autorskiego oprogramowania.
-% oprogramowania omówionego wcześniej.
+W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy wykorzystaniu autorskiego oprogramowania omówionego wcześniej.
 
 \section{Dane wejściowe}
 
 Oprogramowanie posiada implementacje trzech algorytmów: komunikację bezpośrednią, LEACH oraz PEGASIS (dokładniejszy opis działania protokołów został przedstawiony w poprzednich rozdziałach).
 W celu porównania efektywności energetycznej pomiędzy trzema rozwiązaniami, niezbędne jest precyzyjne zdefiniowanie testów.
-W systemie posiadamy cztery parametry, których wartości będą modyfikowane i efekty zmian będą porównywane:
-% Nagła zmiana stylu tekstu - 'posiadamy'.
+Sstemie posiada cztery parametry, których wartości będą modyfikowane i efekty zmian będą porównywane:
 
 \begin{itemize}
  \item Wielkość wiadomości - parametr ten definiuje wielkość wiadomości wysyłanej pomiędzy węzłami (mierzone w Bajtach).
  \item Ilość węzłów w sieci - parametr ten definiuje liczbę węzłów w pojedynczej sieci i symulacji.
- \item Wielkość obszaru sieci - parametr ten definiuje wielkość obszaru wymiany danych w sieci.
- \item Parametr `p` - wartość prawdopodobieństwa wypromowania węzła na węzeł typu cluster head.
+ \item Wielkość obszaru sieci - parametr ten definiuje wielkość obszaru wymiany danych w sieci (mierzony w metrach).
+ \item Parametr `p` - wartość prawdopodobieństwa wypromowania węzła na węzeł typu \textit{cluster head}.
 \end{itemize}
 
 W celu zapewnienia poprawnej jakości porównywania testów, każdy z scenariuszy posiada dedykowany plik konfiguracyjny.
@@ -1090,26 +1074,24 @@ W ten sposób zapewnione jest stworzenie identycznego środowiska testowego, nie
 \section{Scenariusze}
 
 Każdy z testów oraz wartości przedstawione na grafie są wynikami uzyskanymi w procesie wielokrotnego uruchomienia identycznego scenariusza. 
-Ilość uruchomień zdefiniowana dla każdego z testów (domyślenie wynosi 100).
-% domyślenie
-W celach testów wygenerowana została `konfiguracja domyślna`, w której zdefiniowana jest lokalizacja 200 unikatowych węzłów o energii początkowej wynoszącej 2 [J], 
-rozdystrybuowanych w sposób pseudolosowy na przestrzeni X: [0, 200], Y: [0, 200]. Lokalizacja węzła typu `sink` to X:100, Y: 450.
+Ilość uruchomień zdefiniowana dla każdego z testów (domyślnie wynosi 100).
+W celach testów wygenerowana została \textit{konfiguracja domyślna}, w której zdefiniowana jest lokalizacja 200 unikatowych węzłów o energii początkowej wynoszącej 2 [J], 
+rozdystrybuowanych w sposób pseudolosowy na przestrzeni X: [0, 200] [m], Y: [0, 200] [m]. Lokalizacja węzła typu \textit{sink} to X:100, Y: 450.
 Scenariusze wykorzystujące np. 50 węzłów, korzystają z podzbioru węzłów domyślnych, czyli z pierwszych 50 węzłów konfiguracji domyślnej.
 Poniższy rysunek przedstawia rozmieszczenie 200 węzłów standardowych oraz 1 węzła głównego na płaszczyźnie sieci.
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/scenariusz_lokalizacja.png}
- \caption{Rozmieszczenie 200 węzłów w sieci.}
+ \caption{Rozmieszczenie 200 węzłów w sieci o przestrzeni 200 [m] x 200 [m].}
 \end{figure}
 
 \subsection{Test 1 - Wielkość wiadomości}
 
-Test `Wielkość wiadomości` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów dla różnych wielkości wiadomości wysyłanej pomiędzy węzłami.
+Test \textit{Wielkość wiadomości} ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów dla różnych wielkości wiadomości wysyłanej pomiędzy węzłami.
 
-Lista plików konfiguracyjnych:
-% Ta lista niczego nie mówi, żadnej treści nie ma. Zamiast tego powinien być
-% opis tej listy, co zawiera, dlaczego tak a nie inaczej...
+Folder testdata\/test\_1 zawiera 12 plików konfiguracyjnych, w których parametry węzłów i sieci są takie same jak w konfiguracji domyślnej.
+W nazwie pliku występuje ciąg znaków (np. \textit{m32}), który oznacza wielkość wiadomości wykorzystanej w scenariuszu.
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_projec$ tree testdata/test_1/
@@ -1130,10 +1112,7 @@ testdata/test_1/
 0 directories, 12 files
 \end{lstlisting}
 
-
-Uruchomienie oprogramowania:
-% Poniższy listing jest OK, ale można to opisać lepiej. W połączeniu z opisem
-% listy konfigów będzie OK.
+Komenda uruchamiająca oprogramowanie symulatora dla testu z wykorzystaniem 12 plików konfiguracyjnych:
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
@@ -1152,223 +1131,158 @@ testdata/test_1/pegasis200_m256.pbtxt
 \end{lstlisting}
 
 Tabela uzyskanych wyników:
-% Tabela ma za dużo białej przestrzeni. Trzeba ją przeorganizować. Pierwsze
-% dwie kolumny de facto są nagłówkiem. Całość pewnie da się zrobić w poziomie -
-% chyba o tym Panu pisałem.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 32 	& -	& 1434 \\*
-\midrule
-LEACH	& 32	& 1	& 1431 \\*
-	&	& 5	& 1499 \\*
-	&	& 10	& 1518 \\*
-	&	& 25	& 1571 \\*
-	&	& 50	& 1635 \\*
-	&	& 75	& 1697 \\*
-	&	& 90	& 1765 \\*
-	&	& 95	& 1783 \\*
-	&	& 99	& 1805 \\*
-	&	& 100	& 1831 \\*
-\midrule
-PEGASIS	& 32	& 1	& 1136 \\*
-	&	& 5	& 1147 \\*
-	&	& 10	& 1152 \\*
-	&	& 25	& 1166 \\*
-	&	& 50	& 1185 \\*
-	&	& 75	& 1203 \\*
-	&	& 90	& 1224 \\*
-	&	& 95	& 1234 \\*
-	&	& 99	& 1262 \\*
-	&	& 100	& 1274 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Wielkość wiadomości: 32 [B]} \\*
+Kwantyl	& -	\\*
+Wartość	& 1434	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Wielkość wiadomości: 32 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 1431	& 1499	& 1518	& 1571	& 1635	& 1697	& 1765	& 1783	& 1805	& 1831	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Wielkość wiadomości: 32 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 1136	& 1147	& 1152	& 1166	& 1185	& 1203	& 1224	& 1234	& 1262	& 1274	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m32.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (m=32B).}
- % liczby węzłów
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (m=32B).}
  \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m32.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=32B).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 1434.
-% ilość -> liczba
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 1434.
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.3\% dla wartości minimalnej (1416), oraz wydłużenie czasu pracy na poziomie +14.0\% dla mediany (1635), +27.7\% dla wartości maksymalnej (1636).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.5\% dla wartości minimalnej (1112), -17.4\% dla mediany (1184), -11.2\% dla wartości maksymalnej (1274).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par 
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 1000 rund.
 
-% Nad tą tabelą tak samo jak nad poprzednią trzeba trochę popracować.
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 64 	& -	& 717 \\*
-\midrule
-LEACH	& 64	& 1	& 775 \\*
-	&	& 5	& 760 \\*
-	&	& 10	& 770 \\*
-	&	& 25	& 801 \\*
-	&	& 50	& 831 \\*
-	&	& 75	& 872 \\*
-	&	& 90	& 893 \\*
-	&	& 95	& 908 \\*
-	&	& 99	& 935 \\*
-	&	& 100	& 954 \\*
-\midrule
-PEGASIS	& 64	& 1	& 576 \\*
-	&	& 5	& 584 \\*
-	&	& 10	& 587 \\*
-	&	& 25	& 594 \\*
-	&	& 50	& 608 \\*
-	&	& 75	& 622 \\*
-	&	& 90	& 629 \\*
-	&	& 95	& 635 \\*
-	&	& 99	& 669 \\*
-	&	& 100	& 685 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Wielkość wiadomości: 64 [B]} \\*
+Kwantyl	& -	\\*
+Wartość	& 717	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Wielkość wiadomości: 64 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 745	& 760	& 770	& 801	& 831	& 872	& 893	& 908	& 935	& 954	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Wielkość wiadomości: 64 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 576	& 584	& 587	& 594	& 608	& 622	& 629	& 635	& 669	& 685	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m64.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (m=64B).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (m=64B).}
  \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m64.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=64B).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 717.
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 717.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +2.1\% dla wartości minimalnej (732), +15.8\% dla mediany (831), +31.1\% dla wartości maksymalnej (954).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.4\% dla wartości minimalnej (571), -15.3\% dla mediany (608), -4.5\% dla wartości maksymalnej (685).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 500 rund. 
 
-% Nad tą tabelą tak samo jak nad poprzednią trzeba trochę popracować.
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 128 	& -	& 359 \\*
-\midrule
-LEACH	& 128	& 1	& 388 \\*
-	&	& 5	& 392 \\*
-	&	& 10	& 399 \\*
-	&	& 25	& 409 \\*
-	&	& 50	& 432 \\*
-	&	& 75	& 453 \\*
-	&	& 90	& 479 \\*
-	&	& 95	& 492 \\*
-	&	& 99	& 508 \\*
-	&	& 100	& 537 \\*
-\midrule
-PEGASIS	& 128	& 1	& 291 \\*
-	&	& 5	& 295 \\*
-	&	& 10	& 300 \\*
-	&	& 25	& 305 \\*
-	&	& 50	& 312 \\*
-	&	& 75	& 318 \\*
-	&	& 90	& 327 \\*
-	&	& 95	& 330 \\*
-	&	& 99	& 336 \\*
-	&	& 100	& 341 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Wielkość wiadomości: 128 [B]} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Wielkość wiadomości: 128 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 388	& 392	& 399	& 409	& 432	& 453	& 479	& 492	& 508	& 537	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Wielkość wiadomości: 128 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 291	& 295	& 300	& 305	& 312	& 318	& 327	& 330	& 336	& 341	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m128.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (m=128B).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (m=128B).}
  \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m128.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=128B).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359.
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373), +20.3\% dla mediany (432), +49.6\% dla wartości maksymalnej (537).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -19.2\% dla wartości minimalnej (290), -13.1\% dla mediany (312), -5.0\% dla wartości maksymalnej (341).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 250 rund.
 
-% Nad tą tabelą tak samo jak nad poprzednią trzeba trochę popracować.
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Wielkość wiadomości (B)	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 256 	& -	& 180 \\*
-\midrule
-LEACH	& 256	& 1	& 207 \\*
-	&	& 5	& 212 \\*
-	&	& 10	& 215 \\*
-	&	& 25	& 224 \\*
-	&	& 50	& 239 \\*
-	&	& 75	& 252 \\*
-	&	& 90	& 267 \\*
-	&	& 95	& 281 \\*
-	&	& 99	& 289 \\*
-	&	& 100	& 290 \\*
-\midrule
-PEGASIS	& 256	& 1	& 155 \\*
-	&	& 5	& 157 \\*
-	&	& 10	& 158 \\*
-	&	& 25	& 162 \\*
-	&	& 50	& 166 \\*
-	&	& 75	& 170 \\*
-	&	& 90	& 175 \\*
-	&	& 95	& 179 \\*
-	&	& 99	& 181 \\*
-	&	& 100	& 188 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Wielkość wiadomości: 256 [B]} \\*
+Kwantyl	& -	\\*
+Wartość	& 180	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Wielkość wiadomości: 256 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 207	& 212	& 215	& 224	& 239	& 252	& 267	& 281	& 289	& 290	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Wielkość wiadomości: 256 [B]} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 155	& 157	& 158	& 162	& 166	& 170	& 175	& 179	& 181	& 188	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_1/nodes_in_round_m256.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (m=256B).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (m=256B).}
  \includegraphics[width=10cm]{images/gnuplot/test_1/energy_in_round_m256.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (m=256B).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 180.
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 180.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +8.3\% dla wartości minimalnej (195), +32.8\% dla mediany (239), +61.1\% dla wartości maksymalnej (290).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -15.6\% dla wartości minimalnej (152), -7.8\% dla mediany (166), oraz wydłużenie czasu pracy na poziomie +4.4\% dla wartości maksymalnej (188).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 120 rund.
 
-\subsection{Test 2 - Ilość węzłów w sieci}
-% liczba, liczba, liczba...
+\subsection{Test 2 - Liczba węzłów w sieci}
 
-Test `Ilość węzłów w sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem ilości węzłów znajdujących się w sieci.
+Test `Liczba węzłów w sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem liczby węzłów znajdujących się w sieci.
 
-List plików konfiguracyjnych:
-% Jak wcześniej - lista jest bez sensu, jeśli nie wiadomo co w plikach jest.
-% Lepiej je opisać, napisać w jakim są katalogu itd...
+Folder testdata\/test\_2 zawiera 15 plików konfiguracyjnych, w których parametry węzłów i sieci są takie same jak w konfiguracji domyślnej.
+W nazwie pliku występuje liczba, która określa liczbę węzłów znajdujących się w sieci.
+
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ tree testdata/test_2/
 testdata/test_2/
@@ -1391,9 +1305,7 @@ testdata/test_2/
 0 directories, 15 files
 \end{lstlisting}
 
-Uruchomienie oprogramowania:
-% Szablon - więc i uwagi takie jak wyżej. I tak aż do końca rozdziału. 
-% Rinse and repeat.
+Komenda uruchamiająca oprogramowanie symulatora dla testu z wykorzystaniem 15 plików konfiguracyjnych:
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
@@ -1414,249 +1326,179 @@ testdata/test_2/pegasis150.pbtxt,\
 testdata/test_2/pegasis200.pbtxt
 \end{lstlisting}
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 25 	& -	& 214 \\*
-\midrule
-LEACH	& 25	& 1	& 178 \\*
-	&	& 5	& 186 \\*
-	&	& 10	& 197 \\*
-	&	& 25	& 212 \\*
-	&	& 50	& 230 \\*
-	&	& 75	& 246 \\*
-	&	& 90	& 263 \\*
-	&	& 95	& 272 \\*
-	&	& 99	& 287 \\*
-	&	& 100	& 296 \\*
-\midrule
-PEGASIS	& 25	& 1	& 170 \\*
-	&	& 5	& 172 \\*
-	&	& 10	& 176 \\*
-	&	& 25	& 182 \\*
-	&	& 50	& 187 \\*
-	&	& 75	& 195 \\*
-	&	& 90	& 201 \\*
-	&	& 95	& 206 \\*
-	&	& 99	& 215 \\*
-	&	& 100	& 216 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Liczba węzłów: 25} \\*
+Kwantyl	& -	\\*
+Wartość	& 214	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Liczba węzłów: 25} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 179	& 186	& 197	& 212	& 230	& 246	& 263	& 272	& 287	& 296	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Liczba węzłów: 25} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 170	& 172	& 176	& 182	& 187	& 195	& 201	& 206	& 215	& 216	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_25.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (n=25).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (n=25).}
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_25.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=25).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 214 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 214 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -16.8\% dla wartości minimalnej (178), oraz wydłużenie czasu pracy na poziomie +7.2\% dla mediany (229), +38.3\% dla wartości maksymalnej (296).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -32.9\% dla wartości minimalnej (165), -12.9\% dla mediany (186), oraz wydłużenie czasu pracy na poziomie +0.9\% dla wartości maksymalnej (216).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów uwidacznia różnice pomiędzy efektywnością energetyczną protokołów.
 Zauważyć można, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 150 rund.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 50 	& -	& 359 \\*
-\midrule
-LEACH	& 50	& 1	& 294 \\*
-	&	& 5	& 307 \\*
-	&	& 10	& 321 \\*
-	&	& 25	& 357 \\*
-	&	& 50	& 382 \\*
-	&	& 75	& 410 \\*
-	&	& 90	& 435 \\*
-	&	& 95	& 443 \\*
-	&	& 99	& 461 \\*
-	&	& 100	& 467 \\*
-\midrule
-PEGASIS	& 50	& 1	& 285 \\*
-	&	& 5	& 292 \\*
-	&	& 10	& 302 \\*
-	&	& 25	& 310 \\*
-	&	& 50	& 320 \\*
-	&	& 75	& 332 \\*
-	&	& 90	& 342 \\*
-	&	& 95	& 348 \\*
-	&	& 99	& 354 \\*
-	&	& 100	& 357 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Liczba węzłów: 50} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Liczba węzłów: 50} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 294	& 308	& 321	& 357	& 382	& 410	& 435	& 443	& 461	& 467	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Liczba węzłów: 50} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 285	& 292	& 302	& 310	& 320	& 332	& 342	& 348	& 354	& 357	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_50.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (n=50).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (n=50).}
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_50.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=50).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -22.3\% dla wartości minimalnej (279), oraz wydłużenie czasu pracy na poziomie +6.4\% dla mediany (382), +30.1\% dla wartości maksymalnej (467).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -34.2\% dla wartości minimalnej (272), -10.9\% dla mediany (320), -0.6\% dla wartości maksymalnej (357).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest zbliżony.
 Zauważyć można, że PEGASIS cechuje się lepszą sprawnością energetyczną przez pierwsze 250 rund.  Komunikacja bezpośrednia jest widocznie mniej efektywna.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 100 	& -	& 359 \\*
-\midrule
-LEACH	& 100	& 1	& 326 \\*
-	&	& 5	& 347 \\*
-	&	& 10	& 356 \\*
-	&	& 25	& 385 \\*
-	&	& 50	& 413 \\*
-	&	& 75	& 439 \\*
-	&	& 90	& 464 \\*
-	&	& 95	& 477 \\*
-	&	& 99	& 493 \\*
-	&	& 100	& 499 \\*
-\midrule
-PEGASIS	& 100	& 1	& 267 \\*
-	&	& 5	& 274 \\*
-	&	& 10	& 278 \\*
-	&	& 25	& 285 \\*
-	&	& 50	& 291 \\*
-	&	& 75	& 301 \\*
-	&	& 90	& 311 \\*
-	&	& 95	& 314 \\*
-	&	& 99	& 319 \\*
-	&	& 100	& 333 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Liczba węzłów: 100} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Liczba węzłów: 100} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 326	& 347	& 356	& 385	& 413	& 439	& 464	& 477	& 493	& 499	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Liczba węzłów: 100} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 269	& 274	& 278	& 285	& 291	& 301	& 311	& 314	& 319	& 333	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_100.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (n=100).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (n=100).}
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_100.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=100).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -9.7\% dla wartości minimalnej (324), oraz wydłużenie czasu pracy na poziomie +14.9\% dla mediany (413), +39.0\% dla wartości maksymalnej (499).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -25.6\% dla wartości minimalnej (267), -18.9\% dla mediany (291), -7.2\% dla wartości maksymalnej (333).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie dla LEACH i PEGASIS jest niemal identyczny. Komunikacja bezpośrednia jest widocznie mniej efektywna.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 150 	& -	& 359 \\*
-\midrule
-LEACH	& 150	& 1	& 369 \\*
-	&	& 5	& 378 \\*
-	&	& 10	& 384 \\*
-	&	& 25	& 399 \\*
-	&	& 50	& 425 \\*
-	&	& 75	& 447 \\*
-	&	& 90	& 468 \\*
-	&	& 95	& 484 \\*
-	&	& 99	& 499 \\*
-	&	& 100	& 547 \\*
-\midrule
-PEGASIS	& 150	& 1	& 287 \\*
-	&	& 5	& 293 \\*
-	&	& 10	& 297 \\*
-	&	& 25	& 304 \\*
-	&	& 50	& 312 \\*
-	&	& 75	& 322 \\*
-	&	& 90	& 330 \\*
-	&	& 95	& 333 \\*
-	&	& 99	& 339 \\*
-	&	& 100	& 343 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Liczba węzłów: 150} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Liczba węzłów: 150} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 368	& 378	& 384	& 399	& 425	& 447	& 468	& 484	& 499	& 547	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Liczba węzłów: 150} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 287	& 293	& 297	& 304	& 312	& 322	& 330	& 333	& 339	& 343	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_150.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (n=150).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (n=150).}
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_150.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=150).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.3\% dla wartości minimalnej (360), +18.2\% dla mediany (425), +52.4\% dla wartości maksymalnej (547).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.3\% dla wartości minimalnej (286), -13.1\% dla mediany (312), -4.5\% dla wartości maksymalnej (343).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal identyczny.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Ilość węzłów	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 200 	& -	& 359 \\*
-\midrule
-LEACH	& 200	& 1	& 382 \\*
-	&	& 5	& 398 \\*
-	&	& 10	& 405 \\*
-	&	& 25	& 415 \\*
-	&	& 50	& 430 \\*
-	&	& 75	& 449 \\*
-	&	& 90	& 467 \\*
-	&	& 95	& 475 \\*
-	&	& 99	& 499 \\*
-	&	& 100	& 531 \\*
-\midrule
-PEGASIS	& 200	& 1	& 297 \\*
-	&	& 5	& 299 \\*
-	&	& 10	& 302 \\*
-	&	& 25	& 307 \\*
-	&	& 50	& 313 \\*
-	&	& 75	& 321 \\*
-	&	& 90	& 329 \\*
-	&	& 95	& 335 \\*
-	&	& 99	& 349 \\*
-	&	& 100	& 352 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Liczba węzłów: 200} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Liczba węzłów: 200} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 382	& 398	& 405	& 415	& 430	& 449	& 467	& 475	& 499	& 531	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Liczba węzłów: 200} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 297	& 299	& 302	& 307	& 313	& 321	& 329	& 335	& 349	& 352	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_2/nodes_in_round_200.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (n=200).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (n=200).}
  \includegraphics[width=10cm]{images/gnuplot/test_2/energy_in_round_200.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (n=200).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373), +19.6\% dla mediany (430), +47.9\% dla wartości maksymalnej (531).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -18.4\% dla wartości minimalnej (293), -12.8\% dla mediany (313), -1.9\% dla wartości maksymalnej (352).
-Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, ilość węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
+Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
 Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal identyczny.
@@ -1670,7 +1512,8 @@ Istotna informacja: lokalizacja węzłów w scenariuszu 200 jest niezmienna wzgl
 Oznacza to, że koordynaty (X, Y) węzłów zostały przemnożone przez wartość skali. Proporcja odległości pomiędzy węzłami zostaje taka sama, jednakże zmianie ulega koszt komunikacji, gdyż 
 funkcja kosztów energetycznych jest zależna od dystansu.
 
-List plików konfiguracyjnych:
+Folder testdata\/test\_3 zawiera 15 plików konfiguracyjnych, w których parametry węzłów i sieci są takie same jak w konfiguracji domyślnej.
+W nazwie pliku występuje ciąg znaków (np. \textit{xy100}), który oznacza wielkość sieci wykorzystanej w scenariuszu.
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ tree testdata/test_3/
@@ -1692,7 +1535,7 @@ testdata/test_3/
   pegasis_xy800.pbtxt
 \end{lstlisting}
 
-Uruchomienie oprogramowania:
+Komenda uruchamiająca oprogramowanie symulatora dla testu z wykorzystaniem 15 plików konfiguracyjnych:
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
@@ -1715,186 +1558,142 @@ testdata/test_3/pegasis_xy800.pbtxt
 
 Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych. 
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Skala sieci	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 0.25 	& -	& 42976 \\*
-\midrule
-LEACH	& 0.25	& 1	& 43417 \\*
-	&	& 5	& 44197 \\*
-	&	& 10	& 45130 \\*
-	&	& 25	& 45790 \\*
-	&	& 50	& 46910 \\*
-	&	& 75	& 48151 \\*
-	&	& 90	& 49310 \\*
-	&	& 95	& 50097 \\*
-	&	& 99	& 51909 \\*
-	&	& 100	& 52278 \\*
-\midrule
-PEGASIS	& 0.25	& 1	& 38521 \\*
-	&	& 5	& 38724 \\*
-	&	& 10	& 38847 \\*
-	&	& 25	& 39050 \\*
-	&	& 50	& 39279 \\*
-	&	& 75	& 39544 \\*
-	&	& 90	& 39756 \\*
-	&	& 95	& 39828 \\*
-	&	& 99	& 40038 \\*
-	&	& 100	& 40316 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Skala sieci: 0.25} \\*
+Kwantyl	& -	\\*
+Wartość	& 42976	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Skala sieci: 0.25} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	\\*
+Wartość	& 43417	& 44197	& 45130	& 45790	& 46910	& 48151	\\*
+& \\*
+Kwantyl	& 90	& 95	& 99	& 100	\\*
+Wartość	& 49310	& 50097	& 51909	& 52278	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Skala sieci: 0.25} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	\\*
+Wartość	& 38521	& 38724	& 38847	& 39050	& 39279	& 39544	& 39756	\\*
+& \\*
+Kwantyl	& 95	& 99	& 100	\\*
+Wartość	& 39828	& 40038	& 40316	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy050.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie.}
  \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy050.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 42976 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 42976 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.9\% dla wartości minimalnej (43360), +9.2\% dla mediany (46910), +21.6\% dla wartości maksymalnej (52278).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -10.7\% dla wartości minimalnej (38362), -8.6\% dla mediany (39279), -6.2\% dla wartości maksymalnej (40316).
 Odległości węzłów do 'sink' są czterokrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Skala sieci	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 0.50 	& -	& 5657 \\*
-\midrule
-LEACH	& 0.50	& 1	& 5598 \\*
-	&	& 5	& 5744 \\*
-	&	& 10	& 5872 \\*
-	&	& 25	& 6035 \\*
-	&	& 50	& 6293 \\*
-	&	& 75	& 6564 \\*
-	&	& 90	& 6780 \\*
-	&	& 95	& 6920 \\*
-	&	& 99	& 7214 \\*
-	&	& 100	& 7580 \\*
-\midrule
-PEGASIS	& 0.50	& 1	& 4407 \\*
-	&	& 5	& 4455 \\*
-	&	& 10	& 4473 \\*
-	&	& 25	& 4516 \\*
-	&	& 50	& 4577 \\*
-	&	& 75	& 4627 \\*
-	&	& 90	& 4691 \\*
-	&	& 95	& 4708 \\*
-	&	& 99	& 4776 \\*
-	&	& 100	& 4920 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Skala sieci: 0.50} \\*
+Kwantyl	& -	\\*
+Wartość	& 5657	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Skala sieci: 0.50} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	\\*
+Wartość	& 5598	& 5744	& 5872	& 6035	& 6293	& 6564	& 6780	\\*
+& \\*
+Kwantyl	& 95	& 99	& 100	\\*
+Wartość	& 6920	& 7214	& 7580	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Skala sieci: 0.50} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	\\*
+Wartość	& 4407	& 4455	& 4473	& 4516	& 4577	& 4627	& 4691	\\*
+& \\*
+Kwantyl	& 95	& 99	& 100	\\*
+Wartość	& 4708	& 4776	& 4920	\\*
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy100.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie.}
  \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy100.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 5657 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 5657 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.3\% dla wartości minimalnej (5529), oraz wydłużenie czasu pracy na poziomie +11.2\% dla mediany (6293), +34.0\% dla wartości maksymalnej (7580).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.1\% dla wartości minimalnej (4406), -19.1\% dla mediany (4577), -13.0\% dla wartości maksymalnej (4920).
 Odległości węzłów do 'sink' są dwukrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Skala sieci	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 2.00 	& -	& 23 \\*
-\midrule
-LEACH	& 2.00	& 1	& 49 \\*	
-	&	& 5	& 51 \\*
-	&	& 10	& 51 \\*
-	&	& 25	& 53 \\*
-	&	& 50	& 55 \\*
-	&	& 75	& 58 \\*
-	&	& 90	& 60 \\*
-	&	& 95	& 61 \\*
-	&	& 99	& 63 \\*
-	&	& 100	& 65 \\*
-\midrule
-PEGASIS	& 2.00	& 1	& 27 \\*
-	&	& 5	& 29 \\*
-	&	& 10	& 29 \\*
-	&	& 25	& 30 \\*
-	&	& 50	& 32 \\*
-	&	& 75	& 33 \\*
-	&	& 90	& 34 \\*
-	&	& 95	& 36 \\*
-	&	& 99	& 37 \\*
-	&	& 100	& 38 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Skala sieci: 2.0} \\*
+Kwantyl	& -	\\*
+Wartość	& 23	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Skala sieci: 2.0} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 49	& 51	& 51	& 53	& 55	& 58	& 60	& 61	& 63	& 65	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Skala sieci: 2.0} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 27	& 29	& 29	& 30	& 32	& 33	& 34	& 36	& 37	& 38	\\*	
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy400.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie.}
  \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy400.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 23 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 23 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +213.0\% dla wartości minimalnej (49), +239.1\% dla mediany (55), +282.6\% dla wartości maksymalnej (65).
 Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +117.4\% dla wartości minimalnej (27), +139.1\% dla mediany (32), +165.2\% dla wartości maksymalnej (38).
 Odległości węzłów do 'sink' są dwukrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Skala sieci	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& 4.00 	& -	& 2 \\*
-\midrule
-LEACH	& 4.00	& 1	& 27 \\*
-	&	& 5	& 28 \\*
-	&	& 10	& 29 \\*
-	&	& 25	& 29 \\*
-	&	& 50	& 30 \\*
-	&	& 75	& 31 \\*
-	&	& 90	& 32 \\*
-	&	& 95	& 32 \\*
-	&	& 99	& 33 \\*
-	&	& 100	& 33 \\*
-\midrule
-PEGASIS	& 4.00	& 1	& 7 \\*
-	&	& 5	& 8 \\*
-	&	& 10	& 9 \\*
-	&	& 25	& 9 \\*
-	&	& 50	& 10 \\*
-	&	& 75	& 11 \\*
-	&	& 90	& 11 \\*
-	&	& 95	& 12 \\*
-	&	& 99	& 13 \\*
-	&	& 100	& 13 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Skala sieci: 4.0} \\*
+Kwantyl	& -	\\*
+Wartość	& 2	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Skala sieci: 4.0} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 27	& 28	& 29	& 29	& 30	& 31	& 32	& 32	& 33	& 33	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Skala sieci: 4.0} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 7	& 8	& 9	& 9	& 10	& 11	& 11	& 12	& 13	& 13	\\*	
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_3/nodes_in_round_xy800.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie.}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie.}
  \includegraphics[width=10cm]{images/gnuplot/test_3/energy_in_round_xy800.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie.}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 2 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 2 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1350.0\% dla wartości minimalnej (27), +1500.0\% dla mediany (30), +1650.0\% dla wartości maksymalnej (33).
 Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +350.0\% dla wartości minimalnej (7), +500.0\% dla mediany (10), +650.0\% dla wartości maksymalnej (13).
 Odległości węzłów do 'sink' są czterokrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
@@ -1905,11 +1704,12 @@ Test `Parametr p` ma na celu przedstawienie zależności efektywności energetyc
 typu cluster head. 
 
 Istotna informacja: w przypadku algorytmu komunikacji bezpośredniej parametr `p` nie istnieje. Wynika to z charakterystyki komunikacji, gdyż w protokole
-tym nie występuje koncept węzła typu cluster head i każdy z węzłów przesyła informacje bezpośrednio do węzła głównego (sink). Dokonać można jednak założenia, że 
+tym nie występuje koncept węzła typu \textit{cluster head} i każdy z węzłów przesyła informacje bezpośrednio do węzła głównego (\textit{sink}). Dokonać można jednak założenia, że 
 transmisja w protokole komunikacji bezpośredniej jest specjalnym przypadkiem sieci typu LEACH, w której parametr \[ p = 1.0 \]
-Oznacza to, że każdy z węzłów pełni rolę węzła cluster head, który nie posiada przynależących węzłów standardowych i dokonuje transmisji tylko swoich dane.
+Oznacza to, że każdy z węzłów pełni rolę węzła \textit{cluster head}, który nie posiada przynależących węzłów standardowych i dokonuje transmisji tylko swoich dane.
 
-Lista plików konfiguracyjnych:
+Folder testdata\/test\_4 zawiera 13 plików konfiguracyjnych, w których parametry węzłów i sieci są takie same jak w konfiguracji domyślnej.
+W nazwie pliku występuje ciąg znaków (np. \textit{p010}), który oznacza wartość paramatru `p` wykorzystanego w scenariuszu.
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ tree testdata/test_4/
@@ -1930,7 +1730,7 @@ testdata/test_4/
 0 directories, 13 files
 \end{lstlisting}
 
-Uruchomienie oprogramowania:
+Komenda uruchamiająca oprogramowanie symulatora dla testu z wykorzystaniem 13 plików konfiguracyjnych:
 
 \begin{lstlisting}
 ~/go/src/github.com/keadwen/msc_project$ ./msc_project --repeat_config=100 --config_files=\
@@ -1954,7 +1754,7 @@ Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 10
 \begin{longtable}{*{4}{c}}
 \toprule
 \multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
+Protokół	& `	& Kwantyl	& Wartość \\
 \midrule
 \endhead
 DIRECT	& - 	& -	& 359 \\*
@@ -1983,16 +1783,34 @@ PEGASIS	& 0.05	& 1	& 345 \\*
 \bottomrule
 \end{longtable}
 
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Parametr `p`: 0.05} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Parametr `p`: 0.05} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 356	& 363	& 365	& 383	& 396	& 417	& 435	& 455	& 476	& 484	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Parametr `p`: 0.05} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 345	& 351	& 352	& 356	& 365	& 372	& 377	& 380	& 387	& 389	\\*	
+\bottomrule \\*
+\end{longtable}
+
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_p005.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (p=0.05).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (p=0.05).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_p005.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (p=0.05).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.4\% dla wartości minimalnej (354), oraz wydłużenie czasu pracy na poziomie +10.3\% dla mediany (396), +34.8\% dla wartości maksymalnej (484).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -3.9\% dla wartości minimalnej (345), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365), +8.4\% dla wartości maksymalnej (389).
 Ilość węzłów typu cluster head jest dwukrotnie mniejsza niż w konfiguracji podstawowej.
@@ -2029,199 +1847,161 @@ PEGASIS	& 0.10	& 1	& 341 \\*
 \bottomrule
 \end{longtable}
 
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Parametr `p`: 0.10} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Parametr `p`: 0.10} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 364	& 366	& 373	& 386	& 400	& 413	& 430	& 436	& 455	& 474	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Parametr `p`: 0.10} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 341	& 347	& 351	& 359	& 364	& 372	& 377	& 380	& 388	& 395	\\*	
+\bottomrule \\*
+\end{longtable}
+
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_p010.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (p=0.10).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (p=0.10).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_p010.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (p=0.10).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1.4\% dla wartości minimalnej (365), +11.4\% dla mediany (400), +32.0\% dla wartości maksymalnej (474).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -5.3\% dla wartości minimalnej (345), oraz wydłużenie czasu pracy na poziomie +1.3\% dla mediany (364), +10.0\% dla wartości maksymalnej (395).
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& - 	& -	& 359 \\*
-\midrule
-LEACH	& 0.15	& 1	& 357 \\*
-	&	& 5	& 367 \\*
-	&	& 10	& 371 \\*
-	&	& 25	& 386 \\*
-	&	& 50	& 399 \\*
-	&	& 75	& 419 \\*
-	&	& 90	& 434 \\*
-	&	& 95	& 442 \\*
-	&	& 99	& 455 \\*
-	&	& 100	& 470 \\*
-\midrule
-PEGASIS	& 0.15	& 1	& 340 \\*
-	&	& 5	& 346 \\*
-	&	& 10	& 350 \\*
-	&	& 25	& 355 \\*
-	&	& 50	& 365 \\*
-	&	& 75	& 371 \\*
-	&	& 90	& 382 \\*
-	&	& 95	& 386 \\*
-	&	& 99	& 402 \\*
-	&	& 100	& 411 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Parametr `p`: 0.15} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Parametr `p`: 0.15} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 357	& 367	& 371	& 386	& 399	& 419	& 434	& 442	& 452	& 470	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Parametr `p`: 0.15} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 340	& 346	& 350	& 355	& 365	& 371	& 382	& 386	& 402	& 411	\\*	
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_p015.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (p=0.15).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (p=0.15).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_p015.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (p=0.15).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.5\% dla wartości minimalnej (350), oraz wydłużenie czasu pracy na poziomie +10.0\% dla mediany (399), +30.9\% dla wartości maksymalnej (470).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -6.7\% dla wartości minimalnej (335), oraz wydłużenie czasu pracy na poziomie +1.5\% dla mediany (365), +14.5\% dla wartości maksymalnej (411).
 Ilość węzłów typu cluster head jest o 50\% większa niż w konfiguracji podstawowej.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& - 	& -	& 359 \\*
-\midrule
-LEACH	& 0.20	& 1	& 362 \\*
-	&	& 5	& 366 \\*
-	&	& 10	& 372 \\*
-	&	& 25	& 386 \\*
-	&	& 50	& 403 \\*
-	&	& 75	& 423 \\*
-	&	& 90	& 442 \\*
-	&	& 95	& 451 \\*
-	&	& 99	& 471 \\*
-	&	& 100	& 481 \\*
-\midrule
-PEGASIS	& 0.20	& 1	& 347 \\*
-	&	& 5	& 349 \\*
-	&	& 10	& 352 \\*
-	&	& 25	& 358 \\*
-	&	& 50	& 367 \\*
-	&	& 75	& 373 \\*
-	&	& 90	& 378 \\*
-	&	& 95	& 382 \\*
-	&	& 99	& 388 \\*
-	&	& 100	& 397 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Parametr `p`: 0.20} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Parametr `p`: 0.20} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 362	& 366	& 372	& 386	& 403	& 423	& 442	& 451	& 471	& 481	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Parametr `p`: 0.20} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 347	& 349	& 352	& 358	& 367	& 373	& 378	& 382	& 388	& 397	\\*	
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_p020.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (p=0.20).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (p=0.20).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_p020.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (p=0.20).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.8\% dla wartości minimalnej (362), +12.1\% dla mediany (403), +34.0\% dla wartości maksymalnej (481).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367), +10.6\% dla wartości maksymalnej (397).
 Ilość węzłów typu cluster head jest dwukrotnie większa niż w konfiguracji podstawowej.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& - 	& -	& 359 \\*
-\midrule
-LEACH	& 0.25	& 1	& 359 \\*
-	&	& 5	& 363 \\*
-	&	& 10	& 371 \\*
-	&	& 25	& 384 \\*
-	&	& 50	& 404 \\*
-	&	& 75	& 429 \\*
-	&	& 90	& 439 \\*
-	&	& 95	& 450 \\*
-	&	& 99	& 454 \\*
-	&	& 100	& 465 \\*
-\midrule
-PEGASIS	& 0.25	& 1	& 339 \\*
-	&	& 5	& 347 \\*
-	&	& 10	& 345 \\*
-	&	& 25	& 356 \\*
-	&	& 50	& 362 \\*
-	&	& 75	& 370 \\*
-	&	& 90	& 381 \\*
-	&	& 95	& 385 \\*
-	&	& 99	& 397 \\*
-	&	& 100	& 406 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Parametr `p`: 0.25} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Parametr `p`: 0.25} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 359	& 363	& 371	& 384	& 404	& 429	& 439	& 450	& 454	& 465	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Parametr `p`: 0.25} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 339	& 347	& 350	& 356	& 362	& 370	& 381	& 385	& 397	& 406	\\*	
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_p025.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (p=0.25).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (p=0.25).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_p025.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (p=0.25).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -0.3\% dla wartości minimalnej (358), oraz wydłużenie czasu pracy na poziomie +12.4\% dla mediany (404), +29.5\% dla wartości maksymalnej (465).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367), +10.6\% dla wartości maksymalnej (397).
 Ilość węzłów typu cluster head jest 150\% większa niż w konfiguracji podstawowej.
 
-\begin{longtable}{*{4}{c}}
-\toprule
-\multicolumn{4}{c}{Uzyskane rezultaty} \\
-Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
-\midrule
-\endhead
-DIRECT	& - 	& -	& 359 \\*
-\midrule
-LEACH	& 0.30	& 1	& 352 \\*
-	&	& 5	& 369 \\*
-	&	& 10	& 373 \\*
-	&	& 25	& 385 \\*
-	&	& 50	& 399 \\*
-	&	& 75	& 418 \\*
-	&	& 90	& 431 \\*
-	&	& 95	& 444 \\*
-	&	& 99	& 456 \\*
-	&	& 100	& 470 \\*
-\midrule
-PEGASIS	& 0.30	& 1	& 348 \\*
-	&	& 5	& 350 \\*
-	&	& 10	& 354 \\*
-	&	& 25	& 359 \\*
-	&	& 50	& 366 \\*
-	&	& 75	& 372 \\*
-	&	& 90	& 377 \\*
-	&	& 95	& 385 \\*
-	&	& 99	& 389 \\*
-	&	& 100	& 390 \\*
-\bottomrule
+\begin{longtable}{*{11}{c}}
+\toprule \\*
+\multicolumn{11}{c}{Protokół: DIRECT, Parametr `p`: 0.30} \\*
+Kwantyl	& -	\\*
+Wartość	& 359	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: LEACH, Parametr `p`: 0.30} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 352	& 369	& 373	& 385	& 399	& 418	& 431	& 444	& 456	& 470	\\*
+\midrule \\*
+\\*
+\multicolumn{11}{c}{Protokół: PEGASIS, Parametr `p`: 0.30} \\*
+Kwantyl	& 1	& 5	& 10	& 25	& 50	& 75	& 90	& 95	& 99	& 100	\\*
+Wartość	& 348	& 350	& 354	& 359	& 365	& 372	& 377	& 384	& 389	& 390	\\*	
+\bottomrule \\*
 \end{longtable}
 
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_p030.png}
- \caption{Funkcja ilości węzłów aktywnych w rundzie (p=0.30).}
+ \caption{Funkcja liczby węzłów aktywnych w rundzie (p=0.30).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_p030.png}
  \caption{Funkcja całkowitej ilości energii wszystkich węzłów w rundzie (p=0.30).}
 \end{figure}
 
 \par
-Maksymalna ilość rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.2\% dla wartości minimalnej (351), oraz wydłużenie czasu pracy na poziomie +11.1\% dla mediany (399), +30.9\% dla wartości maksymalnej (470).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.7\% dla wartości minimalnej (342), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365), +8.6\% dla wartości maksymalnej (390).
 Ilość węzłów typu cluster head jest trzykrotnie większa niż w konfiguracji podstawowej.
@@ -2229,7 +2009,7 @@ Ilość węzłów typu cluster head jest trzykrotnie większa niż w konfiguracj
 \begin{figure}[H]
  \centering
  \includegraphics[width=10cm]{images/gnuplot/test_4/nodes_in_round_all.png}
- \caption{Funkcje ilości węzłów aktywnych w rundzie (wszystkie konfiguracje parametru p).}
+ \caption{Funkcje liczby węzłów aktywnych w rundzie (wszystkie konfiguracje parametru p).}
  \includegraphics[width=10cm]{images/gnuplot/test_4/energy_in_round_all.png}
  \caption{Funkcje całkowitej ilości energii wszystkich węzłów w rundzie (wszystkie konfiguracje parametru p).}
 \end{figure}
@@ -2239,6 +2019,7 @@ Powyższe dwa wykresy nakładają przebiegi funkcji uzyskane dla wszystkich sze�
 Zauważyć można zależność, że efektywność energetyczna LEACH oraz PEGASIS przynosi pozytywne rezultaty, pozwalające na wydłużenie czasu pracy węzłów.
 
 \chapter{Podsumowanie}
+%TODO Podsumowanie
 \par
 Koncepcja i projekt systemu symulującego model bezprzewodowej sieci czujnikowej został opracowany przez autora pracy.
 % W niniejszej pracy przedstawiony został autorski projekt oprogramowania do
@@ -2349,7 +2130,7 @@ odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energ
 
 % Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF
 % dostarczanym przez dyplomanta i nie są oprawiane.
-\zakonczenie  % wklejenie recenzji i opinii
+%\zakonczenie  % wklejenie recenzji i opinii
 
 \end{document}
 %+++ END +++
