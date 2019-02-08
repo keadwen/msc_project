@@ -408,7 +408,7 @@ Poniższa ilustracja przedstawia trzy węzły w sieci, które komunikują się b
 
 \subsection{LEACH}
 
-LEACH (\textit{Low-Energy Adaptive Clustering Hierarchy}) jest algorytmem wykorzystywanych w protokołach routingu bezprzewodowej sieci czujnikowej \cite{Akyildiz}.
+LEACH (\textit{Low-Energy Adaptive Clustering Hierarchy}) jest algorytmem wykorzystywanych w protokołach trasowania (\textit{routing}) bezprzewodowej sieci czujnikowej \cite{Akyildiz}.
 W przeciwieństwie do komunikacji bezpośredniej, LEACH jest protokołem w którym występuje hierarchia. 
 
 Zestaw operacji w protokole LEACH nazywa się rundami (\textit{round}). Każda z rund podzielona jest na dwie fazy.
@@ -462,7 +462,7 @@ Poniższa ilustracja przedstawia zestaw węzłów w sieci, które wykorzystują 
 
 \subsection{PEGASIS}
 
-PEGASIS (\textit{Power-Efficient GAthering in Sensor Information Systems}) jest algorytmem wykorzystywanym w protokołach routingu bezprzewodowej sieci czujnikowej \cite{Lindsey-Pegasis}.
+PEGASIS (\textit{Power-Efficient GAthering in Sensor Information Systems}) jest algorytmem wykorzystywanym w protokołach trasowania (\textit{routing}) bezprzewodowej sieci czujnikowej \cite{Lindsey-Pegasis}.
 W przeciwieństwie do komunikacji bezpośredniej, PEGASIS podobnie jak LEACH jest protokołem w którym występuje hierarchia.
 
 PEGASIS jest protokołem dokonującym usprawnień w protokole LEACH. W przypadku sieci czujnikowej, urządzenia pełniące rolę węzłów posiadają ograniczone ilości energii, wynikające np. z zasilania bateryjnego.
@@ -647,6 +647,25 @@ message TimeDelay {
 }
 \end{lstlisting}
 
+\subsubsection{Przykładowa konfiguracja}
+
+Poniższa lista przedstawia kompletny zbiór elementów losowego pliku konfiguracyjnego:
+
+% TODO: Powinno być przedstawione wcześniej
+\begin{itemize}[noitemsep]
+ \item Protokół: DIRECT, LEACH, PEGASIS
+ \item Maksymalna liczba rund: 25000
+ \item Proporcja węzłów typu klaster do wszystkich węzłów: 0.15
+ \item Liczba węzłów głównych (\textit{`sink`}): 1
+ \item Energia węzła głównego: 100 [J]
+ \item Lokalizacja węzła głównego na osi X: 100 [m]
+ \item Lokalizacja węzła głównego na osi Y: 300 [m]
+ \item Liczba węzłów: 200
+ \item Energia węzłów: 1 [J]
+ \item Lokalizacja węzłów na osi X: [0, 200] [m]
+ \item Lokalizacja węzłów na osi Y: [0, 200] [m]
+\end{itemize}
+
 \subsection{Moduł główny (Core)}
 
 Moduł główny posiada najważniejsze cechy umożliwiające modelowanie systemu symulatora WSN.
@@ -681,32 +700,18 @@ func (n *Node) distance(dst *Node) float64
 func (n *Node) consume(e float64) error
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury węzła (Node):
-% TODO: Przerobić listy na tekst.
-% Lista, lista, lista... Dobre w dokumentacji technicznej ale nie w pracy
-% dyplomowej. Uważam, że należy poniższą listę (a może listy?) przerobić na tekst.
+Struktura węzła \textit{Node} posiada 3 zmienne publiczne. Zmienna (\textit{Conf}) przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w podrozdziale \textit{Konfiguracja węzła}).
+Zmienna (\textit{Ready}) definiuje stan gotowości węzła do pracy. Wartość \textit{true} oznacza, że węzeł jest gotowy do nadawania i odbierania informacji.
+(\textit{Energy}) przechowuje aktualny stan energetyczny węzła. W przypadku wyczerpania energii (wartość mniejsza lub równa zero), zmienna \textit{Ready} zostaje ustawiona na \textit{false}.
 
-\begin{itemize}
- \item konfiguracja (\textit{Conf}) - zmienna publiczna przechowuje konfigurację węzła w formacie protocol buffer (szczegółowe informacje dostępne w podrozdziale \textit{Konfiguracja węzła}).
- \item gotowość (\textit{Ready}) - zmienna publiczna przechowuje stan gotowości węzła. Wartość \textit{true} oznacza, że węzeł jest gotowy do nadawania i odbierania informacji.
- \item następny skok (\textit{nextHop}) - zmienna prywatna przechowuje adres do zmiennej węzła, będącego odbiorcą informacji nadawanych przez węzeł. Wartością domyślna w momencie
-       rozpoczęcia symulacji jest adres głównego odbiornika danych (\textit{sink}).
- \item energia (\textit{Energy}) - zmienna publiczna przechowuje aktualny stan energetyczny węzła. W przypadku wyczerpania energii, zmienna Ready zostaje ustawiona na \textit{false}.
- \item kolejka nadawania (\textit{transmitQueue}) - zmienna prywatna przechowuje informację o ilości bajtów gotowych do przekazania do następnego węzła na końcu rundy.
- \item kolejka odbioru (\textit{receiveQueue}) - zmienna prywatna przechowuje informację o ilości bajtów odebranych przez węzeł na początku rundy.
- \item dane nadane (\textit{dataSent}) - zmienna prywatna przechowuje sumę bajtów nadanych przez węzeł.
- \item dane odebrane (\textit{dataReceived}) - zmienna prywatna przechowuje sumę bajtów odebranych przez węzeł.
-\end{itemize}
+Dodatkowo, struktura \textit{Node} składa się ze zmiennych prywatnych przechowujących wiele istotnych stanów pracy węzła.
+Następny skok (\textit{nextHop}) przechowuje adres pamięci do zmiennej węzła, będącego odbiorcą informacji nadawanych przez węzeł. Wartością domyślna w momencie rozpoczęcia symulacji jest adres głównego odbiornika danych (\textit{sink}).
+Kolejka nadawania (\textit{transmitQueue}) i kolejka odbioru (\textit{receiveQueue}) przechowują informację o liczbie bajtów gotowych do przekazania do następnego węzła na końcu rundy oraz o liczbie bajtów odebranych przez węzeł na początku rundy.
+Dane nadane (\textit{dataSent}) i dane odebrane (\textit{dataReceived}) przechowuje sumę bajtów nadanych i odebranych przez węzeł.
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (\textit{Node}):
-
-\begin{itemize}
- \item Transmit - funkcja pozwala na transmisję danych do węzła.
- \item Receive - funkcja pozwala na odbieranie danych przez węzeł.
- \item Info - funkcja generuje ciąg znaków w podstawowymi informacjami na temat węzła.
- \item distance - funkcja wyznacza wartość odległości pomiędzy dwoma węzłami.
- \item consume - funkcja obciąża energetycznie węzeł.
-\end{itemize}
+Do struktury węzła przynależą również 3 funkcje publiczne. Funkcja \textit{Transmit} pozwala na transmisję wiadomości do węzła docelowego, natomiast funkcja \textit{Receive} pozwala na odbieranie wiadomości przez węzeł
+Funkcja \textit{Info} generuje ciąg znaków w podstawowymi informacjami na temat węzła.
+Prywatne funkcje \textit{distance} oraz \textit{consume} odpowiadają za wyznaczanie odległości pomiędzy dwoma węzłami oraz obciążeniem węzła kosztem energetycznym za wykonaną pracę.
 
 \subsubsection{Sieć (Network)}
 
@@ -741,34 +746,20 @@ func (net *Network) PopulateEnergyPoints()
 func (net *Network) PopulateNodesAlivePoints()
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury sieci (\textit{Network}):
-% TODO: Przerobić listy na tekst.
+Struktura sieci \textit{Network} posiada 12 zmiennych publicznych. Protokół (\textit{Protocol}) przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
+Stacja bazowa (\textit{BaseStation}) przechowuje adres pamięci do obiektu węzła głównego (\textit{sink}).
+Węzły (\textit{Nodes}) przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (\textit{hashmap}), który umożliwia operacje zapisu i odczytu w procesach równoległych. 
+Kluczem dziennika jest unikatowy identyfikator węzła. Runda (\textit{Round}) przechowuje numer aktualnej rundy symulacji oraz maksymalna ilość rund (\textit{MaxRounds}) definiuje maksymalną ilość rund symulacji. 
+W przypadku osiągnięcia wartości \textit{Round} równej \textit{MaxRounds}, symulacja zostanie przerwana i wyniki zostają zwrócone do użytkownika.
+Długość wiadomości (\textit{MsgLength}) przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana i nadawana jest podczas rundy przez każdy z węzłów. 
+W skład tej wartości wchodzą dane pomiarowe i dodatkowy nakład informacji powstały w wyniku enkapsulacji.
+Zmienne \textit{GNUPlotNodes, GNUPlotTotalEnergy} przechowujące parametry rund wykorzystywane do generowania grafów przy użyciu narzędzia GNUPlot. 
+Następnie \textit{PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints} przechowują parametry rund wykorzystywane do generowania grafów przy użyciu biblioteki plotter.
 
-\begin{itemize}
- \item protokół (\textit{Protocol}) - zmienna publiczna przechowuje obiekt definiujący protokół komunikacji pomiędzy węzłami.
- \item stacja bazowa (\textit{BaseStation}) - zmienna publiczna przechowuje obiekt węzła głównego (\textit{sink}).
- \item węzły (\textit{Nodes}) - zmienna publiczna przechowuje obiekty węzłów w sieci. Implementacja przy wykorzystaniu dziennika (\textit{hashmap}), 
-       który umożliwia operacje zapisu i odczytu w procesach równoległych. Kluczem dziennika jest unikatowy identyfikator węzła.
- \item runda (\textit{Round}) - zmienna publiczna przechowuje numer aktualnej rundy symulacji.
- \item maksymalna ilość rund (\textit{MaxRounds}) - zmienna publiczna przechowuje maksymalną ilość rund symulacji. 
-       W przypadku osiągnięcia wartości \textit{Round} równej \textit{MaxRounds}, symulacja zostanie przerwana.
- \item długość wiadomości (\textit{MsgLength}) - zmienna publiczna przechowuje informację o całkowitej wielkości wiadomości (mierzonej w bajtach) jaka generowana
-       jest podczas rundy przez każdy z węzłów. W skład tej wartości wchodzą dane pomiarowe i dodatkowy nakład informacji powstały w wyniku enkapsulacji.
- \item \textit{GNUPlotNodes, GNUPlotTotalEnergy} - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów przy użyciu narzędzia GNUPlot.
- \item \textit{PlotTotalEnergy, PlotNodes, NodesAlivePoints, NodesEnergyPoints} - zmienne publiczne przechowujące parametry rund wykorzystywane do generowania grafów
-       przy użyciu biblioteki plotter.
-\end{itemize}
-
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (Node):
-% TODO: Przerobić listy na tekst.
-
-\begin{itemize}
- \item AddNode - funkcja pozwala na dodanie węzła do sieci.
- \item Simulate - funkcja umożliwia rozpoczęcie symulacji.
- \item CheckNodes - funkcja sprawdza ilość sprawnych węzłów w sieci.
- \item PopulateEnergyPoints - funkcja sprawdza oraz przechowuje stany energetyczne węzłów.
- \item PopulateNodesAlivePoints - funkcja sprawdza oraz przechowuje ilość sprawnych węzłów w sieci.
-\end{itemize}
+Dodatkowo, do struktura sieci \textit{Network} przynależy 5 funkcji publicznych. 
+Funkcja \textit{AddNode} pozwala na dodanie węzła do obiektu sieci, oraz \textit{CheckNodes} pozwala na sprawdzenie liczby węzłów w sieci.
+Funkcja \textit{PopulateEnergyPoints} oraz \textit{PopulateNodesAlivePoints} odpowiedzialna jest za sprawdzanie i dodawanie nowych danych pomiarowych dotyczących stanów energetycznych węzłów.
+Ostatnią i najważniejszą funkcją jest \textit{Simulate}, która dokonuje rozpoczęcia symulacji w oparciu o wcześniej dodane węzły i protokół.
 
 \subsubsection{Koszty transmisji}
 
@@ -799,23 +790,13 @@ type Protocol interface {
 }
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji węzła (\textit{Node}):
-% TODO: Przerobić listy na tekst.
+Interfejs \textit{Protocol} wymaga od struktury posiadania trzech funkcji o powyższych sygnaturach.
+Funkcja \textit{Setup} odpowiedzialna jest za konfigurację węzłów w sieci zgodnie z zaimplementowanym protokołem. Dodatkowo, dwie funkcje pomocnicze
+\textit{SetNodes} oraz \textit{SetCluster}. Pierwsza z nich pozwalają na zdefiniowanie całkowitej liczby węzłów biorących udział w symulacji.
+Druga natomiast dokonuje przekonwertowania wartości parametru `p` na maksymalną liczbę węzłów, które mogą pełnić rolę węzła typu \textit{cluster head}. 
 
-\begin{itemize}
- \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
- \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
- \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
-\end{itemize}
-
-Poniższa lista przedstawia zaimplementowane protokoły:
-% TODO: Przerobić listy na tekst.
-
-\begin{itemize}
- \item Komunikacja bezpośrednia	(\textit{Direct Communication}) - wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (\textit{sink}).
- \item LEACH (LEACH) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji LEACH.
- \item PEGASIS (PEGASIS) - wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji PEGASIS.
-\end{itemize}
+W autorskim oprogramowaniu symulatora dostępne są trzy protokoły komunikacji. Komunikacja bezpośrednia (\textit{Direct Communication}), w której wszystkie węzły w sieci komunikują się bezpośrednio z węzłem głównym (\textit{sink}).
+Komunikacja z wykorzystaniem protokołu LEACH oraz PEGASIS, w których wszystkie węzły w sieci komunikują się zgodnie z topologią ustaloną w procesie konfiguracji LEACH, bądź PEGASIS.
 
 \subsection{Moduł symulatora (Simulator)}
 
@@ -848,33 +829,16 @@ func createPlot(title, x, y string) (*plot.Plot, error)
 func (s *Simulator) plotter() error
 \end{lstlisting}
 
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych zmiennych struktury symulatora (`Simulator`):
-% TODO: Przerobić listy na tekst.
+Symulator posiada trzy zmienne prywatne typu dziennik. Przestrzeń nazw (\textit{namespace}) przechowuje nazwy symulacji, które w jednoznaczny sposób identyfikują sieć i konfigurację.
+Przestrzeń konfiguracji (\textit{config}) przechowuje obiekt konfiguracji (\textit{Config}) dla każdej symulacji. Kluczem dziennika jest unikatowa nazwa symulacji.
+Przestrzeń sieci (\textit{network}) przechowuje obiekt sieci (\textit{Network}) dla każdej symulacji. Również w tym przypadku kluczem dziennika jest nazwa symulacji.
 
-\begin{itemize}
- \item przestrzeń nazw (\textit{namespace}) - zmienna prywatna przechowuje nazwy symulacji, które w jednoznaczny sposób identyfikują sieć i konfigurację.
- \item przestrzeń konfiguracji (\textit{config}) - zmienna prywatna przechowuje obiekt konfiguracji (\textit{Config}) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
- \item przestrzeń sieci (\textit{network}) - zmienna prywatna przechowuje obiekt sieci (\textit{Network}) dla każdej symulacji. Kluczem dziennika jest nazwa symulacji.
-\end{itemize}
-
-Poniższa lista przedstawia oraz opisuje znaczenie poszczególnych funkcji symulatora (\textit{Simulator}):
-% TODO: Przerobić listy na tekst.
-
-\begin{itemize}
- \item Setup - funkcja konfiguruje węzły w sieci zgodnie z zaimplementowanym protokołem.
- \item SetNodes - funkcja definiuje ilość węzłów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
- \item SetClusters - funkcja definiuje ilość klastrów w sieci. Wartość ta jest niezbędna do wyznaczania parametrów w protokołach (np. LEACH, PEGASIS).
-\end{itemize}
-
-% Powtórzenia
-
-% TODO: Poprawić tekst
-% Przykład naprawy a może refaktoryzacji :) pracy dyplomowej:
-% Węzły sieci są konfigurowane zgodnie z zaimplementowanym protokołem z użyciem
-% funkcji Setup. Określenie liczby węzłów sieci jest niezbedne w protokołach
-% takich jak LEACH i PEGASIS. W celu zdefiniowania tej wartości wywoływana jest
-% funkcja SetNodes. W niektórych protokołach konieczne jest także zdefiniowanie
-% liczby klastrów, co jest realizowane funkcją SetClusters.
+Dodatkowo struktura Symulatora (\textit{Simulator}) posiada 4 funkcje publiczne. Funkcja \textit{AddScenario} umożliwia dodanie scenariusza do obiektu symulatora.
+Wymaganym jest podanie nazwy symulacji oraz pliku konfiguracyjnego. Możliwym jest wykorzystanie tego samego pliku konfiguracyjnego w wielu scenariuszach, wymaganym jest jednak
+wygenerowanie unikatowej nazwy symulacji. W przeciwnym wypadku symulator zwróci błąd informujący o niedozwolonej duplikacji nazwy symulacji.
+W momencie umieszczenia	przynajmniej jednej konfiguracji, użytkownik może wywołać funkcję \textit{Run}, która odpowiedzialna jest za uruchomienie symulacji scenariuszy.
+Efektem pomyślnego zakończenia symulacji jest uzyskanie wyników pracy sieci w poszczególnych rundach. Funkcje \textit{ExportPlots} oraz \textit{ExportGNUPlots} pozwalają na
+przekonwertowanie danych do grafiki lub pliku w formacie kompatybilnym z gnuplot.
 
 \section{Obsługa systemu}
  
@@ -918,7 +882,6 @@ Proces kompilacji (z poziomu folderu z kodem projektu):
 \subsection{Generowanie konfiguracji}
 
 Wcześniej opisany plik konfiguracyjny jest elementem niezbędnym do uruchomienia symulacji.
-
 Przykładowy plik konfiguracyjny (\textit{example.pbtxt}) znajdują się w folderze proto:
 
 \begin{lstlisting}
@@ -964,28 +927,12 @@ nodes <
 Oprogramowanie umożliwia również generowanie scenariuszy w dynamiczny sposób.
 W tym przypadku podczas uruchamiania oprogramowania (proces opisany w sekcji \textit{Uruchamianie scenariuszy})
 użytkownik nie podaje pliku konfiguracyjnego. Oprogramowanie stworzy identyczny zestaw konfiguracyjny
-dla każdego zaimplementowanego protokołu. Parametry wygenerowanej konfiguracji dostępne poniżej:
-
-% TODO: Powinno być przedstawione wcześniej
-\begin{itemize}[noitemsep]
- \item Protokół: Bezpośrednia komunikacja, LEACH, PEGASIS
- \item Maksymalna ilość rund: 25000
- \item Proporcja węzłów typu klaster do wszystkich węzłów: 0.15
- \item Liczba węzłów głównych (`sink`): 1
- \item Energia węzła głównego: 100 [J]
- \item Lokalizacja węzła głównego na osi X: 100 [m]
- \item Lokalizacja węzła głównego na osi Y: 300 [m]
- \item Liczba węzłów: 200
- \item Energia węzłów: 1 [J]
- \item Lokalizacja węzłów na osi X: [0, 200] [m]
- \item Lokalizacja węzłów na osi Y: [0, 200] [m]
-\end{itemize}
-
-Poniższa ilustracja przedstawia przykładowe rozstawienie węzłów w sieci wygenerowanych dynamicznie:
+dla każdego zaimplementowanego protokołu.
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=10cm]{images/przykladowa_sieci_wygenerowana.png} 
+ \includegraphics[width=10cm]{images/przykladowa_sieci_wygenerowana.png}
+ \caption{Przykładowe rozstawienie węzłów w sieci wygenerowanej dynamicznie.}
 \end{figure}
 
 \subsection{Uruchamianie scenariuszy}
@@ -1059,11 +1006,11 @@ W tym rodziale przedstawione zostaną wyniki uzyskane w procesie symulacji przy 
 
 Oprogramowanie posiada implementacje trzech algorytmów: komunikację bezpośrednią, LEACH oraz PEGASIS (dokładniejszy opis działania protokołów został przedstawiony w poprzednich rozdziałach).
 W celu porównania efektywności energetycznej pomiędzy trzema rozwiązaniami, niezbędne jest precyzyjne zdefiniowanie testów.
-Sstemie posiada cztery parametry, których wartości będą modyfikowane i efekty zmian będą porównywane:
+Systemie posiada cztery parametry, których wartości będą modyfikowane i efekty zmian będą porównywane:
 
 \begin{itemize}
  \item Wielkość wiadomości - parametr ten definiuje wielkość wiadomości wysyłanej pomiędzy węzłami (mierzone w Bajtach).
- \item Ilość węzłów w sieci - parametr ten definiuje liczbę węzłów w pojedynczej sieci i symulacji.
+ \item Liczba węzłów w sieci - parametr ten definiuje liczbę węzłów w pojedynczej sieci i symulacji.
  \item Wielkość obszaru sieci - parametr ten definiuje wielkość obszaru wymiany danych w sieci (mierzony w metrach).
  \item Parametr `p` - wartość prawdopodobieństwa wypromowania węzła na węzeł typu \textit{cluster head}.
 \end{itemize}
