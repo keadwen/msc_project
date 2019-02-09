@@ -127,7 +127,7 @@
 %-----------------
 \chapter{Wstęp}
 
-W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinformatycznych w zakresie bezprzewodowych sieci czujnikowych.
+W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinformatycznych w zakresie bezprzewodowych sieci czujnikowych \cite{WsnOpis-Chong}.
 Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych (np. system wykrywania jednostek wojskowych i snajperów \text{Boomerang sniper detection system}) \cite{Akyildiz}. 
 Wzrost popularności rozwiązań bezprzewodowych powiększyła gamę możliwości oferowanych przez bezprzewodowe czujniki, które dzisiaj znajdują zastosowanie w nieskończonej liczbie aplikacji \cite{ACM-WSN}. 
 Branża inżynierii środowiska umożliwiła zbudowanie wielu efektywnych systemów umożliwiających pomiar i kolekcjonowanie danych w miejscach wcześniej niedostępnych ze względu na surowe warunki atmosferyczne.
@@ -139,8 +139,8 @@ Inne sektory przemysłu również wykorzystały korzyści płynące z aplikacji 
 Przyszłość technologii bezprzewodowej sieci czujników zdecydowanie dostarczy wiele nowych rozwiązań, zarówno w nowych branżach jak i tych aktualnie wykorzystujących podobne rozwiązania \cite{wsn-future}.
 
 \par
-Celem pracy są badania problemów współbieżności w algorytmach sieci czujnikowej. Praca wykorzystuje 
-ogólnie znane i udokumentowane algorytmy umożliwiające transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest skończona ilość energii czujnika.
+Celem pracy są badania problemów współbieżności w algorytmach sieci czujnikowej.
+Praca wykorzystuje ogólnie znane i udokumentowane algorytmy umożliwiające transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest skończona ilość energii czujnika.
 Istotnym elementem pracy jest autorski symulator sieci sensorowej, która stanowi podstawowe narzędzie umożliwiająca implementację oraz testowanie nowych algorytmów.
 Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania różnych algorytmów transmisji danych, bez potrzeby wykorzystania fizycznych urządzeń.
 
@@ -1937,11 +1937,11 @@ Nabyte doświadczenie pozwoliło mi zbudować zdecydowanie lepsze rozwiązanie k
 Dodatkowo, ugruntowałem swoją wiedzę teoretyczną z zakresu bezprzewodowych sieci czujnikowych, algorytmów i protokołów wykorzystywanych w sieciach w sposób praktyczny.
 
 Istnieje wiele elementów pracy które warte byłyby przeprowadzenia dalszych badań.
-Począwszy od implementacji dodatkowych protokołów, nie tylko z puli protokołów hierarchicznych (t.j. PEGASIS, LEACH), ale również protokołów t.j. SAR, SPEED. Protokoły w których przesyłane dane posiadają różne priorytety (\textit{Quality of Service})
-Interesującym byłoby również zaimplementowanie protokołów wykorzystujących wielotorowość (M-MPR \textit{Mesh MultiPath Routing}).
+Począwszy od implementacji dodatkowych protokołów, nie tylko z puli protokołów hierarchicznych (t.j. PEGASIS, LEACH) \cite{teen-Manjeshwar}, ale również protokołów t.j. SAR, SPEED. Protokoły w których przesyłane dane posiadają różne priorytety (\textit{Quality of Service})
+Interesującym byłoby również zaimplementowanie protokołów wykorzystujących wielotorowość (M-MPR \textit{Mesh MultiPath Routing}) \cite{Sohrab} \cite{Protocols-Sohrabi} \cite{Gao}.
 Korzystnym z perspektywy istniejących protokołów byłoby zaimplementowanie metody agregacji i kompresji zebranych danych przed ich przesłaniem do węzła docelowego.
 Zdefiniowanie w plikach konfiguracyjnych kosztów energetycznych pracy węzła, wynikającego z czasu pracy procesora, kosztów strat wynikających z odbierania i przesyłania danych.
-Wersja oprogramowani dostępna na GitHub umożliwia definiowanie dodatkowych kosztów energetycznych \textit{EnergyCost} czy opóźnień czasowych \textit{TimeDelay} w pliku konfiguracyjnym.
+Wersja oprogramowani dostępna na GitHub umożliwia definiowanie dodatkowych kosztów energetycznych \textit{EnergyCost} \cite{Slijepcevic} czy opóźnień czasowych \textit{TimeDelay} w pliku konfiguracyjnym.
 Finalnie, przydatnym byłoby napisanie większej bazy testów jednostkowych, umożliwiających weryfikację aktualnego oprogramowania.
 
 % To powyżej jest bardzo fajne. Trzeba to uwypuklić. W podsumowaniu można sobie
@@ -2010,8 +2010,7 @@ Finalnie, przydatnym byłoby napisanie większej bazy testów jednostkowych, umo
 \bibitem{algoBook}{C. Leiserson, C. Stein, R. Riverst, T. Cormen, ,,Introduction to Algorithms, 3rd Edition'', The MIT Press, ISBN 9780262033848, 2009.}
 \end{thebibliography}
 
-% Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF
-% dostarczanym przez dyplomanta i nie są oprawiane.
+% Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF dostarczanym przez dyplomanta i nie są oprawiane.
 %\zakonczenie  % wklejenie recenzji i opinii
 
 \end{document}
