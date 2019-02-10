@@ -115,7 +115,7 @@
 }
 
 \streszczenia{
-  %TODO Poprawnić na końcu ponieważ praca się rozrasta.
+  \newpage
   \input{streszczenia.tex}
 }
 
@@ -127,32 +127,35 @@
 %-----------------
 \chapter{Wstęp}
 
-W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinformatycznych w zakresie bezprzewodowych sieci czujnikowych \cite{WsnOpis-Chong}.
-Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych (np. system wykrywania jednostek wojskowych i snajperów \text{Boomerang sniper detection system}) \cite{Akyildiz}. 
-Wzrost popularności rozwiązań bezprzewodowych powiększyła gamę możliwości oferowanych przez bezprzewodowe czujniki, które dzisiaj znajdują zastosowanie w nieskończonej liczbie aplikacji \cite{ACM-WSN}. 
-Branża inżynierii środowiska umożliwiła zbudowanie wielu efektywnych systemów umożliwiających pomiar i kolekcjonowanie danych w miejscach wcześniej niedostępnych ze względu na surowe warunki atmosferyczne.
-System \textit{Volcano Monitoring} zbudowany został na potrzeby monitorowania aktywności wulkanicznej w Ekwadorze w lata 2004-2005 \cite{volcano}. Korzyści naukowe płynące z informacji uzyskanych w ramach tego projektu zainicjowały dalsze
-modernizacje i wdrożenia w systemie, pozwalające na monitorowanie większej liczby wulkanów na terenie kraju.
-System \textit{ZebraNet} pozwala na kolekcjonowanie aktywności oraz lokalizacji zwierząt w terenie. Zebrane dane pozwalają na zaobserwowanie wcześniej nieznanych schematów migracji zebr oraz ich interakcji z innymi zwierzętami \cite{zebranet}. 
-Występuje wiele innych systemów, które odpowiedzialne są za monitorowania poziomu wody, poziomu zanieczyszczenia powietrza, itp. \cite{Akyildiz} \cite{Shen}
-Inne sektory przemysłu również wykorzystały korzyści płynące z aplikacji WSN. Współczesne budownictwo jest pełne rozwiązań domów inteligentnych w których mam możliwość pomiar temperatury i wilgoci, poboru mocy, zdalnego odczytu wartości liczników gazu i prądu \cite{Wiley-WSN}.
-Przyszłość technologii bezprzewodowej sieci czujników zdecydowanie dostarczy wiele nowych rozwiązań, zarówno w nowych branżach jak i tych aktualnie wykorzystujących podobne rozwiązania \cite{wsn-future}.
+W ciąg ostatnich lat obserwujemy szybki rozwój technologii informatycznych i teleinformatycznych w zakresie bezprzewodowych sieci czujnikowych.
+Pierwsze implementacje bezprzewodowych czujników wykorzystano w celach zbrojeniowych. Aktualnie, możliwości oferowane przez bezprzewodowe 
+czujniki znajdują zastosowanie w nieskończonej liczbie aplikacji, zarówno w przemyśle (np. medycynie), jak również w sektorze prywatnym (np. inteligentny dom) \cite{Shen}.
 
-\par
-Celem pracy są badania problemów współbieżności w algorytmach sieci czujnikowej.
-Praca wykorzystuje ogólnie znane i udokumentowane algorytmy umożliwiające transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest skończona ilość energii czujnika.
+\section{Cel pracy}
+Celem pracy są badania problemów współbieżności w algorytmach sieci czujnikowej. Praca wykorzystuje 
+ogólnie znane i udokumentowane algorytmy umożliwiające transmitowanie danych w sieci, w których najważniejszym ograniczeniem jest skończona ilość energii czujnika.
+
 Istotnym elementem pracy jest autorski symulator sieci sensorowej, która stanowi podstawowe narzędzie umożliwiająca implementację oraz testowanie nowych algorytmów.
 Aplikacja umożliwia tworzenie symulacji porównujących efekty zastosowania różnych algorytmów transmisji danych, bez potrzeby wykorzystania fizycznych urządzeń.
 
-\par
+\section{Tworzenie projektu}
 Koncepcja projektu informatycznego została opracowana przez autora pracy. Początkowy etap tworzenia oprogramowania polegał na zebraniu wymagań systemu.
 Niezbędnym było zdefiniowanie danych wejściowych, oraz oczekiwanych danych wyjściowych będących rezultatem działania oprogramowania symulacyjnego.
 W momencie zatwierdzenia założeń projektu przez promotora pracy, autor przystąpił do stworzenia prototypu, który miał na celu zweryfikowanie założeń, przetestowanie fundamentów architektury systemu, 
-oraz oszacowanie czasu niezbędnego do ukończenia całości projektu. Pierwszy prototyp uwidocznił istotne braki w funkcjonalności (np. brak wielokrotnego odpalania scenariuszy), które zostały
-zaimplementowane w finalnej wersji. Projekt zrealizowano w języku programowania Go, wraz z systemem kontroli wersji git, którego zdalna kopia dostępna jest na serwisie GitHub na profilu autora pracy (github.com/keadwen).
-Projekt chroniony jest licencją publiczną typu \textit{Apache License 2.0}, która pozwala na wykorzystywanie aplikacji w celach komercyjnych, z możliwością dystrybucji, modyfikacji oprogramowania.
-Licencja ta nie stanowi gwarancji poprawności działania oprogramowania. Oprogramowanie dostępne na GitHub umożliwia weryfikację uzyskanych wyników opisanych w pracy dyplomowej, jak również 
-analizę stworzonego oprogramowania.
+oraz oszacowanie czasu niezbędnego do ukończenia całości projektu. Pierwszy prototyp uwidocznył istotne braki w funkcjonalności (np. brak wielokrotnego odpalania scenariuszy), które zostały
+zaimplementowane w finalnej wersji. Projekt zrealizowano w języku programowania Go, wraz z systemem kontroli wersji git, którego zdalna kopia dostępna jest na serwisie GitHub
+na profilu autora pracy (github.com/keadwen).
+
+%TODO
+% napisałbym o githubie wprost: publiczna i ogólnodostępna dlatego każdy może w
+% dowolnym momencie zweryfikować opisane w pracy wyniki. Ponadto można też kod
+% pobrać, przeanalizować, porównać z innymi rozwiązaniami. Nie wiem, na jakiej
+% licencji to Pan wrzucił ale może też "zmodyfikować i udostępniać dalej".
+
+% W części wstępnej i rozdziałach początkowych powinno być dużo (dużo więcej)
+% odniesień do literatury. Tutaj to uzyskać najłatwiej. W zasadzie każdy akapit
+% może być obarczony odniesieniem do jakiejś książki lub przeglądowego artykułu
+% o WSN.
 
 %-----------------
 % Wykorzystane technologie
@@ -213,26 +216,39 @@ W powyższym przykładzie przedstawione zostało kilka innowacyjnych cech język
 Składnia języka oraz cechy zbliżone są do C/C++ czy Python, jednakże występuje kilka cech unikatowych dla Go.
 
 \paragraph{Cechy języka Go i Python}
-Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych. Zaliczany jest do języków statycznych, co pozwala wyeliminować błędy typu \textit{runtime} wynikające z typu zmiennej.
-Go jest językiem kompilowanym, co pozwala na szybsze uruchamianie i wykonanie poleceń oprogramowania oraz wykorzystuje mniej pamięci (np. w Go zmienna typu int32 wymaga 4 bajty pamięci, w Python 24 bajty).
-Python od samego początku umożliwiał \textit{runtime reflection}, które jest już dostępne w Golang przy wykorzystaniu biblioteki \textit{reflect}). 
-W pierwszych latach funkcjonowania Go, język Python posiada zdecydowanie większą bazę publicznych bibliotek.
+\begin{itemize}
+ \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
+ \item Go jest językiem statycznym, co pozwala wyeliminować błędy typu runtime wynikające z typu zmiennej.
+ \item Go jest językiem samodokumentującym. Określony odgórnie format komentarzy umożliwia automatyczne tworzenie przejrzystej dokumentacji.
+ \item Go jest językiem kompilowanym, co pozwala na szybsze uruchamianie i wykonanie poleceń oprogramowania.
+ \item Go wykorzystuje mniej pamięci. Przykład: W Go zmienna typu int32 wymaga 4 bajty pamięci, w Python 24 bajty.
+ \item Python umożliwia runtime reflection.
+ \item Python posiada większy bazę publicznych bibliotek.
+\end{itemize}
 
 \paragraph{Cechy języka Go i C++}
-Go posiada system zarządzania pamięcią (\textit{garbage collector}) i jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
-Go nie wymaga tworzenia plików typu header.
-Go jest językiem obiektowym, niemniej zdolność dziedziczenia (\textit{inheritance}) została zastąpiona osadzaniem (\textit{embedding}).
-Dodatkowo Go posiada możliwość użycia (zaimportowania) dowolnej biblioteki C, C++.
-W przeciwieństwie, C++ pozwala osiągnąć krótszy czas wykonania poleceń oprogramowania, jak również tworzenie kodu niezależnie od typu zmiennej (\textit{generics}).
-Możliwym jest, że Go w wersji 2.0 będzie wyposażony w zmienne typu \textit{generics}.
-Istnieją również aplikacje w których brak systemu zarządzania pamięcią (\textit{garbage collector}) w C++, umożliwia większą kontrolę nad zasobami pamięci (np. w mikro kontrolerach).
+\begin{itemize}
+ \item Go posiada system zarządzania pamięcią (\textit{garbage collector}).
+ \item Go jest językiem wspomagającym tworzenie aplikacji wielowątkowych.
+ \item Go jest językiem samodokumentującym. Nie wymaga tworzenia plików typu header.
+ \item Go nie jest językiem obiektowym. Zdolność dziedziczenia (\textit{inheritance}) została zastąpiona osadzaniem (\textit{embedding}).
+ \item Go posiada możliwość użycia (zaimportowania) dowolnej biblioteki C, C++.
+ \item C++ pozwala osiągnąć krótszy czas wykonania poleceń oprogramowania.
+ \item C++ posiada tworzenie kodu niezależnie od typu zmiennej (\textit{generics}).
+ \item C++ nie posiada systemu zarządzania pamięcią (\textit{garbage collector}), co umożliwia większą kontrolę nad zasobami pamięci (np. w mikro kontrolerach).
+\end{itemize}
 
 \paragraph{Unikatowe cechy Go}
-Go posiada unikatową cechę samodokumentowania kodu. Odgórnie określony format komentarzy umożliwia automatyczne tworzenie przejrzystej dokumentacji.
-Dodatkowo, produktem kompilacji jest plik egzekucyjny posiadający wszystkie niezbędne zależności, a zarządzanie pakietami pozwala na importowanie rozwiązań bezpośrednio z GitHub (lub innych serwisów zewnętrznych).
-Na etapie pisania kodu źródłowego istnieje cecha dynamicznej alokacji typu zmiennej statycznej.
-Go wyposażony jest w system monitorujący zdrowie wątków i współbieżnych procesów, oraz natywnę metoda testowania funkcjonalności i bibliotek w sposób równoległy.
-Dodatkowo pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (\textit{benchmarking}), formatowania składni kodu zgodnie ze standardem (gofmt), oraz wiele innych komponentów.
+\begin{itemize}
+ \item Produktem kompilacji jest plik egzekucyjny posiadający wszystkie niezbędne zależności.
+ \item Zarządzanie pakietami pozwala na importowanie rozwiązań bezpośrednio z GitHub (lub innych serwisów zewnętrznych).
+ \item Dynamiczna alokacja typu zmiennej statycznej.
+ \item Natywne wspieranie tworzenie oprogramowania wykorzystującego wielowątkowość i współbieżność procesów.
+ \item Natywna metoda testowania funkcjonalności i bibliotek.
+ \item Pełny zestaw wbudowanych narzędzi pozwalających na testowanie wydajności kodu (\textit{benchmarking}), formatowania składni kodu zgodnie ze standardem (gofmt),
+       oraz wiele innych funkcjonalności.
+\end{itemize}
+% TODO: Wyliczenie przydałoby się zamienić w zwykły tekst.
 
 \section{Serializacja danych Protocol Buffers}
 
@@ -264,11 +280,11 @@ message PESEL {
 }
 \end{lstlisting}
 
-Struktura ta przechowywana jest w plikach o rozszerzeniu \textit{.proto}, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
+Struktura ta przechowywana jest w plikach o rozszerzeniu `.proto`, które są następnie kompilowane do dowolnego z wspieranych języków oprogramowania 
 W przypadku Protocol Buffers w wersji 3, wspierana jest generacja kodu w Java, C++, Python, Java Lite, Ruby, JavaScript, Objective-C, C\# oraz PHP.
 Następnie, dane zserializowane zostają zapisane w formacie binarnym (\textit{wire format}), który umożliwia na uzyskanie wyższego poziomu kompresji danych oraz transmisję danych 
 bez potrzeby wykonania dalszego kodowania. 
-Wynikiem kompilacji plików \textit{.proto} jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
+Wynikiem kompilacji plików `.proto` jest zestaw bibliotek zawierający wygenerowany kod źródłowy, wraz z gotowymi strukturami, funkcjami i metodami niezbędnymi do 
 operowania danymi w sposób natywny dla wybranego języka programowania.
 
 \section{Narzędzia dodatkowe}
@@ -568,7 +584,6 @@ ponownej kompilacji oprogramowania symulacyjnego. Poniższa lista przedstawia or
        reprezentuje dodatkowe parametry symulacji, które umożliwiają tworzenie zaawansowanych i precyzyjnych scenariuszy.
 \end{itemize}
 
-\newpage
 Fragment pliku konfiguracyjnego dla konfiguracji węzła:
 
 \begin{lstlisting}
@@ -632,6 +647,7 @@ message TimeDelay {
 
 Poniższa lista przedstawia kompletny zbiór elementów losowego pliku konfiguracyjnego:
 
+% TODO: Powinno być przedstawione wcześniej
 \begin{itemize}[noitemsep]
  \item Protokół: DIRECT, LEACH, PEGASIS
  \item Maksymalna liczba rund: 25000
@@ -960,7 +976,6 @@ gnuplot> plot \
   "< cat ./latex/gnuplot_data/test_1/direct200_m32/*" using 1:2 smooth sbezier ls 4 title "DIRECT (m=32B)"
 \end{lstlisting}
 
-\newpage
 \subsection{Dodawanie nowych protokołów}
 
 Architektura systemu umożliwia tworzenie nowych protokołów wymiany informacji pomiędzy węzłami.
@@ -1014,7 +1029,6 @@ Poniższy rysunek przedstawia rozmieszczenie 200 węzłów standardowych oraz 1 
  \caption{Rozmieszczenie 200 węzłów w sieci o przestrzeni 200 [m] x 200 [m].}
 \end{figure}
 
-\newpage
 \subsection{Test 1 - Wielkość wiadomości}
 
 Test \textit{Wielkość wiadomości} ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów dla różnych wielkości wiadomości wysyłanej pomiędzy węzłami.
@@ -1059,7 +1073,7 @@ testdata/test_1/pegasis200_m128.pbtxt,\
 testdata/test_1/pegasis200_m256.pbtxt
 \end{lstlisting}
 
-Poniższe tabele przedstawiają wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych.
+Tabela uzyskanych wyników:
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1088,7 +1102,7 @@ Wartość	& 1136	& 1147	& 1152	& 1166	& 1185	& 1203	& 1224	& 1234	& 1262	& 1274	
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 1434 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 1434.
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.3\% dla wartości minimalnej (1416), oraz wydłużenie czasu pracy na poziomie +14.0\% dla mediany (1635), +27.7\% dla wartości maksymalnej (1636).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.5\% dla wartości minimalnej (1112), -17.4\% dla mediany (1184), -11.2\% dla wartości maksymalnej (1274).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1124,7 +1138,7 @@ Wartość	& 576	& 584	& 587	& 594	& 608	& 622	& 629	& 635	& 669	& 685	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 717 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 717.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +2.1\% dla wartości minimalnej (732), +15.8\% dla mediany (831), +31.1\% dla wartości maksymalnej (954).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.4\% dla wartości minimalnej (571), -15.3\% dla mediany (608), -4.5\% dla wartości maksymalnej (685).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1160,7 +1174,7 @@ Wartość	& 291	& 295	& 300	& 305	& 312	& 318	& 327	& 330	& 336	& 341	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373), +20.3\% dla mediany (432), +49.6\% dla wartości maksymalnej (537).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -19.2\% dla wartości minimalnej (290), -13.1\% dla mediany (312), -5.0\% dla wartości maksymalnej (341).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1196,7 +1210,7 @@ Wartość	& 155	& 157	& 158	& 162	& 166	& 170	& 175	& 179	& 181	& 188	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 180 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 180.
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +8.3\% dla wartości minimalnej (195), +32.8\% dla mediany (239), +61.1\% dla wartości maksymalnej (290).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -15.6\% dla wartości minimalnej (152), -7.8\% dla mediany (166), oraz wydłużenie czasu pracy na poziomie +4.4\% dla wartości maksymalnej (188).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1207,7 +1221,7 @@ Zauważyć należy jednak, że PEGASIS cechuje się lepszą sprawnością energe
 
 \subsection{Test 2 - Liczba węzłów w sieci}
 
-Test \textit{Liczba węzłów w sieci} ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem liczby węzłów znajdujących się w sieci.
+Test `Liczba węzłów w sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem liczby węzłów znajdujących się w sieci.
 
 Folder testdata\/test\_2 zawiera 15 plików konfiguracyjnych, w których parametry węzłów i sieci są takie same jak w konfiguracji domyślnej.
 W nazwie pliku występuje liczba, która określa liczbę węzłów znajdujących się w sieci.
@@ -1255,8 +1269,6 @@ testdata/test_2/pegasis150.pbtxt,\
 testdata/test_2/pegasis200.pbtxt
 \end{lstlisting}
 
-Poniższe tabele przedstawiają wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych.
-
 \begin{longtable}{*{11}{c}}
 \toprule \\*
 \multicolumn{11}{c}{Protokół: DIRECT, Liczba węzłów: 25} \\*
@@ -1284,7 +1296,7 @@ Wartość	& 170	& 172	& 176	& 182	& 187	& 195	& 201	& 206	& 215	& 216	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 214 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 214 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -16.8\% dla wartości minimalnej (178), oraz wydłużenie czasu pracy na poziomie +7.2\% dla mediany (229), +38.3\% dla wartości maksymalnej (296).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -32.9\% dla wartości minimalnej (165), -12.9\% dla mediany (186), oraz wydłużenie czasu pracy na poziomie +0.9\% dla wartości maksymalnej (216).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1320,7 +1332,7 @@ Wartość	& 285	& 292	& 302	& 310	& 320	& 332	& 342	& 348	& 354	& 357	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -22.3\% dla wartości minimalnej (279), oraz wydłużenie czasu pracy na poziomie +6.4\% dla mediany (382), +30.1\% dla wartości maksymalnej (467).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -34.2\% dla wartości minimalnej (272), -10.9\% dla mediany (320), -0.6\% dla wartości maksymalnej (357).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1356,7 +1368,7 @@ Wartość	& 269	& 274	& 278	& 285	& 291	& 301	& 311	& 314	& 319	& 333	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -9.7\% dla wartości minimalnej (324), oraz wydłużenie czasu pracy na poziomie +14.9\% dla mediany (413), +39.0\% dla wartości maksymalnej (499).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -25.6\% dla wartości minimalnej (267), -18.9\% dla mediany (291), -7.2\% dla wartości maksymalnej (333).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1391,7 +1403,7 @@ Wartość	& 287	& 293	& 297	& 304	& 312	& 322	& 330	& 333	& 339	& 343	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.3\% dla wartości minimalnej (360), +18.2\% dla mediany (425), +52.4\% dla wartości maksymalnej (547).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -20.3\% dla wartości minimalnej (286), -13.1\% dla mediany (312), -4.5\% dla wartości maksymalnej (343).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1426,7 +1438,7 @@ Wartość	& 297	& 299	& 302	& 307	& 313	& 321	& 329	& 335	& 349	& 352	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +3.9\% dla wartości minimalnej (373), +19.6\% dla mediany (430), +47.9\% dla wartości maksymalnej (531).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -18.4\% dla wartości minimalnej (293), -12.8\% dla mediany (313), -1.9\% dla wartości maksymalnej (352).
 Pomimo niższej wartości maksymalnej uzyskanych rund pracy węzłów w PEGASIS, liczba węzłów aktywnych w przeciągu symulacji jest wyższa niż w przypadku DIRECT czy LEACH.
@@ -1434,10 +1446,9 @@ Zjawisko to pozwala na uzyskanie danych od większej puli węzłów aktywnych.
 \par
 Rozkład ilości energii całkowitej wszystkich węzłów w rundzie jest niemal identyczny.
 
-\newpage
 \subsection{Test 3 - Wielkość obszaru sieci}
 
-Test \textit{Wielkość obszaru sieci} ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem wielkości obszaru sieci na której
+Test `Wielkość obszaru sieci` ma na celu przedstawienie zależności efektywności energetycznej dla trzech algorytmów względem wielkości obszaru sieci na której
 znajdują się węzły w sieci.
 
 Istotna informacja: lokalizacja węzłów w scenariuszu 200 jest niezmienna względem pozostałych testów. Wielkość obszaru sieci była manipulowana przy użyciu skali (0.25, 0.50, 2.00, 4.00).
@@ -1488,7 +1499,7 @@ testdata/test_3/pegasis_xy400.pbtxt,\
 testdata/test_3/pegasis_xy800.pbtxt
 \end{lstlisting}
 
-Poniższe tabele przedstawiają wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych. 
+Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych. 
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1523,10 +1534,10 @@ Wartość	& 39828	& 40038	& 40316	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 42976 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 42976 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.9\% dla wartości minimalnej (43360), +9.2\% dla mediany (46910), +21.6\% dla wartości maksymalnej (52278).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -10.7\% dla wartości minimalnej (38362), -8.6\% dla mediany (39279), -6.2\% dla wartości maksymalnej (40316).
-Odległości węzłów do \textit{sink} są czterokrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
+Odległości węzłów do 'sink' są czterokrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1561,10 +1572,10 @@ Wartość	& 4708	& 4776	& 4920	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 5657 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 5657 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.3\% dla wartości minimalnej (5529), oraz wydłużenie czasu pracy na poziomie +11.2\% dla mediany (6293), +34.0\% dla wartości maksymalnej (7580).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -22.1\% dla wartości minimalnej (4406), -19.1\% dla mediany (4577), -13.0\% dla wartości maksymalnej (4920).
-Odległości węzłów do \textit{sink} są dwukrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
+Odległości węzłów do 'sink' są dwukrotnie mniejsze niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu wydłużeniu, gdyż koszt energetyczny transmisji jest niższy.
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1593,10 +1604,10 @@ Wartość	& 27	& 29	& 29	& 30	& 32	& 33	& 34	& 36	& 37	& 38	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 23 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 23 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +213.0\% dla wartości minimalnej (49), +239.1\% dla mediany (55), +282.6\% dla wartości maksymalnej (65).
 Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +117.4\% dla wartości minimalnej (27), +139.1\% dla mediany (32), +165.2\% dla wartości maksymalnej (38).
-Odległości węzłów do \textit{sink} są dwukrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
+Odległości węzłów do 'sink' są dwukrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1625,10 +1636,10 @@ Wartość	& 7	& 8	& 9	& 9	& 10	& 11	& 11	& 12	& 13	& 13	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 2 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 2 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1350.0\% dla wartości minimalnej (27), +1500.0\% dla mediany (30), +1650.0\% dla wartości maksymalnej (33).
 Dla PEGASIS uzyskano wydłużenie czasu pracy na poziomie +350.0\% dla wartości minimalnej (7), +500.0\% dla mediany (10), +650.0\% dla wartości maksymalnej (13).
-Odległości węzłów do \textit{sink} są czterokrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
+Odległości węzłów do 'sink' są czterokrotnie większa niż w konfiguracji podstawowej. Czas pracy węzłów uległ znaczącemu skróceniu, gdyż koszt energetyczny transmisji jest wyższy.
 
 \subsection{Test 4 - Parametr `p`}
 
@@ -1658,6 +1669,7 @@ testdata/test_4/
   pegasis200_p015.pbtxt
   pegasis200_p020.pbtxt
   pegasis200_p030.pbtxt
+
 0 directories, 13 files
 \end{lstlisting}
 
@@ -1680,7 +1692,39 @@ testdata/test_4/pegasis200_p025.pbtxt,\
 testdata/test_4/pegasis200_p030.pbtxt
 \end{lstlisting}
 
-Poniższe tabele przedstawiają wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych.
+Poniższa tabela przedstawia wyniki uzyskane w ramach symulacji, powtórzonej 100 razy na każdym z plików konfiguracyjnych. 
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& `	& Kwantyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& - 	& -	& 359 \\*
+\midrule
+LEACH	& 0.05	& 1	& 356 \\*
+	&	& 5	& 363 \\*
+	&	& 10	& 365 \\*
+	&	& 25	& 383 \\*
+	&	& 50	& 396 \\*
+	&	& 75	& 417 \\*
+	&	& 90	& 435 \\*
+	&	& 95	& 455 \\*
+	&	& 99	& 476 \\*
+	&	& 100	& 484 \\*
+\midrule
+PEGASIS	& 0.05	& 1	& 345 \\*
+	&	& 5	& 351 \\*
+	&	& 10	& 352 \\*
+	&	& 25	& 356 \\*
+	&	& 50	& 365 \\*
+	&	& 75	& 372 \\*
+	&	& 90	& 377 \\*
+	&	& 95	& 380 \\*
+	&	& 99	& 387 \\*
+	&	& 100	& 389 \\*
+\bottomrule
+\end{longtable}
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1709,10 +1753,42 @@ Wartość	& 345	& 351	& 352	& 356	& 365	& 372	& 377	& 380	& 387	& 389	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -1.4\% dla wartości minimalnej (354), oraz wydłużenie czasu pracy na poziomie +10.3\% dla mediany (396), +34.8\% dla wartości maksymalnej (484).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -3.9\% dla wartości minimalnej (345), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365), +8.4\% dla wartości maksymalnej (389).
 Ilość węzłów typu cluster head jest dwukrotnie mniejsza niż w konfiguracji podstawowej.
+
+\begin{longtable}{*{4}{c}}
+\toprule
+\multicolumn{4}{c}{Uzyskane rezultaty} \\
+Protokół	& Parametr `p`	& Kwantyl	& Wartość \\
+\midrule
+\endhead
+DIRECT	& - 	& -	& 359 \\*
+\midrule
+LEACH	& 0.10	& 1	& 364 \\*
+	&	& 5	& 366 \\*
+	&	& 10	& 373 \\*
+	&	& 25	& 386 \\*
+	&	& 50	& 400 \\*
+	&	& 75	& 413 \\*
+	&	& 90	& 430 \\*
+	&	& 95	& 436 \\*
+	&	& 99	& 455 \\*
+	&	& 100	& 474 \\*
+\midrule
+PEGASIS	& 0.10	& 1	& 341 \\*
+	&	& 5	& 347 \\*
+	&	& 10	& 351 \\*
+	&	& 25	& 359 \\*
+	&	& 50	& 364 \\*
+	&	& 75	& 372 \\*
+	&	& 90	& 377 \\*
+	&	& 95	& 380 \\*
+	&	& 99	& 388 \\*
+	&	& 100	& 395 \\*
+\bottomrule
+\end{longtable}
 
 \begin{longtable}{*{11}{c}}
 \toprule \\*
@@ -1741,7 +1817,7 @@ Wartość	& 341	& 347	& 351	& 359	& 364	& 372	& 377	& 380	& 388	& 395	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +1.4\% dla wartości minimalnej (365), +11.4\% dla mediany (400), +32.0\% dla wartości maksymalnej (474).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -5.3\% dla wartości minimalnej (345), oraz wydłużenie czasu pracy na poziomie +1.3\% dla mediany (364), +10.0\% dla wartości maksymalnej (395).
 
@@ -1772,7 +1848,7 @@ Wartość	& 340	& 346	& 350	& 355	& 365	& 371	& 382	& 386	& 402	& 411	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.5\% dla wartości minimalnej (350), oraz wydłużenie czasu pracy na poziomie +10.0\% dla mediany (399), +30.9\% dla wartości maksymalnej (470).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -6.7\% dla wartości minimalnej (335), oraz wydłużenie czasu pracy na poziomie +1.5\% dla mediany (365), +14.5\% dla wartości maksymalnej (411).
 Ilość węzłów typu cluster head jest o 50\% większa niż w konfiguracji podstawowej.
@@ -1804,7 +1880,7 @@ Wartość	& 347	& 349	& 352	& 358	& 367	& 373	& 378	& 382	& 388	& 397	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano wydłużenie czasu pracy na poziomie +0.8\% dla wartości minimalnej (362), +12.1\% dla mediany (403), +34.0\% dla wartości maksymalnej (481).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367), +10.6\% dla wartości maksymalnej (397).
 Ilość węzłów typu cluster head jest dwukrotnie większa niż w konfiguracji podstawowej.
@@ -1836,7 +1912,7 @@ Wartość	& 339	& 347	& 350	& 356	& 362	& 370	& 381	& 385	& 397	& 406	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -0.3\% dla wartości minimalnej (358), oraz wydłużenie czasu pracy na poziomie +12.4\% dla mediany (404), +29.5\% dla wartości maksymalnej (465).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.2\% dla wartości minimalnej (344), oraz wydłużenie czasu pracy na poziomie +2.2\% dla mediany (367), +10.6\% dla wartości maksymalnej (397).
 Ilość węzłów typu cluster head jest 150\% większa niż w konfiguracji podstawowej.
@@ -1868,7 +1944,7 @@ Wartość	& 348	& 350	& 354	& 359	& 365	& 372	& 377	& 384	& 389	& 390	\\*
 \end{figure}
 
 \par
-Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego \textit{sink}).
+Maksymalna liczba rund dla komunikacji bezpośredniej (DIRECT) jest parametrem stałym i wynosi 359 (uzyskana przez węzeł znajdujący się najbliższej węzła głównego `sink`).
 Dla LEACH uzyskano skrócenie czasu pracy na poziomie -2.2\% dla wartości minimalnej (351), oraz wydłużenie czasu pracy na poziomie +11.1\% dla mediany (399), +30.9\% dla wartości maksymalnej (470).
 Dla PEGASIS uzyskano skrócenie czasu pracy na poziomie -4.7\% dla wartości minimalnej (342), oraz wydłużenie czasu pracy na poziomie +1.7\% dla mediany (365), +8.6\% dla wartości maksymalnej (390).
 Ilość węzłów typu cluster head jest trzykrotnie większa niż w konfiguracji podstawowej.
@@ -1886,64 +1962,51 @@ Powyższe dwa wykresy nakładają przebiegi funkcji uzyskane dla wszystkich sze�
 Zauważyć można zależność, że efektywność energetyczna LEACH oraz PEGASIS przynosi pozytywne rezultaty, pozwalające na wydłużenie czasu pracy węzłów.
 
 \chapter{Podsumowanie}
-W niniejszej pracy przedstawiony został autorski projekt oprogramowania do symulacji bezprzewodowych sieci czujnikowych. 
-Pierwszym etapem pracy było określenie wymagań oraz cech systemu końcowego.
-Proces ten pozwolił mi na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, zdecydowałem się na stworzeniem prototypu systemu symulującego.
-Decyzja ta pozwoliła na wczesne przetestowanie zebranych założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu \cite{SoftwareDesingBook}.
-Projekt zrealizowałem w języku Go, przy wykorzystaniu rozszerzonego systemu kontroli wersji git. 
-Kod źródłowy finalnej wersji systemu symulacyjnego jest dostępny publicznie na portalu GitHub (github.com/keadwen/msc\_project), co pozwala na weryfikację oprogramowania, samodzielne przetestowanie jego działania oraz zaproponowanie ulepszeń.
-
-Zbieranie wyników generowanych przy pomocy systemu symulacyjny podzieliłem na cztery główne testy.
-W każdym z testów wybrałem dokładnie jeden parametr konfiguracji, który podlegał wielokrotnym zmianom mającym na celu zaobserwowanie zależności czasu i efektywności pracy sieci.
-Najistotniejszym wnioskiem zebranym zarówno w momencie pisania pracy, jak i procesie uzyskiwania wyników jest zależność między wartościami maksymalnego czasu pracy, a konfiguracją sieci.
+%TODO Podsumowanie
+\par
+Koncepcja i projekt systemu symulującego model bezprzewodowej sieci czujnikowej został opracowany przez autora pracy.
+% W niniejszej pracy przedstawiony został autorski projekt oprogramowania do
+% symulacji bezprzewodowych sieci czujnikowych. 
+Pierwszym etapem pracy było określenie wymagań oraz funkcjonalności systemu końcowego. Pierwsze szkice dokumentacji były regularnie konsultowane z promotorem pracy.
+% Denerwujące słowo na "f"? ;P
+% O konsultowaniu nie piszemy. Ja to napiszę w opinii.
+Proces ten pozwolił na zebranie szczegółowych wymagań projektowych. W końcowym etapie zbierania wymagań, autor zdecydował się tworzeniem prototypu systemu symulującego.
+Prace te pozwoliły na wczesne przetestowanie założeń i pomysłów dotyczących dekompozycji problemu, których efekt zaowocował uproszczeniem całkowitej architektury systemu \cite{SoftwareDesingBook}.
+Projekt zrealizowano w języku Go, przy wykorzystaniu rozszerzonego systemu kontroli wersji git.
+% Tu bym się pochwalił, że to na githubie i że każdy może obejrzeć i uruchomić
+% sam. Otwarty kod krytyki się nie boi ;)
+\par
+% \par? Dlaczego nie pusta linia?
+Proces zbieranie wyników generowanych przez system symulacyjny został podzielony na cztery główne testy.
+% zbieranie
+W każdym z testów wybrany został jeden parametr konfiguracji, który podlegał wielokrotnym zmianom mającym na celu zaobserwowanie zależności czasu i efektywności pracy sieci.
+\par
+Najistotniejszym wnioskiem zaobserwowanym zarówno w momencie tworzenia pracy, jak i procesie tworzenia wyników jest zależność między uzyskanymi wynikami maksymalnego czasu pracy, a konfiguracją sieci.
+% Wyników nie 'tworzymy'. Można je na przykład 'zebrać', 'uzyskać'. 'Tworzenie'
+% pasuje do plików z wynikami symulacji - te pliki rzeczywiście są 'tworzone'
+% przez oprogramowanie. Subtelna ale istotna różnica.
 Oznacza to, że niemalże niemożliwym jest określenie stałej (przewidywalnej) efektywności energetycznej sieci w momencie wdrożenia LEACH, PEGASIS czy innego algorytmu usprawniającego
-wymianę danych w bezprzewodowej sieci czujników. Wynika to z pseudolosowego wybierania węzłów pełniących rolę węzła typu \textit{cluster head}.
-% Przypadek szczególny. Podsumowanie powinno uogólniać, wyciągać spójne wnioski.
-% Przypadek szczególny scenariusza wygenerowany w ramach pracy dyplomowej idealnie obrazuje powyższej zaobserwowaną sytuację. 
-% Węzeł 171 (X: 4.5, Y: 6.2) znajduje się zdecydowanie bliżej \textit{sink} i czas życia tego węzła będzie kilkukrotnie dłuższy niż w przypadku węzła bardziej oddalonego, np. węzła 195 (X: 197.5, Y: 190.4).
-
-Każdy z czterech głównych testów definiuje kilka dodatkowych scenariuszy, w których wartości parametru modyfikowanego podlega zmianie. 
-Domyślna wielkość wiadomości wynosi 128 [B]. Test numer 1 składa się z czterech scenariuszy o różnych wartościach wielkości wiadomości. 
-Wielkość wiadomości wysyłanej pomiędzy węzłami podlega modyfikacji, a wielkości te wynoszą 32, 64, 128 oraz 256 [B].
-Pozostałe parametry węzłów (t.j. lokalizacji węzłów, parametr 'p', energia początkowa) i sieci (t.j. pozycja węzła głównego typu \textit{sink}) są takie same jak w konfiguracji domyślnej.
-Stworzenie wielu scenariuszy dla każdego z testów dało mi możliwość zaobserwowania w jaki sposób poszczególne wartości wypływają na pracę sieci i efektywność protokołów.
-
-Wyniki testu numer 1 pozwalają zaobserwować, że LEACH niezależnie od wielkości wiadomości wybranych w scenariuszach uzyskuje lepsze rezultaty dla każdego z powtórzeń symulacji.
-Zaskakującym wynikiem jest efektywność PEGASIS, który nie uzyskuje lepszych czasów pracy maksymalnej, pomimo widocznie lepszej sprawności energetycznej w początkowym etapie symulacji.
-
-W teście numer 2 zaobserwowałem jak istotnym jest położenie węzłów. W scenariuszu występują sytuacje gdzie węzłami typu \textit{cluster head} staje się węzły o małej energii bądź sporej odległości do węzła głównego.
-Pomimo tego, wykresy funkcji całkowitej liczby węzłów aktywnych w sposób precyzyjny pokazują korzyści płynące z implementacji protokołu PEGASIS. Występują rundy w których ilość węzłów aktywnych jest nawet dwukrotnie większa, niż w przypadku
-komunikacji bezpośredniej czy LEACH.
-
+wymianę danych w bezprzewodowej sieci czujników. W przypadku scenariusza wygenerowanego w ramach pracy dyplomowej zauważyć można, że węzeł 171 (X: 4.508531144480791, Y: 6.256340981494829) 
+znajduje się bardzo blisko `sink`. Czas życia tego węzła będzie kilkukrotnie dłuższy niż w przypadku węzła najbardziej oddalonego, węzła 195 (X: 197.47820095322837, Y: 190.37079023341855).
+% Przypadek szczególny. Podsumowanie powinno uogólniać, wyciągać spójne
+% wnioski.
+\par
+Każdy z testów definiuje kilka wartości parametru modyfikowanego, np. domyślna wielkość wiadomości wynosi 128 [B], dlatego też test składa się z mniejszych testów w których
+praca węzłów podlega symulacji przy wykorzystaniu identycznej lokalizacji węzłów zdefiniowanych w konfiguracji domyślnej. Jedyną wartością ulegającą modyfikacji była
+wielkości wiadomości wysyłanej pomiędzy węzłami. Wielkości te wynosiły 32, 64, 128 oraz 256 [B].
+\par
+W początkowym etapie pracy oczekiwanym było, że algorytm PEGASIS będący usprawnieniem protokołu LEACH, umożliwi uzyskanie dłuższego czasu maksymalnego pracy sieci.
+Na pierwszy rzut oka, wyniki tego nie odzwierciedlają. Dystrybucja maksymalnego czas pracy w LEACH jest dłuższa, jednakże wykresy pozwalają zauważyć pewną, że ilość węzłów aktywnych
+w protokole PEGASIS jest wyższa w początkowej fazie symulacji scenariusza (zwłaszcza w pierwszej połowie uzyskanych rund). Oznacza to, że węzeł główny `sink` uzyskuje większą ilość
+danych z większej puli węzłów.
+W scenariuszach w których odległości pomiędzy węzłami zwiększają się, koszt przekazywania informacji PEGASIS przy pomocy algorytmu `greedy` staje się bardzo kosztowny. Każdy kolejny węzeł
+odpowiedzialny za przekazanie (`relay`) danych, musi ponieść spory koszt energetyczny transmisji, który w końcowych rundach bardzo szybko eliminuje węzły niezdolne do przekazywania danych
+(ze względu na niewystarczające zasoby energetyczne). Korzystnym byłoby zaimplementowanie metody aggregacji i kompresji zebranych danych przed ich przesłaniem do węzła docelowego.
+\par
 Najlepsze korzyści płynące z implementacji protokołów LEACH oraz PEGASIS uzyskano dla testu numer 3, w którym dystanse pomiędzy węzłami uległy powiększeniu.
-Dla sieci powiększonej czterokrotnie, czyli o wielkości X: 800, Y: 800 (konfiguracja domyślna X: 200, Y: 200), uzyskano jedynie 2 rundy dla komunikacji bezpośredniej.
-Gdzie w przypadku identycznego scenariusza w wykorzystaniem PEGASIS zaobserwowano w najgorszym przypadku 7 rund, w najlepszym 13. Natomiast sprawność protokołu LEACH zaowocowała utrzymaniem pracy węzłów 
+Dla sieci powiększone czterokrotnie, czyli o wielkości X: 800, Y: 800 (konfiguracja domyślna X: 200, Y: 200), uzyskano jedynie 2 rundy dla komunikacji bezpośredniej.
+Gdzie w przypadku identycznego scenariusza w wykorzystaniem PEGASIS uzyskano w najgorszym przypadku 7 rund, w najlepszym 13. Natomiast LEACH umożliwiło utrzymanie pracy węzłów 
 w 27 rundach dla najgorszego przypadku, oraz 33 rundach dla przypadku najlepszego.
-W pozostałych testach również można zauważyć korzyści płynące z wykorzystania LEACH oraz PEGASIS, należy jednak zwrócić szczególną uwagę, że nie są to zyski na tak dużą skalę jak w przypadku trzeciego testu.
-
-Test numer 4 w którym parametr 'p' ulegał zmianom w zakresie [0.05, 0.10, 0.15, 0.20, 0.25, 0.30] uwidoczniła sporą przewagę protokołu PEGASIS. Pomimo obciążenia energetycznego wymaganego przez stworzenie łańcucha
-po którym agregowane dane \textit{sink}, PEGASIS posiada większą sprawność energetyczną przez dłuższy czas symulacji. Funkcja liczy aktywnych węzłów nie jest aż tak stroma, jak w przypadku LEACH czy DIRECT.
-
-W początkowym etapie pracy oczekiwałem, że algorytm PEGASIS będący usprawnieniem protokołu LEACH, przez co umożliwi to uzyskanie dłuższego czasu maksymalnego pracy sieci i poszczególnych węzłów.
-Na pierwszy rzut oka, wyniki tego nie odzwierciedlają. Dystrybucja maksymalnego czas pracy w LEACH jest dłuższa. Jednakże, wykresy pozwalają zauważyć, że liczba węzłów aktywnych
-w protokole PEGASIS jest wyższa w początkowej fazie symulacji scenariusza (zwłaszcza w pierwszej połowie uzyskanych rund). Oznacza to, że węzeł główny \textit{sink} uzyskuje większą liczbę danych z większej puli węzłów.
-
-W scenariuszach testu trzeciego w których odległości pomiędzy węzłami zwiększają się, koszt przekazywania informacji PEGASIS przy pomocy algorytmu \textit{greedy} staje się bardzo kosztowny. 
-Każdy kolejny węzeł odpowiedzialny za przekazanie (\textit{relay}) danych, musi ponieść spory koszt energetyczny transmisji, który w końcowych rundach bardzo szybko eliminuje węzły niezdolne do przekazywania danych
-(ze względu na niewystarczające zasoby energetyczne).
-
-W procesie przeprowadzonych prac nauczyłem się przede wszystkim jak istotnym elementem prac informatycznych jest etap zbierania wymagań oraz tworzenia prototypu.
-Nabyte doświadczenie pozwoliło mi zbudować zdecydowanie lepsze rozwiązanie końcowe. 
-Dodatkowo, ugruntowałem swoją wiedzę teoretyczną z zakresu bezprzewodowych sieci czujnikowych, algorytmów i protokołów wykorzystywanych w sieciach w sposób praktyczny.
-
-Istnieje wiele elementów pracy które warte byłyby przeprowadzenia dalszych badań.
-Począwszy od implementacji dodatkowych protokołów, nie tylko z puli protokołów hierarchicznych (t.j. PEGASIS, LEACH) \cite{teen-Manjeshwar}, ale również protokołów t.j. SAR, SPEED. Protokoły w których przesyłane dane posiadają różne priorytety (\textit{Quality of Service})
-Interesującym byłoby również zaimplementowanie protokołów wykorzystujących wielotorowość (M-MPR \textit{Mesh MultiPath Routing}) \cite{Sohrab} \cite{Protocols-Sohrabi} \cite{Gao}.
-Korzystnym z perspektywy istniejących protokołów byłoby zaimplementowanie metody agregacji i kompresji zebranych danych przed ich przesłaniem do węzła docelowego.
-Zdefiniowanie w plikach konfiguracyjnych kosztów energetycznych pracy węzła, wynikającego z czasu pracy procesora, kosztów strat wynikających z odbierania i przesyłania danych.
-Wersja oprogramowani dostępna na GitHub umożliwia definiowanie dodatkowych kosztów energetycznych \textit{EnergyCost} \cite{Slijepcevic} czy opóźnień czasowych \textit{TimeDelay} w pliku konfiguracyjnym.
-Finalnie, przydatnym byłoby napisanie większej bazy testów jednostkowych, umożliwiających weryfikację aktualnego oprogramowania.
-
 % To powyżej jest bardzo fajne. Trzeba to uwypuklić. W podsumowaniu można sobie
 % pozwolić na większą swobodę języka. Tak jak wcześniej należy przedstawiać
 % podstawy wiedzy, fakty, obiektywne prawdy tak tutaj można skomentować
@@ -1966,8 +2029,6 @@ Finalnie, przydatnym byłoby napisanie większej bazy testów jednostkowych, umo
 \bibitem{Akyildiz}{I.F. Akyildiz, W. Su, Y. Sankarasubramaniam, E. Cayirci, ,,Wireless sensor networks: a survey'', Georgia Institute of Technology, 2001.}
 \bibitem{Heinzelman}{W. R. Heinzelman, A. Chandrakasan, H. Balakrishnan, ,,Energy\-Efficient Communication Protocol for Wireless Microsensor Networks'', MIT, 2000.}
 \bibitem{wsn-future}{G. Amato, A. Caruso, S. Chessa, V. Masi, A. Urpi, ,,State of the art and future directions in wireless sensor network’s data management.'', ISTI, 2004.}
-\bibitem{volcano}{S. Carn, A. Krueger, S. Arellano, N. Krotkov, K. Yang, ,,Daily monitoring of Ecuadorian volcanic degassing from space'', Journal of Volcanology and Geothermal Research, Vol. 176, s. 141-150, 2008.}
-\bibitem{ZebraNet}{P. Juang, H. Oki, Y. Wang, M. Martonosi, L. Peh, D. Rubenstein, ,,Energy-efficient computing for wildlife tracking: design tradeoffs and early experiences with ZebraNet.'', ACM SIGOPS Operating Systems Review, Vol. 36(5), s. 96–107, 2002.}
 % https://dl.acm.org/citation.cfm?id=1389832
 \bibitem{Yick}{J. Yick, B. Mukherejee, D. Ghosal, ,,Wireless sensor network survey'', Elsevier Computer Networks, Vol. 52, 2008.}
 \bibitem{Wiley-WSN}{I. F. Akyildiz, M. Can Vuran, ,,Wireless Sensor Networks'', Georgia Institute of Technology, Wiley, ISBN 9780470036013, 2010.}
@@ -2010,7 +2071,8 @@ Finalnie, przydatnym byłoby napisanie większej bazy testów jednostkowych, umo
 \bibitem{algoBook}{C. Leiserson, C. Stein, R. Riverst, T. Cormen, ,,Introduction to Algorithms, 3rd Edition'', The MIT Press, ISBN 9780262033848, 2009.}
 \end{thebibliography}
 
-% Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF dostarczanym przez dyplomanta i nie są oprawiane.
+% Normalnie recenzja i opinia są drukowane osobno - nie pojawiają się w PDF
+% dostarczanym przez dyplomanta i nie są oprawiane.
 %\zakonczenie  % wklejenie recenzji i opinii
 
 \end{document}
