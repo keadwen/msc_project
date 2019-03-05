@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.4)  10 FEB 2019 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.3.4)  5 MAR 2019 10:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,7 +592,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./PWHead.png (PNG copy)> <
-./mgrhead.png (PNG copy)>] (./streszczenia.tex [2] [3]) [4]
+./mgrhead.png (PNG copy)>] (./streszczenia.tex [2] [3] [4
+
+]) [5] [6
+
+]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
 
 
@@ -601,10 +605,9 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
- [5
+ [7
 
-
-] [6
+] [8
 
 ]
 (./praca_dyplomowa.toc [1
@@ -652,14 +655,14 @@ plm/m/it/12 E[]\OT4/cmr/m/n/12 (\OML/plm/m/it/12 k; d\OT4/cmr/m/n/12 ) = []
  []
 
 [9]
-<images/komunikacja_bezposrednia.png, id=378, 369.38pt x 375.4025pt>
+<images/komunikacja_bezposrednia.png, id=384, 369.38pt x 375.4025pt>
 File: images/komunikacja_bezposrednia.png Graphic file (type png)
 <use images/komunikacja_bezposrednia.png>
 Package pdftex.def Info: images/komunikacja_bezposrednia.png  used on input lin
 e 386.
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [10] [11 <./images/komunikacja_bezposrednia.png>]
-<images/komunikacja_leach.png, id=396, 369.38pt x 375.4025pt>
+<images/komunikacja_leach.png, id=402, 369.38pt x 375.4025pt>
 File: images/komunikacja_leach.png Graphic file (type png)
 <use images/komunikacja_leach.png>
 Package pdftex.def Info: images/komunikacja_leach.png  used on input line 440.
@@ -669,7 +672,7 @@ Underfull \vbox (badness 1406) has occurred while \output is active []
 
  [12]
 [13 <./images/komunikacja_leach.png>]
-<images/komunikacja_pegasis.png, id=414, 369.38pt x 375.4025pt>
+<images/komunikacja_pegasis.png, id=421, 369.38pt x 375.4025pt>
 File: images/komunikacja_pegasis.png Graphic file (type png)
 <use images/komunikacja_pegasis.png>
 Package pdftex.def Info: images/komunikacja_pegasis.png  used on input line 461
@@ -677,7 +680,7 @@ Package pdftex.def Info: images/komunikacja_pegasis.png  used on input line 461
 (pdftex.def)             Requested size: 284.52756pt x 289.16965pt.
  [14 <./images/komunikacja_pegasis.png>]
 Rozdzia\l  4.
-<images/architektura_systemu.png, id=420, 873.2625pt x 548.0475pt>
+<images/architektura_systemu.png, id=427, 873.2625pt x 548.0475pt>
 File: images/architektura_systemu.png Graphic file (type png)
 <use images/architektura_systemu.png>
 Package pdftex.def Info: images/architektura_systemu.png  used on input line 47
@@ -722,7 +725,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
 [26]
-<images/przykladowa_sieci_wygenerowana.png, id=642, 369.38pt x 375.4025pt>
+<images/przykladowa_sieci_wygenerowana.png, id=649, 369.38pt x 375.4025pt>
 File: images/przykladowa_sieci_wygenerowana.png Graphic file (type png)
 <use images/przykladowa_sieci_wygenerowana.png>
 Package pdftex.def Info: images/przykladowa_sieci_wygenerowana.png  used on inp
@@ -749,7 +752,7 @@ Rozdzia\l  5.
 [31
 
 ]
-<images/scenariusz_lokalizacja.png, id=721, 481.8pt x 361.35pt>
+<images/scenariusz_lokalizacja.png, id=728, 481.8pt x 361.35pt>
 File: images/scenariusz_lokalizacja.png Graphic file (type png)
 <use images/scenariusz_lokalizacja.png>
 Package pdftex.def Info: images/scenariusz_lokalizacja.png  used on input line 
@@ -770,13 +773,13 @@ Overfull \hbox (19.68492pt too wide) in alignment at lines 1064--1080
 Underfull \vbox (badness 10000) detected at line 1080
  []
 
-<images/gnuplot/test_1/nodes_in_round_m32.png, id=762, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m32.png, id=768, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m32.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m32.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m32.png  used on 
 input line 1084.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m32.png, id=763, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m32.png, id=769, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m32.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m32.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m32.png  used on
@@ -803,13 +806,13 @@ es/gnuplot/test_1/energy_in_round_m32.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1116
  []
 
-<images/gnuplot/test_1/nodes_in_round_m64.png, id=777, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m64.png, id=783, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m64.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m64.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m64.png  used on 
 input line 1120.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m64.png, id=778, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m64.png, id=784, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m64.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m64.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m64.png  used on
@@ -836,13 +839,13 @@ es/gnuplot/test_1/energy_in_round_m64.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1152
  []
 
-<images/gnuplot/test_1/nodes_in_round_m128.png, id=790, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m128.png, id=797, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m128.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m128.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m128.png  used on
  input line 1156.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m128.png, id=791, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m128.png, id=798, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m128.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m128.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m128.png  used o
@@ -869,13 +872,13 @@ ges/gnuplot/test_1/energy_in_round_m128.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1188
  []
 
-<images/gnuplot/test_1/nodes_in_round_m256.png, id=804, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/nodes_in_round_m256.png, id=810, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/nodes_in_round_m256.png Graphic file (type png)
 <use images/gnuplot/test_1/nodes_in_round_m256.png>
 Package pdftex.def Info: images/gnuplot/test_1/nodes_in_round_m256.png  used on
  input line 1192.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_1/energy_in_round_m256.png, id=805, 481.8pt x 361.35pt>
+<images/gnuplot/test_1/energy_in_round_m256.png, id=811, 481.8pt x 361.35pt>
 File: images/gnuplot/test_1/energy_in_round_m256.png Graphic file (type png)
 <use images/gnuplot/test_1/energy_in_round_m256.png>
 Package pdftex.def Info: images/gnuplot/test_1/energy_in_round_m256.png  used o
@@ -902,13 +905,13 @@ ges/gnuplot/test_1/energy_in_round_m256.png (PNG copy)>] [42]
 Underfull \vbox (badness 10000) detected at line 1276
  []
 
-<images/gnuplot/test_2/nodes_in_round_25.png, id=841, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_25.png, id=847, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_25.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_25.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_25.png  used on i
 nput line 1280.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_25.png, id=842, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_25.png, id=848, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_25.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_25.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_25.png  used on 
@@ -935,13 +938,13 @@ s/gnuplot/test_2/energy_in_round_25.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1312
  []
 
-<images/gnuplot/test_2/nodes_in_round_50.png, id=871, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_50.png, id=878, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_50.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_50.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_50.png  used on i
 nput line 1316.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_50.png, id=872, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_50.png, id=879, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_50.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_50.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_50.png  used on 
@@ -968,13 +971,13 @@ s/gnuplot/test_2/energy_in_round_50.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1348
  []
 
-<images/gnuplot/test_2/nodes_in_round_100.png, id=886, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_100.png, id=892, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_100.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_100.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_100.png  used on 
 input line 1352.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_100.png, id=887, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_100.png, id=893, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_100.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_100.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_100.png  used on
@@ -1001,13 +1004,13 @@ es/gnuplot/test_2/energy_in_round_100.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1383
  []
 
-<images/gnuplot/test_2/nodes_in_round_150.png, id=899, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_150.png, id=905, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_150.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_150.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_150.png  used on 
 input line 1387.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_150.png, id=900, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_150.png, id=906, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_150.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_150.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_150.png  used on
@@ -1034,13 +1037,13 @@ es/gnuplot/test_2/energy_in_round_150.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1418
  []
 
-<images/gnuplot/test_2/nodes_in_round_200.png, id=912, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/nodes_in_round_200.png, id=919, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/nodes_in_round_200.png Graphic file (type png)
 <use images/gnuplot/test_2/nodes_in_round_200.png>
 Package pdftex.def Info: images/gnuplot/test_2/nodes_in_round_200.png  used on 
 input line 1422.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_2/energy_in_round_200.png, id=913, 481.8pt x 361.35pt>
+<images/gnuplot/test_2/energy_in_round_200.png, id=920, 481.8pt x 361.35pt>
 File: images/gnuplot/test_2/energy_in_round_200.png Graphic file (type png)
 <use images/gnuplot/test_2/energy_in_round_200.png>
 Package pdftex.def Info: images/gnuplot/test_2/energy_in_round_200.png  used on
@@ -1067,13 +1070,13 @@ es/gnuplot/test_2/energy_in_round_200.png (PNG copy)>] [53] [54]
 Underfull \vbox (badness 10000) detected at line 1514
  []
 
-<images/gnuplot/test_3/nodes_in_round_xy050.png, id=956, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy050.png, id=962, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy050.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy050.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy050.png  used o
 n input line 1519.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy050.png, id=957, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy050.png, id=963, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy050.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy050.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy050.png  used 
@@ -1100,13 +1103,13 @@ l.1530
 Underfull \vbox (badness 10000) detected at line 1552
  []
 
-<images/gnuplot/test_3/nodes_in_round_xy100.png, id=982, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy100.png, id=989, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy100.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy100.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy100.png  used o
 n input line 1557.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy100.png, id=983, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy100.png, id=990, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy100.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy100.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy100.png  used 
@@ -1133,13 +1136,13 @@ l.1568
 Underfull \vbox (badness 10000) detected at line 1585
  []
 
-<images/gnuplot/test_3/nodes_in_round_xy400.png, id=996, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy400.png, id=1002, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy400.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy400.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy400.png  used o
 n input line 1589.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy400.png, id=997, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy400.png, id=1003, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy400.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy400.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy400.png  used 
@@ -1166,13 +1169,13 @@ l.1600
 Underfull \vbox (badness 10000) detected at line 1617
  []
 
-<images/gnuplot/test_3/nodes_in_round_xy800.png, id=1010, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/nodes_in_round_xy800.png, id=1016, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/nodes_in_round_xy800.png Graphic file (type png)
 <use images/gnuplot/test_3/nodes_in_round_xy800.png>
 Package pdftex.def Info: images/gnuplot/test_3/nodes_in_round_xy800.png  used o
 n input line 1621.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_3/energy_in_round_xy800.png, id=1011, 481.8pt x 361.35pt>
+<images/gnuplot/test_3/energy_in_round_xy800.png, id=1017, 481.8pt x 361.35pt>
 File: images/gnuplot/test_3/energy_in_round_xy800.png Graphic file (type png)
 <use images/gnuplot/test_3/energy_in_round_xy800.png>
 Package pdftex.def Info: images/gnuplot/test_3/energy_in_round_xy800.png  used 
@@ -1199,13 +1202,13 @@ l.1632
 Underfull \vbox (badness 10000) detected at line 1701
  []
 
-<images/gnuplot/test_4/nodes_in_round_p005.png, id=1044, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p005.png, id=1050, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p005.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p005.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p005.png  used on
  input line 1705.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p005.png, id=1045, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p005.png, id=1051, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p005.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p005.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p005.png  used o
@@ -1232,13 +1235,13 @@ gnuplot/test_4/energy_in_round_p005.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1733
  []
 
-<images/gnuplot/test_4/nodes_in_round_p010.png, id=1072, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p010.png, id=1078, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p010.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p010.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p010.png  used on
  input line 1737.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p010.png, id=1073, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p010.png, id=1079, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p010.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p010.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p010.png  used o
@@ -1265,13 +1268,13 @@ gnuplot/test_4/energy_in_round_p010.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1764
  []
 
-<images/gnuplot/test_4/nodes_in_round_p015.png, id=1085, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p015.png, id=1092, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p015.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p015.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p015.png  used on
  input line 1768.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p015.png, id=1086, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p015.png, id=1093, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p015.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p015.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p015.png  used o
@@ -1298,13 +1301,13 @@ gnuplot/test_4/energy_in_round_p015.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1796
  []
 
-<images/gnuplot/test_4/nodes_in_round_p020.png, id=1099, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p020.png, id=1105, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p020.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p020.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p020.png  used on
  input line 1800.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p020.png, id=1100, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p020.png, id=1106, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p020.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p020.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p020.png  used o
@@ -1331,13 +1334,13 @@ gnuplot/test_4/energy_in_round_p020.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1828
  []
 
-<images/gnuplot/test_4/nodes_in_round_p025.png, id=1112, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p025.png, id=1118, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p025.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p025.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p025.png  used on
  input line 1832.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p025.png, id=1113, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p025.png, id=1119, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p025.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p025.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p025.png  used o
@@ -1364,13 +1367,13 @@ gnuplot/test_4/energy_in_round_p025.png (PNG copy)>]
 Underfull \vbox (badness 10000) detected at line 1860
  []
 
-<images/gnuplot/test_4/nodes_in_round_p030.png, id=1125, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_p030.png, id=1132, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_p030.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_p030.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_p030.png  used on
  input line 1864.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_p030.png, id=1126, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_p030.png, id=1133, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_p030.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_p030.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_p030.png  used o
@@ -1394,13 +1397,13 @@ l.1875
 l.1875 
         <./images/gnuplot/test_4/nodes_in_round_p030.png (PNG copy)> <./images/
 gnuplot/test_4/energy_in_round_p030.png (PNG copy)>]
-<images/gnuplot/test_4/nodes_in_round_all.png, id=1139, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/nodes_in_round_all.png, id=1146, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/nodes_in_round_all.png Graphic file (type png)
 <use images/gnuplot/test_4/nodes_in_round_all.png>
 Package pdftex.def Info: images/gnuplot/test_4/nodes_in_round_all.png  used on 
 input line 1878.
 (pdftex.def)             Requested size: 284.52756pt x 213.39867pt.
-<images/gnuplot/test_4/energy_in_round_all.png, id=1140, 481.8pt x 361.35pt>
+<images/gnuplot/test_4/energy_in_round_all.png, id=1147, 481.8pt x 361.35pt>
 File: images/gnuplot/test_4/energy_in_round_all.png Graphic file (type png)
 <use images/gnuplot/test_4/energy_in_round_all.png>
 Package pdftex.def Info: images/gnuplot/test_4/energy_in_round_all.png  used on
@@ -1454,7 +1457,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2016.
  ) 
 Here is how much of TeX's memory you used:
  10487 strings out of 494549
- 153873 string characters out of 6176898
+ 153873 string characters out of 6176899
  456909 words of memory out of 5000000
  13262 multiletter control sequences out of 15000+600000
  27260 words of font info for 51 fonts, out of 8000000 for 9000
@@ -1482,10 +1485,10 @@ hare/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 /uhvr8a.pfb>
-Output written on praca_dyplomowa.pdf (93 pages, 2128956 bytes).
+Output written on praca_dyplomowa.pdf (95 pages, 2129114 bytes).
 PDF statistics:
- 1849 PDF objects out of 2073 (max. 8388607)
- 1221 compressed objects within 13 object streams
+ 1855 PDF objects out of 2073 (max. 8388607)
+ 1225 compressed objects within 13 object streams
  629 named destinations out of 1000 (max. 500000)
  521 words of extra memory for PDF output out of 10000 (max. 10000000)
 
